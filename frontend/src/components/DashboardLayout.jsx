@@ -27,9 +27,17 @@ const NAV = [
 function SidebarContent({ onNavigate }) {
   return (
     <>
-      <Link to="/" onClick={onNavigate} className="flex items-center gap-2 px-6 h-16 border-b border-[var(--color-line-dark)]">
-        <span className="font-serif font-bold text-lg text-white tracking-tight">SMART</span>
-      </Link>
+     <Link to="/" onClick={onNavigate} className="flex items-center gap-2.5 px-6 h-16 border-b border-[var(--color-line-dark)]">
+  <img src="/logo.png" alt="SMART" className="h-8 w-auto object-contain" />
+  <div className="flex flex-col leading-none">
+    <span className="font-serif font-bold text-lg text-white tracking-tight">
+      SMART
+    </span>
+    <span className="text-[10px] tracking-wide text-[var(--color-muted-inv)] mt-0.4">
+      indicator
+    </span>
+  </div>
+</Link>
       <nav className="flex-1 px-3 py-4 space-y-1 overflow-y-auto">
         {NAV.map(({ to, label, icon: Icon }) => (
           <NavLink

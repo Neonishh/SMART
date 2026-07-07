@@ -3,7 +3,7 @@ export default function Watermark({ className = "" }) {
     <span
       aria-hidden="true"
       className={`st-watermark select-none ${className}`}
-      style={{ fontSize: "clamp(220px, 32vw, 520px)" }}
+      style={{ fontSize: "clamp(320px, 42vw, 680px)" }}
     >
       ST
     </span>
