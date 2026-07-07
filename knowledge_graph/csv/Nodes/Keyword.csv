@@ -1,0 +1,186 @@
+﻿Keyword_ID,Keyword
+KW00001,Engineering
+KW00002,Engineering and Technology
+KW00003,Engineering Civil
+KW00004,Chemistry
+KW00005,Chemistry Applied
+KW00006,Physical Sciences
+KW00007,Mathematics
+KW00008,Mathematics Applied
+KW00009,Engineering Chemical
+KW00010,Engineering Biomedical
+KW00011,Computer Science
+KW00012,Computer Science Information Systems
+KW00013,Engineering Electrical and Electronic
+KW00014,Chemistry Organic
+KW00015,Engineering Mechanical
+KW00016,Computer Science Artificial Intelligence
+KW00017,Computer Science Software Engineering
+KW00018,Physics
+KW00019,Physics Applied
+KW00020,Mechanics
+KW00021,Remote Sensing
+KW00022,Computer Science Interdisciplinary Applications
+KW00023,Construction and Building Technology
+KW00024,Computer Science Hardware and Architecture
+KW00025,Telecommunications
+KW00026,Business Finance
+KW00027,Economics and Business
+KW00028,Social Sciences
+KW00029,Computer Science Theory and Methods
+KW00030,Engineering Industrial
+KW00031,Chemistry Analytical
+KW00032,Instruments and Instrumentation
+KW00033,Management
+KW00034,Engineering Multidisciplinary
+KW00035,Engineering Aerospace
+KW00036,Engineering Manufacturing
+KW00037,Material Science
+KW00038,Materials Science Multidisciplinary
+KW00039,Materials Science Biomaterials
+KW00040,Engineering Environmental
+KW00041,Engineering Geological
+KW00042,Materials Science Composites
+KW00043,Materials Science Ceramics
+KW00044,Automation and Control Systems
+KW00045,Energy and Fuels
+KW00046,Materials Science Characterization and Testing
+KW00047,Metallurgy and Metallurgical Engineering
+KW00048,Nuclear Science and Technology
+KW00049,Biosystems Science
+KW00050,Nanoparticles
+KW00051,Nanoscience
+KW00052,Tactile Cyber-Physical Systems
+KW00053,Energy transfer
+KW00054,Photocurrent spectroscopy
+KW00055,Sparse Recovery
+KW00056,Thermodynamics
+KW00057,Materials Research Centre
+KW00058,Mining and Mineral Processing
+KW00059,Robotics
+KW00060,Engineering Ocean
+KW00061,Materials Science Paper and Wood
+KW00062,Materials Science Coatings and Films
+KW00063,Computer Science Cybernetics
+KW00064,Imaging Science and Photographic Technology
+KW00065,Operations Research and Management Science
+KW00066,Internet of things
+KW00067,Public Administration
+KW00068,Social Sciences General
+KW00069,Statecharts (Computer science)
+KW00070,Artificial intelligence
+KW00071,Computational intelligence
+KW00072,Intelligent agents (Computer software)
+KW00073,Multiagent systems
+KW00074,Health Policy and Services
+KW00075,Electric vehicles
+KW00076,Mathematics Interdisciplinary Applications
+KW00077,Topology
+KW00078,Convolution Neural Networks
+KW00079,Deconvolution
+KW00080,Floating point Multiplier
+KW00081,Genetic Algorithm
+KW00082,Non-Dominant Sorting Genetic Algorithm II
+KW00083,Particle Swarm Optimization
+KW00084,RNSG
+KW00085,5G-advanced
+KW00086,6G
+KW00087,aerial communication
+KW00088,load balancing
+KW00089,network sharing
+KW00090,split computing
+KW00091,wireless for AI
+KW00092,Application Aware Routing (AAR)
+KW00093,Bidirectional Forwarding detection (BFD)
+KW00094,Deep Queue Network (DQN)
+KW00095,Service Level Agreement (SLA)
+KW00096,Software Defined Wide Area Network (SD-WAN)
+KW00097,Tunnel health probing protocol (THPP)
+KW00098,Cryptography
+KW00099,Galois Field
+KW00100,Hardware Security
+KW00101,Karatsuba Multiplier
+KW00102,NSGA-II Algorithm
+KW00103,Polynomial Multiplier
+KW00104,Multiagent Systems
+KW00105,automation safety
+KW00106,Industrial robotics
+KW00107,real-time systems
+KW00108,task-level testing
+KW00109,test case generation
+KW00110,Multi-hop routing
+KW00111,Opportunistic communication
+KW00112,Q-learning
+KW00113,Unmanned Aerial Vehicles
+KW00114,Auto-associative memory
+KW00115,Hopfield neural network
+KW00116,text retrieval
+KW00117,multi-modal learning
+KW00118,M-ary Hopfield neural network
+KW00119,time-frequency constellation
+KW00120,dual-weight learning
+KW00121,two-stage firing
+KW00122,uni-limit cycle
+KW00123,multi-limit cycle
+KW00124,sequence retrieval
+KW00125,temporal sequence decoding
+KW00126,Agent-based Healthcare Ecosystem
+KW00127,Big Health Data
+KW00128,Consent Management System
+KW00129,Data Security and Privacy challenges
+KW00130,ESaP Security and Privacy framework
+KW00131,Privacy Aware Access Control
+KW00132,Agriculture Markets
+KW00133,Cosmetic Compliance
+KW00134,E-markets Intermediaries
+KW00135,Local-Level Indigenous Practices
+KW00136,Planning and Development
+KW00137,Power Asymmetries
+KW00138,State-Mandated ICTD Programmes
+KW00139,Wicked Problems
+KW00140,event triggered urban expansion
+KW00141,land use
+KW00142,PLUS
+KW00143,spatio-temporal matrix
+KW00144,sustainable urban development
+KW00145,topological assessment
+KW00146,Urbanisation
+KW00147,Antenna array
+KW00148,beamforming
+KW00149,beam sweeps
+KW00150,hierarchical beamsearch
+KW00151,millimeter wave
+KW00152,RF chain
+KW00153,synchronization signal
+KW00154,Closed Wi-Fi Network
+KW00155,Device Commissioning
+KW00156,DoS Mitigation
+KW00157,IEEE 802.11
+KW00158,IEEE 802.15.4
+KW00159,IoT Security
+KW00160,Network Privacy
+KW00161,Bar-in-PCP
+KW00162,Data visualization
+KW00163,Geospatial visualization
+KW00164,Malnutrition Survey integration
+KW00165,NFHS
+KW00166,NLP
+KW00167,Semantic embeddings
+KW00168,Convolutional Neural Ne
+KW00169,Gesture Segmentation
+KW00170,Graph Based Classification
+KW00171,Intracranial Hemorrhages
+KW00172,Radiomics
+KW00173,Robotic Surgery
+KW00174,Siamese Networks
+KW00175,Clinical Pre Clinical and Health
+KW00176,Pharmacology and Pharmacy
+KW00177,Pharmacology and Toxicology
+KW00178,Data Mining
+KW00179,Pattern Recognition
+KW00180,Networks
+KW00181,Cloud Computing
+KW00182,Biology and Biochemistry
+KW00183,Life Sciences
+KW00184,Mathematical and Computational Biology
+KW00185,Physics Condensed Matter
