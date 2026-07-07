@@ -34,6 +34,8 @@ body {
 /* Watermark motif — reused across the app as the SMART signature element */
 .st-watermark {
   position: absolute;
+   top: 50px;          /* Increase this value to move it lower */
+  right: 5; 
   font-family: var(--font-serif);
   font-weight: 700;
   color: var(--color-ink);

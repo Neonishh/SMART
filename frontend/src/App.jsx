@@ -10,6 +10,7 @@ import Grants from "./pages/Grants";
 import Chatbot from "./pages/Chatbot";
 import Login from "./pages/Login";
 import InfoPage from "./pages/InfoPage";
+import About from "./pages/About";
 
 export default function App() {
   return (
@@ -17,15 +18,10 @@ export default function App() {
       <Route path="/" element={<Landing />} />
 
       {/* Public nav pages */}
-      <Route
-        path="/about"
-        element={
-          <InfoPage
-            title="About SMART"
-            body="SMART (Systematic Monitoring & Analysis for Research and Technology) is an AI-powered platform that connects publications, patents, grants, and theses into a single knowledge graph — helping researchers, institutions, and policymakers see the full picture of India's research output in real time."
-          />
-        }
-      />
+      {/* Public nav pages */}
+<Route path="/about" element={<About />} />
+        
+      
       <Route
         path="/who-we-serve"
         element={

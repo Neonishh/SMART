@@ -15,9 +15,17 @@ export default function Navbar() {
   return (
     <header className="bg-[var(--color-navy)] text-white relative z-20">
       <div className="mx-auto max-w-6xl px-6 h-16 flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-2 shrink-0">
-          <span className="font-serif font-bold text-xl tracking-tight">SMART</span>
-        </Link>
+        <Link to="/" className="flex items-center gap-2.5 shrink-0">
+  <img src="/logo.png" alt="SMART" className="h-9 w-auto object-contain" />
+  <div className="flex flex-col leading-none">
+    <span className="font-serif font-bold text-xl tracking-tight">
+      SMART
+    </span>
+    <span className="text-[11px] tracking-wide text-[var(--color-muted-inv)] mt-0.4">
+      indicator
+    </span>
+  </div>
+</Link>
 
         <nav className="hidden md:flex items-center gap-8 text-sm">
           {LINKS.map((l) => (
