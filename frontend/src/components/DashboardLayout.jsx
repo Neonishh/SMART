@@ -51,7 +51,7 @@ function SidebarContent({ onNavigate }) {
         ))}
       </nav>
       <div className="px-6 py-4 border-t border-[var(--color-line-dark)] text-xs text-[var(--color-muted-inv)] font-mono">
-        UI preview — backend not yet connected
+        Connected to SMART Knowledge Graph
       </div>
     </>
   );

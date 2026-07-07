@@ -27,7 +27,7 @@ export default function Dashboard() {
   return (
     <DashboardLayout
       title="Dashboard"
-      description="An overview of India's science &amp; technology output"
+      description="An overview of science &amp; technology output across selected Bangalore institutions"
     >
       <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
         {(data?.stats || []).map((s) => (
@@ -70,8 +70,7 @@ export default function Dashboard() {
       </div>
 
       <p className="text-xs text-[var(--color-muted)] font-mono mt-6">
-        Data shown is placeholder mock data. Connect the FastAPI backend via
-        VITE_API_BASE_URL to load live figures from the Neo4j knowledge graph.
+        Live data from the SMART Knowledge Graph (Neo4j)
       </p>
     </DashboardLayout>
   );
