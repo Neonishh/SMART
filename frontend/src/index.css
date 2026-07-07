@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+@theme {
+  /* --- Color tokens --- */
+  --color-ink: #12112b;          /* primary text / deep navy-black */
+  --color-navy: #16143f;         /* header / dark surfaces */
+  --color-navy-2: #1f1c52;       /* lighter navy for hover/gradient */
+  --color-paper: #fbfaf7;        /* warm off-white page background */
+  --color-paper-dim: #f2f0ea;    /* subtle section tint */
+  --color-line: #e2dfd6;         /* hairline dividers on paper */
+  --color-line-dark: #2c2a5c;    /* hairline dividers on navy */
+  --color-muted: #6f6c7f;        /* secondary text on paper */
+  --color-muted-inv: #a5a2c4;    /* secondary text on navy */
+  --color-ochre: #a9762f;        /* signature accent — used sparingly */
+  --color-ochre-soft: #f1e6d3;   /* accent tint background */
+
+  /* --- Type --- */
+  --font-serif: "Source Serif 4", Georgia, serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Watermark motif — reused across the app as the SMART signature element */
+.st-watermark {
+  position: absolute;
+  font-family: var(--font-serif);
+  font-weight: 700;
+  color: var(--color-ink);
+  opacity: 0.035;
+  line-height: 0.8;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+}
+
+/* Focus visibility */
+:focus-visible {
+  outline: 2px solid var(--color-ochre);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
+
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--color-line); border-radius: 6px; }
+::-webkit-scrollbar-thumb:hover { background: var(--color-muted); }
