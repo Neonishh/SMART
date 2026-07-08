@@ -12,8 +12,11 @@ import Login from "./pages/Login";
 import InfoPage from "./pages/InfoPage";
 import About from "./pages/About";
 import WhoWeServe from "./pages/WhoWeServe";
+<<<<<<< HEAD
 import Publications from "./pages/Publications";
 import Theses from "./pages/Theses";
+=======
+>>>>>>> 09f87c862035299d92aa1f154176bb2323192fc9
 
 export default function App() {
   return (
@@ -23,9 +26,13 @@ export default function App() {
       {/* Public nav pages */}
       {/* Public nav pages */}
 <Route path="/about" element={<About />} />
+<<<<<<< HEAD
         
       
       <Route path="/who-we-serve" element={<WhoWeServe />} />
+=======
+        <Route path="/who-we-serve" element={<WhoWeServe />} />
+>>>>>>> 09f87c862035299d92aa1f154176bb2323192fc9
       <Route
         path="/resources"
         element={
