@@ -201,3 +201,44 @@ export const chatSuggestions = [
   "Compare India vs global output in biotech",
   "Related patents for graph neural networks",
 ];
+export const publications = [
+  {
+    id: "pub-2001",
+    title: "Graph Neural Networks for Scalable Knowledge Graph Completion",
+    authors: "A. Rao, S. Iyer, M. Chen",
+    institution: "IISc Bangalore",
+    year: 2024,
+    domain: "AI & Machine Learning",
+    citations: 128,
+  },
+  {
+    id: "pub-2002",
+    title: "Attention-based GNN Architectures for Heterogeneous Research Graphs",
+    authors: "P. Nair, K. Fernandes",
+    institution: "IIT Bombay",
+    year: 2023,
+    domain: "Graph Neural Networks",
+    citations: 96,
+  },
+];
+
+export const theses = [
+  {
+    id: "thesis-3001",
+    title: "Semantic Alignment Techniques for Cross-Institutional Research Graphs",
+    author: "R. Menon",
+    institution: "PES University",
+    year: 2024,
+    degree: "PhD",
+    domain: "AI & Machine Learning",
+  },
+  {
+    id: "thesis-3002",
+    title: "Sustainable Polymer Composites for Packaging Applications",
+    author: "S. Bhatt",
+    institution: "IIT Delhi",
+    year: 2023,
+    degree: "MTech",
+    domain: "Materials Science",
+  },
+];

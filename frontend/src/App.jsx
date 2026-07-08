@@ -12,6 +12,9 @@ import Chatbot from "./pages/Chatbot";
 import Login from "./pages/Login";
 import InfoPage from "./pages/InfoPage";
 import About from "./pages/About";
+import WhoWeServe from "./pages/WhoWeServe";
+import Publications from "./pages/Publications";
+import Theses from "./pages/Theses";
 import KnowledgeGraph from "./pages/KnowledgeGraph";
 import KnowledgeGraphPage from "./pages/KnowledgeGraphPage";
 
@@ -111,6 +114,8 @@ export default function App() {
                 path="/dashboard/chatbot"
                 element={<Chatbot />}
             />
+      <Route path="/dashboard/publications" element={<Publications />} />
+      <Route path="/dashboard/theses" element={<Theses />} />
 
             {/* ====================================================== */}
             {/* Fallback */}

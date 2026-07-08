@@ -2,7 +2,7 @@ import knowledgeGraphRoutes from "./routes/knowledgeGraph.js";
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
-
+import institutionRoutes from "./routes/institution.js";
 import dashboardRoutes from "./routes/dashboard.js";
 
 dotenv.config();
@@ -21,6 +21,7 @@ app.get("/", (req, res) => {
 
 app.use("/dashboard", dashboardRoutes);
 app.use("/knowledge-graph", knowledgeGraphRoutes);
+app.use("/institution", institutionRoutes);
 
 const PORT = process.env.PORT || 5000;
 

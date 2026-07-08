@@ -23,17 +23,17 @@ export default function Institutions() {
             {list.map((inst) => (
               <li key={inst.id}>
                 <button
-                  onClick={() => setActive(inst)}
-                  className={`w-full flex items-center justify-between gap-2 px-4 py-3 text-left text-sm border-b border-[var(--color-line)] transition-colors ${
-                    active?.id === inst.id ? "bg-[var(--color-paper-dim)]" : "hover:bg-[var(--color-paper-dim)]"
-                  }`}
-                >
-                  <span className="flex items-center gap-2 text-[var(--color-ink)]">
-                    <Building2 size={15} className="text-[var(--color-muted)]" />
-                    {inst.name}
-                  </span>
-                  <ChevronRight size={14} className="text-[var(--color-muted)]" />
-                </button>
+  onClick={() => setActive(inst)}
+  className={`w-full flex items-start justify-between gap-2 px-4 py-3 text-left text-sm border-b border-[var(--color-line)] transition-colors ${
+    active?.id === inst.id ? "bg-[var(--color-paper-dim)]" : "hover:bg-[var(--color-paper-dim)]"
+  }`}
+>
+  <span className="flex items-start gap-2 text-[var(--color-ink)]">
+    <Building2 size={15} className="text-[var(--color-muted)] mt-0.5 shrink-0" />
+    {inst.name}
+  </span>
+  <ChevronRight size={14} className="text-[var(--color-muted)] mt-0.5 shrink-0" />
+</button>
               </li>
             ))}
           </ul>
@@ -44,9 +44,9 @@ export default function Institutions() {
             <SectionLabel>Institution profile</SectionLabel>
             <h2 className="font-serif text-2xl font-semibold text-[var(--color-ink)]">{active.name}</h2>
             <p className="text-sm text-[var(--color-muted)] mb-4">{active.location}</p>
-            <Badge tone="accent">{active.topDomain}</Badge>
+            {active.topDomain && <Badge tone="accent">{active.topDomain}</Badge>}
 
-            <div className="grid grid-cols-3 gap-4 mt-6">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-6">
               <div>
                 <p className="text-xs text-[var(--color-muted)] font-mono">Publications</p>
                 <p className="font-serif text-2xl font-semibold text-[var(--color-ink)]">
@@ -63,6 +63,12 @@ export default function Institutions() {
                 <p className="text-xs text-[var(--color-muted)] font-mono">Grants</p>
                 <p className="font-serif text-2xl font-semibold text-[var(--color-ink)]">
                   {active.grants.toLocaleString()}
+                </p>
+              </div>
+              <div>
+                <p className="text-xs text-[var(--color-muted)] font-mono">Theses</p>
+                <p className="font-serif text-2xl font-semibold text-[var(--color-ink)]">
+                  {active.theses.toLocaleString()}
                 </p>
               </div>
             </div>

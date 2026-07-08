@@ -9,6 +9,8 @@ import {
   FileText,
   Landmark,
   MessageSquare,
+  BookOpen,
+  GraduationCap,
   Menu,
   X,
 } from "lucide-react";
@@ -17,6 +19,8 @@ const NAV = [
   { to: "/dashboard", label: "Dashboard", icon: LayoutDashboard },
   { to: "/dashboard/analytics", label: "Analytics", icon: BarChart3 },
   { to: "/dashboard/search", label: "Search", icon: Search },
+  { to: "/dashboard/publications", label: "Publications", icon: BookOpen },
+  { to: "/dashboard/theses", label: "Theses", icon: GraduationCap },
   { to: "/dashboard/institutions", label: "Institutions", icon: Building2 },
   { to: "/dashboard/researchers", label: "Researchers", icon: Users },
   { to: "/dashboard/patents", label: "Patents", icon: FileText },
