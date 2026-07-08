@@ -11,6 +11,9 @@ import Chatbot from "./pages/Chatbot";
 import Login from "./pages/Login";
 import InfoPage from "./pages/InfoPage";
 import About from "./pages/About";
+import WhoWeServe from "./pages/WhoWeServe";
+import Publications from "./pages/Publications";
+import Theses from "./pages/Theses";
 
 export default function App() {
   return (
@@ -22,15 +25,7 @@ export default function App() {
 <Route path="/about" element={<About />} />
         
       
-      <Route
-        path="/who-we-serve"
-        element={
-          <InfoPage
-            title="Who we serve"
-            body="Researchers, universities, funding agencies, government policymakers, and industry innovators all use SMART to explore trends, benchmark performance, map expertise, and make evidence-based decisions from the same connected dataset."
-          />
-        }
-      />
+      <Route path="/who-we-serve" element={<WhoWeServe />} />
       <Route
         path="/resources"
         element={
@@ -69,6 +64,8 @@ export default function App() {
       <Route path="/dashboard/patents" element={<Patents />} />
       <Route path="/dashboard/grants" element={<Grants />} />
       <Route path="/dashboard/chatbot" element={<Chatbot />} />
+      <Route path="/dashboard/publications" element={<Publications />} />
+      <Route path="/dashboard/theses" element={<Theses />} />
 
       <Route path="*" element={<Landing />} />
     </Routes>
