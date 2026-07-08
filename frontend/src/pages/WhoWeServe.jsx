@@ -63,11 +63,7 @@ export default function WhoWeServe() {
             return (
               <div
                 key={a.title}
-<<<<<<< HEAD
-                className={`grid ${gridColsClass} gap-6 items-center py-8 border-b last:border-0 border-[var(--color-line)]`}
-=======
                 className={`grid ${gridColsClass} gap-6 items-center py-8 border-b last:border-0 border-[var(--color-ochre)]/25`}
->>>>>>> 09f87c862035299d92aa1f154176bb2323192fc9
               >
                 <div className={reversed ? "md:order-2 md:justify-self-end" : ""}>
                   <div className="w-14 h-14 rounded-full border border-[var(--color-ochre)] flex items-center justify-center">
