@@ -250,4 +250,13 @@ export async function sendChatMessage(message, history = []) {
   return client.post("/chat", { message, history });
 }
 
+export async function listPublications() {
+  if (USE_MOCK) return resolveMock(mock.publications);
+  return client.get("/publications");
+}
+
+export async function listTheses() {
+  if (USE_MOCK) return resolveMock(mock.theses);
+  return client.get("/theses");
+}
 export default client;
