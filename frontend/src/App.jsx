@@ -32,15 +32,7 @@ export default function App() {
 
             <Route path="/about" element={<About />} />
 
-            <Route
-                path="/who-we-serve"
-                element={
-                    <InfoPage
-                        title="Who we serve"
-                        body="Researchers, universities, funding agencies, government policymakers, and industry innovators all use SMART to explore trends, benchmark performance, map expertise, and make evidence-based decisions from the same connected dataset."
-                    />
-                }
-            />
+           <Route path="/who-we-serve" element={<WhoWeServe />} />
 
             <Route
                 path="/resources"
