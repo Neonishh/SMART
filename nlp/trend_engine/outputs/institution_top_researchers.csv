@@ -1,0 +1,81 @@
+institution,rank,researcher,publications,theses,citations,research_score
+B.M.S. College of Engineering,1,Rajeshwari Hegde,45,0,0,90.0
+B.M.S. College of Engineering,2,Murugendrappa et al,39,0,0,78.0
+B.M.S. College of Engineering,3,Venkatesh Boddapati,33,0,0,66.0
+B.M.S. College of Engineering,4,Karthik Kumara et al,33,0,0,66.0
+B.M.S. College of Engineering,5,Sharanappa Chapi,31,0,0,62.0
+B.M.S. College of Engineering,6,Seema Patil,31,0,0,62.0
+B.M.S. College of Engineering,7,Veena MB,27,0,0,54.0
+B.M.S. College of Engineering,8,Rafiq Mulla,27,0,0,54.0
+B.M.S. College of Engineering,9,Umadevi V,26,0,0,52.0
+B.M.S. College of Engineering,10,SO MANJUNATHA et al,26,0,0,52.0
+CMR Institute of Technology,1,Kumar,124,0,775,286.75
+CMR Institute of Technology,2,Singh,88,0,1005,226.25
+CMR Institute of Technology,3,SK,67,0,585,163.25
+CMR Institute of Technology,4,SS,62,0,585,153.25
+CMR Institute of Technology,5,Thirugnanasambandam,52,0,809,144.45
+CMR Institute of Technology,6,Ramesh,50,0,608,130.4
+CMR Institute of Technology,7,Parthasarathy,52,0,424,125.2
+CMR Institute of Technology,8,Suvitha Rajesh,49,0,438,119.9
+CMR Institute of Technology,9,Sharma,47,0,459,116.95
+CMR Institute of Technology,10,MS,50,0,203,110.15
+Dayananda Sagar College of Engineering,1,Mukti Chaturvedi,24,0,234,59.7
+Dayananda Sagar College of Engineering,2,S Arungalai Vendan,23,0,209,56.45
+Dayananda Sagar College of Engineering,3,Preeta Sharan,21,0,245,54.25
+Dayananda Sagar College of Engineering,4,Sneha Sharma,17,0,298,48.9
+Dayananda Sagar College of Engineering,5,K Saara,16,0,191,41.55
+Dayananda Sagar College of Engineering,6,Shirshendu Roy,19,0,7,38.35
+Dayananda Sagar College of Engineering,7,C Puttamadappa,16,0,116,37.8
+Dayananda Sagar College of Engineering,8,S K Mouleeswaran,16,0,98,36.9
+Dayananda Sagar College of Engineering,9,L Shreenivasa,12,0,168,32.4
+Dayananda Sagar College of Engineering,10,S Ashoka,13,0,125,32.25
+Indian Institute of Science Bangalore,1,Satyam Suwas,156,0,2402,432.1
+Indian Institute of Science Bangalore,2,Suryasarathi Bose,104,0,2438,329.9
+Indian Institute of Science Bangalore,3,Vinyas Mahesh,107,0,2243,326.15
+Indian Institute of Science Bangalore,4,Chandan Srivastava,102,0,2266,317.3
+Indian Institute of Science Bangalore,5,Praveen C Ramamurthy,129,0,1151,315.55
+Indian Institute of Science Bangalore,6,Mayank Shrivastava,116,0,940,279.0
+Indian Institute of Science Bangalore,7,Debasish Ghose,124,0,613,278.65
+Indian Institute of Science Bangalore,8,Kaushik Chatterjee,77,0,2324,270.2
+Indian Institute of Science Bangalore,9,Shankar Kumar Selvaraja,121,0,501,267.05
+Indian Institute of Science Bangalore,10,Bikramjit Basu,82,0,2029,265.45
+International Institute of Information Technology Bangalore,1,Madhav Rao,136,0,557,299.85
+International Institute of Information Technology Bangalore,2,Dankan Gowda,76,0,1365,220.25
+International Institute of Information Technology Bangalore,3,Debabrata Das,99,0,348,215.4
+International Institute of Information Technology Bangalore,4,Jyotsna Bapat,74,0,293,162.65
+International Institute of Information Technology Bangalore,5,Prem Singh,35,0,232,81.6
+International Institute of Information Technology Bangalore,6,KDV Prasad,26,0,432,73.6
+International Institute of Information Technology Bangalore,7,Dinesh Babu Jayagopi,32,0,190,73.5
+International Institute of Information Technology Bangalore,8,Jaya Sreevalsan‐Nair,32,0,116,69.8
+International Institute of Information Technology Bangalore,9,Shrisha Rao,29,0,199,67.95
+International Institute of Information Technology Bangalore,10,Avinash Sharma,18,0,621,67.05
+M.S. Ramaiah Institute of Technology,1,Dinesh P A,29,0,0,58.0
+M.S. Ramaiah Institute of Technology,2,Shilpa Chaudhari,18,0,0,36.0
+M.S. Ramaiah Institute of Technology,3,Suresh Babu R,17,0,0,34.0
+M.S. Ramaiah Institute of Technology,4,Sowmya B J,15,0,0,30.0
+M.S. Ramaiah Institute of Technology,5,Sowmya G etal,15,0,0,30.0
+M.S. Ramaiah Institute of Technology,6,Monica R Mundada,14,0,0,28.0
+M.S. Ramaiah Institute of Technology,7,Annapurna P Patil,13,0,0,26.0
+M.S. Ramaiah Institute of Technology,8,Sowmya G,12,0,0,24.0
+M.S. Ramaiah Institute of Technology,9,Anita Kanavalli,11,0,0,22.0
+M.S. Ramaiah Institute of Technology,10,B Siddlingeshwar,10,0,0,20.0
+PES University,1,Sanjeev Gurugopinath,74,0,362,166.1
+PES University,2,Prasad B Honnavalli,66,0,429,153.45
+PES University,3,H R Mamatha,45,0,177,98.85
+PES University,4,J Manikandan,39,0,213,88.65
+PES University,5,B M Shankar,33,0,444,88.2
+PES University,6,I S Shivakumara,32,0,433,85.65
+PES University,7,Animesh Giri,38,0,69,79.45
+PES University,8,Bhaskarjyoti Das,38,0,60,79.0
+PES University,9,V Sarasvathi,33,0,166,74.3
+PES University,10,Manjunath Patel Gowdru Chandrashekarappa,21,0,644,74.2
+R V College of Engineering,1,BalaAnand Muthu,24,0,1392,117.6
+R V College of Engineering,2,Mohana,45,1,351,110.55
+R V College of Engineering,3,G Shobha,35,0,153,77.65
+R V College of Engineering,4,B S Premananda,30,0,134,66.7
+R V College of Engineering,5,C B Sivaparthipan,10,0,831,61.55
+R V College of Engineering,6,Seifedine Kadry,9,0,769,56.45
+R V College of Engineering,7,Nagaraj G Cholli,22,0,34,45.7
+R V College of Engineering,8,G S Nagaraja,20,0,51,42.55
+R V College of Engineering,9,Gunasekaran Manogaran,5,0,595,39.75
+R V College of Engineering,10,Jyoti Shetty,16,1,84,39.2

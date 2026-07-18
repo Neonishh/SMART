@@ -1,0 +1,176 @@
+domain_name,year,publications,patents,grants,theses,total
+Advanced Manufacturing and Metallurgy,2019,72,1,0,9,82
+Advanced Manufacturing and Metallurgy,2020,107,3,0,10,120
+Advanced Manufacturing and Metallurgy,2021,103,4,0,3,110
+Advanced Manufacturing and Metallurgy,2022,102,3,0,8,113
+Advanced Manufacturing and Metallurgy,2023,104,3,0,14,121
+Advanced Manufacturing and Metallurgy,2024,100,7,0,11,118
+Advanced Manufacturing and Metallurgy,2025,88,8,0,1,97
+Advanced Materials and Nanotechnology,2019,103,0,0,2,105
+Advanced Materials and Nanotechnology,2020,128,4,0,2,134
+Advanced Materials and Nanotechnology,2021,118,6,0,5,129
+Advanced Materials and Nanotechnology,2022,122,10,0,7,139
+Advanced Materials and Nanotechnology,2023,125,12,0,14,151
+Advanced Materials and Nanotechnology,2024,137,21,0,6,164
+Advanced Materials and Nanotechnology,2025,123,14,0,2,139
+Aerospace and Fluid Dynamics,2019,87,3,0,12,102
+Aerospace and Fluid Dynamics,2020,86,5,0,23,114
+Aerospace and Fluid Dynamics,2021,118,3,0,21,142
+Aerospace and Fluid Dynamics,2022,111,16,0,17,144
+Aerospace and Fluid Dynamics,2023,143,10,0,24,177
+Aerospace and Fluid Dynamics,2024,111,13,0,24,148
+Aerospace and Fluid Dynamics,2025,124,13,0,3,140
+Agriculture and Environmental Systems,2019,52,6,1,3,62
+Agriculture and Environmental Systems,2020,80,6,22,2,110
+Agriculture and Environmental Systems,2021,87,3,3,6,99
+Agriculture and Environmental Systems,2022,120,10,4,6,140
+Agriculture and Environmental Systems,2023,99,37,1,8,145
+Agriculture and Environmental Systems,2024,85,36,1,5,127
+Agriculture and Environmental Systems,2025,95,15,0,0,110
+Applied Mathematics and Simulation,2019,66,0,0,0,66
+Applied Mathematics and Simulation,2020,83,0,0,0,83
+Applied Mathematics and Simulation,2021,115,0,0,0,115
+Applied Mathematics and Simulation,2022,105,0,0,0,105
+Applied Mathematics and Simulation,2023,113,0,0,0,113
+Applied Mathematics and Simulation,2024,85,0,0,0,85
+Applied Mathematics and Simulation,2025,109,0,0,0,109
+Artificial Intelligence and Computer Vision,2019,54,2,0,0,56
+Artificial Intelligence and Computer Vision,2020,77,0,0,0,77
+Artificial Intelligence and Computer Vision,2021,74,0,0,0,74
+Artificial Intelligence and Computer Vision,2022,95,3,0,0,98
+Artificial Intelligence and Computer Vision,2023,86,3,0,0,89
+Artificial Intelligence and Computer Vision,2024,95,8,0,0,103
+Artificial Intelligence and Computer Vision,2025,116,9,0,0,125
+Bioinformatics and Life Sciences,2019,38,8,0,0,46
+Bioinformatics and Life Sciences,2020,45,7,0,1,53
+Bioinformatics and Life Sciences,2021,51,17,0,2,70
+Bioinformatics and Life Sciences,2022,43,14,0,1,58
+Bioinformatics and Life Sciences,2023,50,24,0,5,79
+Bioinformatics and Life Sciences,2024,49,26,0,4,79
+Bioinformatics and Life Sciences,2025,59,16,0,1,76
+Biomaterials and Tissue Engineering,2019,71,1,0,1,73
+Biomaterials and Tissue Engineering,2020,82,0,0,3,85
+Biomaterials and Tissue Engineering,2021,118,5,0,4,127
+Biomaterials and Tissue Engineering,2022,124,7,0,3,134
+Biomaterials and Tissue Engineering,2023,120,9,0,7,136
+Biomaterials and Tissue Engineering,2024,121,10,0,3,134
+Biomaterials and Tissue Engineering,2025,120,18,0,1,139
+Computer Systems and Algorithms,2019,71,2,0,5,78
+Computer Systems and Algorithms,2020,84,3,0,5,92
+Computer Systems and Algorithms,2021,95,3,0,5,103
+Computer Systems and Algorithms,2022,82,2,0,4,88
+Computer Systems and Algorithms,2023,75,5,0,3,83
+Computer Systems and Algorithms,2024,91,5,0,4,100
+Computer Systems and Algorithms,2025,73,9,0,1,83
+Construction and Infrastructure Materials,2019,35,0,0,0,35
+Construction and Infrastructure Materials,2020,45,1,0,2,48
+Construction and Infrastructure Materials,2021,45,3,0,2,50
+Construction and Infrastructure Materials,2022,59,6,0,2,67
+Construction and Infrastructure Materials,2023,39,16,0,4,59
+Construction and Infrastructure Materials,2024,52,15,0,1,68
+Construction and Infrastructure Materials,2025,33,12,0,0,45
+Cybersecurity and Blockchain,2019,75,4,0,8,87
+Cybersecurity and Blockchain,2020,99,3,0,8,110
+Cybersecurity and Blockchain,2021,138,1,0,9,148
+Cybersecurity and Blockchain,2022,127,2,0,4,133
+Cybersecurity and Blockchain,2023,144,7,0,15,166
+Cybersecurity and Blockchain,2024,152,6,0,7,165
+Cybersecurity and Blockchain,2025,192,7,0,0,199
+Data Science and Knowledge Discovery,2019,87,2,0,0,89
+Data Science and Knowledge Discovery,2020,107,0,0,2,109
+Data Science and Knowledge Discovery,2021,127,0,0,0,127
+Data Science and Knowledge Discovery,2022,119,4,0,2,125
+Data Science and Knowledge Discovery,2023,111,6,0,4,121
+Data Science and Knowledge Discovery,2024,130,15,0,2,147
+Data Science and Knowledge Discovery,2025,108,6,0,1,115
+Energy Storage and Renewable Energy,2019,50,1,0,0,51
+Energy Storage and Renewable Energy,2020,63,1,0,0,64
+Energy Storage and Renewable Energy,2021,63,2,0,0,65
+Energy Storage and Renewable Energy,2022,109,8,0,0,117
+Energy Storage and Renewable Energy,2023,104,14,0,0,118
+Energy Storage and Renewable Energy,2024,109,17,0,0,126
+Energy Storage and Renewable Energy,2025,123,17,0,0,140
+Healthcare and Biomedical Engineering,2019,51,3,0,21,75
+Healthcare and Biomedical Engineering,2020,71,2,0,15,88
+Healthcare and Biomedical Engineering,2021,85,6,0,23,114
+Healthcare and Biomedical Engineering,2022,72,15,0,29,116
+Healthcare and Biomedical Engineering,2023,82,24,0,19,125
+Healthcare and Biomedical Engineering,2024,104,27,0,33,164
+Healthcare and Biomedical Engineering,2025,97,21,0,8,126
+Intelligent Transportation Systems,2019,38,0,0,0,38
+Intelligent Transportation Systems,2020,48,4,0,0,52
+Intelligent Transportation Systems,2021,50,8,0,0,58
+Intelligent Transportation Systems,2022,37,15,0,0,52
+Intelligent Transportation Systems,2023,71,27,0,0,98
+Intelligent Transportation Systems,2024,55,27,0,0,82
+Intelligent Transportation Systems,2025,49,28,0,0,77
+Mechanical Systems and Control Engineering,2019,75,2,0,1,78
+Mechanical Systems and Control Engineering,2020,91,1,0,4,96
+Mechanical Systems and Control Engineering,2021,74,0,0,2,76
+Mechanical Systems and Control Engineering,2022,100,2,0,2,104
+Mechanical Systems and Control Engineering,2023,70,2,0,0,72
+Mechanical Systems and Control Engineering,2024,58,4,0,2,64
+Mechanical Systems and Control Engineering,2025,54,1,0,0,55
+Photonics and Quantum Materials,2019,231,0,0,0,231
+Photonics and Quantum Materials,2020,225,1,0,0,226
+Photonics and Quantum Materials,2021,247,0,0,0,247
+Photonics and Quantum Materials,2022,244,3,0,0,247
+Photonics and Quantum Materials,2023,261,5,0,0,266
+Photonics and Quantum Materials,2024,236,5,0,0,241
+Photonics and Quantum Materials,2025,236,5,0,0,241
+Physics and Theoretical Sciences,2019,100,1,0,0,101
+Physics and Theoretical Sciences,2020,94,1,0,0,95
+Physics and Theoretical Sciences,2021,136,2,0,0,138
+Physics and Theoretical Sciences,2022,161,1,0,0,162
+Physics and Theoretical Sciences,2023,122,2,0,0,124
+Physics and Theoretical Sciences,2024,104,5,0,0,109
+Physics and Theoretical Sciences,2025,108,2,0,0,110
+Robotics and Autonomous Systems,2019,70,2,19,3,94
+Robotics and Autonomous Systems,2020,92,4,86,13,195
+Robotics and Autonomous Systems,2021,103,4,49,8,164
+Robotics and Autonomous Systems,2022,100,6,54,13,173
+Robotics and Autonomous Systems,2023,130,11,71,8,220
+Robotics and Autonomous Systems,2024,145,26,61,11,243
+Robotics and Autonomous Systems,2025,129,27,17,3,176
+Semiconductors and Nanoelectronics,2019,99,3,0,13,115
+Semiconductors and Nanoelectronics,2020,109,2,0,17,128
+Semiconductors and Nanoelectronics,2021,77,7,0,12,96
+Semiconductors and Nanoelectronics,2022,97,4,0,15,116
+Semiconductors and Nanoelectronics,2023,89,6,0,19,114
+Semiconductors and Nanoelectronics,2024,95,14,0,18,127
+Semiconductors and Nanoelectronics,2025,101,13,0,5,119
+Smart Cities and Sustainability,2019,31,0,0,4,35
+Smart Cities and Sustainability,2020,42,0,0,5,47
+Smart Cities and Sustainability,2021,44,0,0,2,46
+Smart Cities and Sustainability,2022,41,0,0,2,43
+Smart Cities and Sustainability,2023,37,0,0,7,44
+Smart Cities and Sustainability,2024,48,0,0,1,49
+Smart Cities and Sustainability,2025,38,0,0,0,38
+Smart Energy Systems,2019,95,3,0,7,105
+Smart Energy Systems,2020,111,0,0,11,122
+Smart Energy Systems,2021,128,1,0,15,144
+Smart Energy Systems,2022,132,9,0,12,153
+Smart Energy Systems,2023,122,12,0,19,153
+Smart Energy Systems,2024,121,12,0,20,153
+Smart Energy Systems,2025,145,12,0,2,159
+Social Computing and Security Analytics,2019,43,0,0,0,43
+Social Computing and Security Analytics,2020,88,0,0,0,88
+Social Computing and Security Analytics,2021,91,0,0,0,91
+Social Computing and Security Analytics,2022,80,0,0,0,80
+Social Computing and Security Analytics,2023,83,0,0,0,83
+Social Computing and Security Analytics,2024,95,0,0,0,95
+Social Computing and Security Analytics,2025,71,0,0,0,71
+Speech and Language Technologies,2019,46,5,0,4,55
+Speech and Language Technologies,2020,62,6,0,4,72
+Speech and Language Technologies,2021,66,0,0,1,67
+Speech and Language Technologies,2022,38,14,0,1,53
+Speech and Language Technologies,2023,59,20,0,3,82
+Speech and Language Technologies,2024,41,12,0,5,58
+Speech and Language Technologies,2025,56,3,0,3,62
+Wireless Communications and IoT,2019,119,2,0,15,136
+Wireless Communications and IoT,2020,101,1,0,5,107
+Wireless Communications and IoT,2021,153,0,0,11,164
+Wireless Communications and IoT,2022,166,9,0,14,189
+Wireless Communications and IoT,2023,181,11,0,8,200
+Wireless Communications and IoT,2024,135,15,0,11,161
+Wireless Communications and IoT,2025,148,9,0,4,161

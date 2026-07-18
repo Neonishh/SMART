@@ -1,0 +1,10 @@
+topic_id,total_publications,average_publications,maximum_publications,minimum_publications,publication_std,trend_slope,trend_intercept,trend_consistency,overall_growth_percent,momentum_label
+3,38,5.43,10,0,3.92,0.46,-933.36,0.056,100.0,Stable
+5,16,2.29,10,0,3.33,0.43,-864.29,0.066,0.0,Stable
+7,18,2.57,6,1,1.76,0.21,-430.71,0.059,33.33,Stable
+8,12,1.71,4,0,1.39,0.11,-214.93,0.024,0.0,Stable
+1,44,6.29,13,0,4.56,0.04,-65.93,0.0,-50.0,Stable
+6,22,3.14,6,0,2.17,-0.29,580.86,0.07,-66.67,Stable
+0,71,10.14,17,3,4.85,-0.82,1671.07,0.115,-50.0,Stable
+2,40,5.71,19,0,5.77,-1.29,2605.43,0.198,-66.67,Declining
+4,29,4.14,21,0,7.0,-1.61,3253.79,0.211,-50.0,Declining

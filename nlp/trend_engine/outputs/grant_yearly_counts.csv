@@ -1,0 +1,37 @@
+institution,year,total_grants,total_amount_lakhs,grant_growth_pct,funding_growth_pct
+B.M.S. College of Engineering,2019,1,30.0,,
+B.M.S. College of Engineering,2020,15,141.02,1400.0,370.07
+B.M.S. College of Engineering,2021,4,44.858000000000004,-73.33,-68.19
+B.M.S. College of Engineering,2022,10,49.332,150.0,9.97
+B.M.S. College of Engineering,2023,14,376.2,40.0,662.59
+B.M.S. College of Engineering,2024,4,46.257,-71.43,-87.7
+CMR Institute of Technology,2020,5,10.2967,,
+CMR Institute of Technology,2021,19,13.6446,280.0,32.51
+CMR Institute of Technology,2022,8,12.98,-57.89,-4.87
+CMR Institute of Technology,2023,9,3.56,12.5,-72.57
+CMR Institute of Technology,2024,19,122.2036,111.11,3332.69
+Dayananda Sagar College of Engineering,2019,1,0.0,,
+Dayananda Sagar College of Engineering,2022,2,0.0,100.0,
+Dayananda Sagar College of Engineering,2023,1,0.0,-50.0,
+Dayananda Sagar College of Engineering,2024,1,26.9944,0.0,inf
+Indian Institute of Science Bangalore,2019,9,55.8561,,
+Indian Institute of Science Bangalore,2020,64,4106.8343,611.11,7252.53
+Indian Institute of Science Bangalore,2021,7,344.83590000000004,-89.06,-91.6
+Indian Institute of Science Bangalore,2022,27,2002.3511999999998,285.71,480.67
+Indian Institute of Science Bangalore,2023,44,0.0,62.96,-100.0
+Indian Institute of Science Bangalore,2024,33,1077.0663,-25.0,inf
+Indian Institute of Science Bangalore,2025,3,10638.5629,-90.91,887.74
+International Institute of Information Technology Bangalore,2019,1,25.629,,
+International Institute of Information Technology Bangalore,2020,4,101.92410000000001,300.0,297.69
+International Institute of Information Technology Bangalore,2021,1,14.0466,-75.0,-86.22
+International Institute of Information Technology Bangalore,2022,2,42.3869,100.0,201.76
+M.S. Ramaiah Institute of Technology,2019,11,106.3743,,
+M.S. Ramaiah Institute of Technology,2020,23,125.80869999999999,109.09,18.27
+M.S. Ramaiah Institute of Technology,2021,20,104.4088,-13.04,-17.01
+M.S. Ramaiah Institute of Technology,2022,2,47.903999999999996,-90.0,-54.12
+R V College of Engineering,2020,4,139.623,,
+R V College of Engineering,2021,2,27.37,-50.0,-80.4
+R V College of Engineering,2022,7,103.42750000000001,250.0,277.89
+R V College of Engineering,2023,5,10.620000000000001,-28.57,-89.73
+R V College of Engineering,2024,8,6106.5707,60.0,57400.67
+R V College of Engineering,2025,16,336.1477,100.0,-94.5
