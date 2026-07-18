@@ -1,0 +1,3417 @@
+﻿record_id,source_table,keyword,score,rank
+22,grants,scr catalyst,0.5506,1
+22,grants,hybrid ceramic,0.5488,2
+22,grants,ceramic composite,0.5401,3
+22,grants,catalyst nox,0.4843,4
+22,grants,ceramic,0.409,5
+22,grants,fabrication plate,0.3635,6
+22,grants,type scr,0.3563,7
+22,grants,scr,0.3325,8
+23,grants,spectrum sharing,0.4992,1
+23,grants,underlay spectrum,0.4766,2
+23,grants,channel estimation,0.456,3
+23,grants,intelligent reflect,0.4463,4
+23,grants,reflect surface,0.4447,5
+23,grants,optimization channel,0.4243,6
+23,grants,reflect,0.3562,7
+23,grants,assiste underlay,0.3449,8
+24,grants,bundle kahler,0.7499,1
+24,grants,kahler manifold,0.7422,2
+24,grants,holomorphic vector,0.6036,3
+24,grants,vector bundle,0.5573,4
+24,grants,study holomorphic,0.5562,5
+24,grants,kahler,0.5311,6
+24,grants,holomorphic,0.528,7
+24,grants,bundle,0.4173,8
+25,grants,graphene,0.5483,1
+25,grants,graphene base,0.52,2
+25,grants,molecular sensing,0.426,3
+25,grants,novel metamaterial,0.4154,4
+25,grants,metamaterial approach,0.3798,5
+25,grants,metamaterial,0.369,6
+25,grants,opto electronic,0.3339,7
+25,grants,meta fet,0.2929,8
+27,grants,data assimilation,0.6896,1
+27,grants,assimilation reaction,0.614,2
+27,grants,reaction diffusion,0.5704,3
+27,grants,complex networks,0.5338,4
+27,grants,diffusion complex,0.5083,5
+27,grants,diffusion,0.4907,6
+27,grants,assimilation,0.4765,7
+27,grants,networks,0.4085,8
+28,grants,electronic optoelectronic,0.4908,1
+28,grants,chalcogenide material,0.4725,2
+28,grants,memory pcm,0.4705,3
+28,grants,optoelectronic,0.405,4
+28,grants,change memory,0.403,5
+28,grants,optoelectronic property,0.4005,6
+28,grants,transition metal,0.3766,7
+28,grants,phase change,0.3726,8
+29,grants,predator diet,0.6132,1
+29,grants,ecological behavioural,0.575,2
+29,grants,bats katydids,0.5734,3
+29,grants,katydids moths,0.5557,4
+29,grants,moths,0.5529,5
+29,grants,determinants predator,0.5414,6
+29,grants,study bats,0.471,7
+29,grants,ecological,0.4692,8
+30,grants,transmission mosquito,0.5911,1
+30,grants,mosquito control,0.5749,2
+30,grants,vector ecology,0.518,3
+30,grants,ecology pathogen,0.5102,4
+30,grants,aedes aegypti,0.5064,5
+30,grants,mosquito,0.4915,6
+30,grants,pathogen transmission,0.4284,7
+30,grants,vector aedes,0.4067,8
+31,grants,exciton condensation,0.5972,1
+31,grants,waals heterostructure,0.5361,2
+31,grants,correlated electron,0.4599,3
+31,grants,electron state,0.4332,4
+31,grants,heterostructure,0.4229,5
+31,grants,condensation double,0.4061,6
+31,grants,layer van,0.3371,7
+31,grants,state exciton,0.3268,8
+32,grants,artificial basilar,0.6383,1
+32,grants,basilar epithelium,0.6324,2
+32,grants,fabrication flexible,0.5602,3
+32,grants,flexible artificial,0.5452,4
+32,grants,design fabrication,0.447,5
+32,grants,epithelium,0.3996,6
+32,grants,basilar,0.3756,7
+32,grants,fabrication,0.3471,8
+33,grants,energy storage,0.5456,1
+33,grants,hydrate base,0.468,2
+33,grants,storage thermal,0.4657,3
+33,grants,salt hydrate,0.4564,4
+33,grants,management batteries,0.4245,5
+33,grants,base thermochemical,0.3817,6
+33,grants,hydrate,0.3693,7
+33,grants,thermal management,0.3654,8
+34,grants,geomaterial use,0.5674,1
+34,grants,geomaterial,0.5131,2
+34,grants,mud architecture,0.5087,3
+34,grants,framework geomaterial,0.4881,4
+34,grants,principle termite,0.4647,5
+34,grants,wasp mud,0.4322,6
+34,grants,termite,0.4194,7
+34,grants,compare bioengineere,0.3656,8
+35,grants,indian waterbodie,0.5839,1
+35,grants,waterbodie quantification,0.5548,2
+35,grants,lead laden,0.4657,3
+35,grants,quantification alleviation,0.4166,4
+35,grants,waterbodie,0.4148,5
+35,grants,legacy indian,0.4026,6
+35,grants,alleviation,0.3675,7
+35,grants,lead,0.3531,8
+36,grants,vector processor,0.676,1
+36,grants,precision machine,0.4596,2
+36,grants,processor design,0.4165,3
+36,grants,weight precision,0.4152,4
+36,grants,bit width,0.4093,5
+36,grants,vector,0.3728,6
+36,grants,low bit,0.3687,7
+36,grants,processor,0.3665,8
+37,grants,centre electrochemical,0.5917,1
+37,grants,performance batteries,0.5899,2
+37,grants,energy storage,0.5694,3
+37,grants,electrochemical energy,0.5253,4
+37,grants,electrochemical,0.4883,5
+37,grants,batteries,0.4094,6
+37,grants,storage design,0.3513,7
+37,grants,storage,0.2563,8
+38,grants,algebraic complexity,0.6127,1
+38,grants,bound learn,0.5421,2
+38,grants,complexity theory,0.5218,3
+38,grants,complexity,0.4836,4
+38,grants,low bound,0.4709,5
+38,grants,hit set,0.4363,6
+38,grants,learn algebraic,0.4214,7
+38,grants,bound,0.3314,8
+39,grants,nanomaterial assembly,0.6316,1
+39,grants,matrix nanomaterial,0.5582,2
+39,grants,liquid crystal,0.5309,3
+39,grants,crystal matrix,0.4857,4
+39,grants,assembly manipulation,0.4787,5
+39,grants,nanomaterial,0.3818,6
+39,grants,assembly,0.3815,7
+39,grants,crystal,0.3364,8
+41,grants,co2 methanol,0.6553,1
+41,grants,hydrogenation carbon,0.5394,2
+41,grants,hydrogenation,0.496,3
+41,grants,dioxide co2,0.4801,4
+41,grants,co2,0.477,5
+41,grants,methanol dme,0.4729,6
+41,grants,fuel domestic,0.4631,7
+41,grants,alternative fuel,0.4514,8
+42,grants,brake disc,0.5037,1
+42,grants,5si composite,0.4856,2
+42,grants,composite automobile,0.4713,3
+42,grants,disc,0.4585,4
+42,grants,disc cast,0.4577,5
+42,grants,situ al,0.4559,6
+42,grants,composite process,0.4425,7
+42,grants,al 15mg2si,0.4417,8
+43,grants,fabricating antimicrobial,0.8119,1
+43,grants,antimicrobial layer,0.6847,2
+43,grants,coated fabric,0.6727,3
+43,grants,layer fabric,0.6688,4
+43,grants,fabric coated,0.6508,5
+43,grants,fabric thereof,0.6085,6
+43,grants,antimicrobial,0.5815,7
+43,grants,fabric,0.576,8
+45,grants,nanopore base,0.6951,1
+45,grants,state nanopore,0.6598,2
+45,grants,nanopore,0.6205,3
+45,grants,molecule protein,0.5327,4
+45,grants,single molecule,0.5159,5
+45,grants,molecule,0.4535,6
+45,grants,protein sequence,0.4273,7
+45,grants,limit solid,0.3696,8
+46,grants,blind modulation,0.6833,1
+46,grants,modulation classification,0.6101,2
+46,grants,modulation,0.513,3
+46,grants,classification bmc,0.4551,4
+46,grants,single carrier,0.4306,5
+46,grants,modulate signal,0.4274,6
+46,grants,bmc method,0.426,7
+46,grants,signal single,0.4198,8
+47,grants,acoustic modeling,0.6676,1
+47,grants,analysis pulmonary,0.6195,2
+47,grants,pulmonary,0.5228,3
+47,grants,acoustic,0.4473,4
+47,grants,modeling analysis,0.319,5
+47,grants,modeling,0.3042,6
+47,grants,analysis,0.0756,7
+48,grants,propagation periodic,0.6153,1
+48,grants,nonlinear wave,0.597,2
+48,grants,wave propagation,0.5649,3
+48,grants,medium perturbation,0.539,4
+48,grants,dispersion relation,0.5357,5
+48,grants,dispersion,0.4849,6
+48,grants,periodic medium,0.4471,7
+48,grants,nonlinear,0.4202,8
+49,grants,boltzmann transport,0.5907,1
+49,grants,solution boltzmann,0.5849,2
+49,grants,electron relaxation,0.5659,3
+49,grants,equation phonon,0.535,4
+49,grants,transport equation,0.5246,5
+49,grants,phonon electron,0.4993,6
+49,grants,boltzmann,0.4378,7
+49,grants,relaxation time,0.3589,8
+50,grants,networked cps,0.6216,1
+50,grants,optimal topology,0.5834,2
+50,grants,resilient networked,0.5624,3
+50,grants,topology design,0.553,4
+50,grants,design resilient,0.4555,5
+50,grants,cps,0.3622,6
+50,grants,topology,0.3277,7
+50,grants,networked,0.3089,8
+51,grants,cosmological imprint,0.7133,1
+51,grants,field inflation,0.6119,2
+51,grants,investigate cosmological,0.5527,3
+51,grants,cosmological,0.55,4
+51,grants,dynamical gauge,0.5091,5
+51,grants,inflation,0.49,6
+51,grants,imprint dynamical,0.4713,7
+51,grants,gauge field,0.4141,8
+52,grants,frontier particle,0.6476,1
+52,grants,particle physic,0.6054,2
+52,grants,lifetime frontier,0.5751,3
+52,grants,particle,0.4785,4
+52,grants,lifetime,0.3861,5
+52,grants,investigation lifetime,0.3396,6
+52,grants,frontier,0.3019,7
+52,grants,physic,0.245,8
+53,grants,noise heterogeneity,0.6436,1
+53,grants,intrinsic noise,0.6304,2
+53,grants,heterogeneity ecosystem,0.6024,3
+53,grants,ecosystem dynamic,0.5956,4
+53,grants,ecosystem,0.5042,5
+53,grants,mathematical models,0.4605,6
+53,grants,models intrinsic,0.4242,7
+53,grants,noise,0.4151,8
+54,grants,aspect physics,0.7505,1
+54,grants,theoretical aspect,0.5809,2
+54,grants,aspect,0.5675,3
+54,grants,standard models,0.5398,4
+54,grants,physics standard,0.4881,5
+54,grants,models,0.4427,6
+54,grants,theoretical,0.3523,7
+54,grants,physics,0.3311,8
+55,grants,kahler geometry,0.7396,1
+55,grants,problem kahler,0.6645,2
+55,grants,existence rigidity,0.6619,3
+55,grants,rigidity problem,0.6312,4
+55,grants,kahler,0.5508,5
+55,grants,rigidity,0.5084,6
+55,grants,existence,0.3205,7
+55,grants,geometry,0.2735,8
+56,grants,ergodic principle,0.7701,1
+56,grants,iwasawa theory,0.6928,2
+56,grants,ergodic,0.6546,3
+56,grants,principle iwasawa,0.6188,4
+56,grants,iwasawa,0.4881,5
+56,grants,theory,0.2949,6
+56,grants,principle,0.2419,7
+57,grants,soil microbial,0.6321,1
+57,grants,antibiotic pollution,0.5997,2
+57,grants,microbial function,0.5516,3
+57,grants,nitrogen cycle,0.5397,4
+57,grants,effect antibiotic,0.4997,5
+57,grants,pollution soil,0.4947,6
+57,grants,function nitrogen,0.4903,7
+57,grants,microbial,0.4804,8
+58,grants,epoxy mediate,0.5684,1
+58,grants,cure epoxy,0.5297,2
+58,grants,recyclable fast,0.5111,3
+58,grants,loop recyclable,0.5064,4
+58,grants,covalent adaptable,0.5031,5
+58,grants,epoxy,0.4983,6
+58,grants,mediate covalent,0.4703,7
+58,grants,recyclable,0.4616,8
+59,grants,hall effect,0.6491,1
+59,grants,linear hall,0.5893,2
+59,grants,mechanism material,0.4867,3
+59,grants,hall,0.4224,4
+59,grants,effect mechanism,0.3818,5
+59,grants,non linear,0.3463,6
+59,grants,material,0.2832,7
+59,grants,mechanism,0.2632,8
+60,grants,swimming chlamydomonas,0.8374,1
+60,grants,chlamydomonas reinhardtii,0.7992,2
+60,grants,chlamydomonas,0.6753,3
+60,grants,collective swimming,0.533,4
+60,grants,reinhardtii confinement,0.5308,5
+60,grants,reinhardtii,0.4367,6
+60,grants,swimming,0.3944,7
+60,grants,confinement,0.3246,8
+61,grants,membrane separation,0.5062,1
+61,grants,curcumin turmeric,0.505,2
+61,grants,cost membrane,0.4459,3
+61,grants,turmeric,0.4317,4
+61,grants,grade curcumin,0.3954,5
+61,grants,turmeric low,0.3901,6
+61,grants,analysis isolation,0.3817,7
+61,grants,curcumin,0.3725,8
+62,grants,2d nanoresonator,0.8492,1
+62,grants,nanoresonator,0.7113,2
+62,grants,couple dynamic,0.4857,3
+62,grants,dynamic 2d,0.413,4
+62,grants,couple,0.3338,5
+62,grants,2d,0.2666,6
+62,grants,dynamic,0.1984,7
+63,grants,optical logic,0.4765,1
+63,grants,core photonic,0.4056,2
+63,grants,photonic crystal,0.4048,3
+63,grants,quantum computing,0.3861,4
+63,grants,efficient optical,0.3822,5
+63,grants,subtractor soliton,0.3799,6
+63,grants,soliton base,0.3752,7
+63,grants,soliton dynamic,0.3712,8
+64,grants,battery photovoltaic,0.6751,1
+64,grants,photovoltaic cells,0.6224,2
+64,grants,integrated battery,0.5458,3
+64,grants,composites integrated,0.5365,4
+64,grants,photovoltaic,0.5079,5
+64,grants,advanced composites,0.4629,6
+64,grants,composites,0.3419,7
+64,grants,battery,0.3125,8
+65,grants,green ironmaking,0.5186,1
+65,grants,ironmaking multiscale,0.5164,2
+65,grants,blast furnace,0.4929,3
+65,grants,shaft furnace,0.4873,4
+65,grants,furnace validation,0.484,5
+65,grants,furnace dri,0.4562,6
+65,grants,ironmaking,0.3792,7
+65,grants,hydrogen injection,0.378,8
+67,grants,fabricated cfrp,0.5115,1
+67,grants,cenosphere reinforced,0.473,2
+67,grants,cfrp face,0.466,3
+67,grants,composite fabricated,0.452,4
+67,grants,sandwich composite,0.4371,5
+67,grants,reinforced peek,0.3898,6
+67,grants,resistant sandwich,0.3865,7
+67,grants,impact resistant,0.367,8
+68,grants,nanoelectrode array,0.6683,1
+68,grants,nanoelectrode,0.6023,2
+68,grants,recording neural,0.5739,3
+68,grants,neural activity,0.4841,4
+68,grants,neural,0.4113,5
+68,grants,recording,0.3677,6
+68,grants,resolution recording,0.3366,7
+68,grants,array high,0.2193,8
+66,grants,affine demazure,0.8092,1
+66,grants,demazure module,0.7639,2
+66,grants,study affine,0.5662,3
+66,grants,affine,0.5106,4
+66,grants,demazure,0.5019,5
+66,grants,module,0.4347,6
+66,grants,study,0.0639,7
+69,grants,piezoelectric mems,0.8069,1
+69,grants,mems resonator,0.7256,2
+69,grants,merit piezoelectric,0.6485,3
+69,grants,piezoelectric,0.573,4
+69,grants,mems,0.4942,5
+69,grants,resonator,0.4741,6
+69,grants,design architecture,0.2722,7
+69,grants,new design,0.2616,8
+70,grants,burner decarbonization,0.69,1
+70,grants,simulation combustion,0.6885,2
+70,grants,combustion dynamic,0.614,3
+70,grants,reheat burner,0.5714,4
+70,grants,burner,0.4915,5
+70,grants,combustion,0.4902,6
+70,grants,hydrogen reheat,0.4732,7
+70,grants,dynamic hydrogen,0.409,8
+71,grants,datum center,0.5767,1
+71,grants,low latency,0.5378,2
+71,grants,transport protocol,0.5139,3
+71,grants,latency,0.5135,4
+71,grants,center network,0.4918,5
+71,grants,datum,0.4709,6
+71,grants,network transport,0.4604,7
+71,grants,protocol low,0.455,8
+72,grants,woven nanofiber,0.6725,1
+72,grants,non woven,0.5415,2
+72,grants,woven,0.5193,3
+72,grants,nanofiber networks,0.5034,4
+72,grants,mechanics deformation,0.4406,5
+72,grants,composites,0.3954,6
+72,grants,nanofiber,0.3848,7
+72,grants,networks composites,0.3772,8
+73,grants,bandit drones,0.649,1
+73,grants,drones data,0.601,2
+73,grants,lens computational,0.5999,3
+73,grants,computational geometry,0.5268,4
+73,grants,drones,0.5037,5
+73,grants,structures lens,0.4745,6
+73,grants,bandit,0.4353,7
+73,grants,lens,0.434,8
+74,grants,luminescent boron,0.6472,1
+74,grants,chiroptical materials,0.5558,2
+74,grants,boron base,0.4853,3
+74,grants,base chiroptical,0.4627,4
+74,grants,bio imaging,0.446,5
+74,grants,boron,0.4154,6
+74,grants,strongly luminescent,0.4052,7
+74,grants,luminescent,0.3909,8
+75,grants,negative capacitance,0.5042,1
+75,grants,print flexible,0.4748,2
+75,grants,transistor nc,0.4583,3
+75,grants,nc fets,0.457,4
+75,grants,flexible negative,0.4317,5
+75,grants,fets logic,0.4248,6
+75,grants,capacitance field,0.4196,7
+75,grants,capacitance,0.3881,8
+76,grants,transition metal,0.5606,1
+76,grants,modulation doping,0.5444,2
+76,grants,phase transitions,0.5266,3
+76,grants,transitions transition,0.4396,4
+76,grants,metal compounds,0.4056,5
+76,grants,interfacial phase,0.3846,6
+76,grants,transitions,0.3722,7
+76,grants,transition,0.3512,8
+77,grants,ml accelerator,0.6786,1
+77,grants,inertia memory,0.639,2
+77,grants,accelerator,0.4872,3
+77,grants,unified ml,0.4523,4
+77,grants,efficient unified,0.4204,5
+77,grants,inertia,0.4176,6
+77,grants,memory computing,0.4164,7
+77,grants,ml,0.3382,8
+78,grants,magnetic swarm,0.7977,1
+78,grants,swarm,0.5502,2
+78,grants,active magnetic,0.5468,3
+78,grants,collective behaviour,0.4208,4
+78,grants,magnetic,0.3948,5
+78,grants,collective,0.3367,6
+78,grants,numerical experimental,0.3146,7
+78,grants,behaviour active,0.2884,8
+79,grants,channel gallium,0.5938,1
+79,grants,gallium nitride,0.5887,2
+79,grants,microwave transistor,0.5684,3
+79,grants,nitride microwave,0.5414,4
+79,grants,fin channel,0.4414,5
+79,grants,transistor,0.4348,6
+79,grants,gallium,0.3898,7
+79,grants,nitride,0.3414,8
+80,grants,functional biomaterials,0.6406,1
+80,grants,biomaterials spaces,0.6054,2
+80,grants,materials research,0.5975,3
+80,grants,biomaterials,0.5663,4
+80,grants,advancing materials,0.478,5
+80,grants,applications structural,0.4737,6
+80,grants,materials,0.4287,7
+80,grants,structural functional,0.4279,8
+81,grants,harvesting chlorosomes,0.5549,1
+81,grants,exciton delocalization,0.5051,2
+81,grants,chlorosomes,0.4692,3
+81,grants,chlorosomes dimensional,0.4683,4
+81,grants,light harvesting,0.4319,5
+81,grants,electronic spectroscopy,0.4304,6
+81,grants,spectroscopy,0.3762,7
+81,grants,ultrafast internal,0.3744,8
+82,grants,fractional orbitals,0.5434,1
+82,grants,bind gauge,0.4635,2
+82,grants,orbitals tight,0.4263,3
+82,grants,gauge fields,0.3655,4
+82,grants,orbitals,0.3487,5
+82,grants,theory simulation,0.318,6
+82,grants,fractional,0.3132,7
+82,grants,tight bind,0.3069,8
+83,grants,mechanism degradation,0.5649,1
+83,grants,degradation compositionally,0.5248,2
+83,grants,corrosive environment,0.5121,3
+83,grants,component alloy,0.5035,4
+83,grants,alloy severe,0.4986,5
+83,grants,severe corrosive,0.4669,6
+83,grants,alloy,0.4484,7
+83,grants,corrosive,0.4271,8
+84,grants,rivers geomorphology,0.5936,1
+84,grants,indian rivers,0.5925,2
+84,grants,streamflow records,0.4752,3
+84,grants,rivers,0.4426,4
+84,grants,reconstream systematic,0.429,5
+84,grants,term streamflow,0.4212,6
+84,grants,streamflow,0.405,7
+84,grants,geomorphology guided,0.4011,8
+85,grants,mechanochemical feedback,0.7048,1
+85,grants,dynamic mechanochemical,0.6069,2
+85,grants,hermitian dynamic,0.5828,3
+85,grants,mechanochemical,0.4609,4
+85,grants,non hermitian,0.4567,5
+85,grants,hermitian,0.385,6
+85,grants,theoretical investigation,0.2551,7
+85,grants,dynamic,0.2356,8
+86,grants,coâ electroreduction,0.4808,1
+86,grants,design catalyst,0.4348,2
+86,grants,process coâ,0.4005,3
+86,grants,multiscale modeling,0.3817,4
+86,grants,catalyst process,0.3652,5
+86,grants,catalyst,0.317,6
+86,grants,modeling design,0.3002,7
+86,grants,electroreduction,0.2649,8
+87,grants,magnetic conduct,0.5663,1
+87,grants,particle time,0.5636,2
+87,grants,conduct particle,0.5559,3
+87,grants,dependent magnetic,0.5393,4
+87,grants,magnetic field,0.5131,5
+87,grants,time dependent,0.4251,6
+87,grants,magnetic,0.3777,7
+87,grants,particle,0.307,8
+16,grants,polar codes,0.7635,1
+16,grants,codes learning,0.6695,2
+16,grants,base codes,0.6109,3
+16,grants,analysis polar,0.47,4
+16,grants,learning base,0.4148,5
+16,grants,polar,0.4124,6
+16,grants,codes,0.4044,7
+16,grants,design analysis,0.3489,8
+17,grants,advanced composites,0.6804,1
+17,grants,composites development,0.6335,2
+17,grants,composites,0.462,3
+17,grants,design advanced,0.4301,4
+17,grants,scale design,0.4222,5
+17,grants,manufacturing technologies,0.3824,6
+17,grants,new manufacturing,0.3478,7
+17,grants,multi scale,0.3409,8
+19,grants,coding theory,0.6638,1
+19,grants,distribute communication,0.6337,2
+19,grants,communication computing,0.6258,3
+19,grants,robust distribute,0.5972,4
+19,grants,coding,0.511,5
+19,grants,computing systems,0.4499,6
+19,grants,distribute,0.4315,7
+19,grants,communication,0.3798,8
+88,grants,creep fatigue,0.4708,1
+88,grants,ferritic martensitic,0.4485,2
+88,grants,ods steel,0.4431,3
+88,grants,martensitic ods,0.3889,4
+88,grants,9cr ferritic,0.3527,5
+88,grants,steel integrated,0.3374,6
+88,grants,fatigue behavior,0.3275,7
+88,grants,creep,0.3206,8
+89,grants,sandworm propulsion,0.7605,1
+89,grants,robotic sandworm,0.7121,2
+89,grants,propulsion deformable,0.5775,3
+89,grants,sandworm,0.5037,4
+89,grants,object particulate,0.4983,5
+89,grants,propulsion,0.4574,6
+89,grants,particulate medium,0.4284,7
+89,grants,deformable object,0.422,8
+90,grants,train regularizers,0.6272,1
+90,grants,base reconstruction,0.4627,2
+90,grants,grounded model,0.4487,3
+90,grants,regularizers,0.4437,4
+90,grants,reconstruction train,0.436,5
+90,grants,model base,0.3837,6
+90,grants,model,0.3375,7
+90,grants,train,0.3108,8
+91,grants,hydrodynamic state,0.5033,1
+91,grants,state electron,0.4984,2
+91,grants,trivial hydrodynamic,0.4673,3
+91,grants,electron,0.4506,4
+91,grants,transport phenomenon,0.435,5
+91,grants,hydrodynamic,0.3896,6
+91,grants,novel transport,0.3885,7
+91,grants,phenomenon topologically,0.3584,8
+92,grants,cave fauna,0.6981,1
+92,grants,indian cave,0.6802,2
+92,grants,troglomorphy indian,0.6188,3
+92,grants,cave,0.4516,4
+92,grants,fauna,0.436,5
+92,grants,troglomorphy,0.4257,6
+92,grants,genetic basis,0.421,7
+92,grants,decipher genetic,0.418,8
+93,grants,magnetic heterostructures,0.5302,1
+93,grants,memory iot,0.5201,2
+93,grants,3d magnetic,0.4611,3
+93,grants,heterostructures ai,0.4607,4
+93,grants,iot sensing,0.4061,5
+93,grants,iot,0.3922,6
+93,grants,heterostructures,0.3631,7
+93,grants,magnetic,0.3539,8
+94,grants,innovations 3gpp,0.5944,1
+94,grants,3gpp compliant,0.5691,2
+94,grants,terrestrial networks,0.5123,3
+94,grants,networks physical,0.4891,4
+94,grants,compliant prototyping,0.4877,5
+94,grants,layer innovations,0.4853,6
+94,grants,3gpp,0.4357,7
+94,grants,prototyping,0.4187,8
+95,grants,quantum matter,0.5061,1
+95,grants,transport optics,0.488,2
+95,grants,correlated quantum,0.463,3
+95,grants,moirã systems,0.4416,4
+95,grants,optics moirã,0.4312,5
+95,grants,quantum,0.3986,6
+95,grants,bridge transport,0.3851,7
+95,grants,strongly correlated,0.2786,8
+96,grants,raman spectroscopy,0.5712,1
+96,grants,hydrogel mechanical,0.5466,2
+96,grants,spectroscopy polymer,0.5151,3
+96,grants,polymer networks,0.5007,4
+96,grants,hydrogel,0.4923,5
+96,grants,situ raman,0.4907,6
+96,grants,tailor hydrogel,0.4881,7
+96,grants,raman,0.4418,8
+97,grants,metasurfaces terahertz,0.7544,1
+97,grants,terahertz communication,0.6905,2
+97,grants,terahertz,0.5394,3
+97,grants,time metasurfaces,0.511,4
+97,grants,metasurfaces,0.4582,5
+97,grants,multi frequency,0.3569,6
+97,grants,communication sensing,0.3434,7
+97,grants,frequency space,0.3105,8
+98,grants,graphene dissipationless,0.7295,1
+98,grants,rhombohedral graphene,0.69,2
+98,grants,graphene,0.6091,3
+98,grants,dissipationless electronic,0.5437,4
+98,grants,phase rhombohedral,0.3906,5
+98,grants,quantum phase,0.3521,6
+98,grants,tailor quantum,0.3404,7
+98,grants,dissipationless,0.336,8
+99,grants,antimicrobial peptides,0.6466,1
+99,grants,peptides realistic,0.5653,2
+99,grants,bacterial membrane,0.5553,3
+99,grants,interactions antimicrobial,0.5317,4
+99,grants,peptides,0.5252,5
+99,grants,membrane model,0.5139,6
+99,grants,realistic bacterial,0.4161,7
+99,grants,antimicrobial,0.4029,8
+100,grants,temperature resilience,0.5854,1
+100,grants,reef ecosystems,0.5624,2
+100,grants,response climate,0.4821,3
+100,grants,ecology behaviour,0.4806,4
+100,grants,change coral,0.4719,5
+100,grants,climate change,0.4458,6
+100,grants,reef rise,0.4367,7
+100,grants,integrating ecology,0.4338,8
+101,grants,spreader thermal,0.7434,1
+101,grants,passive spreader,0.5639,2
+101,grants,spreader,0.5002,3
+101,grants,flux electronic,0.3778,4
+101,grants,heat flux,0.3639,5
+101,grants,thermal management,0.3612,6
+101,grants,phase passive,0.3333,7
+101,grants,thermal,0.3124,8
+102,grants,film transistors,0.4581,1
+102,grants,temperature plasma,0.412,2
+102,grants,transistors low,0.3956,3
+102,grants,deposition beol,0.3751,4
+102,grants,enhance deposition,0.3462,5
+102,grants,beol cmo,0.3459,6
+102,grants,transistors,0.3335,7
+102,grants,plasma enhance,0.3246,8
+104,grants,ultrasonic atomizer,0.7202,1
+104,grants,simulation ultrasonic,0.6384,2
+104,grants,multiphase simulation,0.5422,3
+104,grants,atomizer biomedical,0.5237,4
+104,grants,ultrasonic,0.4998,5
+104,grants,multiscale multiphase,0.4726,6
+104,grants,atomizer,0.405,7
+104,grants,multiphase,0.3525,8
+105,grants,kahler geometry,0.6023,1
+105,grants,bundle physics,0.5638,2
+105,grants,vector bundle,0.5343,3
+105,grants,holomorphic vector,0.5177,4
+105,grants,application kahler,0.5045,5
+105,grants,geometry holomorphic,0.4619,6
+105,grants,nonlinear equation,0.4491,7
+105,grants,kahler,0.422,8
+106,grants,entanglement entropy,0.7249,1
+106,grants,entropy harish,0.6182,2
+106,grants,chandra character,0.5432,3
+106,grants,entanglement,0.529,4
+106,grants,harish chandra,0.4799,5
+106,grants,entropy,0.4508,6
+106,grants,chandra,0.4268,7
+106,grants,harish,0.2893,8
+107,grants,quantum error,0.6141,1
+107,grants,operators quantum,0.4973,2
+107,grants,fault tolerant,0.4835,3
+107,grants,correcting codes,0.4617,4
+107,grants,quantum,0.4419,5
+107,grants,logical operators,0.4322,6
+107,grants,tolerant logical,0.3919,7
+107,grants,error correcting,0.3554,8
+109,grants,percolation model,0.7673,1
+109,grants,phenomenon percolation,0.7138,2
+109,grants,percolation,0.6887,3
+109,grants,random tree,0.5948,4
+109,grants,random graph,0.582,5
+109,grants,graph random,0.5704,6
+109,grants,critical phenomenon,0.4805,7
+109,grants,model random,0.4241,8
+110,grants,bergman space,0.7289,1
+110,grants,toeplitz operator,0.6427,2
+110,grants,hardy bergman,0.6068,3
+110,grants,bergman,0.5919,4
+110,grants,operator hardy,0.5443,5
+110,grants,toeplitz,0.4765,6
+110,grants,space domain,0.3624,7
+110,grants,operator,0.3415,8
+111,grants,gpu computing,0.6581,1
+111,grants,centric gpu,0.6554,2
+111,grants,gpu,0.5681,3
+111,grants,power supplies,0.4864,4
+111,grants,current compact,0.368,5
+111,grants,supplies ai,0.3649,6
+111,grants,compact power,0.3611,7
+111,grants,ai centric,0.3142,8
+112,grants,communication learning,0.5724,1
+112,grants,sensing communication,0.5697,2
+112,grants,learning multi,0.4981,3
+112,grants,efficient sensing,0.4947,4
+112,grants,multi modal,0.4611,5
+112,grants,sensing,0.4389,6
+112,grants,modal artificial,0.4177,7
+112,grants,communication,0.3724,8
+113,grants,gm cryocooler,0.611,1
+113,grants,nitrogen biogas,0.5255,2
+113,grants,cryocooler base,0.5145,3
+113,grants,biogas liquefi,0.5133,4
+113,grants,helium nitrogen,0.4862,5
+113,grants,cryocooler,0.4454,6
+113,grants,biogas,0.4334,7
+113,grants,hydrogen helium,0.4068,8
+114,grants,quantum hpc,0.5667,1
+114,grants,material modeling,0.413,2
+114,grants,hybrid quantum,0.3651,3
+114,grants,ab initio,0.3199,4
+114,grants,hpc accelerate,0.3133,5
+114,grants,initio material,0.3044,6
+114,grants,computational method,0.3019,7
+114,grants,quantum,0.2872,8
+115,grants,social learning,0.6327,1
+115,grants,social,0.4674,2
+115,grants,learning offset,0.446,3
+115,grants,bounded rationality,0.4338,4
+115,grants,learning,0.424,5
+115,grants,rationality,0.3857,6
+115,grants,offset bounded,0.3605,7
+115,grants,offset,0.255,8
+116,grants,adaptive galerkin,0.6329,1
+116,grants,galerkin framework,0.5783,2
+116,grants,galerkin,0.4598,3
+116,grants,population dynamics,0.4056,4
+116,grants,hp adaptive,0.3961,5
+116,grants,space pde,0.3668,6
+116,grants,age space,0.346,7
+116,grants,structured population,0.3285,8
+117,grants,virtual automation,0.7097,1
+117,grants,augmented virtual,0.6793,2
+117,grants,automation lab,0.648,3
+117,grants,virtual reality,0.5917,4
+117,grants,lab augmented,0.5358,5
+117,grants,automation,0.5268,6
+117,grants,virtual,0.4823,7
+117,grants,augmented,0.384,8
+118,grants,differential algebraic,0.5035,1
+118,grants,numerical solution,0.4521,2
+118,grants,solution differential,0.4412,3
+118,grants,efficient numerical,0.4149,4
+118,grants,deep learning,0.4062,5
+118,grants,algebraic equations,0.3923,6
+118,grants,equations,0.3788,7
+118,grants,learning efficient,0.361,8
+119,grants,nailfold capillaroscopy,0.8104,1
+119,grants,capillaroscopy diagnosis,0.6285,2
+119,grants,technique nailfold,0.5824,3
+119,grants,nailfold,0.5676,4
+119,grants,capillaroscopy,0.5641,5
+119,grants,diabetes mellitus,0.4069,6
+119,grants,type diabetes,0.373,7
+119,grants,diabetes,0.3682,8
+120,grants,wearable antennas,0.6561,1
+120,grants,dynamic iot,0.5705,2
+120,grants,antennas dynamic,0.5133,3
+120,grants,iot connectivity,0.504,4
+120,grants,flexible wearable,0.4352,5
+120,grants,iot,0.4129,6
+120,grants,wearable,0.3884,7
+120,grants,antennas,0.3676,8
+121,grants,anomaly detection,0.6322,1
+121,grants,anomaly,0.4805,2
+121,grants,mobile computing,0.4668,3
+121,grants,detection machine,0.3945,4
+121,grants,techniques mobile,0.3602,5
+121,grants,machine intelligence,0.3465,6
+121,grants,mobile,0.339,7
+121,grants,computing networks,0.3164,8
+122,grants,smart reporter,1.0,1
+122,grants,reporter,0.7911,2
+122,grants,smart,0.5565,3
+123,grants,training program,0.8011,1
+123,grants,term training,0.6938,2
+123,grants,training,0.6674,3
+123,grants,short term,0.5164,4
+123,grants,program,0.4252,5
+123,grants,short,0.3121,6
+123,grants,term,0.2207,7
+124,grants,training program,0.8011,1
+124,grants,term training,0.6938,2
+124,grants,training,0.6674,3
+124,grants,short term,0.5164,4
+124,grants,program,0.4252,5
+124,grants,short,0.3121,6
+124,grants,term,0.2207,7
+125,grants,neonatal monitoring,0.774,1
+125,grants,comprehensive neonatal,0.6316,2
+125,grants,neonatal,0.5505,3
+125,grants,design development,0.4227,4
+125,grants,development virtual,0.3883,5
+125,grants,monitoring,0.3719,6
+125,grants,development,0.3357,7
+125,grants,virtual comprehensive,0.3131,8
+126,grants,antenna lab,0.6981,1
+126,grants,microwave antenna,0.6777,2
+126,grants,set microwave,0.5572,3
+126,grants,antenna,0.5088,4
+126,grants,microwave,0.4897,5
+126,grants,centre learning,0.3879,6
+126,grants,learning set,0.363,7
+126,grants,lab,0.28,8
+127,grants,efficiency taguchiâ,0.574,1
+127,grants,worker efficiency,0.5402,2
+127,grants,taguchiâ orthogonal,0.4633,3
+127,grants,optimization workplace,0.463,4
+127,grants,workplace design,0.4399,5
+127,grants,improve worker,0.4211,6
+127,grants,orthogonal array,0.3866,7
+127,grants,efficiency,0.349,8
+128,grants,modernization wireless,0.8122,1
+128,grants,communication lab,0.654,2
+128,grants,wireless communication,0.6157,3
+128,grants,wireless,0.5458,4
+128,grants,modernization,0.4015,5
+128,grants,lab,0.3788,6
+128,grants,communication,0.33,7
+129,grants,welding equipment,0.535,1
+129,grants,ferrous tubes,0.4951,2
+129,grants,butt welding,0.4889,3
+129,grants,welding,0.451,4
+129,grants,smart robotic,0.4266,5
+129,grants,manufacturing technology,0.4197,6
+129,grants,robotic based,0.4067,7
+129,grants,advanced manufacturing,0.4064,8
+9,grants,foil failure,0.5728,1
+9,grants,pulse flaws,0.5694,2
+9,grants,propagation healing,0.4883,3
+9,grants,flaws metallic,0.4465,4
+9,grants,healing flaw,0.4455,5
+9,grants,flaw closure,0.444,6
+9,grants,flaw propagation,0.4404,7
+9,grants,metallic foil,0.4173,8
+130,grants,memory waveguide,0.6303,1
+130,grants,waveguide application,0.4954,2
+130,grants,waveguide,0.4615,3
+130,grants,sensor nv,0.4431,4
+130,grants,film sensor,0.4311,5
+130,grants,nv memory,0.4208,6
+130,grants,fabrication characterization,0.3762,7
+130,grants,characterization film,0.272,8
+131,grants,awarded teachers,0.6999,1
+131,grants,teachers associateship,0.6737,2
+131,grants,excellence tare,0.631,3
+131,grants,associateship research,0.5219,4
+131,grants,research excellence,0.5131,5
+131,grants,teachers,0.4621,6
+131,grants,excellence,0.4393,7
+131,grants,associateship,0.4387,8
+132,grants,iot enable,0.6021,1
+132,grants,sanitizer vend,0.5852,2
+132,grants,smart sanitizer,0.5558,3
+132,grants,iot,0.4705,4
+132,grants,enable smart,0.4606,5
+132,grants,vend machine,0.4472,6
+132,grants,sanitizer,0.3595,7
+132,grants,vend,0.3269,8
+133,grants,electronic optoelectronic,0.4908,1
+133,grants,chalcogenide material,0.4725,2
+133,grants,memory pcm,0.4705,3
+133,grants,optoelectronic,0.405,4
+133,grants,change memory,0.403,5
+133,grants,optoelectronic property,0.4005,6
+133,grants,transition metal,0.3766,7
+133,grants,phase change,0.3726,8
+134,grants,wind pv,0.6001,1
+134,grants,pv micro,0.4535,2
+134,grants,grid tribal,0.4313,3
+134,grants,micro grid,0.4194,4
+134,grants,pv,0.3966,5
+134,grants,tribal community,0.3911,6
+134,grants,effective wind,0.359,7
+134,grants,cost effective,0.3418,8
+135,grants,wind pv,0.6001,1
+135,grants,pv micro,0.4535,2
+135,grants,grid tribal,0.4313,3
+135,grants,micro grid,0.4194,4
+135,grants,pv,0.3966,5
+135,grants,tribal community,0.3911,6
+135,grants,effective wind,0.359,7
+135,grants,cost effective,0.3418,8
+136,grants,karnataka renewable,0.7981,1
+136,grants,efficiency karnataka,0.7167,2
+136,grants,renewable energy,0.5973,3
+136,grants,energy development,0.55,4
+136,grants,karnataka,0.539,5
+136,grants,conservation efficiency,0.5209,6
+136,grants,renewable,0.5167,7
+136,grants,energy conservation,0.4714,8
+137,grants,aicte training,0.6407,1
+137,grants,virtual reality,0.5711,2
+137,grants,immersive virtual,0.5685,3
+137,grants,programme immersive,0.5449,4
+137,grants,atal academy,0.5236,5
+137,grants,learning atal,0.5081,6
+137,grants,aicte,0.5029,7
+137,grants,immersive,0.4591,8
+138,grants,technology,1.0,1
+139,grants,endophenotype schizophrenia,0.6848,1
+139,grants,schizophrenia examination,0.6351,2
+139,grants,schizophrenia,0.5799,3
+139,grants,retinal vascular,0.5306,4
+139,grants,abnormality endophenotype,0.4509,5
+139,grants,retinal,0.4422,6
+139,grants,vascular abnormality,0.4026,7
+139,grants,endophenotype,0.3705,8
+140,grants,biomedical waste,0.5781,1
+140,grants,covid 19,0.4399,2
+140,grants,handle covid,0.4339,3
+140,grants,waste,0.391,4
+140,grants,covid,0.3886,5
+140,grants,19 biomedical,0.3128,6
+140,grants,biomedical,0.2852,7
+140,grants,vibhajaka smart,0.2662,8
+141,grants,fever respiration,0.6642,1
+141,grants,respiration monitoring,0.6026,2
+141,grants,contact fever,0.5355,3
+141,grants,fever,0.4393,4
+141,grants,mass screening,0.3861,5
+141,grants,monitoring mass,0.3845,6
+141,grants,respiration,0.3543,7
+141,grants,screening,0.2779,8
+142,grants,ocean climatic,0.6432,1
+142,grants,indian ocean,0.635,2
+142,grants,climatic response,0.563,3
+142,grants,sea coupling,0.5546,4
+142,grants,coupling indian,0.4847,5
+142,grants,air sea,0.4683,6
+142,grants,climatic,0.4358,7
+142,grants,ocean,0.3437,8
+143,grants,piezoelectric material,0.5968,1
+143,grants,material discovery,0.5672,2
+143,grants,performance piezoelectric,0.5634,3
+143,grants,piezoelectric,0.5513,4
+143,grants,discovery machine,0.4238,5
+143,grants,machine learning,0.4035,6
+143,grants,learning experimental,0.4002,7
+143,grants,discovery,0.3308,8
+144,grants,base sentiment,0.4995,1
+144,grants,diagnose mental,0.4892,2
+144,grants,sentiment analysis,0.4655,3
+144,grants,recurrent neural,0.4562,4
+144,grants,mental disorders,0.4257,5
+144,grants,neural network,0.4148,6
+144,grants,diary image,0.411,7
+144,grants,patientâ diary,0.4099,8
+145,grants,edge computing,0.7072,1
+145,grants,intelligent edge,0.5222,2
+145,grants,sttp aicte,0.5207,3
+145,grants,sttp,0.4393,4
+145,grants,edge,0.436,5
+145,grants,aicte aqis,0.3888,6
+145,grants,aqis,0.381,7
+145,grants,aqis intelligent,0.3782,8
+146,grants,automation hydroponic,0.6585,1
+146,grants,precision farming,0.5624,2
+146,grants,hydroponic farms,0.5373,3
+146,grants,automation,0.4812,4
+146,grants,farming,0.4665,5
+146,grants,farms urban,0.4594,6
+146,grants,farming incorporate,0.4228,7
+146,grants,farms,0.4193,8
+147,grants,measure pollutant,0.5815,1
+147,grants,pollutant concentration,0.4909,2
+147,grants,lung deposition,0.4768,3
+147,grants,predictive lung,0.4522,4
+147,grants,sensor measure,0.4206,5
+147,grants,pollutant,0.4001,6
+147,grants,cost sensor,0.3729,7
+147,grants,deposition factor,0.3619,8
+148,grants,concrete alkali,0.8523,1
+148,grants,activate concrete,0.6947,2
+148,grants,alkali activate,0.661,3
+148,grants,alkali,0.5903,4
+148,grants,concrete,0.5736,5
+148,grants,friendly concrete,0.551,6
+148,grants,study environmentally,0.2772,7
+148,grants,environmentally friendly,0.2748,8
+150,grants,automation hydroponic,0.6585,1
+150,grants,precision farming,0.5624,2
+150,grants,hydroponic farms,0.5373,3
+150,grants,automation,0.4812,4
+150,grants,farming,0.4665,5
+150,grants,farms urban,0.4594,6
+150,grants,farming incorporate,0.4228,7
+150,grants,farms,0.4193,8
+151,grants,arc weld,0.5534,1
+151,grants,weld obtain,0.5291,2
+151,grants,t6 weld,0.5169,3
+151,grants,weld technique,0.4909,4
+151,grants,fatigue crack,0.4549,5
+151,grants,weld,0.4524,6
+151,grants,crack growth,0.4447,7
+151,grants,metal arc,0.4315,8
+152,grants,edge computing,0.7124,1
+152,grants,intelligent edge,0.5299,2
+152,grants,sttp aicte,0.5167,3
+152,grants,edge,0.4438,4
+152,grants,sttp,0.4318,5
+152,grants,aicte aqis,0.3829,6
+152,grants,aqis,0.3666,7
+152,grants,aqis intelligent,0.366,8
+20,grants,temporal regularization,0.5123,1
+20,grants,adaptive spatio,0.5044,2
+20,grants,image reconstruction,0.4902,3
+20,grants,biomedical image,0.4515,4
+20,grants,dynamic biomedical,0.4338,5
+20,grants,spatio temporal,0.4268,6
+20,grants,motion adaptive,0.4236,7
+20,grants,regularization,0.3937,8
+153,grants,sign language,0.6002,1
+153,grants,kannada educational,0.5539,2
+153,grants,augment kannada,0.488,3
+153,grants,language anime,0.4765,4
+153,grants,educational video,0.4558,5
+153,grants,video indian,0.4419,6
+153,grants,kannada,0.4299,7
+153,grants,indian sign,0.4194,8
+154,grants,glass carbon,0.4213,1
+154,grants,fiber aerospace,0.4098,2
+154,grants,lmpact damage,0.4086,3
+154,grants,kevlar fiber,0.399,4
+154,grants,layer glass,0.3845,5
+154,grants,lnvestigation low,0.3502,6
+154,grants,experimental lnvestigation,0.3497,7
+154,grants,carbon kevlar,0.3428,8
+156,grants,ieee cis,0.6738,1
+156,grants,industry interaction,0.6379,2
+156,grants,ieee,0.5883,3
+156,grants,local industry,0.5682,4
+156,grants,cis local,0.5242,5
+156,grants,industry,0.4211,6
+156,grants,cis,0.3628,7
+156,grants,local,0.3392,8
+157,grants,school outreach,0.6349,1
+157,grants,outreach program,0.6242,2
+157,grants,ieee cis,0.6121,3
+157,grants,ieee,0.5543,4
+157,grants,outreach,0.5485,5
+157,grants,high school,0.4126,6
+157,grants,cis high,0.342,7
+157,grants,school,0.3217,8
+158,grants,webdriver python,0.9235,1
+158,grants,selenium webdriver,0.8336,2
+158,grants,webdriver,0.7178,3
+158,grants,selenium,0.6645,4
+158,grants,python,0.5071,5
+159,grants,drowsiness detection,0.8048,1
+159,grants,drowsiness,0.6458,2
+159,grants,automotive drivers,0.5653,3
+159,grants,detection automotive,0.5597,4
+159,grants,automotive,0.447,5
+159,grants,drivers,0.4359,6
+159,grants,detection,0.2977,7
+160,grants,action bot,1.0,1
+160,grants,bot,0.7286,2
+160,grants,action,0.6815,3
+161,grants,composite photonic,0.6515,1
+161,grants,polymer nano,0.5808,2
+161,grants,nano composite,0.5388,3
+161,grants,photonic application,0.5267,4
+161,grants,development polymer,0.5077,5
+161,grants,polymer,0.4506,6
+161,grants,photonic,0.4338,7
+161,grants,composite,0.3276,8
+162,grants,composite retrofits,0.5946,1
+162,grants,rc beams,0.5334,2
+162,grants,structural efficiency,0.4807,3
+162,grants,effective composite,0.419,4
+162,grants,beams enhance,0.4189,5
+162,grants,beams,0.3714,6
+162,grants,retrofits,0.3713,7
+162,grants,distressed rc,0.3654,8
+163,grants,water recycling,0.6532,1
+163,grants,recycling equipment,0.5725,2
+163,grants,implementation water,0.4825,3
+163,grants,recycling,0.4791,4
+163,grants,feasibility study,0.3678,5
+163,grants,individual house,0.3351,6
+163,grants,chikkaballapur district,0.3235,7
+163,grants,house specific,0.3103,8
+164,grants,card ticketing,0.5672,1
+164,grants,ticketing service,0.5424,2
+164,grants,smart card,0.5422,3
+164,grants,bengarulu city,0.4465,4
+164,grants,ticketing,0.4287,5
+164,grants,reference bengarulu,0.3914,6
+164,grants,public transport,0.3889,7
+164,grants,bengarulu,0.3811,8
+165,grants,diesel production,0.5714,1
+165,grants,oil uco,0.5186,2
+165,grants,bio diesel,0.4725,3
+165,grants,production unit,0.465,4
+165,grants,unit bengarulu,0.412,5
+165,grants,distribution cook,0.4117,6
+165,grants,cook oil,0.4072,7
+165,grants,diesel,0.3947,8
+166,grants,metal detection,0.6834,1
+166,grants,detection water,0.6733,2
+166,grants,optical sensing,0.5441,3
+166,grants,sensing heavy,0.4892,4
+166,grants,heavy metal,0.3943,5
+166,grants,sensing,0.3885,6
+166,grants,application optical,0.3664,7
+166,grants,metal,0.3264,8
+167,grants,vahini,1.0,1
+168,grants,matlab simulink,0.7415,1
+168,grants,alternative matlab,0.5396,2
+168,grants,fdp scilab,0.5368,3
+168,grants,atal fdp,0.5304,4
+168,grants,simulink,0.5303,5
+168,grants,matlab,0.5232,6
+168,grants,atal,0.4049,7
+168,grants,scilab xcos,0.397,8
+169,grants,neuromorphic computing,0.7731,1
+169,grants,material neuromorphic,0.6887,2
+169,grants,electronic synapsis,0.6656,3
+169,grants,neuromorphic,0.6093,4
+169,grants,synapsis base,0.5731,5
+169,grants,synapsis,0.4932,6
+169,grants,dimensional material,0.3682,7
+169,grants,computing,0.3374,8
+170,grants,development ultrasonic,0.5801,1
+170,grants,dry food,0.5459,2
+170,grants,ultrasonic assist,0.5313,3
+170,grants,vacuum dry,0.526,4
+170,grants,ultrasonic,0.5114,5
+170,grants,assist vacuum,0.498,6
+170,grants,vacuum,0.4315,7
+170,grants,food,0.2631,8
+171,grants,flow battery,0.5174,1
+171,grants,lead redox,0.4685,2
+171,grants,redox flow,0.4632,3
+171,grants,battery cycleablity,0.3671,4
+171,grants,soluble lead,0.3622,5
+171,grants,natural convection,0.3432,6
+171,grants,gradient drive,0.3191,7
+171,grants,convection,0.2908,8
+172,grants,membrane desalination,0.6565,1
+172,grants,matrix membrane,0.5316,2
+172,grants,desalination,0.4994,3
+172,grants,carbon base,0.4075,4
+172,grants,nano composite,0.3944,5
+172,grants,membrane,0.3908,6
+172,grants,carbon,0.3598,7
+172,grants,base nano,0.3026,8
+174,grants,quantum transport,0.6119,1
+174,grants,transport equation,0.5486,2
+174,grants,compact model,0.4233,3
+174,grants,quantum,0.3646,4
+174,grants,generation compact,0.3443,5
+174,grants,equation base,0.3258,6
+174,grants,transport,0.3255,7
+174,grants,base generation,0.3224,8
+175,grants,cold plasma,0.529,1
+175,grants,water hygiene,0.4809,2
+175,grants,application cold,0.4577,3
+175,grants,plasma,0.3785,4
+175,grants,plasma activate,0.3682,5
+175,grants,mathematical modeling,0.3499,6
+175,grants,hygiene purpose,0.3413,7
+175,grants,activate water,0.338,8
+176,grants,flow granular,0.5789,1
+176,grants,dem simulation,0.5116,2
+176,grants,granular material,0.4667,3
+176,grants,vertical channel,0.4468,4
+176,grants,granular,0.3863,5
+176,grants,material vertical,0.3667,6
+176,grants,simulation prediction,0.3536,7
+176,grants,channel comparison,0.3518,8
+10,grants,probe microscope,0.7008,1
+10,grants,microscope rotatable,0.6442,2
+10,grants,scan probe,0.6021,3
+10,grants,microscope,0.5605,4
+10,grants,rotatable tip,0.559,5
+10,grants,probe,0.4687,6
+10,grants,tip development,0.4497,7
+10,grants,tip,0.3822,8
+18,grants,networked distribute,0.7656,1
+18,grants,distribute control,0.701,2
+18,grants,aware networked,0.578,3
+18,grants,distribute,0.4911,4
+18,grants,resource aware,0.4812,5
+18,grants,networked,0.4512,6
+18,grants,control,0.3485,7
+18,grants,resource,0.2285,8
+177,grants,wall turbulence,0.8854,1
+177,grants,turbulence,0.6904,2
+177,grants,soft wall,0.6351,3
+177,grants,wall,0.3972,4
+177,grants,soft,0.3825,5
+178,grants,microdroplet analysis,0.835,1
+178,grants,microdroplet,0.7028,2
+178,grants,quantification biomolecule,0.5967,3
+178,grants,biomolecule,0.4996,4
+178,grants,quantification,0.249,5
+178,grants,analysis quantification,0.2332,6
+178,grants,analysis,0.1351,7
+179,grants,bubble injection,0.5733,1
+179,grants,bubble interaction,0.5357,2
+179,grants,air bubble,0.5331,3
+179,grants,vortex ring,0.5207,4
+179,grants,ring bubble,0.5041,5
+179,grants,turbulent boundary,0.4871,6
+179,grants,bubble,0.444,7
+179,grants,turbulent,0.4396,8
+180,grants,flow deformation,0.5969,1
+180,grants,plastic flow,0.5536,2
+180,grants,strain mesoscale,0.5295,3
+180,grants,mesoscale plastic,0.4905,4
+180,grants,deformation processing,0.4341,5
+180,grants,large strain,0.3569,6
+180,grants,deformation,0.3522,7
+180,grants,strain,0.3315,8
+181,grants,polymeric flow,0.6864,1
+181,grants,microfluidic platform,0.6591,2
+181,grants,microfluidic,0.6561,3
+181,grants,flow induced,0.4412,4
+181,grants,investigate flow,0.3994,5
+181,grants,flow,0.3887,6
+181,grants,polymeric,0.3447,7
+181,grants,laden polymeric,0.2978,8
+182,grants,deformation porous,0.6911,1
+182,grants,plastic deformation,0.627,2
+182,grants,soft rock,0.6103,3
+182,grants,porous soft,0.597,4
+182,grants,severe plastic,0.4926,5
+182,grants,deformation,0.4588,6
+182,grants,porous,0.3907,7
+182,grants,soft,0.3727,8
+183,grants,quenching surface,0.6634,1
+183,grants,surface modification,0.5915,2
+183,grants,enhancement thermal,0.5712,3
+183,grants,thermal performance,0.4746,4
+183,grants,performance quenching,0.3799,5
+183,grants,surface,0.3664,6
+183,grants,thermal,0.3511,7
+183,grants,quenching,0.3384,8
+184,grants,tomography perfusion,0.6693,1
+184,grants,perfusion imaging,0.6016,2
+184,grants,deep learning,0.4578,3
+184,grants,tomography,0.4481,4
+184,grants,compute tomography,0.4477,5
+184,grants,perfusion,0.4283,6
+184,grants,imaging,0.3584,7
+184,grants,dose compute,0.332,8
+185,grants,microarchitectural technique,0.7773,1
+185,grants,secure processor,0.7692,2
+185,grants,microarchitectural,0.7174,3
+185,grants,design secure,0.6214,4
+185,grants,processor,0.4998,5
+185,grants,secure,0.4294,6
+185,grants,technique design,0.3271,7
+185,grants,design,0.3016,8
+186,grants,topological datum,0.6917,1
+186,grants,datum analysis,0.6083,2
+186,grants,tool multivariate,0.5702,3
+186,grants,multivariate,0.4726,4
+186,grants,topological,0.4555,5
+186,grants,datum,0.4301,6
+186,grants,analysis tool,0.3966,7
+186,grants,analysis,0.228,8
+187,grants,nanoparticle coating,0.7269,1
+187,grants,entropy alloy,0.7167,2
+187,grants,alloy nanoparticle,0.6329,3
+187,grants,nanoparticle,0.5141,4
+187,grants,high entropy,0.5082,5
+187,grants,coating,0.4514,6
+187,grants,entropy,0.4445,7
+187,grants,alloy,0.4083,8
+188,grants,lead endothelial,0.6223,1
+188,grants,endothelial dysfunction,0.584,2
+188,grants,microfluidic,0.5691,3
+188,grants,endothelial,0.536,4
+188,grants,microfluidic approach,0.5114,5
+188,grants,mechanical fluid,0.3635,6
+188,grants,biochemical stimulus,0.3239,7
+188,grants,fluid dynamic,0.3217,8
+189,grants,neuromorphic audio,0.6,1
+189,grants,saliency model,0.4757,2
+189,grants,visual saliency,0.4496,3
+189,grants,implementation neuromorphic,0.4467,4
+189,grants,saliency,0.4234,5
+189,grants,audio visual,0.4141,6
+189,grants,automate surveillance,0.3954,7
+189,grants,deep learn,0.3906,8
+190,grants,programming spectral,0.7225,1
+190,grants,spectral method,0.6445,2
+190,grants,fundamental algorithms,0.6103,3
+190,grants,convex programming,0.6037,4
+190,grants,spectral,0.4597,5
+190,grants,base convex,0.3998,6
+190,grants,algorithms,0.3731,7
+190,grants,algorithms base,0.3514,8
+191,grants,wall turbulence,0.6202,1
+191,grants,friction drag,0.5863,2
+191,grants,turbulence external,0.5418,3
+191,grants,manipulation wall,0.5078,4
+191,grants,drag transport,0.5003,5
+191,grants,turbulence,0.4679,6
+191,grants,friction,0.3959,7
+191,grants,surface friction,0.3933,8
+192,grants,sonar signal,0.6359,1
+192,grants,application sonar,0.6096,2
+192,grants,sonar,0.5689,3
+192,grants,simulation ship,0.5588,4
+192,grants,ship wake,0.5436,5
+192,grants,signal modeling,0.381,6
+192,grants,wake application,0.3794,7
+192,grants,simulation,0.3128,8
+193,grants,strengthening nano,0.5894,1
+193,grants,nano precipitate,0.5409,2
+193,grants,dispersion nano,0.5306,3
+193,grants,nano dispersion,0.5074,4
+193,grants,aluminium alloy,0.4785,5
+193,grants,alloy high,0.4377,6
+193,grants,aluminium,0.4215,7
+193,grants,weight aluminium,0.3988,8
+194,grants,corona ignition,0.6502,1
+194,grants,ignition lean,0.5909,2
+194,grants,lean combustion,0.5767,3
+194,grants,combustion engine,0.5329,4
+194,grants,study corona,0.4105,5
+194,grants,corona,0.3744,6
+194,grants,combustion,0.3553,7
+194,grants,engine,0.3462,8
+195,grants,evaporative cool,0.519,1
+195,grants,optimization heat,0.5101,2
+195,grants,indirect evaporative,0.4812,3
+195,grants,exchanger indirect,0.4239,4
+195,grants,evaporative,0.4214,5
+195,grants,mass exchanger,0.3839,6
+195,grants,heat mass,0.3647,7
+195,grants,exchanger,0.3196,8
+12,grants,perovskite solar,0.8131,1
+12,grants,stable perovskite,0.7496,2
+12,grants,perovskite,0.5923,3
+12,grants,solar cell,0.5135,4
+12,grants,solar,0.3352,5
+12,grants,area stable,0.264,6
+12,grants,cell,0.184,7
+12,grants,large area,0.1811,8
+13,grants,3d reconstruction,0.6782,1
+13,grants,principles 3d,0.5583,2
+13,grants,network principles,0.5398,3
+13,grants,network,0.447,4
+13,grants,3d,0.4387,5
+13,grants,reconstruction,0.3889,6
+13,grants,principles,0.2489,7
+196,grants,power sector,0.5595,1
+196,grants,approach development,0.5446,2
+196,grants,development environment,0.5398,3
+196,grants,integrated approach,0.5375,4
+196,grants,environment power,0.5138,5
+196,grants,development,0.4207,6
+196,grants,sector,0.415,7
+196,grants,environment,0.3845,8
+197,grants,lens array,0.6206,1
+197,grants,index lens,0.6013,2
+197,grants,array antenna,0.5739,3
+197,grants,lens,0.4021,4
+197,grants,array,0.3673,5
+197,grants,antenna,0.341,6
+197,grants,compact band,0.3332,7
+197,grants,band dual,0.3172,8
+198,grants,prosumer drive,0.6564,1
+198,grants,smart grid,0.6196,2
+198,grants,development prosumer,0.4816,3
+198,grants,drive integrate,0.4263,4
+198,grants,prosumer,0.4191,5
+198,grants,integrate smart,0.4189,6
+198,grants,grid,0.2424,7
+198,grants,drive,0.235,8
+199,grants,coal research,0.797,1
+199,grants,clean coal,0.7646,2
+199,grants,coal,0.6144,3
+199,grants,centre clean,0.4046,4
+199,grants,national centre,0.3397,5
+199,grants,research development,0.2868,6
+199,grants,research,0.254,7
+199,grants,centre,0.2147,8
+200,grants,geoploymer composite,0.5696,1
+200,grants,pollution addition,0.4143,2
+200,grants,nano particle,0.3897,3
+200,grants,development geoploymer,0.3729,4
+200,grants,mechanical property,0.3568,5
+200,grants,air pollution,0.3536,6
+200,grants,geoploymer,0.3481,7
+200,grants,pollution,0.3105,8
+202,grants,fabrication nanomaterial,0.6938,1
+202,grants,scale fabrication,0.6466,2
+202,grants,nanomaterial high,0.5624,3
+202,grants,nanomaterial,0.5238,4
+202,grants,fabrication,0.3972,5
+202,grants,degree complexity,0.3671,6
+202,grants,scale,0.3604,7
+202,grants,complexity,0.3132,8
+203,grants,embed geosynthetic,0.4947,1
+203,grants,incline plate,0.4789,2
+203,grants,plate anchor,0.4696,3
+203,grants,geosynthetic reinforce,0.4656,4
+203,grants,anchor embed,0.4437,5
+203,grants,tower foundation,0.4404,6
+203,grants,performance incline,0.426,7
+203,grants,incline,0.4111,8
+204,grants,ai base,0.6113,1
+204,grants,conference ai,0.5728,2
+204,grants,ai,0.496,3
+204,grants,learning services,0.4583,4
+204,grants,machine learning,0.4386,5
+204,grants,base machine,0.4378,6
+204,grants,services industry,0.4308,7
+204,grants,national conference,0.4108,8
+205,grants,artificial intelligence,0.6262,1
+205,grants,power utlities,0.6243,2
+205,grants,power,0.5512,3
+205,grants,intelligence,0.4405,4
+205,grants,utlities artificial,0.368,5
+205,grants,artificial,0.3407,6
+205,grants,utlities,0.1876,7
+206,grants,brain signal,0.5984,1
+206,grants,development neurological,0.5515,2
+206,grants,neurological disorder,0.5503,3
+206,grants,disorder brain,0.5413,4
+206,grants,neurological,0.5324,5
+206,grants,signal computing,0.5174,6
+206,grants,brain,0.4301,7
+206,grants,infrastructure development,0.3853,8
+208,grants,python fdp,0.6887,1
+208,grants,deep learning,0.5699,2
+208,grants,fdp,0.5695,3
+208,grants,learning deep,0.5072,4
+208,grants,learning python,0.4192,5
+208,grants,machine learning,0.3914,6
+208,grants,learning,0.3576,7
+208,grants,deep,0.3232,8
+209,grants,lucene query,0.8526,1
+209,grants,sql lucene,0.8516,2
+209,grants,lucene,0.7265,3
+209,grants,query parser,0.7198,4
+209,grants,parser,0.5007,5
+209,grants,sql,0.4193,6
+209,grants,query,0.4144,7
+210,grants,ieee stem,0.7605,1
+210,grants,ambassodar ideathon,0.5607,2
+210,grants,ideathon school,0.5488,3
+210,grants,ieee,0.5403,4
+210,grants,stem ambassodar,0.5366,5
+210,grants,ideathon,0.4457,6
+210,grants,stem,0.3742,7
+210,grants,ambassodar,0.3673,8
+211,grants,embed prediction,0.5194,1
+211,grants,development ai,0.5143,2
+211,grants,child birth,0.5034,3
+211,grants,birth pregnancy,0.5026,4
+211,grants,ai base,0.4912,5
+211,grants,prediction preterm,0.4548,6
+211,grants,preterm child,0.4489,7
+211,grants,base embed,0.4203,8
+212,grants,edge computing,0.5585,1
+212,grants,snake farm,0.5356,2
+212,grants,detect snake,0.5313,3
+212,grants,land edge,0.4771,4
+212,grants,edge,0.3742,5
+212,grants,snake,0.3672,6
+212,grants,algorithm,0.3321,7
+212,grants,detect,0.3295,8
+213,grants,ieee computer,0.6207,1
+213,grants,ieee,0.6008,2
+213,grants,activity fund,0.5334,3
+213,grants,computer society,0.4951,4
+213,grants,inaguration activity,0.4506,5
+213,grants,society inaguration,0.3531,6
+213,grants,computer,0.3387,7
+213,grants,fund,0.3284,8
+214,grants,homomorphic encryption,0.5653,1
+214,grants,encryption cloud,0.5394,2
+214,grants,auditing share,0.4766,3
+214,grants,secure lightweight,0.4682,4
+214,grants,fully homomorphic,0.4459,5
+214,grants,framework auditing,0.4341,6
+214,grants,lightweight distribute,0.4234,7
+214,grants,homomorphic,0.4179,8
+215,grants,violence detection,0.725,1
+215,grants,drone surveillance,0.6339,2
+215,grants,detection drone,0.6008,3
+215,grants,drone,0.4958,4
+215,grants,surveillance video,0.4927,5
+215,grants,violence,0.478,6
+215,grants,surveillance,0.3561,7
+215,grants,video,0.3453,8
+216,grants,hyperspectral image,0.5263,1
+216,grants,customized reconfigurable,0.4563,2
+216,grants,video compression,0.4456,3
+216,grants,algorithm hyperspectral,0.4267,4
+216,grants,platform image,0.4111,5
+216,grants,hyperspectral,0.4022,6
+216,grants,reconfigurable platform,0.3944,7
+216,grants,deep learning,0.3668,8
+217,grants,snakes farmland,0.5673,1
+217,grants,farmland edge,0.5623,2
+217,grants,edge computing,0.5463,3
+217,grants,detection snakes,0.5064,4
+217,grants,farmland,0.3875,5
+217,grants,edge,0.363,6
+217,grants,snakes,0.3436,7
+217,grants,detection,0.3204,8
+218,grants,cloud environment,0.5424,1
+218,grants,framework cloud,0.5414,2
+218,grants,online assessment,0.5067,3
+218,grants,lightweight container,0.4959,4
+218,grants,cloud,0.4604,5
+218,grants,container base,0.421,6
+218,grants,assessment computer,0.4124,7
+218,grants,container,0.4075,8
+14,grants,nanostructures desalination,0.7337,1
+14,grants,membranes 2d,0.6176,2
+14,grants,membranes,0.5233,3
+14,grants,desalination water,0.5229,4
+14,grants,layered nanostructures,0.5129,5
+14,grants,inspire membranes,0.5088,6
+14,grants,desalination,0.437,7
+14,grants,water remediation,0.428,8
+219,grants,sign language,0.5887,1
+219,grants,gesture recognition,0.517,2
+219,grants,translator vocally,0.5158,3
+219,grants,recognition hgr,0.4997,4
+219,grants,hand gesture,0.4939,5
+219,grants,gesture,0.4823,6
+219,grants,vocally challenge,0.4517,7
+219,grants,language translator,0.4463,8
+220,grants,challenge atmospheric,0.6233,1
+220,grants,atmospheric sciences,0.5563,2
+220,grants,computing edgeâ,0.5025,3
+220,grants,atmospheric,0.4437,4
+220,grants,sciences computing,0.4341,5
+220,grants,fdp research,0.3931,6
+220,grants,computing,0.3374,7
+220,grants,fdp,0.3293,8
+221,grants,goc icritcsa,0.8686,1
+221,grants,icritcsa 2022,0.8019,2
+221,grants,goc,0.6563,3
+221,grants,icritcsa,0.6464,4
+221,grants,2022,0.4037,5
+222,grants,rc beams,0.659,1
+222,grants,retrofitted rc,0.6003,2
+222,grants,rc jacket,0.563,3
+222,grants,emission rc,0.5593,4
+222,grants,rc,0.4292,5
+222,grants,beams undergo,0.3611,6
+222,grants,beams,0.3378,7
+222,grants,carbon emission,0.3092,8
+223,grants,sustainable concrete,0.5911,1
+223,grants,printing sustainable,0.5388,2
+223,grants,3d printing,0.5154,3
+223,grants,concrete structure,0.5054,4
+223,grants,concrete,0.3758,5
+223,grants,printing,0.3481,6
+223,grants,affordable housing,0.3428,7
+223,grants,sustainable,0.3245,8
+224,grants,mobility advanced,0.6661,1
+224,grants,functional mobility,0.6633,2
+224,grants,gait analysis,0.5899,3
+224,grants,advanced gait,0.5871,4
+224,grants,mobility,0.5552,5
+224,grants,gait,0.4776,6
+224,grants,virtual reality,0.3943,7
+224,grants,enable functional,0.3739,8
+227,grants,housing rural,0.6287,1
+227,grants,rural india,0.5888,2
+227,grants,cost housing,0.5868,3
+227,grants,sustainable strengthening,0.5186,4
+227,grants,housing,0.4993,5
+227,grants,sustainable,0.434,6
+227,grants,rural,0.3546,7
+227,grants,strengthening low,0.3494,8
+228,grants,cement concrete,0.6109,1
+228,grants,green cement,0.5653,2
+228,grants,concrete utilize,0.5265,3
+228,grants,cement,0.498,4
+228,grants,concrete,0.4934,5
+228,grants,aluminium industry,0.4683,6
+228,grants,iron aluminium,0.4074,7
+228,grants,slag iron,0.3903,8
+230,grants,bee hive,0.6128,1
+230,grants,hive monitoring,0.6101,2
+230,grants,processing iot,0.5111,3
+230,grants,based bee,0.4899,4
+230,grants,bee,0.4889,5
+230,grants,hive,0.4732,6
+230,grants,iot based,0.4732,7
+230,grants,iot,0.4353,8
+231,grants,consultancy work,1.0,1
+231,grants,consultancy,0.9206,2
+231,grants,work,0.4007,3
+232,grants,consultancy work,1.0,1
+232,grants,consultancy,0.9206,2
+232,grants,work,0.4007,3
+233,grants,consultancy knowledge,0.6715,1
+233,grants,educational trainer,0.566,2
+233,grants,knowledge sharing,0.5577,3
+233,grants,manufacturing educational,0.555,4
+233,grants,consultancy,0.5387,5
+233,grants,trainer kit,0.4714,6
+233,grants,sharing development,0.4503,7
+233,grants,development manufacturing,0.4477,8
+234,grants,mobile stp,1.0,1
+234,grants,stp,0.7245,2
+234,grants,mobile,0.6162,3
+235,grants,iot base,0.6701,1
+235,grants,air pollution,0.5885,2
+235,grants,pollution control,0.5713,3
+235,grants,iot,0.5499,4
+235,grants,pollution,0.421,5
+235,grants,base air,0.4144,6
+235,grants,air,0.2996,7
+235,grants,base,0.259,8
+236,grants,borewell zigbee,0.6952,1
+236,grants,rescue borewell,0.5444,2
+236,grants,zigbee,0.5385,3
+236,grants,zigbee long,0.5126,4
+236,grants,child rescue,0.5039,5
+236,grants,range application,0.4092,6
+236,grants,long range,0.3593,7
+236,grants,borewell,0.333,8
+237,grants,iot based,0.6068,1
+237,grants,water management,0.6014,2
+237,grants,iot,0.5625,3
+237,grants,management website,0.4475,4
+237,grants,based water,0.4365,5
+237,grants,website,0.3108,6
+237,grants,water,0.2803,7
+237,grants,management,0.2027,8
+238,grants,smart pulmonary,0.7059,1
+238,grants,pulmonary function,0.6222,2
+238,grants,function analyzer,0.5415,3
+238,grants,pulmonary,0.4767,4
+238,grants,analyzer,0.4398,5
+238,grants,function,0.2479,6
+238,grants,smart,0.2184,7
+239,grants,management floods,0.6509,1
+239,grants,river management,0.6051,2
+239,grants,ai prediction,0.5483,3
+239,grants,floods,0.5259,4
+239,grants,ml ai,0.51,5
+239,grants,prediction management,0.5091,6
+239,grants,management ml,0.451,7
+239,grants,ai,0.4485,8
+240,grants,student engagement,0.7245,1
+240,grants,engagement prediction,0.697,2
+240,grants,learning platform,0.5563,3
+240,grants,student,0.456,4
+240,grants,engagement,0.4294,5
+240,grants,learning,0.3653,6
+240,grants,prediction learning,0.3182,7
+240,grants,prediction,0.3181,8
+241,grants,conversion hearing,0.6299,1
+241,grants,speech sign,0.5814,2
+241,grants,speech impair,0.5572,3
+241,grants,hearing speech,0.5396,4
+241,grants,sign language,0.5236,5
+241,grants,language conversion,0.4603,6
+241,grants,hearing,0.4156,7
+241,grants,speech,0.361,8
+242,grants,self diagnosis,0.8379,1
+242,grants,diagnosis mental,0.7824,2
+242,grants,mental illness,0.768,3
+242,grants,diagnosis,0.5881,4
+242,grants,illness,0.5319,5
+242,grants,mental,0.5152,6
+242,grants,self,0.5134,7
+243,grants,rural electrification,0.5448,1
+243,grants,renewable energy,0.4734,2
+243,grants,grids rural,0.4659,3
+243,grants,electrification,0.4321,4
+243,grants,renewable,0.3834,5
+243,grants,dc nano,0.3786,6
+243,grants,analysis renewable,0.3549,7
+243,grants,nano grids,0.3534,8
+245,grants,electric vehicles,0.6196,1
+245,grants,power electronics,0.4956,2
+245,grants,electronics electric,0.4612,3
+245,grants,electronics,0.3721,4
+245,grants,role power,0.3578,5
+245,grants,vehicles new,0.3483,6
+245,grants,vehicles,0.3425,7
+245,grants,electric,0.3129,8
+246,grants,things roadmap,0.6704,1
+246,grants,roadmap research,0.6318,2
+246,grants,internet things,0.5854,3
+246,grants,product development,0.5482,4
+246,grants,roadmap,0.5363,5
+246,grants,research product,0.4583,6
+246,grants,development,0.3608,7
+246,grants,internet,0.3321,8
+247,grants,kannada hand,0.6643,1
+247,grants,hand write,0.5857,2
+247,grants,write recognition,0.5685,3
+247,grants,kannada,0.4978,4
+247,grants,deep learning,0.3976,5
+247,grants,hand,0.376,6
+247,grants,recognition deep,0.3468,7
+247,grants,write,0.3391,8
+244,grants,ironing cart,0.8021,1
+244,grants,solar ironing,0.774,2
+244,grants,ironing,0.5141,3
+244,grants,solar,0.4914,4
+244,grants,cart,0.4749,5
+248,grants,abhiyan viilage,0.6976,1
+248,grants,bharat abhiyan,0.6838,2
+248,grants,unnat bharat,0.6644,3
+248,grants,viilage project,0.5975,4
+248,grants,bharat,0.5794,5
+248,grants,viilage,0.4481,6
+248,grants,abhiyan,0.4396,7
+248,grants,project,0.3872,8
+249,grants,air purifier,0.703,1
+249,grants,solar air,0.6115,2
+249,grants,purifier,0.5045,3
+249,grants,development solar,0.4528,4
+249,grants,solar,0.3421,5
+249,grants,air,0.3138,6
+249,grants,design development,0.1409,7
+249,grants,design,0.1331,8
+250,grants,lapkit design,0.68,1
+250,grants,laptop electronics,0.62,2
+250,grants,base laptop,0.5778,3
+250,grants,lapkit,0.577,4
+250,grants,laptop,0.5155,5
+250,grants,electronics kit,0.4654,6
+250,grants,rural student,0.3882,7
+250,grants,cost raspberry,0.3663,8
+251,grants,indian calendar,0.8767,1
+251,grants,calendar systems,0.8223,2
+251,grants,calendar,0.7532,3
+251,grants,investigation indian,0.4374,4
+251,grants,indian,0.3169,5
+251,grants,systems,0.2864,6
+251,grants,investigation,0.1923,7
+254,grants,195026d02 sense,0.5481,1
+254,grants,climate energy,0.4551,2
+254,grants,energy water,0.4259,3
+254,grants,195026d02,0.3696,4
+254,grants,century climate,0.3675,5
+254,grants,climate,0.3642,6
+254,grants,water food,0.36,7
+254,grants,sense related,0.3534,8
+256,grants,plant decay,0.5398,1
+256,grants,deep learning,0.4385,2
+256,grants,iot,0.4294,3
+256,grants,decay detection,0.4293,4
+256,grants,iot base,0.4169,5
+256,grants,decay,0.3912,6
+256,grants,lightweight deep,0.3669,7
+256,grants,early plant,0.3159,8
+257,grants,variable viscosity,0.5721,1
+257,grants,stability rheological,0.5544,2
+257,grants,porous channel,0.5102,3
+257,grants,viscosity,0.5081,4
+257,grants,rheological fluid,0.4702,5
+257,grants,vertical porous,0.4579,6
+257,grants,fluid vertical,0.3873,7
+257,grants,rheological,0.3608,8
+258,grants,chalcogenide thermoelectric,0.8279,1
+258,grants,thermoelectric application,0.703,2
+258,grants,thermoelectric,0.6711,3
+258,grants,metal chalcogenide,0.4805,4
+258,grants,tellurium free,0.4613,5
+258,grants,chalcogenide,0.4027,6
+258,grants,development tellurium,0.4001,7
+258,grants,tellurium,0.385,8
+259,grants,fiber sensor,0.6502,1
+259,grants,optical fiber,0.5014,2
+259,grants,shock index,0.501,3
+259,grants,sensor correlation,0.4405,4
+259,grants,correlation shock,0.4259,5
+259,grants,loss optical,0.4205,6
+259,grants,fiber,0.3596,7
+259,grants,blood loss,0.3413,8
+260,grants,sewage treatment,0.6147,1
+260,grants,sector india,0.5052,2
+260,grants,sewage,0.4845,3
+260,grants,rural sector,0.4659,4
+260,grants,setup rural,0.3914,5
+260,grants,treatment plant,0.3879,6
+260,grants,plant setup,0.3329,7
+260,grants,india,0.3293,8
+261,grants,internet things,0.6727,1
+261,grants,things roadmap,0.6721,2
+261,grants,roadmap research,0.5795,3
+261,grants,product development,0.5399,4
+261,grants,roadmap,0.4997,5
+261,grants,research product,0.4606,6
+261,grants,internet,0.399,7
+261,grants,development,0.3539,8
+262,grants,electric vehicles,0.6196,1
+262,grants,power electronics,0.4956,2
+262,grants,electronics electric,0.4612,3
+262,grants,electronics,0.3721,4
+262,grants,role power,0.3578,5
+262,grants,vehicles new,0.3483,6
+262,grants,vehicles,0.3425,7
+262,grants,electric,0.3129,8
+263,grants,authenticated waste,0.7579,1
+263,grants,waste management,0.703,2
+263,grants,renewable resource,0.5726,3
+263,grants,management renewable,0.5551,4
+263,grants,waste,0.5223,5
+263,grants,renewable,0.4868,6
+263,grants,authenticated,0.3158,7
+263,grants,resource,0.2313,8
+264,grants,hydrophonics farming,0.6894,1
+264,grants,nutrient allocation,0.5431,2
+264,grants,nutrient availability,0.53,3
+264,grants,automated hydrophonics,0.525,4
+264,grants,environment agriculture,0.4986,5
+264,grants,agriculture,0.4775,6
+264,grants,farming versatile,0.4623,7
+264,grants,farming,0.4346,8
+265,grants,electrochemical detection,0.5497,1
+265,grants,biosensor base,0.5269,2
+265,grants,film biosensor,0.5225,3
+265,grants,copper zeolite,0.4851,4
+265,grants,biosensor,0.484,5
+265,grants,electrode electrochemical,0.4828,6
+265,grants,carbon electrode,0.4764,7
+265,grants,dopamine waste,0.4705,8
+266,grants,sewer pipelines,0.6304,1
+266,grants,clog remover,0.5967,2
+266,grants,narrow sewer,0.5247,3
+266,grants,pipelines,0.5206,4
+266,grants,base clog,0.5025,5
+266,grants,clog,0.46,6
+266,grants,vision base,0.4501,7
+266,grants,sewer,0.4364,8
+267,grants,hatch iot,0.6849,1
+267,grants,egg incubator,0.6843,2
+267,grants,incubator hatch,0.5964,3
+267,grants,incubator,0.5186,4
+267,grants,iot,0.49,5
+267,grants,egg,0.4677,6
+267,grants,chicken egg,0.4649,7
+267,grants,implementation chicken,0.4371,8
+268,grants,power plant,0.5011,1
+268,grants,jal urja,0.4755,2
+268,grants,urja mitra,0.4481,3
+268,grants,mitra skill,0.4372,4
+268,grants,hydro power,0.4246,5
+268,grants,development program,0.3837,6
+268,grants,skill development,0.3672,7
+268,grants,jal,0.3592,8
+269,grants,iron cart,0.6695,1
+269,grants,iot base,0.6034,2
+269,grants,solar iron,0.5735,3
+269,grants,iot,0.509,4
+269,grants,base solar,0.4246,5
+269,grants,cart,0.4174,6
+269,grants,iron,0.3846,7
+269,grants,solar,0.3296,8
+270,grants,vegetable harvesting,0.7282,1
+270,grants,harvesting device,0.6589,2
+270,grants,motorized fruit,0.6553,3
+270,grants,fruit vegetable,0.5626,4
+270,grants,harvesting,0.541,5
+270,grants,solar base,0.521,6
+270,grants,base motorized,0.4339,7
+270,grants,vegetable,0.4323,8
+271,grants,mosquito trap,0.6746,1
+271,grants,air cooler,0.5003,2
+271,grants,mosquito,0.4749,3
+271,grants,solar base,0.4688,4
+271,grants,cum mosquito,0.4654,5
+271,grants,mini air,0.4432,6
+271,grants,solar,0.3694,7
+271,grants,trap,0.3535,8
+272,grants,vehicle wirin,0.6301,1
+272,grants,wirin wipro,0.5497,2
+272,grants,network consortium,0.5053,3
+272,grants,connected autonomous,0.4848,4
+272,grants,wipro iisc,0.4755,5
+272,grants,wirin,0.4742,6
+272,grants,wipro,0.474,7
+272,grants,innovation network,0.4477,8
+273,grants,material acceleration,0.5138,1
+273,grants,dst iit,0.4539,2
+273,grants,platform materials,0.4423,3
+273,grants,acceleration platform,0.4275,4
+273,grants,iit kanpur,0.4085,5
+273,grants,energy material,0.4027,6
+273,grants,dst,0.3634,7
+273,grants,iit,0.3131,8
+274,grants,gauntlet lymphedema,0.7609,1
+274,grants,exertion gauntlet,0.6103,2
+274,grants,gauntlet,0.507,3
+274,grants,lymphedema,0.4974,4
+274,grants,cost exertion,0.3826,5
+274,grants,exertion,0.2449,6
+274,grants,design experimentation,0.2393,7
+274,grants,design,0.2246,8
+277,grants,iot cyber,0.8264,1
+277,grants,cyber security,0.7027,2
+277,grants,iot,0.6511,3
+277,grants,security,0.4574,4
+277,grants,cyber,0.3967,5
+8,grants,rheological thermal,0.7068,1
+8,grants,thermal map,0.6153,2
+8,grants,simultaneous rheological,0.5951,3
+8,grants,rheological,0.5559,4
+8,grants,cellular interior,0.4925,5
+8,grants,map cellular,0.3909,6
+8,grants,thermal,0.383,7
+8,grants,map,0.2395,8
+276,grants,computer networks,0.7224,1
+276,grants,artificial intelligence,0.7068,2
+276,grants,intelligence computer,0.6062,3
+276,grants,networks,0.5972,4
+276,grants,intelligence,0.3801,5
+276,grants,computer,0.3634,6
+276,grants,artificial,0.2829,7
+278,grants,penetrating radar,0.5988,1
+278,grants,ground penetrating,0.5402,2
+278,grants,radar field,0.5139,3
+278,grants,radar,0.4381,4
+278,grants,field reconfiguration,0.3661,5
+278,grants,reconfiguration capability,0.3562,6
+278,grants,reconfiguration,0.298,7
+278,grants,penetrating,0.293,8
+280,grants,program 2023,0.5107,1
+280,grants,tpn 89936,0.5099,2
+280,grants,college 2023,0.5016,3
+280,grants,fst college,0.5007,4
+280,grants,2023 tpn,0.4924,5
+280,grants,tpn,0.4402,6
+280,grants,89936 file,0.4398,7
+280,grants,file sr,0.3833,8
+281,grants,ge2sb2te5 materials,0.7658,1
+281,grants,ge2sb2te5,0.6755,2
+281,grants,dope ge2sb2te5,0.6754,3
+281,grants,materials neuromorphic,0.5788,4
+281,grants,neuromorphic computing,0.5742,5
+281,grants,neuromorphic,0.4445,6
+281,grants,transition metal,0.4434,7
+281,grants,metal dope,0.331,8
+282,grants,application number,0.7881,1
+282,grants,number 1691566506,0.781,2
+282,grants,1691566506,0.7022,3
+282,grants,application,0.5428,4
+282,grants,number,0.4002,5
+283,grants,arkesh technology,0.7909,1
+283,grants,arkesh,0.6438,2
+283,grants,technology private,0.6067,3
+283,grants,private limited,0.5427,4
+283,grants,private,0.4218,5
+283,grants,limited,0.3755,6
+283,grants,technology,0.3346,7
+284,grants,modeling heat,0.4902,1
+284,grants,heat transfer,0.4622,2
+284,grants,transfer porous,0.4337,3
+284,grants,deep neural,0.4291,4
+284,grants,multiphysic modeling,0.4165,5
+284,grants,porous medium,0.4022,6
+284,grants,neural network,0.3666,7
+284,grants,path multiphysic,0.3358,8
+285,grants,contactless patient,0.6177,1
+285,grants,screen triage,0.5922,2
+285,grants,patient monitoring,0.5849,3
+285,grants,monitoring screen,0.534,4
+285,grants,invasive contactless,0.4744,5
+285,grants,contactless,0.4045,6
+285,grants,triage,0.3711,7
+285,grants,screen,0.3679,8
+286,grants,malaria sense,0.5594,1
+286,grants,polymer nanocomposite,0.5287,2
+286,grants,nanocomposite,0.4848,3
+286,grants,nanocomposite base,0.4491,4
+286,grants,rapid malaria,0.4471,5
+286,grants,malaria,0.444,6
+286,grants,sense device,0.3744,7
+286,grants,development polymer,0.3684,8
+287,grants,smart bed,0.625,1
+287,grants,monitoring smart,0.4811,2
+287,grants,bed generate,0.4678,3
+287,grants,intrusive monitoring,0.464,4
+287,grants,peronalize health,0.4573,5
+287,grants,health profile,0.3796,6
+287,grants,artificial intelligence,0.3524,7
+287,grants,monitoring,0.33,8
+288,grants,implementation incubation,0.6955,1
+288,grants,msme innovative,0.6538,2
+288,grants,incubation component,0.6012,3
+288,grants,component msme,0.5599,4
+288,grants,msme,0.4705,5
+288,grants,incubation,0.4506,6
+288,grants,innovative scheme,0.4339,7
+288,grants,innovative,0.3472,8
+289,grants,virtual presence,0.7179,1
+289,grants,presence robo,0.6931,2
+289,grants,ai base,0.579,3
+289,grants,presence,0.5506,4
+289,grants,base virtual,0.4957,5
+289,grants,ai,0.4914,6
+289,grants,virtual,0.4683,7
+289,grants,robo,0.4294,8
+290,grants,psychology chatbot,0.9033,1
+290,grants,chatbot,0.7256,2
+290,grants,mindmate psychology,0.6818,3
+290,grants,mindmate,0.5177,4
+290,grants,psychology,0.443,5
+291,grants,visually impaired,0.6171,1
+291,grants,impaired access,0.5491,2
+291,grants,assistive tool,0.5092,3
+291,grants,impaired,0.4785,4
+291,grants,news realm,0.4707,5
+291,grants,access information,0.4324,6
+291,grants,assistive,0.3928,7
+291,grants,information news,0.3925,8
+292,grants,electric vehicles,0.6393,1
+292,grants,innovation electric,0.6044,2
+292,grants,mobility ai,0.5737,3
+292,grants,ai driven,0.5243,4
+292,grants,tomorrowâ mobility,0.4662,5
+292,grants,driven innovation,0.4658,6
+292,grants,ai,0.4138,7
+292,grants,mobility,0.4054,8
+293,grants,secure cloud,0.569,1
+293,grants,day fdp,0.5686,2
+293,grants,fdp data,0.5254,3
+293,grants,fdp,0.4951,4
+293,grants,cloud computing,0.4644,5
+293,grants,cloud,0.4239,6
+293,grants,tools secure,0.4103,7
+293,grants,data science,0.3745,8
+294,grants,day fdp,0.6567,1
+294,grants,analytics healthcare,0.6246,2
+294,grants,fdp big,0.5481,3
+294,grants,fdp,0.5444,4
+294,grants,big data,0.4823,5
+294,grants,healthcare,0.4295,6
+294,grants,data analytics,0.3957,7
+294,grants,analytics,0.3875,8
+295,grants,bioelectronics biosensor,0.7231,1
+295,grants,materials bioelectronics,0.635,2
+295,grants,biosensor,0.6304,3
+295,grants,bioelectronics,0.5096,4
+295,grants,2d materials,0.498,5
+295,grants,emerge 2d,0.2921,6
+295,grants,2d,0.2484,7
+295,grants,materials,0.2085,8
+296,grants,gan semiconductor,0.7697,1
+296,grants,future gan,0.5996,2
+296,grants,gan,0.5862,3
+296,grants,semiconductor technology,0.5499,4
+296,grants,semiconductor,0.4595,5
+296,grants,growth sustainable,0.4465,6
+296,grants,technology growth,0.438,7
+296,grants,sustainable society,0.3577,8
+297,grants,farming soil,0.6279,1
+297,grants,backward farmer,0.5781,2
+297,grants,soil water,0.5646,3
+297,grants,farming,0.5288,4
+297,grants,round farming,0.5079,5
+297,grants,farmer,0.4858,6
+297,grants,water socio,0.4663,7
+297,grants,soil,0.4144,8
+298,grants,smart aeroponics,1.0,1
+298,grants,aeroponics,0.829,2
+298,grants,smart,0.3305,3
+299,grants,fuel sensor,0.6561,1
+299,grants,flex fuel,0.6005,2
+299,grants,enable flex,0.3813,3
+299,grants,modelling implementation,0.3619,4
+299,grants,sensor,0.3601,5
+299,grants,cost enable,0.3127,6
+299,grants,flex,0.3016,7
+299,grants,fuel,0.2703,8
+300,grants,cyber security,0.5799,1
+300,grants,security industry,0.5408,2
+300,grants,atal academy,0.5044,3
+300,grants,programme cyber,0.4607,4
+300,grants,faculty development,0.4523,5
+300,grants,academy faculty,0.4169,6
+300,grants,development programme,0.4094,7
+300,grants,security,0.3989,8
+301,grants,sensing communication,0.6254,1
+301,grants,intergrated sensing,0.5924,2
+301,grants,sensing,0.4973,3
+301,grants,soc design,0.4774,4
+301,grants,design intergrated,0.4387,5
+301,grants,atal academy,0.4286,6
+301,grants,programme soc,0.3661,7
+301,grants,soc,0.347,8
+21,grants,noma generalized,0.5306,1
+21,grants,generalized boolean,0.5134,2
+21,grants,access noma,0.4638,3
+21,grants,boolean bent,0.4606,4
+21,grants,boolean,0.3901,5
+21,grants,efficient code,0.382,6
+21,grants,orthogonal multiple,0.3699,7
+21,grants,code non,0.3661,8
+302,grants,quantum photonics,0.7587,1
+302,grants,photonics computing,0.7036,2
+302,grants,photonics,0.5915,3
+302,grants,programme quantum,0.5721,4
+302,grants,quantum,0.5148,5
+302,grants,computing communications,0.4316,6
+302,grants,communications,0.2987,7
+302,grants,atal academy,0.2983,8
+303,grants,protein peanut,0.4747,1
+303,grants,peanut meal,0.4411,2
+303,grants,electrical discharge,0.4159,3
+303,grants,peanut,0.4122,4
+303,grants,extraction protein,0.4066,5
+303,grants,voltage electrical,0.3723,6
+303,grants,high voltage,0.356,7
+303,grants,discharge base,0.3443,8
+304,grants,video proctoring,0.7464,1
+304,grants,proctoring online,0.7337,2
+304,grants,proctoring,0.6342,3
+304,grants,base proctoring,0.5962,4
+304,grants,examination video,0.5943,5
+304,grants,online examination,0.5862,6
+304,grants,examination,0.4563,7
+304,grants,ai base,0.4134,8
+305,grants,processing pipeline,0.564,1
+305,grants,bottleneck scalability,0.548,2
+305,grants,optimize big,0.5032,3
+305,grants,pipeline comprehensive,0.5028,4
+305,grants,pipeline,0.4871,5
+305,grants,performance bottleneck,0.4838,6
+305,grants,bottleneck,0.4563,7
+305,grants,scalability challenge,0.4231,8
+306,grants,photodetector swir,0.684,1
+306,grants,sn alloy,0.5311,2
+306,grants,suitable photodetector,0.5268,3
+306,grants,swir range,0.5064,4
+306,grants,ge sn,0.4965,5
+306,grants,photodetector,0.4784,6
+306,grants,swir,0.389,7
+306,grants,sn,0.3712,8
+307,grants,smart docking,0.614,1
+307,grants,digital detox,0.5955,2
+307,grants,detox user,0.5428,3
+307,grants,docking,0.5321,4
+307,grants,mobile addiction,0.5149,5
+307,grants,addiction smart,0.4888,6
+307,grants,detox,0.4837,7
+307,grants,addiction,0.4368,8
+308,grants,livelihood entrepreneurship,0.7322,1
+308,grants,tourism livelihood,0.7085,2
+308,grants,rural tourism,0.6139,3
+308,grants,entrepreneurship developmentâ,0.6109,4
+308,grants,opportunity rural,0.5612,5
+308,grants,entrepreneurship,0.5401,6
+308,grants,livelihood,0.5374,7
+308,grants,tourism,0.4444,8
+309,grants,seed sprout,0.6675,1
+309,grants,automate seed,0.6072,2
+309,grants,sprout,0.5397,3
+309,grants,sprout cater,0.5088,4
+309,grants,seed,0.4899,5
+309,grants,elderly athletic,0.3997,6
+309,grants,need elderly,0.3434,7
+309,grants,innovative automate,0.3235,8
+310,grants,gan semiconductor,0.664,1
+310,grants,mosfet physics,0.4877,2
+310,grants,future gan,0.4824,3
+310,grants,semiconductor sustainable,0.471,4
+310,grants,electronic mosfet,0.4638,5
+310,grants,gan,0.4484,6
+310,grants,qubit frontend,0.4389,7
+310,grants,mosfet,0.4055,8
+311,grants,biofilter conventional,0.6113,1
+311,grants,base biofilter,0.5991,2
+311,grants,biofilter,0.5829,3
+311,grants,waste water,0.5326,4
+311,grants,effluent waste,0.4947,5
+311,grants,biochemical inspire,0.3971,6
+311,grants,farming application,0.3643,7
+311,grants,water poly,0.364,8
+312,grants,rural entrepreneurship,0.7681,1
+312,grants,rural development,0.6124,2
+312,grants,establish rural,0.6098,3
+312,grants,sustainable rural,0.6,4
+312,grants,entrepreneurship cell,0.5849,5
+312,grants,entrepreneurship,0.5483,6
+312,grants,innovation hub,0.5076,7
+312,grants,local innovation,0.4843,8
+313,grants,livelihood entrepreneurship,0.734,1
+313,grants,tourism livelihood,0.7052,2
+313,grants,rural tourism,0.6044,3
+313,grants,entrepreneurship development,0.5937,4
+313,grants,opportunity rural,0.5654,5
+313,grants,livelihood,0.5346,6
+313,grants,entrepreneurship,0.5303,7
+313,grants,create opportunity,0.4374,8
+314,grants,insect trap,0.6303,1
+314,grants,trap cropfield,0.5893,2
+314,grants,cropfield channasandra,0.5121,3
+314,grants,effective insect,0.4626,4
+314,grants,channasandra village,0.4395,5
+314,grants,insect,0.4125,6
+314,grants,trap,0.3855,7
+314,grants,development installation,0.3451,8
+315,grants,livelihoods rural,0.7251,1
+315,grants,sustainable livelihoods,0.6854,2
+315,grants,rural agripreneurship,0.658,3
+315,grants,farming sustainable,0.6521,4
+315,grants,livelihoods,0.5772,5
+315,grants,farming,0.523,6
+315,grants,round farming,0.4537,7
+315,grants,rural,0.429,8
+316,grants,popularizing electronics,0.6384,1
+316,grants,attractive experiment,0.5937,2
+316,grants,electronics school,0.5506,3
+316,grants,experiment,0.5105,4
+316,grants,electronics,0.4886,5
+316,grants,kid basic,0.4195,6
+316,grants,school kid,0.4067,7
+316,grants,basic attractive,0.3747,8
+318,grants,atal fdp,0.6304,1
+318,grants,online atal,0.5338,2
+318,grants,satellite image,0.522,3
+318,grants,atal,0.5036,4
+318,grants,intelligence satellite,0.4975,5
+318,grants,fdp artificial,0.4402,6
+318,grants,aicte approve,0.3799,7
+318,grants,image processing,0.3603,8
+319,grants,sanitary napkins,0.7097,1
+319,grants,sanitary,0.6358,2
+319,grants,friendly sanitary,0.6358,3
+319,grants,napkins,0.5781,4
+319,grants,woman nurture,0.4506,5
+319,grants,nurture woman,0.4469,6
+319,grants,eco friendly,0.4009,7
+319,grants,nurture earth,0.3349,8
+320,grants,artisans stop,0.5883,1
+320,grants,empower artisans,0.5701,2
+320,grants,stop export,0.5444,3
+320,grants,export support,0.5164,4
+320,grants,export,0.4639,5
+320,grants,artisans,0.4584,6
+320,grants,18 trades,0.3531,7
+320,grants,pm vishwakarma,0.3416,8
+321,grants,base helmet,0.662,1
+321,grants,samridh military,0.5552,2
+321,grants,helmet,0.5469,3
+321,grants,samridh,0.4397,4
+321,grants,ai base,0.4154,5
+321,grants,advanced ai,0.3625,6
+321,grants,military advanced,0.3014,7
+321,grants,ai,0.2893,8
+322,grants,leaf tissue,1.0,1
+322,grants,leaf,0.7298,2
+322,grants,tissue,0.7128,3
+15,grants,molecular simulation,0.6454,1
+15,grants,nucleation molecular,0.5418,2
+15,grants,crystal nucleation,0.5111,3
+15,grants,polymorphism crystal,0.4956,4
+15,grants,molecular,0.4853,5
+15,grants,solid molecular,0.4743,6
+15,grants,study solvent,0.4619,7
+15,grants,solvent,0.4421,8
+323,grants,farming soil,0.6279,1
+323,grants,backward farmer,0.5781,2
+323,grants,soil water,0.5646,3
+323,grants,farming,0.5288,4
+323,grants,round farming,0.5079,5
+323,grants,farmer,0.4858,6
+323,grants,water socio,0.4663,7
+323,grants,soil,0.4144,8
+324,grants,smart docking,0.614,1
+324,grants,digital detox,0.5955,2
+324,grants,detox user,0.5428,3
+324,grants,docking,0.5321,4
+324,grants,mobile addiction,0.5149,5
+324,grants,addiction smart,0.4888,6
+324,grants,detox,0.4837,7
+324,grants,addiction,0.4368,8
+327,grants,water generator,0.8536,1
+327,grants,atmospheric water,0.6922,2
+327,grants,generator,0.5301,3
+327,grants,atmospheric,0.4509,4
+327,grants,water,0.3502,5
+328,grants,atal advanced,0.6116,1
+328,grants,atal,0.5076,2
+328,grants,advanced semiconductor,0.494,3
+328,grants,advanced fdp,0.4899,4
+328,grants,fdp gen,0.4808,5
+328,grants,fdp,0.3918,6
+328,grants,gen chip,0.3106,7
+328,grants,chip design,0.3103,8
+329,grants,exposer absorption,0.7896,1
+329,grants,electromagnetic exposer,0.7394,2
+329,grants,absorption study,0.6657,3
+329,grants,absorption,0.5737,4
+329,grants,assessment electromagnetic,0.5498,5
+329,grants,exposer,0.4791,6
+329,grants,electromagnetic,0.4678,7
+329,grants,study biological,0.2365,8
+330,grants,iot device,0.6663,1
+330,grants,iot,0.6029,2
+330,grants,classification specie,0.5839,3
+330,grants,remote monitoring,0.5744,4
+330,grants,monitoring classification,0.556,5
+330,grants,device remote,0.5108,6
+330,grants,classification,0.4437,7
+330,grants,monitoring,0.3936,8
+331,grants,innovation incubation,0.8281,1
+331,grants,invention innovation,0.7554,2
+331,grants,center invention,0.6777,3
+331,grants,innovation,0.6084,4
+331,grants,invention,0.5544,5
+331,grants,incubation,0.4218,6
+331,grants,center,0.2988,7
+332,grants,grading cashew,0.6698,1
+332,grants,cashew kernel,0.6167,2
+332,grants,detection grading,0.603,3
+332,grants,kernel ai,0.4725,4
+332,grants,automate detection,0.4567,5
+332,grants,cashew,0.4498,6
+332,grants,grading,0.388,7
+332,grants,ai approach,0.3728,8
+333,grants,subjective analysis,0.631,1
+333,grants,objective analysis,0.6123,2
+333,grants,replace subjective,0.5828,3
+333,grants,test objective,0.5291,4
+333,grants,use ai,0.4974,5
+333,grants,subjective,0.4973,6
+333,grants,objective,0.4386,7
+333,grants,seriplane test,0.438,8
+334,grants,bldc stepper,0.6383,1
+334,grants,stepper motor,0.5512,2
+334,grants,drive electronics,0.4433,3
+334,grants,base bldc,0.4386,4
+334,grants,stepper,0.4022,5
+334,grants,motor drive,0.3946,6
+334,grants,ciontrol foc,0.3887,7
+334,grants,orient ciontrol,0.378,8
+335,grants,bldc stepper,0.6202,1
+335,grants,stepper motor,0.4908,2
+335,grants,control foc,0.4491,3
+335,grants,base bldc,0.4262,4
+335,grants,foc base,0.4039,5
+335,grants,drive electronics,0.3942,6
+335,grants,bldc,0.368,7
+335,grants,stepper,0.3633,8
+336,grants,scan enhancement,0.64,1
+336,grants,array antenna,0.5971,2
+336,grants,phase array,0.5655,3
+336,grants,scan,0.45,4
+336,grants,antenna,0.4362,5
+336,grants,enhancement technique,0.423,6
+336,grants,technique phase,0.3374,7
+336,grants,array,0.2919,8
+337,grants,beam antenna,0.5151,1
+337,grants,sandwich lens,0.462,2
+337,grants,squint compensation,0.4419,3
+337,grants,streere beam,0.44,4
+337,grants,lens enhanced,0.4371,5
+337,grants,gain squint,0.3936,6
+337,grants,lens,0.3646,7
+337,grants,antenna,0.3634,8
+338,grants,detection rubber,0.562,1
+338,grants,rubber seal,0.5077,2
+338,grants,seal production,0.4976,3
+338,grants,defect detection,0.4913,4
+338,grants,rubber,0.3666,5
+338,grants,precision defect,0.3654,6
+338,grants,automation,0.3508,7
+338,grants,seal,0.3425,8
+339,grants,threat prediction,0.624,1
+339,grants,automated threat,0.5701,2
+339,grants,ai base,0.4997,3
+339,grants,incident response,0.4472,4
+339,grants,detection incident,0.4029,5
+339,grants,threat,0.3979,6
+339,grants,ai,0.3847,7
+339,grants,base automated,0.364,8
+340,grants,waste management,0.5439,1
+340,grants,bulk waste,0.5409,2
+340,grants,portal bulk,0.4524,3
+340,grants,waste,0.4103,4
+340,grants,android ios,0.3953,5
+340,grants,ios application,0.3934,6
+340,grants,management msgp,0.3781,7
+340,grants,mobile android,0.3739,8
+341,grants,sensor fusion,0.5605,1
+341,grants,fusion algorithms,0.4812,2
+341,grants,target detection,0.479,3
+341,grants,drive sensor,0.476,4
+341,grants,algorithms target,0.3814,5
+341,grants,recognition parameter,0.3756,6
+341,grants,al drive,0.365,7
+341,grants,sensor,0.3478,8
+342,grants,digital demodulator,0.7652,1
+342,grants,demodulator variable,0.6396,2
+342,grants,demodulator,0.5855,3
+342,grants,data rate,0.505,4
+342,grants,digital,0.3955,5
+342,grants,rate applications,0.3874,6
+342,grants,variable data,0.3728,7
+342,grants,development digital,0.3691,8
+343,grants,smart tarpulin,1.0,1
+343,grants,tarpulin,0.8249,2
+343,grants,smart,0.4215,3
+344,grants,pulselife multiparameter,0.8435,1
+344,grants,multiparameter diagnostic,0.6739,2
+344,grants,diagnostic device,0.6237,3
+344,grants,pulselife,0.593,4
+344,grants,multiparameter,0.5019,5
+344,grants,diagnostic,0.4551,6
+344,grants,device,0.2912,7
+345,grants,radar based,0.6554,1
+345,grants,radar,0.5919,2
+345,grants,human monitoring,0.5422,3
+345,grants,ti iwr6843,0.4819,4
+345,grants,monitoring ti,0.4679,5
+345,grants,intelligent human,0.3988,6
+345,grants,iwr6843,0.3944,7
+345,grants,monitoring,0.3854,8
+346,grants,ecg rhythm,0.9055,1
+346,grants,ecg,0.6968,2
+346,grants,rhythm analysis,0.683,3
+346,grants,rhythm,0.5356,4
+346,grants,analysis,0.2892,5
+347,grants,video analysis,0.6163,1
+347,grants,vision base,0.5801,2
+347,grants,computer vision,0.5515,3
+347,grants,recorded video,0.5392,4
+347,grants,base recorded,0.4764,5
+347,grants,video,0.369,6
+347,grants,vision,0.3592,7
+347,grants,recorded,0.3006,8
+348,grants,virtual assistant,0.6263,1
+348,grants,education rural,0.4948,2
+348,grants,primary education,0.4728,3
+348,grants,ai base,0.4363,4
+348,grants,assistant support,0.4301,5
+348,grants,assistant,0.4253,6
+348,grants,rural student,0.4006,7
+348,grants,base virtual,0.3718,8
+11,grants,modeling gas,0.624,1
+11,grants,liquid flow,0.5443,2
+11,grants,pack bed,0.4107,3
+11,grants,wetting pack,0.4,4
+11,grants,mathematical modeling,0.3853,5
+11,grants,gas fine,0.3686,6
+11,grants,flow non,0.3196,7
+11,grants,gas,0.3073,8
+349,grants,snr target,0.5327,1
+349,grants,detection tracking,0.4595,2
+349,grants,target detection,0.3988,3
+349,grants,low snr,0.381,4
+349,grants,snr,0.3786,5
+349,grants,tracking,0.3566,6
+349,grants,development implementation,0.3006,7
+349,grants,real time,0.276,8
+350,grants,pg college,0.6944,1
+350,grants,fist pg,0.6895,2
+350,grants,college project,0.5881,3
+350,grants,pg,0.5428,4
+350,grants,fist,0.4685,5
+350,grants,college,0.4302,6
+350,grants,project,0.4155,7
+351,grants,community resilience,0.6669,1
+351,grants,resilience resource,0.6386,2
+351,grants,resilience,0.5471,3
+351,grants,resource centre,0.5009,4
+351,grants,chitradurga district,0.4594,5
+351,grants,district karnantaka,0.4514,6
+351,grants,establishment community,0.4152,7
+351,grants,karnantaka state,0.4128,8
+352,grants,carbon sequestration,0.6518,1
+352,grants,slags recycle,0.5265,2
+352,grants,fines co2,0.4671,3
+352,grants,carbon stabilise,0.4654,4
+352,grants,low carbon,0.4602,5
+352,grants,utilising slags,0.4534,6
+352,grants,co2,0.4462,7
+352,grants,carbon,0.444,8
+353,grants,interpolation scheme,0.5681,1
+353,grants,dimensional interpolation,0.4984,2
+353,grants,interpolation,0.4654,3
+353,grants,order model,0.4105,4
+353,grants,stochastic dynamical,0.3927,5
+353,grants,model stochastic,0.3922,6
+353,grants,reduce order,0.3101,7
+353,grants,stochastic,0.294,8
+354,grants,vehicle batteries,0.4701,1
+354,grants,digital twin,0.3896,2
+354,grants,twin systems,0.3886,3
+354,grants,electric vehicle,0.3633,4
+354,grants,power electronic,0.3592,5
+354,grants,smart power,0.3414,6
+354,grants,batteries,0.3349,7
+354,grants,systems iot,0.3181,8
+355,grants,composite thermal,0.4995,1
+355,grants,heat sink,0.4646,2
+355,grants,performance server,0.4527,3
+355,grants,thermal management,0.4344,4
+355,grants,micro cast,0.3939,5
+355,grants,management cpu,0.3887,6
+355,grants,mwcnt alloy,0.3884,7
+355,grants,alloy composite,0.3764,8
+356,grants,transcritical co2,0.5884,1
+356,grants,ejectors refrigeration,0.5548,2
+356,grants,refrigeration applications,0.5033,3
+356,grants,gaseous mixing,0.4733,4
+356,grants,mixing shock,0.4664,5
+356,grants,waves supercritical,0.4618,6
+356,grants,co2 ejectors,0.4571,7
+356,grants,refrigeration,0.455,8
+357,grants,cooperative formation,0.6942,1
+357,grants,formation control,0.6403,2
+357,grants,multi vehicle,0.5507,3
+357,grants,design cooperative,0.5501,4
+357,grants,cooperative,0.5078,5
+357,grants,formation,0.463,6
+357,grants,vehicle systems,0.4588,7
+357,grants,control multi,0.4542,8
+358,grants,resonators rf,0.5627,1
+358,grants,rf readout,0.5448,2
+358,grants,cavity resonators,0.5333,3
+358,grants,entrant cavity,0.4839,4
+358,grants,circuits sensing,0.4285,5
+358,grants,readout circuits,0.4186,6
+358,grants,resonators,0.3732,7
+358,grants,sensing applications,0.3553,8
+359,grants,voltage lithium,0.596,1
+359,grants,lithium ion,0.5426,2
+359,grants,ion battery,0.4897,3
+359,grants,base stable,0.4718,4
+359,grants,high voltage,0.4432,5
+359,grants,lithium,0.4356,6
+359,grants,spinel base,0.4342,7
+359,grants,stable high,0.3978,8
+360,grants,downlink duplex,0.7134,1
+360,grants,duplex satellite,0.666,2
+360,grants,satellite communication,0.5898,3
+360,grants,assisted uplink,0.4963,4
+360,grants,duplex,0.4956,5
+360,grants,satellite,0.4255,6
+360,grants,uplink downlink,0.4112,7
+360,grants,communication prototyping,0.3697,8
+361,grants,volatile memory,0.4966,1
+361,grants,delafossite material,0.4853,2
+361,grants,delafossite,0.4137,3
+361,grants,memory application,0.3989,4
+361,grants,film delafossite,0.3968,5
+361,grants,material spin,0.3876,6
+361,grants,non volatile,0.3633,7
+361,grants,torque base,0.3377,8
+362,grants,metal powder,0.559,1
+362,grants,robust mechanical,0.5257,2
+362,grants,mechanical method,0.4836,3
+362,grants,powder,0.3932,4
+362,grants,fidelity metal,0.3911,5
+362,grants,method production,0.3573,6
+362,grants,mechanical,0.3389,7
+362,grants,robust,0.2959,8
+363,grants,fabricate inflatable,0.8101,1
+363,grants,inflatable structure,0.783,2
+363,grants,inflatable,0.6566,3
+363,grants,analyze fabricate,0.4889,4
+363,grants,design analyze,0.4098,5
+363,grants,fabricate,0.3988,6
+363,grants,toolkit design,0.3664,7
+363,grants,design,0.3193,8
+1,grants,deformation processing,0.4767,1
+1,grants,lightweight structural,0.4553,2
+1,grants,surface flow,0.4492,3
+1,grants,structural metal,0.4168,4
+1,grants,flow field,0.399,5
+1,grants,deformation,0.3687,6
+1,grants,situ analysis,0.3552,7
+1,grants,metal correlating,0.3427,8
+2,grants,handwritten transcript,0.6781,1
+2,grants,manuscript thigalari,0.5337,2
+2,grants,online handwritten,0.5279,3
+2,grants,transcript expert,0.522,4
+2,grants,ancient manuscript,0.5092,5
+2,grants,recognition speech,0.4944,6
+2,grants,script multimodal,0.4682,7
+2,grants,digitization ancient,0.465,8
+3,grants,defect detection,0.5545,1
+3,grants,aircraft engines,0.4845,2
+3,grants,detection aircraft,0.4536,3
+3,grants,machine learning,0.4432,4
+3,grants,base ai,0.4389,5
+3,grants,learning base,0.3989,6
+3,grants,ai technology,0.3936,7
+3,grants,engines,0.3849,8
+4,grants,assistant tutor,0.7429,1
+4,grants,tutor interaction,0.7235,2
+4,grants,tutor english,0.703,3
+4,grants,learner tutor,0.7009,4
+4,grants,tutor,0.6655,5
+4,grants,intelligent assistant,0.5659,6
+4,grants,gyani intelligent,0.5068,7
+4,grants,english learner,0.4869,8
+5,grants,nfc base,0.4557,1
+5,grants,transportation storage,0.4534,2
+5,grants,sensor platform,0.4208,3
+5,grants,nfc,0.4145,4
+5,grants,storage integrity,0.4145,5
+5,grants,lifesave pharmaceutical,0.4074,6
+5,grants,monitor transportation,0.4037,7
+5,grants,sensor,0.3577,8
+6,grants,smart agriculture,0.5902,1
+6,grants,agriculture,0.5113,2
+6,grants,millet crop,0.4686,3
+6,grants,crop deep,0.4654,4
+6,grants,climate smart,0.4472,5
+6,grants,crop,0.442,6
+6,grants,deep learning,0.3868,7
+6,grants,diseases millet,0.3714,8
+7,grants,electron microscopy,0.6218,1
+7,grants,scale electron,0.564,2
+7,grants,microscopy investigation,0.5302,3
+7,grants,supported catalyst,0.5222,4
+7,grants,catalyst,0.4927,5
+7,grants,atomic scale,0.4883,6
+7,grants,microscopy,0.4457,7
+7,grants,electron,0.3943,8
+364,grants,simulation speech,0.607,1
+364,grants,effect loudness,0.5497,2
+364,grants,background ventilation,0.5238,3
+364,grants,speech flow,0.5139,4
+364,grants,loudness background,0.4991,5
+364,grants,conversation effect,0.4699,6
+364,grants,ventilation,0.4639,7
+364,grants,flow conversation,0.463,8
+365,grants,uav autonomy,0.7769,1
+365,grants,empower uav,0.7558,2
+365,grants,uav,0.5996,3
+365,grants,autonomy innovative,0.5524,4
+365,grants,innovative control,0.5068,5
+365,grants,control design,0.4904,6
+365,grants,autonomy,0.4114,7
+365,grants,control,0.3489,8
+381,grants,molecular memristors,0.8342,1
+381,grants,memristors,0.693,2
+381,grants,nanometer scale,0.3692,3
+381,grants,energy molecular,0.3435,4
+381,grants,ultra low,0.3074,5
+381,grants,molecular,0.3034,6
+381,grants,low energy,0.2997,7
+381,grants,nanometer,0.2945,8
+26,grants,iwasawa theory,0.7897,1
+26,grants,bianchi modular,0.6885,2
+26,grants,form iwasawa,0.6584,3
+26,grants,iwasawa,0.5622,4
+26,grants,modular form,0.557,5
+26,grants,modular,0.4449,6
+26,grants,bianchi,0.3859,7
+26,grants,form,0.1937,8
+40,grants,lymphocyte infiltration,0.8376,1
+40,grants,understand lymphocyte,0.7275,2
+40,grants,lymphocyte,0.7101,3
+40,grants,solid tumour,0.5092,4
+40,grants,tumour,0.4882,5
+40,grants,infiltration solid,0.4809,6
+40,grants,infiltration,0.4203,7
+40,grants,solid,0.1394,8
+44,grants,arboreal topological,0.8497,1
+44,grants,topological phases,0.7451,2
+44,grants,arboreal,0.5507,3
+44,grants,phases,0.5137,4
+44,grants,topological,0.4656,5
+103,grants,cosmological quest,0.6566,1
+103,grants,dark matter,0.643,2
+103,grants,cosmological,0.61,3
+103,grants,black holes,0.5657,4
+103,grants,novel frontier,0.476,5
+103,grants,primordial black,0.4726,6
+103,grants,matter primordial,0.4356,7
+103,grants,holes novel,0.414,8
+108,grants,automorphic form,0.7561,1
+108,grants,automorphic,0.6163,2
+108,grants,aspect automorphic,0.6101,3
+108,grants,analytic arithmetic,0.607,4
+108,grants,form function,0.5111,5
+108,grants,arithmetic aspect,0.4434,6
+108,grants,arithmetic,0.3784,7
+108,grants,analytic,0.3696,8
+149,grants,crawler scrape,0.74,1
+149,grants,scrape datum,0.7398,2
+149,grants,web crawler,0.6457,3
+149,grants,scrape,0.5791,4
+149,grants,crawler,0.5268,5
+149,grants,datum,0.3782,6
+149,grants,web,0.2596,7
+155,grants,webdriver python,0.9235,1
+155,grants,selenium webdriver,0.8336,2
+155,grants,webdriver,0.7178,3
+155,grants,selenium,0.6645,4
+155,grants,python,0.5071,5
+173,grants,battery ultracapcitor,0.6228,1
+173,grants,energy storage,0.6009,2
+173,grants,hybrid energy,0.5346,3
+173,grants,ion battery,0.483,4
+173,grants,ultracapcitor,0.4575,5
+173,grants,hybrid,0.4427,6
+173,grants,li ion,0.381,7
+173,grants,battery,0.3738,8
+201,grants,pathogenic fungus,0.6221,1
+201,grants,fungus sing,0.5625,2
+201,grants,plant pathogenic,0.5412,3
+201,grants,fungus,0.5295,4
+201,grants,detection plant,0.5177,5
+201,grants,handheld pcr,0.4739,6
+201,grants,pcr,0.4382,7
+201,grants,pathogenic,0.325,8
+207,grants,intelligence fdp,0.8218,1
+207,grants,fdp,0.7179,2
+207,grants,artificial intelligence,0.6683,3
+207,grants,artificial,0.3665,4
+207,grants,intelligence,0.3579,5
+225,grants,beam residential,0.6215,1
+225,grants,builtup beam,0.5413,2
+225,grants,cfs builtup,0.534,3
+225,grants,residential structure,0.521,4
+225,grants,validation cfs,0.4251,5
+225,grants,beam,0.364,6
+225,grants,numerical validation,0.3387,7
+225,grants,cfs,0.3333,8
+226,grants,braille dot,0.7442,1
+226,grants,effective braille,0.7038,2
+226,grants,braille,0.6585,3
+226,grants,blind india,0.596,4
+226,grants,display deaf,0.5503,5
+226,grants,deaf blind,0.5441,6
+226,grants,dot cost,0.499,7
+226,grants,dot display,0.4574,8
+229,grants,saarci company,0.8074,1
+229,grants,consultancy project,0.7399,2
+229,grants,company consultancy,0.7247,3
+229,grants,consultancy,0.6629,4
+229,grants,saarci,0.6529,5
+229,grants,company,0.4314,6
+229,grants,project,0.3026,7
+252,grants,antenna design,0.6246,1
+252,grants,antenna,0.5125,2
+252,grants,generation wireless,0.4827,3
+252,grants,investigation antenna,0.4759,4
+252,grants,material generation,0.4667,5
+252,grants,wireless network,0.3427,6
+252,grants,performance material,0.3287,7
+252,grants,wireless,0.2662,8
+253,grants,rf oqc,0.6312,1
+253,grants,oqc outgoing,0.5797,2
+253,grants,control rf,0.5409,3
+253,grants,rf talent,0.5151,4
+253,grants,oqc,0.4402,5
+253,grants,quality control,0.4322,6
+253,grants,outgoing quality,0.4176,7
+253,grants,talent integration,0.4115,8
+255,grants,watering internet,0.7278,1
+255,grants,smart watering,0.7274,2
+255,grants,iot chanakya,0.6071,3
+255,grants,iot,0.5596,4
+255,grants,watering,0.5291,5
+255,grants,tih iot,0.5165,6
+255,grants,internet thing,0.4084,7
+255,grants,internet,0.3977,8
+275,grants,young projects,0.601,1
+275,grants,hewlett packard,0.5334,2
+275,grants,packard enterprise,0.5223,3
+275,grants,packard,0.4853,4
+275,grants,projects,0.428,5
+275,grants,catch young,0.3611,6
+275,grants,mou,0.3141,7
+275,grants,enterprise catch,0.3092,8
+279,grants,management mou,0.86,1
+279,grants,create management,0.7198,2
+279,grants,mou,0.5989,3
+279,grants,management,0.52,4
+279,grants,create,0.3473,5
+317,grants,science laboratory,0.8355,1
+317,grants,laboratory,0.7601,2
+317,grants,set science,0.7533,3
+317,grants,science,0.483,4
+317,grants,set,0.4466,5
+325,grants,game accessibility,0.691,1
+325,grants,games gesture,0.6072,2
+325,grants,accessibility disabled,0.5967,3
+325,grants,accessibility,0.5886,4
+325,grants,disabled people,0.5388,5
+325,grants,people enable,0.5357,6
+325,grants,disabled,0.4894,7
+325,grants,mobile games,0.4801,8
+326,grants,solenoid valve,0.7226,1
+326,grants,valve pneumatic,0.691,2
+326,grants,development solenoid,0.6253,3
+326,grants,pneumatic actuation,0.5663,4
+326,grants,pneumatic,0.5416,5
+326,grants,solenoid,0.4779,6
+326,grants,valve,0.4441,7
+326,grants,actuation seed,0.4135,8
+366,grants,ga2o3 field,0.5161,1
+366,grants,vertical ga2o3,0.5078,2
+366,grants,reliability design,0.441,3
+366,grants,transistor fet,0.4397,4
+366,grants,ga2o3,0.418,5
+366,grants,performance reliability,0.4148,6
+366,grants,high reliability,0.4108,7
+366,grants,reliability normally,0.4056,8
+367,grants,granular material,0.6986,1
+367,grants,dense granular,0.6872,2
+367,grants,liquid suspension,0.6632,3
+367,grants,particle liquid,0.6554,4
+367,grants,granular,0.5476,5
+367,grants,material particle,0.5274,6
+367,grants,liquid,0.4668,7
+367,grants,mechanic dense,0.4033,8
+368,grants,quantum coding,0.6242,1
+368,grants,dimensional quantum,0.4575,2
+368,grants,fault tolerant,0.4412,3
+368,grants,circuit architectures,0.4256,4
+368,grants,quantum,0.4162,5
+368,grants,coding fault,0.4105,6
+368,grants,tolerant circuit,0.409,7
+368,grants,fault,0.2906,8
+369,grants,cohesive granular,0.776,1
+369,grants,granular material,0.673,2
+369,grants,propagation cohesive,0.5589,3
+369,grants,force propagation,0.5212,4
+369,grants,granular,0.4806,5
+369,grants,mechanism force,0.4618,6
+369,grants,cohesive,0.4316,7
+369,grants,material,0.3244,8
+370,grants,aerosol speech,0.7355,1
+370,grants,transmission aerosol,0.5391,2
+370,grants,aerosol,0.4415,3
+370,grants,speech,0.3787,4
+370,grants,eulerian lagrangian,0.3619,5
+370,grants,lagrangian model,0.3536,6
+370,grants,eulerian,0.3251,7
+370,grants,lagrangian,0.2761,8
+371,grants,bridge quantum,0.6761,1
+371,grants,graph theory,0.6039,2
+371,grants,quantum physics,0.5228,3
+371,grants,quantum,0.4941,4
+371,grants,science graph,0.4579,5
+371,grants,graph,0.4341,6
+371,grants,theoretical computer,0.3931,7
+371,grants,physics theoretical,0.3911,8
+372,grants,bubbly flow,0.5618,1
+372,grants,vortex bubble,0.5566,2
+372,grants,bubble interaction,0.4976,3
+372,grants,body vortex,0.4916,4
+372,grants,induce vibration,0.4573,5
+372,grants,vibration,0.4353,6
+372,grants,vortex,0.4145,7
+372,grants,bluff body,0.3969,8
+373,grants,incontinence biomedical,0.644,1
+373,grants,conductive yarn,0.588,2
+373,grants,urinary incontinence,0.5387,3
+373,grants,incontinence,0.5109,4
+373,grants,base electrode,0.5011,5
+373,grants,electrode use,0.4957,6
+373,grants,electrode,0.4934,7
+373,grants,portable wearable,0.4856,8
+378,grants,surface irs,0.4507,1
+378,grants,ofdm otfs,0.4314,2
+378,grants,cfo estimation,0.411,3
+378,grants,reflect surface,0.3943,4
+378,grants,otfs deep,0.3754,5
+378,grants,assisted ofdm,0.3635,6
+378,grants,cfo,0.3485,7
+378,grants,sto cfo,0.3468,8
+382,grants,sensor graphene,0.6567,1
+382,grants,applicable graphene,0.5482,2
+382,grants,graphene hall,0.5334,3
+382,grants,graphene,0.5326,4
+382,grants,magnetic sensor,0.4135,5
+382,grants,circuit asic,0.3894,6
+382,grants,device cmos,0.3667,7
+382,grants,sensor ghs,0.3434,8
+383,grants,photovoltaics molecular,0.6442,1
+383,grants,tolerant photovoltaics,0.6057,2
+383,grants,molecular design,0.5159,3
+383,grants,photovoltaics,0.4965,4
+383,grants,defect tolerant,0.4279,5
+383,grants,design defect,0.371,6
+383,grants,device scale,0.3666,7
+383,grants,molecular,0.354,8
+384,grants,nanostructured electrodes,0.6986,1
+384,grants,platinum overlayer,0.6622,2
+384,grants,overlayer nanostructured,0.6338,3
+384,grants,platinum,0.4745,4
+384,grants,electrodes,0.4479,5
+384,grants,nanostructured,0.445,6
+384,grants,overlayer,0.3713,7
+385,grants,diesel exhaust,0.579,1
+385,grants,plasma hazardous,0.4681,2
+385,grants,diesel,0.4405,3
+385,grants,treatment diesel,0.438,4
+385,grants,voltage plasma,0.4323,5
+385,grants,waste blend,0.4287,6
+385,grants,hazardous pollutant,0.4139,7
+385,grants,exhaust,0.4126,8
+386,grants,rheocoalescence exploit,0.6989,1
+386,grants,rheological signature,0.686,2
+386,grants,rheocoalescence,0.6839,3
+386,grants,investigate rheological,0.6142,4
+386,grants,rheological,0.5696,5
+386,grants,fluid droplet,0.4273,6
+386,grants,droplet investigate,0.279,7
+386,grants,complex fluid,0.2778,8
+387,grants,flexible photonic,0.5947,1
+387,grants,photonic integrated,0.5294,2
+387,grants,fluid instabilities,0.3967,3
+387,grants,templated fluid,0.3687,4
+387,grants,effective flexible,0.3561,5
+387,grants,photonic,0.3449,6
+387,grants,integrated circuits,0.3291,7
+387,grants,flexible,0.3264,8
+388,grants,antibacterial graphene,0.6797,1
+388,grants,graphene cellulose,0.4814,2
+388,grants,antibacterial molecular,0.4472,3
+388,grants,resistant staphylococcus,0.4376,4
+388,grants,self antibacterial,0.4339,5
+388,grants,antibacterial,0.4335,6
+388,grants,staphylococcus aureus,0.4231,7
+388,grants,graphene,0.3991,8
+389,grants,microwave imaging,0.7546,1
+389,grants,computational microwave,0.6441,2
+389,grants,imaging meta,0.6188,3
+389,grants,meta surface,0.5865,4
+389,grants,microwave,0.4758,5
+389,grants,imaging,0.4641,6
+389,grants,surface,0.3206,7
+389,grants,meta,0.2696,8
+390,grants,control unknown,0.6502,1
+390,grants,complex specifications,0.6375,2
+390,grants,unknown systems,0.6244,3
+390,grants,systems complex,0.6073,4
+390,grants,systems,0.507,5
+390,grants,control,0.4846,6
+390,grants,specifications,0.3635,7
+390,grants,complex,0.2707,8
+391,grants,turbulent laboratory,0.673,1
+391,grants,transitionally turbulent,0.5966,2
+391,grants,turbulent,0.5726,3
+391,grants,laboratory flow,0.5439,4
+391,grants,drive modelling,0.5075,5
+391,grants,modelling transitionally,0.4018,6
+391,grants,data drive,0.398,7
+391,grants,flow,0.352,8
+393,grants,line cryogenic,0.6071,1
+393,grants,cryogenic application,0.6004,2
+393,grants,heat transfer,0.5222,3
+393,grants,cryogenic,0.4652,4
+393,grants,transfer line,0.4521,5
+393,grants,rigid transfer,0.3851,6
+393,grants,transfer analysis,0.3658,7
+393,grants,development heat,0.322,8
+395,grants,tmfd mimo,0.595,1
+395,grants,radar detection,0.5235,2
+395,grants,accurate radar,0.5225,3
+395,grants,mimo array,0.4964,4
+395,grants,radar,0.4586,5
+395,grants,diverse tmfd,0.3835,6
+395,grants,mimo,0.3557,7
+395,grants,modulated frequency,0.3462,8
+397,grants,fabrication lung,0.6686,1
+397,grants,chip bioprinting,0.6672,2
+397,grants,lung chip,0.6416,3
+397,grants,bioprinting,0.5675,4
+397,grants,lung fibrosis,0.5544,5
+397,grants,bioprinting studying,0.499,6
+397,grants,studying lung,0.4227,7
+397,grants,fabrication,0.4018,8
+398,grants,routing autonomous,0.6121,1
+398,grants,board routing,0.6017,2
+398,grants,scalable algorithms,0.5123,3
+398,grants,algorithms board,0.4966,4
+398,grants,agents stochastic,0.4927,5
+398,grants,routing,0.4659,6
+398,grants,autonomous agents,0.448,7
+398,grants,stochastic dynamic,0.4362,8
+399,grants,measurement parkinson,0.721,1
+399,grants,tremor assistive,0.712,2
+399,grants,parkinson tremor,0.7069,3
+399,grants,tremor,0.5491,4
+399,grants,parkinson,0.514,5
+399,grants,assistive device,0.4187,6
+399,grants,device design,0.2961,7
+399,grants,device,0.2753,8
+400,grants,spatial extreme,0.5046,1
+400,grants,processes india,0.4825,2
+400,grants,modelling spatial,0.4261,3
+400,grants,stable processes,0.4259,4
+400,grants,max stable,0.3934,5
+400,grants,extreme max,0.3732,6
+400,grants,modelling,0.3381,7
+400,grants,extreme,0.2951,8
+401,grants,alloying additive,0.6244,1
+401,grants,titanium alloy,0.6019,2
+401,grants,additive manufacturing,0.6011,3
+401,grants,situ alloying,0.5418,4
+401,grants,beta titanium,0.5233,5
+401,grants,alloy situ,0.5131,6
+401,grants,titanium,0.4881,7
+401,grants,microstructure mechanical,0.4701,8
+402,grants,chip acoustic,0.5307,1
+402,grants,learning chip,0.4746,2
+402,grants,analog machine,0.4725,3
+402,grants,eda tools,0.4615,4
+402,grants,power analog,0.427,5
+402,grants,analog,0.4094,6
+402,grants,acoustic pattern,0.3723,7
+402,grants,eda,0.3469,8
+403,grants,dislocation slip,0.5366,1
+403,grants,dislocation,0.4502,2
+403,grants,alloy,0.4027,3
+403,grants,role dislocation,0.3961,4
+403,grants,slip mode,0.3695,5
+403,grants,concentrated alloy,0.3692,6
+403,grants,fatigue behavior,0.3402,7
+403,grants,mode fatigue,0.3177,8
+404,grants,mechanical metamaterials,0.7012,1
+404,grants,topological mechanical,0.6292,2
+404,grants,metamaterials,0.6184,3
+404,grants,dynamics topological,0.5978,4
+404,grants,nonlinear dynamics,0.5151,5
+404,grants,dynamics,0.3948,6
+404,grants,topological,0.3702,7
+404,grants,nonlinear,0.3697,8
+405,grants,accelerator adversarial,0.6887,1
+405,grants,adversarial fault,0.6558,2
+405,grants,adversarial,0.5197,3
+405,grants,learning hardware,0.4483,4
+405,grants,implementation robust,0.4482,5
+405,grants,attack countermeasures,0.4331,6
+405,grants,fault attack,0.4327,7
+405,grants,hardware accelerator,0.4189,8
+406,grants,age brain,0.6447,1
+406,grants,variation age,0.4779,2
+406,grants,artificial intelligence,0.4764,3
+406,grants,intelligence method,0.4743,4
+406,grants,brain,0.4308,5
+406,grants,structural variation,0.4303,6
+406,grants,explainable artificial,0.4049,7
+406,grants,intelligence,0.333,8
+408,grants,fool adversarial,0.7675,1
+408,grants,cryptography fool,0.7388,2
+408,grants,adversarial mind,0.6964,3
+408,grants,rational cryptography,0.5998,4
+408,grants,adversarial,0.5678,5
+408,grants,fool,0.5182,6
+408,grants,cryptography,0.475,7
+408,grants,rational,0.4219,8
+409,grants,interface ugi,0.5957,1
+409,grants,geospatial interface,0.5813,2
+409,grants,unified geospatial,0.5779,3
+409,grants,ugi enable,0.5227,4
+409,grants,spatial analytics,0.4971,5
+409,grants,ugi,0.4911,6
+409,grants,geo spatial,0.4901,7
+409,grants,exchange spatial,0.4543,8
+410,grants,tunnel junction,0.5278,1
+410,grants,electron trap,0.5248,2
+410,grants,trap tunnel,0.4958,3
+410,grants,generation electron,0.4157,4
+410,grants,tunnel,0.4076,5
+410,grants,random number,0.3993,6
+410,grants,true random,0.2927,7
+410,grants,random,0.2822,8
+411,grants,autonomous navigation,0.6489,1
+411,grants,navigation crowded,0.6296,2
+411,grants,ai ml,0.5639,3
+411,grants,crowded environment,0.5529,4
+411,grants,environment ai,0.5447,5
+411,grants,autonomous,0.5076,6
+411,grants,ai,0.4604,7
+411,grants,crowded,0.4597,8
+412,grants,explainable cluster,0.5781,1
+412,grants,cluster structure,0.5721,2
+412,grants,structure assessment,0.4524,3
+412,grants,dimensional datum,0.4484,4
+412,grants,cluster,0.4141,5
+412,grants,high dimensional,0.3811,6
+412,grants,deep learning,0.3804,7
+412,grants,structure,0.3491,8
+413,grants,magnetoelectric nonvolatile,0.5661,1
+413,grants,power magnetoelectric,0.5044,2
+413,grants,magnetoelectric,0.4693,3
+413,grants,nonvolatile memory,0.4671,4
+413,grants,revolutionize iot,0.4422,5
+413,grants,iot technology,0.4328,6
+413,grants,iot,0.4275,7
+413,grants,device ai,0.4082,8
+414,grants,massive mimo,0.5493,1
+414,grants,mimo otfs,0.5475,2
+414,grants,mimo massive,0.5222,3
+414,grants,channel estimation,0.5004,4
+414,grants,user mimo,0.4261,5
+414,grants,mimo,0.418,6
+414,grants,efficient channel,0.4133,7
+414,grants,complexity receiver,0.4018,8
+415,grants,sars cov,0.4813,1
+415,grants,snp covid,0.4792,2
+415,grants,proteo genomic,0.4699,3
+415,grants,proteome host,0.451,4
+415,grants,covid 19,0.4408,5
+415,grants,19 proteome,0.4171,6
+415,grants,cov clinical,0.354,7
+415,grants,covid,0.3388,8
+416,grants,smartphone penetration,0.6368,1
+416,grants,covidwatch,0.6072,2
+416,grants,covidwatch rapid,0.5943,3
+416,grants,smartphone,0.4534,4
+416,grants,low smartphone,0.4495,5
+416,grants,rapid monitoring,0.4186,6
+416,grants,monitoring tool,0.3932,7
+416,grants,monitoring,0.3586,8
+417,grants,coswara speech,0.6265,1
+417,grants,speech sound,0.6213,2
+417,grants,sound base,0.4963,3
+417,grants,coswara,0.4828,4
+417,grants,base diagnostic,0.4527,5
+417,grants,diagnostic,0.3996,6
+417,grants,speech,0.3747,7
+417,grants,sound,0.3033,8
+418,grants,gocoronago contact,0.6308,1
+418,grants,contact trace,0.5529,2
+418,grants,trace app,0.5418,3
+418,grants,gocoronago,0.5111,4
+418,grants,app network,0.4386,5
+418,grants,trace,0.415,6
+418,grants,network analytic,0.4096,7
+418,grants,app,0.347,8
+419,grants,mobile diagnostic,0.7104,1
+419,grants,lab covid,0.5773,2
+419,grants,covid 19,0.5409,3
+419,grants,diagnostic testing,0.5341,4
+419,grants,diagnostic,0.4921,5
+419,grants,testing lab,0.4587,6
+419,grants,covid,0.4086,7
+419,grants,mobile,0.3735,8
+420,grants,oxygen generator,0.6922,1
+420,grants,s3 medical,0.6195,2
+420,grants,medical oxygen,0.5944,3
+420,grants,s3,0.4549,4
+420,grants,generator,0.4103,5
+420,grants,oxygen,0.3975,6
+420,grants,medical,0.2783,7
+421,grants,respiratory droplet,0.6079,1
+421,grants,route covid,0.4892,2
+421,grants,covid 19,0.4357,3
+421,grants,droplet dry,0.4161,4
+421,grants,role respiratory,0.4068,5
+421,grants,respiratory,0.3746,6
+421,grants,dry dynamic,0.3586,7
+421,grants,covid,0.3576,8
+423,grants,modelling covid,0.6833,1
+423,grants,pde base,0.5896,2
+423,grants,covid 19,0.5651,3
+423,grants,19 infection,0.5209,4
+423,grants,covid,0.4646,5
+423,grants,pde,0.4454,6
+423,grants,base modelling,0.4106,7
+423,grants,infection,0.3624,8
+424,grants,sneeze flow,0.6192,1
+424,grants,simulation cough,0.5992,2
+424,grants,cough sneeze,0.543,3
+424,grants,sneeze,0.4374,4
+424,grants,dynamic covid,0.4216,5
+424,grants,covid 19,0.3494,6
+424,grants,numerical simulation,0.3471,7
+424,grants,19 infection,0.3456,8
+428,grants,asymptomatic lockdown,0.5854,1
+428,grants,medical inventory,0.5464,2
+428,grants,inventory asymptomatic,0.5301,3
+428,grants,lockdown effect,0.5241,4
+428,grants,predict medical,0.5205,5
+428,grants,lockdown,0.4631,6
+428,grants,inventory,0.3556,7
+428,grants,medical,0.3345,8
+429,grants,automatic phase,0.6134,1
+429,grants,phase analysis,0.5951,2
+429,grants,covid 19,0.5428,3
+429,grants,phase,0.4998,4
+429,grants,covid,0.4605,5
+429,grants,19 automatic,0.2586,6
+429,grants,automatic,0.2001,7
+429,grants,analysis,0.1294,8
+430,grants,modeling epidemic,0.7883,1
+430,grants,epidemic spread,0.6726,2
+430,grants,epidemic,0.6,3
+430,grants,spread indian,0.5443,4
+430,grants,indian urban,0.5417,5
+430,grants,urban condition,0.5129,6
+430,grants,modeling,0.3586,7
+430,grants,urban,0.3342,8
+431,grants,protein sars,0.4896,1
+431,grants,cell membrane,0.4215,2
+431,grants,fluorescence microscopy,0.4071,3
+431,grants,dihydrate drug,0.3998,4
+431,grants,amodiaquin dihydrochloride,0.3988,5
+431,grants,vitro fluorescence,0.3954,6
+431,grants,spike protein,0.3862,7
+431,grants,cov cell,0.3688,8
+432,grants,covid graph,0.5671,1
+432,grants,cov drug,0.5145,2
+432,grants,sars cov,0.5124,3
+432,grants,networks sars,0.498,4
+432,grants,drug repurposing,0.4588,5
+432,grants,dr covid,0.4181,6
+432,grants,covid,0.404,7
+432,grants,graph neural,0.3749,8
+433,grants,disease spread,0.6013,1
+433,grants,infectious disease,0.5247,2
+433,grants,spatio temporal,0.5225,3
+433,grants,infectious,0.4391,4
+433,grants,predictive modeling,0.4193,5
+433,grants,temporal predictive,0.4039,6
+433,grants,spatio,0.402,7
+433,grants,modeling framework,0.3772,8
+434,grants,lockdown india,0.687,1
+434,grants,epidemic unlock,0.6248,2
+434,grants,unlock lockdown,0.5434,3
+434,grants,covid 19,0.5428,4
+434,grants,19 epidemic,0.4949,5
+434,grants,unlock,0.4508,6
+434,grants,lockdown,0.4404,7
+434,grants,covid,0.4151,8
+374,grants,edge computing,0.6452,1
+374,grants,hardware implementation,0.4699,2
+374,grants,constrained edge,0.4634,3
+374,grants,neumann accelerators,0.4338,4
+374,grants,design hardware,0.43,5
+374,grants,edge,0.4171,6
+374,grants,accelerators energy,0.3585,7
+374,grants,energy constrained,0.3507,8
+375,grants,aluminide aerospace,0.4701,1
+375,grants,titanium aluminide,0.4685,2
+375,grants,temperature fatigue,0.4239,3
+375,grants,behaviour laser,0.4125,4
+375,grants,manufactured titanium,0.4008,5
+375,grants,laser,0.3598,6
+375,grants,titanium,0.3572,7
+375,grants,laser peened,0.3455,8
+376,grants,duplex communication,0.6101,1
+376,grants,duplex,0.4939,2
+376,grants,index modulation,0.4886,3
+376,grants,intelligent reflect,0.4841,4
+376,grants,reflect surface,0.4447,5
+376,grants,surface irs,0.4429,6
+376,grants,modulation,0.3791,7
+376,grants,irs index,0.3602,8
+379,grants,loop thermosyphon,0.646,1
+379,grants,traction motors,0.6161,2
+379,grants,thermosyphon thermal,0.5602,3
+379,grants,thermosyphon,0.5047,4
+379,grants,vehicle traction,0.4892,5
+379,grants,thermal management,0.4173,6
+379,grants,traction,0.4071,7
+379,grants,motors,0.4067,8
+380,grants,singlet fission,0.724,1
+380,grants,silicon solar,0.6029,2
+380,grants,fission enhance,0.5433,3
+380,grants,fission,0.5187,4
+380,grants,solar cell,0.5176,5
+380,grants,singlet,0.4514,6
+380,grants,enhance silicon,0.4324,7
+380,grants,silicon,0.3926,8
+435,grants,19 epidemic,0.487,1
+435,grants,covid 19,0.4738,2
+435,grants,scale agent,0.4473,3
+435,grants,city scale,0.414,4
+435,grants,epidemic,0.4114,5
+435,grants,context covid,0.4095,6
+435,grants,covid,0.3983,7
+435,grants,simulator,0.3918,8
+436,grants,modeling sars,0.6118,1
+436,grants,sars cov,0.6088,2
+436,grants,cov immune,0.5609,3
+436,grants,immune interplay,0.4319,4
+436,grants,sars,0.4284,5
+436,grants,immune,0.3479,6
+436,grants,cov,0.3329,7
+436,grants,mechanistic modeling,0.3016,8
+437,grants,sars cov,0.6391,1
+437,grants,indian sars,0.5749,2
+437,grants,sars,0.4682,3
+437,grants,genomic indian,0.4439,4
+437,grants,functional genomic,0.3828,5
+437,grants,cov,0.3355,6
+437,grants,genomic,0.3184,7
+437,grants,indian,0.2152,8
+377,grants,liquefaction sand,0.6371,1
+377,grants,enzyme stabilisation,0.5624,2
+377,grants,mitigate liquefaction,0.479,3
+377,grants,bio enzyme,0.4382,4
+377,grants,enzyme,0.4215,5
+377,grants,liquefaction,0.3819,6
+377,grants,sand,0.3817,7
+377,grants,stabilisation mitigate,0.3311,8
+392,grants,artificial basilar,0.6383,1
+392,grants,basilar epithelium,0.6324,2
+392,grants,fabrication flexible,0.5602,3
+392,grants,flexible artificial,0.5452,4
+392,grants,design fabrication,0.447,5
+392,grants,epithelium,0.3996,6
+392,grants,basilar,0.3756,7
+392,grants,fabrication,0.3471,8
+394,grants,malaria sensing,0.6621,1
+394,grants,polymer nanocomposite,0.604,2
+394,grants,nanocomposite,0.5151,3
+394,grants,nanocomposite base,0.4933,4
+394,grants,rapid malaria,0.4348,5
+394,grants,malaria,0.4324,6
+394,grants,development polymer,0.3986,7
+394,grants,polymer,0.373,8
+396,grants,co2 methanol,0.6553,1
+396,grants,hydrogenation carbon,0.5394,2
+396,grants,hydrogenation,0.496,3
+396,grants,dioxide co2,0.4801,4
+396,grants,co2,0.477,5
+396,grants,methanol dme,0.4729,6
+396,grants,fuel domestic,0.4631,7
+396,grants,alternative fuel,0.4514,8
+407,grants,approximation algorithms,0.7098,1
+407,grants,practice approximation,0.7015,2
+407,grants,algorithms practical,0.5608,3
+407,grants,bridge gap,0.5505,4
+407,grants,approximation,0.5239,5
+407,grants,gap theory,0.5171,6
+407,grants,algorithms,0.5056,7
+407,grants,gap,0.4089,8
+422,grants,asymptomatic spreader,0.5979,1
+422,grants,spreader agent,0.5426,2
+422,grants,cohorte isolate,0.4878,3
+422,grants,spreader,0.4583,4
+422,grants,isolate asymptomatic,0.4092,5
+422,grants,suburban railway,0.3531,6
+422,grants,isolate,0.3295,7
+422,grants,railway,0.3013,8
+425,grants,suppression covid,0.655,1
+425,grants,covid 19,0.5629,2
+425,grants,covid,0.494,3
+425,grants,rapid suppression,0.4065,4
+425,grants,19 transmission,0.3925,5
+425,grants,transmission small,0.3806,6
+425,grants,suppression,0.3448,7
+425,grants,transmission,0.3414,8
+426,grants,infection rate,0.7626,1
+426,grants,covid 19,0.6552,2
+426,grants,19 infection,0.5816,3
+426,grants,covid,0.563,4
+426,grants,rate estimation,0.4526,5
+426,grants,infection,0.4041,6
+426,grants,estimation,0.3496,7
+426,grants,rate,0.3434,8
+427,grants,testing strategy,0.5863,1
+427,grants,covid 19,0.5759,2
+427,grants,framework study,0.5533,3
+427,grants,strategy covid,0.5399,4
+427,grants,testing,0.456,5
+427,grants,study testing,0.4539,6
+427,grants,covid,0.451,7
+427,grants,framework,0.4284,8
+438,grants,indian airspace,0.6795,1
+438,grants,airspace,0.5219,2
+438,grants,air traffic,0.5062,3
+438,grants,traffic indian,0.4562,4
+438,grants,management air,0.4553,5
+438,grants,modelling optimal,0.4426,6
+438,grants,dynamic modelling,0.4398,7
+438,grants,optimal management,0.4081,8
+439,grants,handwritten transcript,0.6781,1
+439,grants,manuscript thigalari,0.5337,2
+439,grants,online handwritten,0.5279,3
+439,grants,transcript expert,0.522,4
+439,grants,ancient manuscript,0.5092,5
+439,grants,recognition speech,0.4944,6
+439,grants,script multimodal,0.4682,7
+439,grants,digitization ancient,0.465,8
+440,grants,nfc base,0.4557,1
+440,grants,transportation storage,0.4534,2
+440,grants,sensor platform,0.4208,3
+440,grants,nfc,0.4145,4
+440,grants,storage integrity,0.4145,5
+440,grants,lifesave pharmaceutical,0.4074,6
+440,grants,monitor transportation,0.4037,7
+440,grants,sensor,0.3577,8
+441,grants,certification worthiness,0.5155,1
+441,grants,smart factory,0.4949,2
+441,grants,assessment certification,0.4774,3
+441,grants,design transfer,0.4641,4
+441,grants,certification,0.4592,5
+441,grants,factory test,0.4151,6
+441,grants,electronic sme,0.4085,7
+441,grants,test bed,0.4026,8
+442,grants,voltage esd,0.7567,1
+442,grants,esd device,0.672,2
+442,grants,esd,0.5611,3
+442,grants,high voltage,0.4351,4
+442,grants,180 nm,0.3452,5
+442,grants,scl 180,0.3147,6
+442,grants,enablement scl,0.2998,7
+442,grants,voltage,0.2995,8
