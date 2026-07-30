@@ -5,6 +5,7 @@ import dotenv from "dotenv";
 import patentRoutes from "./routes/patents.js";
 import institutionRoutes from "./routes/institution.js";
 import dashboardRoutes from "./routes/dashboard.js";
+import thesisRoutes from "./routes/thesisRoutes.js";
 
 dotenv.config();
 
@@ -24,6 +25,7 @@ app.use("/dashboard", dashboardRoutes);
 app.use("/patents", patentRoutes);
 app.use("/knowledge-graph", knowledgeGraphRoutes);
 app.use("/institution", institutionRoutes);
+app.use("/theses", thesisRoutes);
 
 const PORT = process.env.PORT || 5000;
 
