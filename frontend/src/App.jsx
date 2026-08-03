@@ -6,6 +6,7 @@ import Analytics from "./pages/Analytics";
 import Search from "./pages/Search";
 import Institutions from "./pages/Institutions";
 import Researchers from "./pages/Researchers";
+import ResearcherProfile from "./pages/ResearcherProfile";
 import Patents from "./pages/Patents";
 import Grants from "./pages/Grants";
 import Chatbot from "./pages/Chatbot";
@@ -17,6 +18,7 @@ import Publications from "./pages/Publications";
 import Theses from "./pages/Theses";
 import KnowledgeGraph from "./pages/KnowledgeGraph";
 import KnowledgeGraphPage from "./pages/KnowledgeGraphPage";
+
 
 export default function App() {
 
@@ -87,9 +89,15 @@ export default function App() {
                 element={<Institutions />}
             />
 
+
             <Route
                 path="/dashboard/researchers"
                 element={<Researchers />}
+            />
+
+            <Route
+                path="/dashboard/researchers/:id"
+                element={<ResearcherProfile />}
             />
 
             <Route
