@@ -15,9 +15,9 @@ const STAKEHOLDERS = [
 ];
 
 const HERO_STATS = [
-  { value: "12M+", label: "Data Points Linked" },
-  { value: "99.8%", label: "Semantic Accuracy" },
-  { value: "45ms", label: "Inference Speed" },
+  { value: "87K+", label: "NODES" },
+  { value: "270K+", label: "RELATIONSHIPS" },
+  { value: "15", label: "ENTITY TYPES" },
 ];
 
 const PHILOSOPHY_POINTS = [
@@ -139,8 +139,12 @@ export default function Landing() {
             <p className="text-xs uppercase tracking-wide text-[var(--color-muted)] font-mono mb-3">
               Knowledge Graph Visualization
             </p>
-            <div className="aspect-[4/3] rounded-sm bg-[var(--color-paper)] border border-[var(--color-line)] flex items-center justify-center">
-              <Share2 size={40} className="text-[var(--color-muted)] opacity-40" />
+            <div className="aspect-[4/3] rounded-sm bg-[var(--color-paper)] border border-[var(--color-line)] overflow-hidden">
+              <img
+                src="/visualisation.png"
+                alt="Knowledge Graph Visualization"
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
 

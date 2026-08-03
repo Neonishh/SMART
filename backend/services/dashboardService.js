@@ -94,7 +94,7 @@ export async function getDashboardOverview() {
 
             ORDER BY papers DESC
 
-            LIMIT 10
+            LIMIT 5
         `);
 
         const topDomains = domainResult.records.map(record => ({

@@ -234,9 +234,257 @@ export async function getPatentAnalytics() {
 
 }
 
-export async function listGrants() {
-  if (USE_MOCK) return resolveMock(mock.grants);
-  return client.get("/grants");
+/* ============================================================
+   GRANTS
+============================================================ */
+
+/*
+----------------------------------------------------
+GET ALL GRANTS
+
+Supports Filters
+
+page
+limit
+year
+institution
+agency
+pi
+search
+
+Example:
+
+listGrants({
+    page:1,
+    limit:10,
+    year:2024,
+    institution:"Indian Institute of Science Bangalore",
+    agency:"ANRF",
+    pi:"John Doe"
+})
+
+----------------------------------------------------
+*/
+
+export async function listGrants(filters = {}) {
+
+    const params = {};
+
+    if (filters.page)
+        params.page = filters.page;
+
+    if (filters.limit)
+        params.limit = filters.limit;
+
+    if (filters.year)
+        params.year = filters.year;
+
+    if (filters.institution)
+        params.institution = filters.institution;
+
+    if (filters.agency)
+        params.agency = filters.agency;
+
+    if (filters.pi)
+        params.pi = filters.pi;
+
+    if (filters.search)
+        params.search = filters.search;
+
+    if (USE_MOCK) {
+
+        const searchTerm = String(filters.search || "").toLowerCase();
+
+        const filtered = mock.grants.filter((grant) => {
+
+            const title =
+                String(grant.title || "").toLowerCase();
+
+            const institution =
+                String(grant.institution || "").toLowerCase();
+
+            const agency =
+                String(grant.agency || "").toLowerCase();
+
+            const pi =
+                String(grant.pi || "").toLowerCase();
+
+            const matchesYear =
+                !filters.year ||
+                String(grant.year) === String(filters.year);
+
+            const matchesInstitution =
+                !filters.institution ||
+                grant.institution === filters.institution;
+
+            const matchesAgency =
+                !filters.agency ||
+                grant.agency === filters.agency;
+
+            const matchesPI =
+                !filters.pi ||
+                grant.pi === filters.pi;
+
+            const matchesSearch =
+                !searchTerm ||
+                [title, institution, agency, pi]
+                    .some(value => value.includes(searchTerm));
+
+            return (
+
+                matchesYear &&
+                matchesInstitution &&
+                matchesAgency &&
+                matchesPI &&
+                matchesSearch
+
+            );
+
+        });
+
+        const page =
+            Math.max(Number(filters.page) || 1, 1);
+
+        const limit =
+            Math.max(Number(filters.limit) || 20, 1);
+
+        const offset =
+            (page - 1) * limit;
+
+        const pageData =
+            filtered.slice(offset, offset + limit);
+
+        const uniqueValues = (key) =>
+            [...new Set(
+                filtered
+                    .map(item => item[key])
+                    .filter(Boolean)
+            )].sort();
+
+        return resolveMock({
+
+            success: true,
+
+            count: filtered.length,
+
+            page,
+
+            limit,
+
+            totalPages:
+                Math.max(
+                    Math.ceil(filtered.length / limit),
+                    1
+                ),
+
+            facets: {
+
+                institutions:
+                    uniqueValues("institution"),
+
+                agencies:
+                    uniqueValues("agency"),
+
+                principalInvestigators:
+                    uniqueValues("pi")
+
+            },
+
+            data: pageData
+
+        });
+
+    }
+
+    return client.get("/grants", { params });
+
+}
+
+/*
+----------------------------------------------------
+GRANT DETAILS
+----------------------------------------------------
+*/
+
+export async function getGrant(id) {
+
+    if (USE_MOCK) {
+
+        const grant =
+            mock.grants.find(g => g.id === id)
+            || mock.grants[0];
+
+        return resolveMock({
+
+            success: true,
+
+            data: grant
+
+        });
+
+    }
+
+    return client.get(`/grants/${id}`);
+
+}
+
+/*
+----------------------------------------------------
+GRANT ANALYTICS
+----------------------------------------------------
+*/
+
+export async function getGrantAnalytics() {
+
+    if (USE_MOCK) {
+
+        return resolveMock({
+
+            success: true,
+
+            data: {
+
+                overview: mock.grantOverview || {},
+
+                fundingTrend:
+                    mock.fundingTrend || [],
+
+                agencyFunding:
+                    mock.agencyFunding || [],
+
+                institutionFunding:
+                    mock.institutionFunding || []
+
+            }
+
+        });
+
+    }
+
+    const response =
+        await client.get("/grants/analytics");
+
+    const analytics =
+        response.data?.data ??
+        response.data ??
+        {};
+
+    return {
+
+        ...response,
+
+        data: {
+
+            ...response.data,
+
+            ...analytics,
+
+            data: analytics
+
+        }
+
+    };
+
 }
 
 export async function sendChatMessage(message, history = []) {

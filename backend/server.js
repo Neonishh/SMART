@@ -3,6 +3,7 @@ import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 import patentRoutes from "./routes/patents.js";
+import grantRoutes from "./routes/grants.js";
 import institutionRoutes from "./routes/institution.js";
 import dashboardRoutes from "./routes/dashboard.js";
 import thesisRoutes from "./routes/thesisRoutes.js";
@@ -23,6 +24,7 @@ app.get("/", (req, res) => {
 
 app.use("/dashboard", dashboardRoutes);
 app.use("/patents", patentRoutes);
+app.use("/grants", grantRoutes);
 app.use("/knowledge-graph", knowledgeGraphRoutes);
 app.use("/institution", institutionRoutes);
 app.use("/theses", thesisRoutes);

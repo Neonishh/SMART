@@ -1,443 +1,444 @@
 ﻿Grant_ID,Title,Amount,Year,Source_URL
-GRANT_00001,"Deformation processing of lightweight structural metals: Correlating surface flow fields, energy dissipation and product quality through in situ analyses",5585615,2019,
-GRANT_00002,Digitization of ancient manuscripts in Thigalari and Grantha scripts using multimodal recognition of speech and online handwritten transcript of an expert in the loop,,2019,
-GRANT_00003,Machine Learning based AI Technology for Defect Detection in Aircraft Engines,,2019,
-GRANT_00004,English Gyani - An intelligent assistant for tutoring English via learner-tutor interactions,,2019,
-GRANT_00005,NFC-based multi-sensor platform to monitor transportation and storage integrity of lifesaving pharmaceutical products,,2019,
-GRANT_00006,Identification of Diseases in Millet Crop using Deep Learning for Next Generation Climate-Smart Agriculture,2562900,2019,
-GRANT_00007,Atomic Scale Electron Microscopy Investigation of Supported Catalysts,4763250,2020,
-GRANT_00008,Making simultaneous rheological and thermal maps of the cellular interior,7689070,2020,
-GRANT_00009,Effect of Passage of Electric Pulse on Flaws in Metallic Foils: Failure by Flaw Propagation to Healing by Flaw Closure,5749973,2020,
-GRANT_00010,Scanning probe microscopes with rotatable tips: Development and Applications,5004644,2020,
-GRANT_00011,Physical and mathematical modeling of gas-fine-liquid flow in a non-wetting packed bed,6539480,2020,
-GRANT_00012,Large-area and stable perovskite solar cells,7711145,2020,
-GRANT_00013,Network Principles in 3D Reconstruction,1582098,2020,
-GRANT_00014,Bio-inspired Membranes with 2D Layered Nanostructures for Desalination and Water Remediation,4136098,2020,
-GRANT_00015,Study of solvent induced polymorphism during crystal nucleation of molecular solids using molecular simulations,6225363,2020,
-GRANT_00016,Design and Analysis of Polar Codes and Learning-based Codes,2275843,2020,
-GRANT_00017,Multi-scale Design of Advanced Composites and Development of New Manufacturing Technologies,4112353,2020,
-GRANT_00018,Resource Aware Networked and Distributed Control,1924436,2020,
-GRANT_00019,Using Coding Theory for Fast and Robust Distributed Communication and Computing Systems,2373024,2020,
-GRANT_00020,Dynamic biomedical image reconstruction from highly noisy and under-sampled data using motion-adaptive spatio-temporal regularization,2299844,2020,
-GRANT_00021,Designing cost-efficient codes for Non-Orthogonal Multiple Access (NOMA) for 5G Using Generalized Boolean/Bent Functions,0,2020,
-GRANT_00022,Design and fabrication of plate type SCR catalyst for De-NOx application using Hybrid ceramic composite,3224590,2020,
-GRANT_00023,"Modeling, Optimization, and Channel Estimation of Intelligent Reflecting Surface (IRS)-Assisted Underlay Spectrum Sharing for 6G",1404663,2021,
-GRANT_00024,An analytic study of holomorphic vector bundles and Kahler manifolds,0,2021,
-GRANT_00025,Graphene based Meta-FET Device: Novel Metamaterial Approach for Multi-molecular Sensing Platform with Integrated Opto-electronic Communication,20720560,2021,
-GRANT_00026,Bianchi modular forms and Iwasawa theory,0,2021,
-GRANT_00027,DATA ASSIMILATION TO REACTION-DIFFUSION COMPLEX NETWORKS,0,2021,
-GRANT_00028,Investigations on electronic and optoelectronic properties of transition metal doped chalcogenide materials suitable for phase change memory (PCM) applications.,2692800,2021,
-GRANT_00029,"Ecological and Behavioural Determinants of Predator Diet Selection: A case study using Bats, Katydids and Moths",2995015,2021,
-GRANT_00030,"Linking vector ecology and pathogen transmission: Behavioural and life-history strategies of the vector, Aedes aegypti, and their consequences for pathogen transmission and mosquito control",6204520,2021,
-GRANT_00031,Correlated electron states and exciton condensation in double-layer van der Waals heterostructures,4563488,2021,
-GRANT_00032,Design and Fabrication of Flexible Artificial Basilar Epithelium,2997500,2022,
-GRANT_00033,Salt Hydrate-based Thermochemical Energy Storage System for Thermal Management of Batteries for Electric Vehicles,9367330,2022,
-GRANT_00034,Towards a general framework for geomaterial use by animals: Comparing bioengineering principles in termite and potter wasp mud architecture,5860888,2022,
-GRANT_00035,A Lead Laden Legacy of Indian Waterbodies: Quantification and Alleviation,64486160,2022,
-GRANT_00036,Vector Processor Design to support lower bit width weight precisions in machine learning applications,4238690,2022,
-GRANT_00037,"Centre for Electrochemical Energy Storage: Design, Development, Fabrication and Evaluation of Utility-Scale High-Performance Batteries",83630000,2022,
-GRANT_00038,"Hitting-sets, lower bounds and learning in algebraic complexity theory",0,2022,
-GRANT_00039,Liquid crystal as matrices for nanomaterial assembly-manipulation,2952400,2022,
-GRANT_00040,Understanding T lymphocyte infiltration into solid tumours,5909618,2022,
-GRANT_00041,Hydrogenation of carbon dioxide (CO2) into methanol and DME - A potential alternative fuel for domestic and transport applications,4477000,2022,
-GRANT_00042,"""Gravity cast in-situ Al-15Mg2Si-4.5Si composite and a process thereof"" & âRheo Gravity die cast in-situ Al-15Mg2Si-4.5Si-0.01Sr-0.015B composite and an Automobile Brake disc cast thereofâ",3000000,2022,
-GRANT_00043,A METHOD FOR FABRICATING AN ANTIMICROBIAL LAYER ON A FABRIC AND A COATED FABRIC THEREOF,3000000,2022,
-GRANT_00044,Arboreal Topological Phases,0,2022,
-GRANT_00045,Pushing the limits of solid-state nanopore based single molecule protein sequencing,17504120,2022,
-GRANT_00046,A Blind Modulation Classification (BMC) Method for Linearly Modulated Signal over Single Carrier Systems,3000000,2022,
-GRANT_00047,Acoustic Modeling and Analysis of Pulmonary System,0,2023,
-GRANT_00048,Dispersion relations for nonlinear wave propagation in periodic media through perturbation analysis,0,2023,
-GRANT_00049,Solutions of the Boltzmann transport equation for phonons and electrons beyond the relaxation time approximation,0,2023,
-GRANT_00050,Optimal Topology Design for Resilient Networked CPS,0,2023,
-GRANT_00051,Investigating cosmological imprints of dynamical gauge fields during inflation,0,2023,
-GRANT_00052,Investigation of the lifetime frontier of particle physics,0,2023,
-GRANT_00053,Mathematical Models of Intrinsic Noise and Heterogeneity in Ecosystem Dynamics,0,2023,
-GRANT_00054,Theoretical aspects of some Physics Beyond Standard Models.,0,2023,
-GRANT_00055,Some existence and rigidity problems in Kahler geometry,0,2023,
-GRANT_00056,Ergodic principles in Iwasawa theory,0,2023,
-GRANT_00057,Quantifying the effect of antibiotic pollution on soil microbial functions and the nitrogen cycle,3872790,2024,
-GRANT_00058,Closed-loop recyclable and fast curing Epoxy mediated by covalent adaptable network,5807950,2024,
-GRANT_00059,Non-linear Hall Effect: Mechanisms and Materials,3503315,2024,
-GRANT_00060,Collective swimming of Chlamydomonas reinhardtii under confinement,1441000,2024,
-GRANT_00061,Proof of concept and system analysis of the isolation of high-grade curcumin from turmeric using low-cost membrane separations,3838912,2024,
-GRANT_00062,Coupled dynamics in 2D nanoresonators,6310541,2024,
-GRANT_00063,"Investigation of soliton dynamics through multi-core photonic crystal fiber couplers and array waveguides for efficient all-optical logic adders, subtractors and soliton based quantum computing",2699441,2024,
-GRANT_00064,Development of Advanced Composites with Integrated Battery and Photovoltaic Cells,7830416,2024,
-GRANT_00065,Green ironmaking: Multiscale model to study hydrogen injection in a shaft furnace (DRI) and hydrogen injection with coal in the blast furnace with validation,5479320,2024,
-GRANT_00066,Study on affine Demazure modules,597709,2024,
-GRANT_00067,Design and Development of Light Weight Impact Resistant Sandwich Composite Fabricated using CFRP Face sheet and Cenosphere Reinforced PEEK Auxetic Core: An Integrated Experimental-Computational Approach,3680688,2024,
-GRANT_00068,Nanoelectrode arrays for high resolution recording of neural activity,6417435,2024,
-GRANT_00069,Development of new design architecture to realize high Figure of Merit piezoelectric MEMS resonators.,6639688,2024,
-GRANT_00070,Simulations of combustion dynamics in hydrogen-fired reheat burner towards decarbonization,4510044,2024,
-GRANT_00071,Design and analysis of data center network transport protocols for low latency,3639720,2024,
-GRANT_00072,Mechanics of Deformation of Non-Woven Nanofiber Networks & Their Composites,5187717,2024,
-GRANT_00073,"Bandits, Drones and Data Structures Through the Lens of Computational Geometry",3372790,2024,
-GRANT_00074,Design and Development of Strongly Luminescent Boron Based Chiroptical Materials for Bio-imaging Applications,7976788,2024,
-GRANT_00075,"Fully-printed, flexible negative capacitance field-effect transistors (nc-FETs) and logics",6529688,2024,
-GRANT_00076,Realization and Study of Modulation-Doping-Induced Interfacial Phase Transitions in Transition Metal Compounds,5698000,2024,
-GRANT_00077,INERTIA: In-memory Computing-based Energy-efficient Unified ML Accelerator,7206480,2024,
-GRANT_00078,"Theoretical, numerical, and experimental investigation of the collective behaviour of active magnetic swarms",8165626,2024,
-GRANT_00079,Fin-channel gallium nitride microwave transistors,3427680,2025,
-GRANT_00080,"An Eight Institution Partnership for Advancing Materials Research and Development: From Fundamental Design to Emerging Applications in Structural, Functional and Biomaterials Spaces",1036618200,2025,
-GRANT_00081,Exciton Delocalization versus Ultrafast Internal Conversion â Probing Structure-Function Relations in Artificial Light-harvesting Chlorosomes Through Two-dimensional Electronic Spectroscopy,23810414,2025,
-GRANT_00082,"Fractional Orbitals and Tight-Binding Gauge Fields: Theory, Simulation, and Detection",8137920,2026,
-GRANT_00083,Understanding the atomistic mechanism of degradation of compositionally complex multi-component alloys in severe corrosive environments.,8022096,2026,
-GRANT_00084,Reconstream: Systematic Reconstruction of Long-Term Streamflow Records in Indian Rivers using Geomorphology-Guided Machine Learning,9120940,2026,
-GRANT_00085,Theoretical investigations of the non-Hermitian dynamics of systems with mechanochemical feedback,9120000,2026,
-GRANT_00086,First-principles and experimental data-driven accurate multiscale modeling to design catalysts and processes for COâ electroreduction,8848800,2026,
-GRANT_00087,Magnetic and conducting particles in time-dependent magnetic fields.,7747642,2026,
-GRANT_00088,Creep-Fatigue Behavior of 9Cr ferritic-martensitic ODS Steel: Integrated Experimental and Modeling Approach for Advanced Energy Applications,6611280,2026,
-GRANT_00089,The science and design of robotic sandworms: Propulsion of deformable objects through particulate media,28151949,2026,
-GRANT_00090,Stable and Theoretically Grounded Model-Based Reconstruction with Trained Regularizers,6130944,2026,
-GRANT_00091,A comprehensive investigation of novel transport phenomena in topologically non-trivial hydrodynamic states of electrons.,4590720,2026,
-GRANT_00092,Deciphering the genetic basis of troglomorphy in the Indian cave fauna,9555600,2026,
-GRANT_00093,Novel Platform for Harnessing Proximity Effects in 2D Materialâ3D Magnetic Heterostructures for AI Memory and IoT Sensing,29801100,2026,
-GRANT_00094,Toward Practical Non-Terrestrial Networks: Physical Layer Innovations and 3GPP-Compliant Prototyping,9090691,2026,
-GRANT_00095,Bridging Transport and Optics in MoirÃ© Systems: A Platform for Strongly Correlated Quantum Matter,43788320,2026,
-GRANT_00096,Tailoring Hydrogel Mechanical Properties via In-situ Raman Spectroscopy of Polymer Networks for Biomedical Applications,22397420,2026,
-GRANT_00097,Multi-frequency Space-Time Metasurfaces for Terahertz Communication and Sensing,40861340,2026,
-GRANT_00098,Tailoring quantum phases in rhombohedral graphene for dissipationless electronic devices,22235250,2026,
-GRANT_00099,Folding Transitions and Interactions of Antimicrobial Peptides with Realistic Bacterial Membrane Models,7571520,2026,
-GRANT_00100,"Reefs, Rising Temperatures and Resilience: Integrating Ecology, Behaviour and Physiology to Understand and Predict Responses to Climate Change in Coral Reef Ecosystems",9156729,2026,
-GRANT_00101,Development of two-phase passive spreaders for thermal management of compact high heat flux electronics,9916800,2026,
-GRANT_00102,CuâO Thin-film Transistors using low-temperature plasma-enhanced deposition for BEOL CMOS,12980000,2026,
-GRANT_00103,Cosmological Quest for Dark Matter: Primordial Black Holes as a Novel Frontier,0,2026,
-GRANT_00104,Multiscale-Multiphase simulations of ultrasonic atomizers for biomedical applications,0,2026,
-GRANT_00105,"Nonlinear equations and their applications to Kahler geometry, holomorphic vector bundles, and physics",0,2026,
-GRANT_00106,Entanglement entropy and Harish-Chandra characters,0,2026,
-GRANT_00107,Fault-Tolerant Logical Operators in Quantum Error-Correcting Codes,0,2026,
-GRANT_00108,Analytic and arithmetic aspects of Automorphic forms and L-functions,0,2026,
-GRANT_00109,"Critical phenomena in percolation models, random graphs, and random trees",0,2026,
-GRANT_00110,Toeplitz operators on Hardy and Bergman spaces over domains,0,2026,
-GRANT_00111,"High-Current, Compact Power Supplies for AI-centric GPU Computing",14588200,2026,
-GRANT_00112,"Efficient Sensing, Communication, and Learning for Multi-Modal Artificial Intelligence of Things",12619200,2026,
-GRANT_00113,Indigenous development of twin cold finger driven GM cryocooler based Hydrogen / Helium / Nitrogen / Biogas liquefier,9872640,2026,
-GRANT_00114,Mathematical techniques and computational methods for hybrid quantum-HPC accelerated large-scale ab initio material modeling,0,2026,
-GRANT_00115,Can Social Learning Offset Bounded Rationality?,0,2026,
-GRANT_00116,"hp-Adaptive Galerkin Framework for Structured Population Dynamics: Theory, Error Estimates, and Applications to Age-Space PDEs",0,2026,
-GRANT_00117,Virtual Automation Lab with Augmented/Virtual reality,3000000,2019,
-GRANT_00118,Deep Learning for the efficient Numerical Solution of Differential Algebraic Equations,420000,2019,
-GRANT_00119,Non-Invasive technique of Nailfold capillaroscopy for diagnosis of Type â 2 diabetes Mellitus,500000,2019,
-GRANT_00120,Performance characterization of flexible wearable Antennas for Dynamic IoT Connectivity,1000000,2019,
-GRANT_00121,Anomaly Detection Using Machine Intelligence Techniques For Mobile Computing Networks,900000,2019,
-GRANT_00122,Smart Reporter,5000,2019,
-GRANT_00123,Short Term Training Program,193277,2019,
-GRANT_00124,Short Term Training Program,391388,2019,
-GRANT_00125,Design and Development of Virtual Comprehensive Neonatal monitoring system,2388760,2019,
-GRANT_00126,Centre of Learning for setting up Microwave and Antenna Lab,4000000,2019,
-GRANT_00127,"Study, Analysis and Optimization of workplace design parameters to improve worker efficiency through Taguchiâs Orthogonal Array Approach",70000,2019,
-GRANT_00128,Modernization of Wireless Communication Lab,769000,2019,
-GRANT_00129,Advanced Manufacturing technology (AMT)/ “Design and Development of Smart Robotic Based Magnetically Impelled Arc Butt welding equipment for joining Ferrous and Non Ferrous Tubes,4788720,2019,
-GRANT_00130,"Fabrication and characterization on thin films for sensors, NV memory and waveguide application",1500000,2020,
-GRANT_00131,Awarded Teachers Associateship for Research Excellence (TARE),275000,2020,
-GRANT_00132,IOT enabled smart sanitizer vending machine,10000,2020,
-GRANT_00133,Investigations on electronic and optoelectronic properties of transition metal doped chalcogenide materials suitable for phase change memory (PCM) applications,2692000,2020,
-GRANT_00134,"Development of a Novel, cost effective Wind/pv Micro grid for tribal community living",950000,2020,
-GRANT_00135,"Development of a Novel, cost effective Wind/pv Micro grid for tribal community living",174000,2020,
-GRANT_00136,"Energy conservation and efficiency, Karnataka Renewable Energy Development Limited",100000,2020,
-GRANT_00137,AICTE Training and learning (ATAL) Academy Programme (IMMERSIVE VIRTUAL REALITY),93000,2020,
-GRANT_00138,5G Technology,93000,2020,
-GRANT_00139,Are retinal vascular abnormalities endophenotype in Schizophrenia : an examination in first degree relatives,3242000,2020,
-GRANT_00140,Jaivika tyajya vibhajaka - a smart system to handle covid-19 biomedical waste,18000,2020,
-GRANT_00141,Non-contact fever and respiration monitoring system for mass screening,32000,2020,
-GRANT_00142,Air sea coupling of Indian ocean and its climatic responses,2149000,2020,
-GRANT_00143,Combined studies of materials discovery with machine learning and experimental for the development of high performance piezoelectric materials,300000,2020,
-GRANT_00144,Recurrent Neural Network based Sentiment analysis approach to diagnose Mental Disorders using scanned patientâs Diary images,200000,2020,
-GRANT_00145,STTP-AICTE-AQIS- INTELLIGENT EDGE COMPUTING TECHNIQUE FOR DIVERSE APPLICATIONS(Grant),285000,2020,
-GRANT_00146,Technology Development and Automation of Hydroponic Farms in Urban areas using enhanced precision farming by incorporating loT and Cyber Physical System,300000,2020,
-GRANT_00147,Predictive lung deposition factor using low cost sensors to measure pollutant concentration and individual physiological properties,7000,2020,
-GRANT_00148,Study on environmentally friendly concrete- Alkali activated concrete,70000,2020,
-GRANT_00149,Web-crawler to scrape data,72000,2020,
-GRANT_00150,Technology Development and Automation of Hydroponic Farms in Urban areas using enhanced precision farming by incorporating loT and Cyber Physical System.,300000,2020,
-GRANT_00151,Study of fatigue crack growth of Al 6061 - T6 welds obtained by gas metal arc welding technique,2706350,2020,
-GRANT_00152,STTP-AICTE-AQIS-Intelligent Edge Computing Technique For Diverse Applications(Grant),285000,2020,
-GRANT_00153,Augmenting Kannada Educational Video with Indian Sign Language animes for assisting hearing impaired students,389000,2020,
-GRANT_00154,Experimental lnvestigation of low Velocity lmpact and Damage Studies of Hybrid Composite Inter / Intra layered with Glass Carbon Kevlar fibers for aerospace application.,2132235,2020,
-GRANT_00155,Selenium WebDriver using Python,391388,2020,
-GRANT_00156,IEEE-CIS Local industry interactions,115064,2020,
-GRANT_00157,IEEE-CIS High school outreach program,146498,2020,
-GRANT_00158,Selenium WebDriver using Python,198333,2020,
-GRANT_00159,Drowsiness detection for Automotive Drivers,4000,2020,
-GRANT_00160,Action Bot,125000,2020,
-GRANT_00161,"KSCST student project titled "" Design and development of polymer nano composite for photonic applications""",6000,2020,
-GRANT_00162,Determining the Structural Efficiency of Cost Effective Composite Retrofits Applied onto Distressed RC Beams to Enhance Their Load Carrying Capacities,6000,2020,
-GRANT_00163,Feasibility study for implementation of water recycling equipment at individual houses with specific reference to Kolar and Chikkaballapur districts,5000,2020,
-GRANT_00164,A feasibility study on Smart Card ticketing services in public transport with reference to Bengarulu City,1500000,2020,
-GRANT_00165,Supply Chain for Collection and Distribution of used cooking oil (UCO) to Bio Diesel production units in Bengarulu City,5000,2020,
-GRANT_00166,Innovative Application of Optical Sensing for Heavy Metal Detection in Water,5000,2020,
-GRANT_00167,Vahini,468000,2020,
-GRANT_00168,Atal FDP on SCILAB and XCOS - FOSS alternatives for MATLAB and SIMULINK,93000,2020,
-GRANT_00169,Electronic synapses based on two dimensional materials for neuromorphic computing,4780600,2020,
-GRANT_00170,Design & development of ultrasonic assisted vacuum drying system for food,3436503,2020,
-GRANT_00171,Soluble lead redox flow battery: Cycleablity and impact of forced and concentration gradient driven natural convection,6653880,2020,
-GRANT_00172,Carbon based nano composite mixed matrix membranes for desalination,2410000,2020,
-GRANT_00173,Hybrid energy storage system consisting of li-ion batteries & ultracapcitors,3105500,2020,
-GRANT_00174,Quantum transport equation based next generation compact models,1300000,2020,
-GRANT_00175,Applications of cold plasma activated water for hygiene purposes through experiments and Mathematical modeling,3633120,2020,
-GRANT_00176,"Flow of granular materials through a vertical channel: Comparison between experiments, DEM simulations and predictions of continuum models",2502050,2020,
-GRANT_00177,Soft-wall turbulence,2969568,2020,
-GRANT_00178,Microdroplet analysis and quantification of biomolecules,5906800,2020,
-GRANT_00179,Vortex ring and bubble interaction: Towards understanding drag reduction in turbulent boundary layers using air bubble injection,3559600,2020,
-GRANT_00180,Modeling and simulation of large strain mesoscale plastic flow for deformation processing of structural components,2377250,2020,
-GRANT_00181,Microfluidic platforms for investigating flow induced structure formation in particle laden polymeric flows,5985128,2020,
-GRANT_00182,The mechanics of severe plastic deformation in porous soft rocks,3979800,2020,
-GRANT_00183,Enhancement of thermal performance during quenching using surface modification,5287297,2020,
-GRANT_00184,Deep learning methods for improving low-dose computed tomography perfusion imaging,3578696,2020,
-GRANT_00185,Microarchitectural techniques to design a secure processor,2878914,2020,
-GRANT_00186,Topological data analysis: Tools for multivariate,2664640,2020,
-GRANT_00187,High entropy alloy nanoparticles and coatings,2310000,2020,
-GRANT_00188,Microfluidic approach to study mechanical and fluid dynamic changes caused by biochemical stimuli leading to endothelial dysfunction,3549700,2020,
-GRANT_00189,Development and hardware implementation of a neuromorphic audio-visual saliency model and deep learning architecture for automated surveillance systems,3339600,2020,
-GRANT_00190,Fundamental Algorithms based on convex programming and spectral methods,1988380,2020,
-GRANT_00191,Manipulation of wall turbulence by external forcing for investigating mechanisms causing surface friction drag on transport vehicles,4707320,2020,
-GRANT_00192,Simulation of ship wake for application in Sonar Signal modeling,4758000,2020,
-GRANT_00193,Searching for new strengthening nano dispersions & nano precipitates to develop an advanced light weight aluminium alloys for high temperature applications,3654000,2020,
-GRANT_00194,Study of Corona ignition system in lean combustion engines,3320000,2020,
-GRANT_00195,Optimization of heat & mass exchanger used in the indirect evaporative cooling system working on Maisotsenko cycle,2474000,2020,
-GRANT_00196,An integrated approach to development & environment in the power sector,15075600,2020,
-GRANT_00197,Development of compact C-band dual shaped graded index lens - array antenna,1389000,2020,
-GRANT_00198,Development of prosumer driven integrated Smart grid,3332000,2020,
-GRANT_00199,National Centre for Clean Coal Research & Development,239407000,2020,
-GRANT_00200,Development of geoploymer composites for enahnaced mechanical properties & to subside air pollution by the addition of nano particles with emphasis on achieving content uniformity,6726800,2020,
-GRANT_00201,Detection of plant pathogenic fungi sing handheld PCR,3997190,2020,
-GRANT_00202,Scaling up the fabrication of nanomaterials with higher degree of complexity,4799000,2020,
-GRANT_00203,Analysis of performance of inclined plate anchors embedded in geosynthetics reinforced soils for transmission tower foundations,3196000,2020,
-GRANT_00204,National Conference on AI based machine Learning as a Services for Industries,166667,2020,
-GRANT_00205,Power Utlities and Artificial Intelligence,297000,2020,
-GRANT_00206,Infrastructure for Development for Neurological Disorder using Brain Signal Computing,1500000,2021,
-GRANT_00207,Artificial intelligence FDP,93000,2021,
-GRANT_00208,Machine Learning and Deep Learning with Python - FDP,200000,2021,
-GRANT_00209,SQL to Lucene Query Parser,72000,2021,
-GRANT_00210,IEEE-STEM Ambassodar- Ideathon for School students,16000,2021,
-GRANT_00211,Development of AI based embedded system for prediction of preterm child birth during pregnancies,2300000,2021,
-GRANT_00212,Development of prototype for detecting snakes in farm land using Edge computing algorithms,300000,2021,
-GRANT_00213,IEEE- Computer Society Inaguration of activities fund,12000,2021,
-GRANT_00214,A Secure Lightweight distributed framework for auditing shared data of Smart applications using Fully Homomorphic Encryption in Cloud Storage,200000,2021,
-GRANT_00215,Violence Detection in Drone Surveillance Videos,605000,2021,
-GRANT_00216,Customized Reconfigurable platform for Image/Video Compression based on Deep Learning Algorithm for Hyperspectral image,2934880,2021,
-GRANT_00217,Development of a Prototype for Detection of Snakes in Farmland using Edge Computing Algorithms,300000,2021,
-GRANT_00218,Lightweight Container-based Framework in Cloud Environment for Automated Online Assessment for Computer Science Courses,300000,2021,
-GRANT_00219,Sign Language Translator for vocally challenged using Sensor based hand gesture Recognition(HGR),180000,2021,
-GRANT_00220,FDP on âResearch Challenges in Atmospheric Sciences with a Computing Edgeâ.,93000,2021,
-GRANT_00221,GOC- ICRITCSA 2022,400000,2021,
-GRANT_00222,Performance Evaluation of Retrofitted RC Beams that have undergone distress adopting low carbon emission RC Jackets.,6000,2021,
-GRANT_00223,Design and Development of 3 Axis 3D printing of sustainable concrete structures and characterization of affordable housing solutions,7000,2021,
-GRANT_00224,Enabling Functional Mobility through Advanced Gait Analysis and Virtual Reality,2140000,2021,
-GRANT_00225,Experimental investigation and numerical validation of CFS builtup beams for residential structures,6000,2021,
-GRANT_00226,Braille Dot In- Cost effective braille dotted display for the deaf blind in India,450000,2021,
-GRANT_00227,"Sustainable and strengthening of low cost housing for Rural India""",49000,2021,
-GRANT_00228,"Studies on production of sustainable Green, Cement Less concrete By Utilizing Slag from Iron and Aluminium Industry",70000,2021,
-GRANT_00229,SAARCI Company consultancy Project,150000,2021,
-GRANT_00230,Image Processing and IoT Based Bee Hive Monitoring,300000,2021,
-GRANT_00231,consultancy work,5000,2021,
-GRANT_00232,consultancy work,30000,2021,
-GRANT_00233,Consultancy and knowledge sharing for development and manufacturing of educational trainer kits,10000,2021,
-GRANT_00234,Mobile STP,150000,2021,
-GRANT_00235,IoT-based air pollution control system,5000,2021,
-GRANT_00236,Implementation of child rescue from borewell using Zigbee for long range applications,5000,2021,
-GRANT_00237,IOT Based Water Management System through a Website,5000,2021,
-GRANT_00238,Smart Pulmonary Function Analyzer,5000,2021,
-GRANT_00239,River management using ML/AI for the prediction and management of Floods.,5000,2021,
-GRANT_00240,Student Engagement Prediction in an E-Learning Platform,5000,2021,
-GRANT_00241,Speech to sign language conversion for the hearing and speech impaired,5000,2021,
-GRANT_00242,Self Diagnosis of Mental Illness,5000,2021,
-GRANT_00243,Control and Stability Analysis of Renewable Energy based DC Nano Grids for Rural Electrification,2632278,2021,
-GRANT_00244,Solar Ironing Cart,105000,2021,
-GRANT_00245,Role of Power Electronics in Electric Vehicles: New Trends & Challenges,300000,2021,
-GRANT_00246,Internet of Things - A Roadmap to Research and Product Development,300000,2021,
-GRANT_00247,Kannada Hand written recognition using Deep learning methods,3500,2021,
-GRANT_00248,Unnat Bharat Abhiyan-Viilage Project,68965,2021,
-GRANT_00249,Design and Development of solar Air purifier,7000,2021,
-GRANT_00250,LAPKIT - Design of a low-cost Raspberry PI based Laptop and Electronics Kit for rural students,297000,2022,
-GRANT_00251,Investigation of Indian Calendar Systems,188200,2022,
-GRANT_00252,Investigation on Antenna design using high performance materials for next generation wireless networks,1383000,2022,
-GRANT_00253,"M/s Liveon Techn : Project "" RF OQC (Outgoing Quality Control) RF Talent and System integration",1050000,2022,
-GRANT_00254,"195026D02: Sensing and Related Technologies for the Grand challenges of the 21st Century climate, Energy, Water, Food, and Mega-cities",480000,2022,
-GRANT_00255,Smart watering system with the internet of things - TIH IOT CHANAKYA UG/PG,480000,2022,
-GRANT_00256,IoT based Lightweight Deep Learning Model for Early Plant Decay Detection for CHANAKYA Fellowship Program 2022-23,480000,2022,
-GRANT_00257,Numerical investigation of stability of rheological fluids through vertical porous channels in the presence of external fields with variable viscosity,300000,2022,
-GRANT_00258,"Development of Tellurium-Free, low-cost binary metal chalcogenides for thermoelectric applications",275000,2022,
-GRANT_00259,Estimation of Post-partum blood loss using optical fiber sensor and its correlation to shock index,1838000,2022,
-GRANT_00260,Sewage Treatment Plant Setup for Rural Sector of India,98000,2022,
-GRANT_00261,Internet of Things â A Roadmap to Research and Product Development,300000,2022,
-GRANT_00262,Role of Power Electronics in Electric Vehicles: New Trends & Challenges,300000,2022,
-GRANT_00263,Authenticated e-Waste Management Using Renewable Resources,,2022,
-GRANT_00264,Automated Hydrophonics Farming-A versatile system to study nutrient allocation and plant responses to nutrient availability in a controlled environment agriculture,600000,2022,
-GRANT_00265,Development of thin film biosensor based on modified Copper-Zeolite A (CuZEA) glassy carbon electrode for electrochemical detection of dopamine from E-waste,,2022,
-GRANT_00266,Vision Based Clog Remover in Narrow Sewer Pipelines,,2022,
-GRANT_00267,DESIGN AND IMPLEMENTATION OF CHICKEN EGG INCUBATOR FOR HATCHING USING IOT,,2022,
-GRANT_00268,Jal Urja Mitra Skill Development Program - Operation & Maintenance of small hydro power plants,1934250,2022,
-GRANT_00269,IoT based Solar ironing cart,7000,2022,
-GRANT_00270,Solar based Motorized fruit and Vegetable Harvesting Device,185000,2022,
-GRANT_00271,Solar based mini-Air Cooler cum Mosquito trap,219000,2022,
-GRANT_00272,Connected Autonomous Vehicle-WIRIN (WIPRO IISc Research and Innovation Network Consortium),5000000,2022,
-GRANT_00273,“DST-IIT Kanpur integrated Clean Energy Material Acceleration Platform on Materials”,3035029,2022,
-GRANT_00274,STUDENT PROJECT PROGRAMME-45TH SERIES/ “Design and Experimentation of a Low-Cost Exertion Gauntlet for Lymphedema”,8000,2022,
-GRANT_00275,MOU: Hewlett Packard Enterprise: Catch then Young Projects,110000,2023,
-GRANT_00276,Artificial Intelligence in Computer Networks,350000,2023,
-GRANT_00277,IOT AND CYBER SECURITY,350000,2023,
-GRANT_00278,"Design and Development of Ground Penetrating Radar with On-Field Reconfiguration Capability applicable to Institute of Technology, Bengaluru",6665000,2023,
-GRANT_00279,Create Management Under the MOU,20000,2023,
-GRANT_00280,FIST Program-2023 (TPN-89936) FILE NO.SR/FST/COLLEGE/2023/1474 -30/10/2023,9500000,2023,
-GRANT_00281,Exploration of transition metal doped GE2SB2TE5 Materials towards neuromorphic computing application,1263600,2023,
-GRANT_00282,Application Number: 1691566506,350000,2023,
-GRANT_00283,Arkesh Technology Private Limited,120000,2023,
-GRANT_00284,Deep Neural Network path to multiphysics modeling of heat transfer in porous media,3672000,2023,
-GRANT_00285,"""Research and Development in areas of minimally invasive and contactless patient monitoring, screening and triaging.""",6000000,2023,
-GRANT_00286,Development of a Polymer Nanocomposite based rapid malaria sensing device,2849000,2023,
-GRANT_00287,"A Non-intrusive monitoring smart bed to generate peronalized health profiles using Artificial Intelligence""",5477900,2023,
-GRANT_00288,IMPLEMENTATION OF INCUBATION COMPONENT OF MSME INNOVATIVE SCHEME,892500,2023,
-GRANT_00289,AI Based Virtual Presence Robo,6000,2023,
-GRANT_00290,MINDMATE: A PSYCHOLOGY CHATBOT,,2023,
-GRANT_00291,An assistive tool for the visually impaired in getting access to information in the news realm,,2023,
-GRANT_00292,âEmpowering Tomorrowâs Mobility : AI Driven Innovation for Electric Vehicles,350000,2023,
-GRANT_00293,"5 Days FDP on ""Data Science Tools for Secure Cloud Computing"".",,2023,
-GRANT_00294,"5 Days FDP on ""Big Data Analytics in Healthcare""",,2023,
-GRANT_00295,New Opportunities for Emerging 2D Materials in Bioelectronics and Biosensors,,2023,
-GRANT_00296,Empowering future 6G: GaN Semiconductor Technology growth towards a sustainable society,,2023,
-GRANT_00297,An automated year-round farming without soil and less water for socio-economic backward farmers,,2023,
-GRANT_00298,Smart Aeroponics,6000,2023,
-GRANT_00299,Modelling and Implementation of a Low Cost CAN Enabled Flex-Fuel Sensor,6000,2023,
-GRANT_00300,ATAL Academy Faculty Development Programme on Cyber Security for Industry 4.0,350000,2023,
-GRANT_00301,ATAL Academy Faculty Development Programme on SOC Design for Intergrated Sensing and Communication,350000,2023,
-GRANT_00302,"ATAL Academy Faculty Development Programme on Quantum Photonics, Computing and Communications dated 18.12.2023 to 23.12.2023",350000,2023,
-GRANT_00303,Investigation and optimization of factors influencing the high voltage electrical discharge-based extraction of protein from peanut meal/,3125150,2023,
-GRANT_00304,AI - Based Proctoring System for Online Examination (Video Proctoring),500000,2024,
-GRANT_00305,Optimizing Big Data processing pipelines: A Comprehensive Investigation into performance Bottlenecks and scalability Challenges,300000,2024,
-GRANT_00306,"Investigations of Ge-Sn Alloys Suitable for Photodetector in SWIR Range""",3825700,2024,
-GRANT_00307,Digital Detox - User based prevention of Mobile Addiction through Smart Docking System,,2024,
-GRANT_00308,"Building Bridges, Creating Opportunities: Rural Tourism for Livelihood and Entrepreneurship Developmentâ",,2024,
-GRANT_00309,Designing an innovative automated seed sprouting system catering to the unique needs of elderly and athletic individuals,,2024,
-GRANT_00310,Empowering the future GaN Semiconductor for a sustainable society: From Qubits to frontend electronics and MOSFET Physics,,2024,
-GRANT_00311,Biochemical inspired remidiation of effluent waste water using poly based biofilter for conventional farming applications,,2024,
-GRANT_00312,Establishing a Rural Entrepreneurship Cell and Local Innovation Hub for Sustainable Rural Development: A Student-Led Initiative,100000,2024,
-GRANT_00313,"Building Bridges, Creating Opportunities: Rural Tourism for Livelihood and Entrepreneurship Development",100000,2024,
-GRANT_00314,Development and Installation of Effective Insect Trapping System in cropfields of channasandra village,100000,2024,
-GRANT_00315,Year-Round Farming for Sustainable Livelihoods and Rural Agripreneurship,100000,2024,
-GRANT_00316,Popularizing Electronics among School Kids through Basic Attractive Experiments,100000,2024,
-GRANT_00317,Setting Up Science Laboratory,100000,2024,
-GRANT_00318,"AICTE Approved online ATAL FDP on ""Artificial Intelligence in Satellite Image Processing & Applications""",100000,2024,
-GRANT_00319,"Nurturing Women, Nurturing Earth - Eco Friendly Sanitary Napkins",1500000,2024,
-GRANT_00320,Empowering Artisans: One-Stop Export Support Platform for PM Vishwakarma 18 Trades,1500000,2024,
-GRANT_00321,Samridh: Military advanced AI based Helmet,1500000,2024,
-GRANT_00322,Leaf Tissue,1500000,2024,
-GRANT_00323,An automated year-round farming without soil and less water for socio-economic backward farmers,2520358,2024,
-GRANT_00324,Digital Detox - User based prevention of Mobile Addiction through Smart Docking System,1500000,2024,
-GRANT_00325,Providing Game Accessibility to Disabled People and enabling Physical Activities in Computer / Mobile Games through Gestures,1500000,2024,
-GRANT_00326,Development of a Solenoid Valve for Pneumatic Actuation System in Seed,2909500,2024,
-GRANT_00327,Atmospheric Water Well Generator,700000,2024,
-GRANT_00328,ATAL Advanced FDP on Next-Gen System-on-Chip Design for Advanced Semiconductor Solutions during 12.08.24 to 24.08.24,415425,2024,
-GRANT_00329,Analysis and assessment of 6G electromagnetic exposer and absorption -A study on Biological aspects,2500000,2024,
-GRANT_00330,An IoT device for Remote Monitoring and Classification of species,1531640,2024,
-GRANT_00331,"Center for invention, innovation and incubation",600000000,2024,
-GRANT_00332,Development of automated detection and grading of cashew kernels using AI approach,1400000,2024,
-GRANT_00333,Studies on Use of AI for Replacing Subjective Analysis of Seriplane Test with Objective Analysis,1200000,2024,
-GRANT_00334,Field oriented ciontrol (FOC)based BLDC/Stepper motor Drive Electronics,2218112,2025,
-GRANT_00335,Field Oriented Control (FOC) based BLDC/Stepper Motor Drive Electronics,2218112,2025,
-GRANT_00336,Scan enhancement technique for phased array antennas,2500000,2025,
-GRANT_00337,"A shaped Sandwich Lens for enhanced directive gain, with squint compensation in streered beam antennas",1900000,2025,
-GRANT_00338,Al Driven Automation For High Precision Defect Detection in Rubber Seal Production,1500000,2025,
-GRANT_00339,"AI-Based Automated Threat Prediction, Detection and Incident Response System",2000000,2025,
-GRANT_00340,Development of Mobile (Android &amp; iOS) Application and web portal for Bulk Waste Management at MSGP,750000,2025,
-GRANT_00341,"Development of Al-driven Sensor Fusion Algorithms for Target Detection, Recognition and Parameter Estimation",9881025,2025,
-GRANT_00342,Development Of Digital Demodulator For Variable Data Rate Applications,986300,2025,
-GRANT_00343,Smart Tarpulin,1500000,2025,
-GRANT_00344,Pulselife: Multiparameter Diagnostic Device,630000,2025,
-GRANT_00345,Radar Based Intelligent Human Monitoring System using TI IWR6843,1828200,2025,
-GRANT_00346,ECG Rhythm Analysis,850000,2025,
-GRANT_00347,Computer Vision Based Recorded Video Analysis System,1357000,2025,
-GRANT_00348,AI based virtual assistant to support primary education for rural students in regional language,1000000,2025,
-GRANT_00349,"Design, Development & implementation of real / near real time low SNR target detection & tracking system",2496140,2025,
-GRANT_00350,FIST PG College - Project,,2024,https://www.indiascienceandtechnology.gov.in/research/fist-pg-college-project-17?field_area_id=2396
-GRANT_00351,"Establishment of Community Resilience Resource Centre CRRC in Challekere Block, Chitradurga District, Karnantaka State",,2024,https://www.indiascienceandtechnology.gov.in/research/establishment-community-resilience-resource-centre-crrc-challekere-block-chitradurga-district?field_area_id=2396
-GRANT_00352,"Carbon Sequestration and Development of Low Carbon Stabilised Compressed Earth Blocks Utilising Slags, Recycle FInes and CO2",,2024,https://www.indiascienceandtechnology.gov.in/research/carbon-sequestration-and-development-low-carbon-stabilised-compressed-earth-blocks-utilising-slags?field_area_id=2396
-GRANT_00353,A novel high dimensional interpolation scheme in reduced order models of stochastic dynamical systems,,2024,https://www.indiascienceandtechnology.gov.in/research/novel-high-dimensional-interpolation-scheme-reduced-order-models-stochastic-dynamical-systems?field_area_id=2396
-GRANT_00354,Smart Power Electronic-based Active Paralleling and Digital Twin Systems with IoT for Robust Design of Electric Vehicle Batteries,,2024,https://www.indiascienceandtechnology.gov.in/research/smart-power-electronic-based-active-paralleling-and-digital-twin-systems-iot-robust-design-electric?field_area_id=2396
-GRANT_00355,Design and development of Micro-cast heat sink out of Al-Si-MWCNT alloy composite for Thermal management of CPUs of High-Performance Servers,,2024,https://www.indiascienceandtechnology.gov.in/research/design-and-development-micro-cast-heat-sink-out-al-si-mwcnt-alloy-composite-thermal-management-cpus?field_area_id=2396
-GRANT_00356,Studies on Gaseous Mixing and Shock Waves in Supercritical and Transcritical CO2 Ejectors for Refrigeration Applications,,2024,https://www.indiascienceandtechnology.gov.in/research/studies-gaseous-mixing-and-shock-waves-supercritical-and-transcritical-co2-ejectors-refrigeration?field_area_id=2396
-GRANT_00357,Design of Cooperative Formation Control for Multi-Vehicle Systems,,2024,https://www.indiascienceandtechnology.gov.in/research/design-cooperative-formation-control-multi-vehicle-systems?field_area_id=2396
-GRANT_00358,Design of Robust Re-entrant Cavity Resonators and Their RF Readout Circuits for Sensing Applications,,2024,https://www.indiascienceandtechnology.gov.in/research/design-robust-re-entrant-cavity-resonators-and-their-rf-readout-circuits-sensing-applications?field_area_id=2396
-GRANT_00359,Development of Spinel-based Stable High-Voltage Lithium-ion Batteries,,2023,https://www.indiascienceandtechnology.gov.in/research/development-spinel-based-stable-high-voltage-lithium-ion-batteries?field_area_id=2396
-GRANT_00360,"IRS-Assisted Uplink, Downlink, and Full Duplex Satellite Communication and Its Prototyping",,2023,https://www.indiascienceandtechnology.gov.in/research/irs-assisted-uplink-downlink-and-full-duplex-satellite-communication-and-its-prototyping?field_area_id=2396
-GRANT_00361,Investigation of thin-film delafossite materials for spin-orbit torque-based energy-efficient non-volatile memory applications,,2023,https://www.indiascienceandtechnology.gov.in/research/investigation-thin-film-delafossite-materials-spin-orbit-torque-based-energy-efficient-non-volatile?field_area_id=2396
-GRANT_00362,Robust mechanical methods for production of high fidelity metal powders,,2023,https://www.indiascienceandtechnology.gov.in/research/robust-mechanical-methods-production-high-fidelity-metal-powders?field_area_id=2396
-GRANT_00363,"A toolkit to design, analyze and fabricate inflatable structures",,2023,https://www.indiascienceandtechnology.gov.in/research/toolkit-design-analyze-and-fabricate-inflatable-structures?field_area_id=2396
-GRANT_00364,Direct numerical simulation of speech flow during conversations: effect of loudness and background ventilation,,2023,https://www.indiascienceandtechnology.gov.in/research/direct-numerical-simulation-speech-flow-during-conversations-effect-loudness-and-background?field_area_id=2396
-GRANT_00365,Empowering UAV Autonomy Through Innovative Control Design,,2023,https://www.indiascienceandtechnology.gov.in/research/empowering-uav-autonomy-through-innovative-control-design?field_area_id=2396
-GRANT_00366,Performance-reliability Co-design Approach for High-performance and High Reliability Normally OFF Vertical β-Ga2O3 Field Effect Transistors (FETs),,2023,https://www.indiascienceandtechnology.gov.in/research/performance-reliability-co-design-approach-high-performance-and-high-reliability-normally-vertical-%CE%B2?field_area_id=2396
-GRANT_00367,Mechanics of dense granular materials and particle-liquid suspensions,,2023,https://www.indiascienceandtechnology.gov.in/research/mechanics-dense-granular-materials-and-particle-liquid-suspensions?field_area_id=2396
-GRANT_00368,Multi-dimensional Quantum Coding and fault-Tolerant Circuit Architectures,,2023,https://www.indiascienceandtechnology.gov.in/research/multi-dimensional-quantum-coding-and-fault-tolerant-circuit-architectures?field_area_id=2396
-GRANT_00369,Mechanism of force propagation in cohesive granular materials,,2023,https://www.indiascienceandtechnology.gov.in/research/mechanism-force-propagation-cohesive-granular-materials?field_area_id=2396
-GRANT_00370,An Eulerian-Lagrangian model to study the transmission of aerosols during speech,,2023,https://www.indiascienceandtechnology.gov.in/research/eulerian-lagrangian-model-study-transmission-aerosols-during-speech?field_area_id=2396
-GRANT_00371,Bridging Quantum Physics with Theoretical Computer Science and Graph Theory,,2023,https://www.indiascienceandtechnology.gov.in/research/bridging-quantum-physics-theoretical-computer-science-and-graph-theory?field_area_id=2396
-GRANT_00372,Bubbly flow past fixed and elastically-mounted bluff bodies: Vortex bubble interactions and their effects on flow-induced vibrations,,2023,https://www.indiascienceandtechnology.gov.in/research/bubbly-flow-past-fixed-and-elastically-mounted-bluff-bodies-vortex-bubble-interactions-and-their?field_area_id=2396
-GRANT_00373,"Conductive yarn-based electrodes for use in portable, wearable device for treatment of urinary incontinence and other biomedical applications",,2023,https://www.indiascienceandtechnology.gov.in/research/conductive-yarn-based-electrodes-use-portable-wearable-device-treatment-urinary-incontinence-and?field_area_id=2396
-GRANT_00374,Design and Hardware Implementation of Non-von-Neumann Accelerators for Energy Constrained Edge Computing Applications,,2023,https://www.indiascienceandtechnology.gov.in/research/design-and-hardware-implementation-non-von-neumann-accelerators-energy-constrained-edge-computing?field_area_id=2396
-GRANT_00375,High-Temperature Fatigue Behaviour of Laser Peened Additively Manufactured Titanium Aluminide for Aerospace Applications,,2023,https://www.indiascienceandtechnology.gov.in/research/high-temperature-fatigue-behaviour-laser-peened-additively-manufactured-titanium-aluminide-aerospace?field_area_id=2396
-GRANT_00376,Full duplex communication for Intelligent reflecting surface (IRS) using index modulation,,2023,https://www.indiascienceandtechnology.gov.in/research/full-duplex-communication-intelligent-reflecting-surface-irs-using-index-modulation?field_area_id=2396
-GRANT_00377,Fundamental aspects of bio-enzyme stabilisation to mitigate liquefaction in sands,,2023,https://www.indiascienceandtechnology.gov.in/research/fundamental-aspects-bio-enzyme-stabilisation-mitigate-liquefaction-sands?field_area_id=2396
-GRANT_00378,Joint STO and CFO Estimation for Intelligent Reflecting Surface (IRS) Assisted OFDM/OTFS using Deep Learning,,2023,https://www.indiascienceandtechnology.gov.in/research/joint-sto-and-cfo-estimation-intelligent-reflecting-surface-irs-assisted-ofdmotfs-using-deep?field_area_id=2396
-GRANT_00379,Loop Thermosyphon for Thermal Management of Electric Vehicle Traction Motors,,2023,https://www.indiascienceandtechnology.gov.in/research/loop-thermosyphon-thermal-management-electric-vehicle-traction-motors?field_area_id=2396
-GRANT_00380,Singlet-fission enhanced silicon solar cells,,2023,https://www.indiascienceandtechnology.gov.in/research/singlet-fission-enhanced-silicon-solar-cells?field_area_id=2396
-GRANT_00381,Nanometer-scale Ultra-low Energy Molecular Memristors,,2023,https://www.indiascienceandtechnology.gov.in/research/nanometer-scale-ultra-low-energy-molecular-memristors?field_area_id=2396
-GRANT_00382,The title of the project is: “Development of a magnetic sensor system using graphene Hall-effect device and CMOS Application Specific Integrated Circuit (ASIC)”. The ASIC implements a novel ambipolar gate modulation signal processing scheme which is uniquely applicable for graphene Hall-effect sensor (GHS). The ASIC provides bias and modulation signal for the GHS and amplifies and demodulates the sensor signal to achieve low-offset and low noise magnetic sensor performance.,,2023,https://www.indiascienceandtechnology.gov.in/research/title-project-%E2%80%9Cdevelopment-magnetic-sensor-system-using-graphene-hall-effect-device-and-cmos?field_area_id=2396
-GRANT_00383,Toward the Rational Design of Defect-Tolerant Photovoltaics: From Molecular Design to Device Scale,,2023,https://www.indiascienceandtechnology.gov.in/research/toward-rational-design-defect-tolerant-photovoltaics-molecular-design-device-scale?field_area_id=2396
-GRANT_00384,Platinum Overlayers on Nanostructured Electrodes,,2023,https://www.indiascienceandtechnology.gov.in/research/platinum-overlayers-nanostructured-electrodes?field_area_id=2396
-GRANT_00385,Red mud industry waste blended with high voltage plasma for hazardous pollutants treatment from diesel exhaust,,2023,https://www.indiascienceandtechnology.gov.in/research/red-mud-industry-waste-blended-high-voltage-plasma-hazardous-pollutants-treatment-diesel-exhaust?field_area_id=2396
-GRANT_00386,Rheocoalescence: Exploiting coalescence of complex fluid droplets to investigate rheological signatures,,2023,https://www.indiascienceandtechnology.gov.in/research/rheocoalescence-exploiting-coalescence-complex-fluid-droplets-investigate-rheological-signatures?field_area_id=2396
-GRANT_00387,"Scalable, Cost Effective Flexible Photonic Integrated Circuits via Templated Fluid Instabilities",,2023,https://www.indiascienceandtechnology.gov.in/research/scalable-cost-effective-flexible-photonic-integrated-circuits-templated-fluid-instabilities?field_area_id=2396
-GRANT_00388,Assessment of the antibacterial molecular mechanism of metal decorated self-antibacterial graphene-cellulose based scaffolds to combat chronic Methicillin-resistant Staphylococcus aureus (MRSA) osteomyelitis,,2022,https://www.indiascienceandtechnology.gov.in/research/assessment-antibacterial-molecular-mechanism-metal-decorated-self-antibacterial-graphene-cellulose?field_area_id=2396
-GRANT_00389,Computational Microwave Imaging using Meta-surface,,2022,https://www.indiascienceandtechnology.gov.in/research/computational-microwave-imaging-using-meta-surface?field_area_id=2396
-GRANT_00390,Control of Unknown Systems against Complex Specifications,,2022,https://www.indiascienceandtechnology.gov.in/research/control-unknown-systems-against-complex-specifications?field_area_id=2396
-GRANT_00391,Data-driven modelling of transitionally turbulent laboratory flows,,2022,https://www.indiascienceandtechnology.gov.in/research/data-driven-modelling-transitionally-turbulent-laboratory-flows?field_area_id=2396
-GRANT_00392,Design and Fabrication of Flexible Artificial Basilar Epithelium,,2022,https://www.indiascienceandtechnology.gov.in/research/design-and-fabrication-flexible-artificial-basilar-epithelium?field_area_id=2396
-GRANT_00393,"Design, development and heat transfer analysis of flexible and rigid transfer lines for cryogenic applications",,2022,https://www.indiascienceandtechnology.gov.in/research/design-development-and-heat-transfer-analysis-flexible-and-rigid-transfer-lines-cryogenic?field_area_id=2396
-GRANT_00394,Development of a Polymer Nanocomposite based Rapid Malaria Sensing Device,,2022,https://www.indiascienceandtechnology.gov.in/research/development-polymer-nanocomposite-based-rapid-malaria-sensing-device?field_area_id=2396
-GRANT_00395,Development of Time Modulated Frequency Diverse (TMFD) MIMO Array for Accurate RADAR Detection,,2022,https://www.indiascienceandtechnology.gov.in/research/development-time-modulated-frequency-diverse-tmfd-mimo-array-accurate-radar-detection?field_area_id=2396
-GRANT_00396,Hydrogenation of carbon dioxide (CO2) into methanol and DME - A potential alternative fuel for domestic and transport applications,,2022,https://www.indiascienceandtechnology.gov.in/research/hydrogenation-carbon-dioxide-co2-methanol-and-dme-potential-alternative-fuel-domestic-and-transport?field_area_id=2396
-GRANT_00397,Fabrication of Lung-on-a-chip by Bioprinting for Studying Lung Fibrosis.,,2022,https://www.indiascienceandtechnology.gov.in/research/fabrication-lung-chip-bioprinting-studying-lung-fibrosis?field_area_id=2396
-GRANT_00398,Fast and Scalable Algorithms for On-Board Routing of Autonomous Agents in Stochastic Dynamic Environments,,2022,https://www.indiascienceandtechnology.gov.in/research/fast-and-scalable-algorithms-board-routing-autonomous-agents-stochastic-dynamic-environments?field_area_id=2396
-GRANT_00399,Measurement of Parkinson’s Tremor and assistive device design,,2022,https://www.indiascienceandtechnology.gov.in/research/measurement-parkinson%E2%80%99s-tremor-and-assistive-device-design?field_area_id=2396
-GRANT_00400,Modelling spatial extremes using Max-Stable Processes across India,,2022,https://www.indiascienceandtechnology.gov.in/research/modelling-spatial-extremes-using-max-stable-processes-across-india?field_area_id=2396
-GRANT_00401,"The development of beta titanium alloys by in-situ alloying using additive manufacturing: Processing, microstructure and mechanical properties",,2022,https://www.indiascienceandtechnology.gov.in/research/development-beta-titanium-alloys-situ-alloying-using-additive-manufacturing-processing?field_area_id=2396
-GRANT_00402,Ultra-Low Power Analog Machine Learning Chip for Acoustic Pattern Recognizer Using Open Source EDA Tools,,2022,https://www.indiascienceandtechnology.gov.in/research/ultra-low-power-analog-machine-learning-chip-acoustic-pattern-recognizer-using-open-source-eda-tools?field_area_id=2396
-GRANT_00403,Role of dislocations slip mode on the fatigue behavior of novel complex concentrated alloys,,2022,https://www.indiascienceandtechnology.gov.in/research/role-dislocations-slip-mode-fatigue-behavior-novel-complex-concentrated-alloys?field_area_id=2396
-GRANT_00404,Nonlinear Dynamics of Topological Mechanical Metamaterials,,2022,https://www.indiascienceandtechnology.gov.in/research/nonlinear-dynamics-topological-mechanical-metamaterials?field_area_id=2396
-GRANT_00405,Design and Implementation of a Robust Machine Learning Hardware Accelerator with Adversarial Fault Attack Countermeasures,,2024,https://www.indiascienceandtechnology.gov.in/research/design-and-implementation-robust-machine-learning-hardware-accelerator-adversarial-fault-attack?field_area_id=2457
-GRANT_00406,Explainable artificial intelligence methods for studying structural variations in ageing brain,,2024,https://www.indiascienceandtechnology.gov.in/research/explainable-artificial-intelligence-methods-studying-structural-variations-ageing-brain?field_area_id=2457
-GRANT_00407,Bridging the Gap Between Theory and Practice: Towards Approximation Algorithms for Practical Instances,,2024,https://www.indiascienceandtechnology.gov.in/research/bridging-gap-between-theory-and-practice-towards-approximation-algorithms-practical-instances?field_area_id=2457
-GRANT_00408,Rational Cryptography : Fooling the Adversarial Mind,,2024,https://www.indiascienceandtechnology.gov.in/research/rational-cryptography-fooling-adversarial-mind?field_area_id=2457
-GRANT_00409,Unified GeoSpatial Interface UGI enabled Data Exchange and Spatial Analytics Engine for Geo-spatial Data Science Applications,,2023,https://www.indiascienceandtechnology.gov.in/research/unified-geospatial-interface-ugi-enabled-data-exchange-and-spatial-analytics-engine-geo-spatial-data?field_area_id=2457
-GRANT_00410,A Method and System for True Random Number Generation Using Electron Trapping in Tunnel Junction,,2023,https://www.indiascienceandtechnology.gov.in/research/method-and-system-true-random-number-generation-using-electron-trapping-tunnel-junction?field_area_id=2457
-GRANT_00411,Autonomous navigation in a crowded environment using AI/ML,,2023,https://www.indiascienceandtechnology.gov.in/research/autonomous-navigation-crowded-environment-using-aiml?field_area_id=2457
-GRANT_00412,"Deep Learning based Explainable, Cluster Structure Assessment in Complex High-Dimensional Data",,2023,https://www.indiascienceandtechnology.gov.in/research/deep-learning-based-explainable-cluster-structure-assessment-complex-high-dimensional-data?field_area_id=2457
-GRANT_00413,Ultralow power magnetoelectric nonvolatile memory devices for AI computing: A potential pathway to revolutionize the IoT technology,,2023,https://www.indiascienceandtechnology.gov.in/research/ultralow-power-magnetoelectric-nonvolatile-memory-devices-ai-computing-potential-pathway?field_area_id=2457
-GRANT_00414,"Design, analysis and real-time implementation of low-complexity receivers and spectrally efficient channel estimation schemes for 6G multi-user MIMO/massive MIMO-OTFS systems",,2022,https://www.indiascienceandtechnology.gov.in/research/design-analysis-and-real-time-implementation-low-complexity-receivers-and-spectrally-efficient?field_area_id=2457
-GRANT_00415,"Proteo-genomic analysis of SARS-CoV-2: A clinical landscape of SNPs, COVID-19 proteome and host responses",,2020,https://www.indiascienceandtechnology.gov.in/research/proteo-genomic-analysis-sars-cov-2-clinical-landscape-snps-covid-19-proteome-and-host-responses?field_area_id=2457
-GRANT_00416,CovidWATCH: Rapid monitoring tool for regions with low smartphone penetration,,2020,https://www.indiascienceandtechnology.gov.in/research/covidwatch-rapid-monitoring-tool-regions-low-smartphone-penetration?field_area_id=2457
-GRANT_00417,Coswara: Speech and sound based diagnostics,,2020,https://www.indiascienceandtechnology.gov.in/research/coswara-speech-and-sound-based-diagnostics?field_area_id=2457
-GRANT_00418,GoCoronaGo – Contact tracing app and network analytics,,2020,https://www.indiascienceandtechnology.gov.in/research/gocoronago-%E2%80%93-contact-tracing-app-and-network-analytics?field_area_id=2457
-GRANT_00419,Mobile diagnostic testing lab for COVID-19,,2020,https://www.indiascienceandtechnology.gov.in/research/mobile-diagnostic-testing-lab-covid-19?field_area_id=2457
-GRANT_00420,S3 medical oxygen generator,,2020,https://www.indiascienceandtechnology.gov.in/research/s3-medical-oxygen-generator?field_area_id=2457
-GRANT_00421,"Role of respiratory droplets, drying dynamics and transmission routes during COVID-19",,2020,https://www.indiascienceandtechnology.gov.in/research/role-respiratory-droplets-drying-dynamics-and-transmission-routes-during-covid-19?field_area_id=2457
-GRANT_00422,Cohorting to isolate asymptomatic spreaders: An agent-based simulation study on the Mumbai Suburban Railway,,2020,https://www.indiascienceandtechnology.gov.in/research/cohorting-isolate-asymptomatic-spreaders-agent-based-simulation-study-mumbai-suburban-railway?field_area_id=2457
-GRANT_00423,PDE-based modelling of COVID-19 infections,,2020,https://www.indiascienceandtechnology.gov.in/research/pde-based-modelling-covid-19-infections?field_area_id=2457
-GRANT_00424,Direct numerical simulation of “cough/sneeze flows” to understand transmission dynamics of COVID-19 infections,,2020,https://www.indiascienceandtechnology.gov.in/research/direct-numerical-simulation-%E2%80%9Ccoughsneeze-flows%E2%80%9D-understand-transmission-dynamics-covid-19-infections?field_area_id=2457
-GRANT_00425,Strategies for rapid suppression of COVID-19 transmission in small world communities,,2020,https://www.indiascienceandtechnology.gov.in/research/strategies-rapid-suppression-covid-19-transmission-small-world-communities?field_area_id=2457
-GRANT_00426,COVID-19 infection rate estimation,,2020,https://www.indiascienceandtechnology.gov.in/research/covid-19-infection-rate-estimation?field_area_id=2457
-GRANT_00427,Framework for studying testing strategies for COVID-19,,2020,https://www.indiascienceandtechnology.gov.in/research/framework-studying-testing-strategies-covid-19?field_area_id=2457
-GRANT_00428,"Predicting medical inventory, asymptomatics and lockdown effects",,2020,https://www.indiascienceandtechnology.gov.in/research/predicting-medical-inventory-asymptomatics-and-lockdown-effects?field_area_id=2457
-GRANT_00429,COVID-19 automatic phase analysis,,2020,https://www.indiascienceandtechnology.gov.in/research/covid-19-automatic-phase-analysis?field_area_id=2457
-GRANT_00430,Modeling of epidemic spread in Indian urban conditions,,2020,https://www.indiascienceandtechnology.gov.in/research/modeling-epidemic-spread-indian-urban-conditions?field_area_id=2457
-GRANT_00431,In-Vitro Fluorescence Microscopy Studies Show Retention of Spike-Protein (SARS-CoV-2) on Cell Membrane in the Presence of Amodiaquin Dihydrochloride Dihydrate Drug,,2020,https://www.indiascienceandtechnology.gov.in/research/vitro-fluorescence-microscopy-studies-show-retention-spike-protein-sars-cov-2-cell-membrane-presence?field_area_id=2457
-GRANT_00432,Dr-COVID: Graph Neural Networks for SARS-CoV-2 Drug Repurposing,,2020,https://www.indiascienceandtechnology.gov.in/research/dr-covid-graph-neural-networks-sars-cov-2-drug-repurposing?field_area_id=2457
-GRANT_00433,Spatio-temporal predictive modeling framework for infectious disease spread,,2020,https://www.indiascienceandtechnology.gov.in/research/spatio-temporal-predictive-modeling-framework-infectious-disease-spread?field_area_id=2457
-GRANT_00434,COVID-19 epidemic: unlocking the lockdown in India,,2020,https://www.indiascienceandtechnology.gov.in/research/covid-19-epidemic-unlocking-lockdown-india?field_area_id=2457
-GRANT_00435,City-scale agent-based simulators for the study of non-pharmaceutical interventions in the context of the COVID-19 epidemic,,2020,https://www.indiascienceandtechnology.gov.in/research/city-scale-agent-based-simulators-study-non-pharmaceutical-interventions-context-covid-19-epidemic?field_area_id=2457
-GRANT_00436,Mechanistic modeling of the SARS-CoV-2 and immune system interplay,,2020,https://www.indiascienceandtechnology.gov.in/research/mechanistic-modeling-sars-cov-2-and-immune-system-interplay?field_area_id=2457
-GRANT_00437,Functional genomics of Indian SARS-CoV-2,,2020,https://www.indiascienceandtechnology.gov.in/research/functional-genomics-indian-sars-cov-2?field_area_id=2457
-GRANT_00438,Dynamic Modelling and Optimal Management of Air-traffic over Indian Airspace,,2019,https://www.indiascienceandtechnology.gov.in/research/dynamic-modelling-and-optimal-management-air-traffic-over-indian-airspace?field_area_id=2457
-GRANT_00439,Digitization of ancient manuscripts in Thigalari and Grantha scripts using multimodal recognition of speech and online handwritten transcript of an expert in the loop,,2019,https://www.indiascienceandtechnology.gov.in/research/digitization-ancient-manuscripts-thigalari-and-grantha-scripts-using-multimodal-recognition-speech?field_area_id=2457
-GRANT_00440,NFC-based multi-sensor platform to monitor transportation and storage integrity of lifesaving pharmaceutical products,,2019,https://www.indiascienceandtechnology.gov.in/research/nfc-based-multi-sensor-platform-monitor-transportation-and-storage-integrity-lifesaving?field_area_id=2457
-GRANT_00441,A Smart factory test bed for Assessment of Certification worthiness for Design Transfer and changes in Medical Electronic SMEs,,2019,https://www.indiascienceandtechnology.gov.in/research/smart-factory-test-bed-assessment-certification-worthiness-design-transfer-and-changes-medical?field_area_id=2457
-GRANT_00442,High voltage & ESD device development & enablement for SCL 180nm CMOS Technology,,2026,https://www.indiascienceandtechnology.gov.in/research/high-voltage-esd-device-development-enablement-scl-180nm-cmos-technology?field_area_id=2457
+GRANT_00001,Spin-Orbit Neuron Accelerator: A Scalable SOT-MTJ Based Stochastic Hardware Engine for Energy-Efficient AI,2930400,2026,
+GRANT_00002,"Deformation processing of lightweight structural metals: Correlating surface flow fields, energy dissipation and product quality through in situ analyses",5585615,2019,
+GRANT_00003,Digitization of ancient manuscripts in Thigalari and Grantha scripts using multimodal recognition of speech and online handwritten transcript of an expert in the loop,,2019,
+GRANT_00004,Machine Learning based AI Technology for Defect Detection in Aircraft Engines,,2019,
+GRANT_00005,English Gyani - An intelligent assistant for tutoring English via learner-tutor interactions,,2019,
+GRANT_00006,NFC-based multi-sensor platform to monitor transportation and storage integrity of lifesaving pharmaceutical products,,2019,
+GRANT_00007,Identification of Diseases in Millet Crop using Deep Learning for Next Generation Climate-Smart Agriculture,2562900,2019,
+GRANT_00008,Atomic Scale Electron Microscopy Investigation of Supported Catalysts,4763250,2020,
+GRANT_00009,Making simultaneous rheological and thermal maps of the cellular interior,7689070,2020,
+GRANT_00010,Effect of Passage of Electric Pulse on Flaws in Metallic Foils: Failure by Flaw Propagation to Healing by Flaw Closure,5749973,2020,
+GRANT_00011,Scanning probe microscopes with rotatable tips: Development and Applications,5004644,2020,
+GRANT_00012,Physical and mathematical modeling of gas-fine-liquid flow in a non-wetting packed bed,6539480,2020,
+GRANT_00013,Large-area and stable perovskite solar cells,7711145,2020,
+GRANT_00014,Network Principles in 3D Reconstruction,1582098,2020,
+GRANT_00015,Bio-inspired Membranes with 2D Layered Nanostructures for Desalination and Water Remediation,4136098,2020,
+GRANT_00016,Study of solvent induced polymorphism during crystal nucleation of molecular solids using molecular simulations,6225363,2020,
+GRANT_00017,Design and Analysis of Polar Codes and Learning-based Codes,2275843,2020,
+GRANT_00018,Multi-scale Design of Advanced Composites and Development of New Manufacturing Technologies,4112353,2020,
+GRANT_00019,Resource Aware Networked and Distributed Control,1924436,2020,
+GRANT_00020,Using Coding Theory for Fast and Robust Distributed Communication and Computing Systems,2373024,2020,
+GRANT_00021,Dynamic biomedical image reconstruction from highly noisy and under-sampled data using motion-adaptive spatio-temporal regularization,2299844,2020,
+GRANT_00022,Designing cost-efficient codes for Non-Orthogonal Multiple Access (NOMA) for 5G Using Generalized Boolean/Bent Functions,0,2020,
+GRANT_00023,Design and fabrication of plate type SCR catalyst for De-NOx application using Hybrid ceramic composite,3224590,2020,
+GRANT_00024,"Modeling, Optimization, and Channel Estimation of Intelligent Reflecting Surface (IRS)-Assisted Underlay Spectrum Sharing for 6G",1404663,2021,
+GRANT_00025,An analytic study of holomorphic vector bundles and Kahler manifolds,0,2021,
+GRANT_00026,Graphene based Meta-FET Device: Novel Metamaterial Approach for Multi-molecular Sensing Platform with Integrated Opto-electronic Communication,20720560,2021,
+GRANT_00027,Bianchi modular forms and Iwasawa theory,0,2021,
+GRANT_00028,DATA ASSIMILATION TO REACTION-DIFFUSION COMPLEX NETWORKS,0,2021,
+GRANT_00029,Investigations on electronic and optoelectronic properties of transition metal doped chalcogenide materials suitable for phase change memory (PCM) applications.,2692800,2021,
+GRANT_00030,"Ecological and Behavioural Determinants of Predator Diet Selection: A case study using Bats, Katydids and Moths",2995015,2021,
+GRANT_00031,"Linking vector ecology and pathogen transmission: Behavioural and life-history strategies of the vector, Aedes aegypti, and their consequences for pathogen transmission and mosquito control",6204520,2021,
+GRANT_00032,Correlated electron states and exciton condensation in double-layer van der Waals heterostructures,4563488,2021,
+GRANT_00033,Design and Fabrication of Flexible Artificial Basilar Epithelium,2997500,2022,
+GRANT_00034,Salt Hydrate-based Thermochemical Energy Storage System for Thermal Management of Batteries for Electric Vehicles,9367330,2022,
+GRANT_00035,Towards a general framework for geomaterial use by animals: Comparing bioengineering principles in termite and potter wasp mud architecture,5860888,2022,
+GRANT_00036,A Lead Laden Legacy of Indian Waterbodies: Quantification and Alleviation,64486160,2022,
+GRANT_00037,Vector Processor Design to support lower bit width weight precisions in machine learning applications,4238690,2022,
+GRANT_00038,"Centre for Electrochemical Energy Storage: Design, Development, Fabrication and Evaluation of Utility-Scale High-Performance Batteries",83630000,2022,
+GRANT_00039,"Hitting-sets, lower bounds and learning in algebraic complexity theory",0,2022,
+GRANT_00040,Liquid crystal as matrices for nanomaterial assembly-manipulation,2952400,2022,
+GRANT_00041,Understanding T lymphocyte infiltration into solid tumours,5909618,2022,
+GRANT_00042,Hydrogenation of carbon dioxide (CO2) into methanol and DME - A potential alternative fuel for domestic and transport applications,4477000,2022,
+GRANT_00043,"""Gravity cast in-situ Al-15Mg2Si-4.5Si composite and a process thereof"" & âRheo Gravity die cast in-situ Al-15Mg2Si-4.5Si-0.01Sr-0.015B composite and an Automobile Brake disc cast thereofâ",3000000,2022,
+GRANT_00044,A METHOD FOR FABRICATING AN ANTIMICROBIAL LAYER ON A FABRIC AND A COATED FABRIC THEREOF,3000000,2022,
+GRANT_00045,Arboreal Topological Phases,0,2022,
+GRANT_00046,Pushing the limits of solid-state nanopore based single molecule protein sequencing,17504120,2022,
+GRANT_00047,A Blind Modulation Classification (BMC) Method for Linearly Modulated Signal over Single Carrier Systems,3000000,2022,
+GRANT_00048,Acoustic Modeling and Analysis of Pulmonary System,0,2023,
+GRANT_00049,Dispersion relations for nonlinear wave propagation in periodic media through perturbation analysis,0,2023,
+GRANT_00050,Solutions of the Boltzmann transport equation for phonons and electrons beyond the relaxation time approximation,0,2023,
+GRANT_00051,Optimal Topology Design for Resilient Networked CPS,0,2023,
+GRANT_00052,Investigating cosmological imprints of dynamical gauge fields during inflation,0,2023,
+GRANT_00053,Investigation of the lifetime frontier of particle physics,0,2023,
+GRANT_00054,Mathematical Models of Intrinsic Noise and Heterogeneity in Ecosystem Dynamics,0,2023,
+GRANT_00055,Theoretical aspects of some Physics Beyond Standard Models.,0,2023,
+GRANT_00056,Some existence and rigidity problems in Kahler geometry,0,2023,
+GRANT_00057,Ergodic principles in Iwasawa theory,0,2023,
+GRANT_00058,Quantifying the effect of antibiotic pollution on soil microbial functions and the nitrogen cycle,3872790,2024,
+GRANT_00059,Closed-loop recyclable and fast curing Epoxy mediated by covalent adaptable network,5807950,2024,
+GRANT_00060,Non-linear Hall Effect: Mechanisms and Materials,3503315,2024,
+GRANT_00061,Collective swimming of Chlamydomonas reinhardtii under confinement,1441000,2024,
+GRANT_00062,Proof of concept and system analysis of the isolation of high-grade curcumin from turmeric using low-cost membrane separations,3838912,2024,
+GRANT_00063,Coupled dynamics in 2D nanoresonators,6310541,2024,
+GRANT_00064,"Investigation of soliton dynamics through multi-core photonic crystal fiber couplers and array waveguides for efficient all-optical logic adders, subtractors and soliton based quantum computing",2699441,2024,
+GRANT_00065,Development of Advanced Composites with Integrated Battery and Photovoltaic Cells,7830416,2024,
+GRANT_00066,Green ironmaking: Multiscale model to study hydrogen injection in a shaft furnace (DRI) and hydrogen injection with coal in the blast furnace with validation,5479320,2024,
+GRANT_00067,Study on affine Demazure modules,597709,2024,
+GRANT_00068,Design and Development of Light Weight Impact Resistant Sandwich Composite Fabricated using CFRP Face sheet and Cenosphere Reinforced PEEK Auxetic Core: An Integrated Experimental-Computational Approach,3680688,2024,
+GRANT_00069,Nanoelectrode arrays for high resolution recording of neural activity,6417435,2024,
+GRANT_00070,Development of new design architecture to realize high Figure of Merit piezoelectric MEMS resonators.,6639688,2024,
+GRANT_00071,Simulations of combustion dynamics in hydrogen-fired reheat burner towards decarbonization,4510044,2024,
+GRANT_00072,Design and analysis of data center network transport protocols for low latency,3639720,2024,
+GRANT_00073,Mechanics of Deformation of Non-Woven Nanofiber Networks & Their Composites,5187717,2024,
+GRANT_00074,"Bandits, Drones and Data Structures Through the Lens of Computational Geometry",3372790,2024,
+GRANT_00075,Design and Development of Strongly Luminescent Boron Based Chiroptical Materials for Bio-imaging Applications,7976788,2024,
+GRANT_00076,"Fully-printed, flexible negative capacitance field-effect transistors (nc-FETs) and logics",6529688,2024,
+GRANT_00077,Realization and Study of Modulation-Doping-Induced Interfacial Phase Transitions in Transition Metal Compounds,5698000,2024,
+GRANT_00078,INERTIA: In-memory Computing-based Energy-efficient Unified ML Accelerator,7206480,2024,
+GRANT_00079,"Theoretical, numerical, and experimental investigation of the collective behaviour of active magnetic swarms",8165626,2024,
+GRANT_00080,Fin-channel gallium nitride microwave transistors,3427680,2025,
+GRANT_00081,"An Eight Institution Partnership for Advancing Materials Research and Development: From Fundamental Design to Emerging Applications in Structural, Functional and Biomaterials Spaces",1036618200,2025,
+GRANT_00082,Exciton Delocalization versus Ultrafast Internal Conversion â Probing Structure-Function Relations in Artificial Light-harvesting Chlorosomes Through Two-dimensional Electronic Spectroscopy,23810414,2025,
+GRANT_00083,"Fractional Orbitals and Tight-Binding Gauge Fields: Theory, Simulation, and Detection",8137920,2026,
+GRANT_00084,Understanding the atomistic mechanism of degradation of compositionally complex multi-component alloys in severe corrosive environments.,8022096,2026,
+GRANT_00085,Reconstream: Systematic Reconstruction of Long-Term Streamflow Records in Indian Rivers using Geomorphology-Guided Machine Learning,9120940,2026,
+GRANT_00086,Theoretical investigations of the non-Hermitian dynamics of systems with mechanochemical feedback,9120000,2026,
+GRANT_00087,First-principles and experimental data-driven accurate multiscale modeling to design catalysts and processes for COâ electroreduction,8848800,2026,
+GRANT_00088,Magnetic and conducting particles in time-dependent magnetic fields.,7747642,2026,
+GRANT_00089,Creep-Fatigue Behavior of 9Cr ferritic-martensitic ODS Steel: Integrated Experimental and Modeling Approach for Advanced Energy Applications,6611280,2026,
+GRANT_00090,The science and design of robotic sandworms: Propulsion of deformable objects through particulate media,28151949,2026,
+GRANT_00091,Stable and Theoretically Grounded Model-Based Reconstruction with Trained Regularizers,6130944,2026,
+GRANT_00092,A comprehensive investigation of novel transport phenomena in topologically non-trivial hydrodynamic states of electrons.,4590720,2026,
+GRANT_00093,Deciphering the genetic basis of troglomorphy in the Indian cave fauna,9555600,2026,
+GRANT_00094,Novel Platform for Harnessing Proximity Effects in 2D Materialâ3D Magnetic Heterostructures for AI Memory and IoT Sensing,29801100,2026,
+GRANT_00095,Toward Practical Non-Terrestrial Networks: Physical Layer Innovations and 3GPP-Compliant Prototyping,9090691,2026,
+GRANT_00096,Bridging Transport and Optics in MoirÃ© Systems: A Platform for Strongly Correlated Quantum Matter,43788320,2026,
+GRANT_00097,Tailoring Hydrogel Mechanical Properties via In-situ Raman Spectroscopy of Polymer Networks for Biomedical Applications,22397420,2026,
+GRANT_00098,Multi-frequency Space-Time Metasurfaces for Terahertz Communication and Sensing,40861340,2026,
+GRANT_00099,Tailoring quantum phases in rhombohedral graphene for dissipationless electronic devices,22235250,2026,
+GRANT_00100,Folding Transitions and Interactions of Antimicrobial Peptides with Realistic Bacterial Membrane Models,7571520,2026,
+GRANT_00101,"Reefs, Rising Temperatures and Resilience: Integrating Ecology, Behaviour and Physiology to Understand and Predict Responses to Climate Change in Coral Reef Ecosystems",9156729,2026,
+GRANT_00102,Development of two-phase passive spreaders for thermal management of compact high heat flux electronics,9916800,2026,
+GRANT_00103,CuâO Thin-film Transistors using low-temperature plasma-enhanced deposition for BEOL CMOS,12980000,2026,
+GRANT_00104,Cosmological Quest for Dark Matter: Primordial Black Holes as a Novel Frontier,0,2026,
+GRANT_00105,Multiscale-Multiphase simulations of ultrasonic atomizers for biomedical applications,0,2026,
+GRANT_00106,"Nonlinear equations and their applications to Kahler geometry, holomorphic vector bundles, and physics",0,2026,
+GRANT_00107,Entanglement entropy and Harish-Chandra characters,0,2026,
+GRANT_00108,Fault-Tolerant Logical Operators in Quantum Error-Correcting Codes,0,2026,
+GRANT_00109,Analytic and arithmetic aspects of Automorphic forms and L-functions,0,2026,
+GRANT_00110,"Critical phenomena in percolation models, random graphs, and random trees",0,2026,
+GRANT_00111,Toeplitz operators on Hardy and Bergman spaces over domains,0,2026,
+GRANT_00112,"High-Current, Compact Power Supplies for AI-centric GPU Computing",14588200,2026,
+GRANT_00113,"Efficient Sensing, Communication, and Learning for Multi-Modal Artificial Intelligence of Things",12619200,2026,
+GRANT_00114,Indigenous development of twin cold finger driven GM cryocooler based Hydrogen / Helium / Nitrogen / Biogas liquefier,9872640,2026,
+GRANT_00115,Mathematical techniques and computational methods for hybrid quantum-HPC accelerated large-scale ab initio material modeling,0,2026,
+GRANT_00116,Can Social Learning Offset Bounded Rationality?,0,2026,
+GRANT_00117,"hp-Adaptive Galerkin Framework for Structured Population Dynamics: Theory, Error Estimates, and Applications to Age-Space PDEs",0,2026,
+GRANT_00118,Virtual Automation Lab with Augmented/Virtual reality,3000000,2019,
+GRANT_00119,Deep Learning for the efficient Numerical Solution of Differential Algebraic Equations,420000,2019,
+GRANT_00120,Non-Invasive technique of Nailfold capillaroscopy for diagnosis of Type â 2 diabetes Mellitus,500000,2019,
+GRANT_00121,Performance characterization of flexible wearable Antennas for Dynamic IoT Connectivity,1000000,2019,
+GRANT_00122,Anomaly Detection Using Machine Intelligence Techniques For Mobile Computing Networks,900000,2019,
+GRANT_00123,Smart Reporter,5000,2019,
+GRANT_00124,Short Term Training Program,193277,2019,
+GRANT_00125,Short Term Training Program,391388,2019,
+GRANT_00126,Design and Development of Virtual Comprehensive Neonatal monitoring system,2388760,2019,
+GRANT_00127,Centre of Learning for setting up Microwave and Antenna Lab,4000000,2019,
+GRANT_00128,"Study, Analysis and Optimization of workplace design parameters to improve worker efficiency through Taguchiâs Orthogonal Array Approach",70000,2019,
+GRANT_00129,Modernization of Wireless Communication Lab,769000,2019,
+GRANT_00130,Advanced Manufacturing technology (AMT)/ “Design and Development of Smart Robotic Based Magnetically Impelled Arc Butt welding equipment for joining Ferrous and Non Ferrous Tubes,"47,88,720",2019,
+GRANT_00131,"Fabrication and characterization on thin films for sensors, NV memory and waveguide application",1500000,2020,
+GRANT_00132,Awarded Teachers Associateship for Research Excellence (TARE),275000,2020,
+GRANT_00133,IOT enabled smart sanitizer vending machine,10000,2020,
+GRANT_00134,Investigations on electronic and optoelectronic properties of transition metal doped chalcogenide materials suitable for phase change memory (PCM) applications,2692000,2020,
+GRANT_00135,"Development of a Novel, cost effective Wind/pv Micro grid for tribal community living",950000,2020,
+GRANT_00136,"Development of a Novel, cost effective Wind/pv Micro grid for tribal community living",174000,2020,
+GRANT_00137,"Energy conservation and efficiency, Karnataka Renewable Energy Development Limited",100000,2020,
+GRANT_00138,AICTE Training and learning (ATAL) Academy Programme (IMMERSIVE VIRTUAL REALITY),93000,2020,
+GRANT_00139,5G Technology,93000,2020,
+GRANT_00140,Are retinal vascular abnormalities endophenotype in Schizophrenia : an examination in first degree relatives,3242000,2020,
+GRANT_00141,Jaivika tyajya vibhajaka - a smart system to handle covid-19 biomedical waste,18000,2020,
+GRANT_00142,Non-contact fever and respiration monitoring system for mass screening,32000,2020,
+GRANT_00143,Air sea coupling of Indian ocean and its climatic responses,2149000,2020,
+GRANT_00144,Combined studies of materials discovery with machine learning and experimental for the development of high performance piezoelectric materials,300000,2020,
+GRANT_00145,Recurrent Neural Network based Sentiment analysis approach to diagnose Mental Disorders using scanned patientâs Diary images,200000,2020,
+GRANT_00146,STTP-AICTE-AQIS- INTELLIGENT EDGE COMPUTING TECHNIQUE FOR DIVERSE APPLICATIONS(Grant),285000,2020,
+GRANT_00147,Technology Development and Automation of Hydroponic Farms in Urban areas using enhanced precision farming by incorporating loT and Cyber Physical System,300000,2020,
+GRANT_00148,Predictive lung deposition factor using low cost sensors to measure pollutant concentration and individual physiological properties,7000,2020,
+GRANT_00149,Study on environmentally friendly concrete- Alkali activated concrete,70000,2020,
+GRANT_00150,Web-crawler to scrape data,72000,2020,
+GRANT_00151,Technology Development and Automation of Hydroponic Farms in Urban areas using enhanced precision farming by incorporating loT and Cyber Physical System.,300000,2020,
+GRANT_00152,Study of fatigue crack growth of Al 6061 - T6 welds obtained by gas metal arc welding technique,2706350,2020,
+GRANT_00153,STTP-AICTE-AQIS-Intelligent Edge Computing Technique For Diverse Applications(Grant),285000,2020,
+GRANT_00154,Augmenting Kannada Educational Video with Indian Sign Language animes for assisting hearing impaired students,389000,2020,
+GRANT_00155,Experimental lnvestigation of low Velocity lmpact and Damage Studies of Hybrid Composite Inter / Intra layered with Glass Carbon Kevlar fibers for aerospace application.,2132235,2020,
+GRANT_00156,Selenium WebDriver using Python,391388,2020,
+GRANT_00157,IEEE-CIS Local industry interactions,115064,2020,
+GRANT_00158,IEEE-CIS High school outreach program,146498,2020,
+GRANT_00159,Selenium WebDriver using Python,198333,2020,
+GRANT_00160,Drowsiness detection for Automotive Drivers,4000,2020,
+GRANT_00161,Action Bot,125000,2020,
+GRANT_00162,"KSCST student project titled "" Design and development of polymer nano composite for photonic applications""",6000,2020,
+GRANT_00163,Determining the Structural Efficiency of Cost Effective Composite Retrofits Applied onto Distressed RC Beams to Enhance Their Load Carrying Capacities,6000,2020,
+GRANT_00164,Feasibility study for implementation of water recycling equipment at individual houses with specific reference to Kolar and Chikkaballapur districts,5000,2020,
+GRANT_00165,A feasibility study on Smart Card ticketing services in public transport with reference to Bengarulu City,1500000,2020,
+GRANT_00166,Supply Chain for Collection and Distribution of used cooking oil (UCO) to Bio Diesel production units in Bengarulu City,5000,2020,
+GRANT_00167,Innovative Application of Optical Sensing for Heavy Metal Detection in Water,5000,2020,
+GRANT_00168,Vahini,468000,2020,
+GRANT_00169,Atal FDP on SCILAB and XCOS - FOSS alternatives for MATLAB and SIMULINK,93000,2020,
+GRANT_00170,Electronic synapses based on two dimensional materials for neuromorphic computing,4780600,2020,
+GRANT_00171,Design & development of ultrasonic assisted vacuum drying system for food,3436503,2020,
+GRANT_00172,Soluble lead redox flow battery: Cycleablity and impact of forced and concentration gradient driven natural convection,6653880,2020,
+GRANT_00173,Carbon based nano composite mixed matrix membranes for desalination,2410000,2020,
+GRANT_00174,Hybrid energy storage system consisting of li-ion batteries & ultracapcitors,3105500,2020,
+GRANT_00175,Quantum transport equation based next generation compact models,1300000,2020,
+GRANT_00176,Applications of cold plasma activated water for hygiene purposes through experiments and Mathematical modeling,3633120,2020,
+GRANT_00177,"Flow of granular materials through a vertical channel: Comparison between experiments, DEM simulations and predictions of continuum models",2502050,2020,
+GRANT_00178,Soft-wall turbulence,2969568,2020,
+GRANT_00179,Microdroplet analysis and quantification of biomolecules,5906800,2020,
+GRANT_00180,Vortex ring and bubble interaction: Towards understanding drag reduction in turbulent boundary layers using air bubble injection,3559600,2020,
+GRANT_00181,Modeling and simulation of large strain mesoscale plastic flow for deformation processing of structural components,2377250,2020,
+GRANT_00182,Microfluidic platforms for investigating flow induced structure formation in particle laden polymeric flows,5985128,2020,
+GRANT_00183,The mechanics of severe plastic deformation in porous soft rocks,3979800,2020,
+GRANT_00184,Enhancement of thermal performance during quenching using surface modification,5287297,2020,
+GRANT_00185,Deep learning methods for improving low-dose computed tomography perfusion imaging,3578696,2020,
+GRANT_00186,Microarchitectural techniques to design a secure processor,2878914,2020,
+GRANT_00187,Topological data analysis: Tools for multivariate,2664640,2020,
+GRANT_00188,High entropy alloy nanoparticles and coatings,2310000,2020,
+GRANT_00189,Microfluidic approach to study mechanical and fluid dynamic changes caused by biochemical stimuli leading to endothelial dysfunction,3549700,2020,
+GRANT_00190,Development and hardware implementation of a neuromorphic audio-visual saliency model and deep learning architecture for automated surveillance systems,3339600,2020,
+GRANT_00191,Fundamental Algorithms based on convex programming and spectral methods,1988380,2020,
+GRANT_00192,Manipulation of wall turbulence by external forcing for investigating mechanisms causing surface friction drag on transport vehicles,4707320,2020,
+GRANT_00193,Simulation of ship wake for application in Sonar Signal modeling,4758000,2020,
+GRANT_00194,Searching for new strengthening nano dispersions & nano precipitates to develop an advanced light weight aluminium alloys for high temperature applications,3654000,2020,
+GRANT_00195,Study of Corona ignition system in lean combustion engines,3320000,2020,
+GRANT_00196,Optimization of heat & mass exchanger used in the indirect evaporative cooling system working on Maisotsenko cycle,2474000,2020,
+GRANT_00197,An integrated approach to development & environment in the power sector,15075600,2020,
+GRANT_00198,Development of compact C-band dual shaped graded index lens - array antenna,1389000,2020,
+GRANT_00199,Development of prosumer driven integrated Smart grid,3332000,2020,
+GRANT_00200,National Centre for Clean Coal Research & Development,239407000,2020,
+GRANT_00201,Development of geoploymer composites for enahnaced mechanical properties & to subside air pollution by the addition of nano particles with emphasis on achieving content uniformity,6726800,2020,
+GRANT_00202,Detection of plant pathogenic fungi sing handheld PCR,3997190,2020,
+GRANT_00203,Scaling up the fabrication of nanomaterials with higher degree of complexity,4799000,2020,
+GRANT_00204,Analysis of performance of inclined plate anchors embedded in geosynthetics reinforced soils for transmission tower foundations,3196000,2020,
+GRANT_00205,National Conference on AI based machine Learning as a Services for Industries,166667,2020,
+GRANT_00206,Power Utlities and Artificial Intelligence,297000,2020,
+GRANT_00207,Infrastructure for Development for Neurological Disorder using Brain Signal Computing,1500000,2021,
+GRANT_00208,Artificial intelligence FDP,93000,2021,
+GRANT_00209,Machine Learning and Deep Learning with Python - FDP,200000,2021,
+GRANT_00210,SQL to Lucene Query Parser,72000,2021,
+GRANT_00211,IEEE-STEM Ambassodar- Ideathon for School students,16000,2021,
+GRANT_00212,Development of AI based embedded system for prediction of preterm child birth during pregnancies,2300000,2021,
+GRANT_00213,Development of prototype for detecting snakes in farm land using Edge computing algorithms,300000,2021,
+GRANT_00214,IEEE- Computer Society Inaguration of activities fund,12000,2021,
+GRANT_00215,A Secure Lightweight distributed framework for auditing shared data of Smart applications using Fully Homomorphic Encryption in Cloud Storage,200000,2021,
+GRANT_00216,Violence Detection in Drone Surveillance Videos,605000,2021,
+GRANT_00217,Customized Reconfigurable platform for Image/Video Compression based on Deep Learning Algorithm for Hyperspectral image,2934880,2021,
+GRANT_00218,Development of a Prototype for Detection of Snakes in Farmland using Edge Computing Algorithms,300000,2021,
+GRANT_00219,Lightweight Container-based Framework in Cloud Environment for Automated Online Assessment for Computer Science Courses,300000,2021,
+GRANT_00220,Sign Language Translator for vocally challenged using Sensor based hand gesture Recognition(HGR),180000,2021,
+GRANT_00221,FDP on âResearch Challenges in Atmospheric Sciences with a Computing Edgeâ.,93000,2021,
+GRANT_00222,GOC- ICRITCSA 2022,400000,2021,
+GRANT_00223,Performance Evaluation of Retrofitted RC Beams that have undergone distress adopting low carbon emission RC Jackets.,6000,2021,
+GRANT_00224,Design and Development of 3 Axis 3D printing of sustainable concrete structures and characterization of affordable housing solutions,7000,2021,
+GRANT_00225,Enabling Functional Mobility through Advanced Gait Analysis and Virtual Reality,2140000,2021,
+GRANT_00226,Experimental investigation and numerical validation of CFS builtup beams for residential structures,6000,2021,
+GRANT_00227,Braille Dot In- Cost effective braille dotted display for the deaf blind in India,450000,2021,
+GRANT_00228,"Sustainable and strengthening of low cost housing for Rural India""",49000,2021,
+GRANT_00229,"Studies on production of sustainable Green, Cement Less concrete By Utilizing Slag from Iron and Aluminium Industry",70000,2021,
+GRANT_00230,SAARCI Company consultancy Project,150000,2021,
+GRANT_00231,Image Processing and IoT Based Bee Hive Monitoring,300000,2021,
+GRANT_00232,consultancy work,5000,2021,
+GRANT_00233,consultancy work,30000,2021,
+GRANT_00234,Consultancy and knowledge sharing for development and manufacturing of educational trainer kits,10000,2021,
+GRANT_00235,Mobile STP,150000,2021,
+GRANT_00236,IoT-based air pollution control system,5000,2021,
+GRANT_00237,Implementation of child rescue from borewell using Zigbee for long range applications,5000,2021,
+GRANT_00238,IOT Based Water Management System through a Website,5000,2021,
+GRANT_00239,Smart Pulmonary Function Analyzer,5000,2021,
+GRANT_00240,River management using ML/AI for the prediction and management of Floods.,5000,2021,
+GRANT_00241,Student Engagement Prediction in an E-Learning Platform,5000,2021,
+GRANT_00242,Speech to sign language conversion for the hearing and speech impaired,5000,2021,
+GRANT_00243,Self Diagnosis of Mental Illness,5000,2021,
+GRANT_00244,Control and Stability Analysis of Renewable Energy based DC Nano Grids for Rural Electrification,2632278,2021,
+GRANT_00245,Solar Ironing Cart,105000,2021,
+GRANT_00246,Role of Power Electronics in Electric Vehicles: New Trends & Challenges,300000,2021,
+GRANT_00247,Internet of Things - A Roadmap to Research and Product Development,300000,2021,
+GRANT_00248,Kannada Hand written recognition using Deep learning methods,3500,2021,
+GRANT_00249,Unnat Bharat Abhiyan-Viilage Project,68965,2021,
+GRANT_00250,Design and Development of solar Air purifier,7000,2021,
+GRANT_00251,LAPKIT - Design of a low-cost Raspberry PI based Laptop and Electronics Kit for rural students,297000,2022,
+GRANT_00252,Investigation of Indian Calendar Systems,188200,2022,
+GRANT_00253,Investigation on Antenna design using high performance materials for next generation wireless networks,1383000,2022,
+GRANT_00254,"M/s Liveon Techn : Project "" RF OQC (Outgoing Quality Control) RF Talent and System integration",1050000,2022,
+GRANT_00255,"195026D02: Sensing and Related Technologies for the Grand challenges of the 21st Century climate, Energy, Water, Food, and Mega-cities",480000,2022,
+GRANT_00256,Smart watering system with the internet of things - TIH IOT CHANAKYA UG/PG,480000,2022,
+GRANT_00257,IoT based Lightweight Deep Learning Model for Early Plant Decay Detection for CHANAKYA Fellowship Program 2022-23,480000,2022,
+GRANT_00258,Numerical investigation of stability of rheological fluids through vertical porous channels in the presence of external fields with variable viscosity,300000,2022,
+GRANT_00259,"Development of Tellurium-Free, low-cost binary metal chalcogenides for thermoelectric applications",275000,2022,
+GRANT_00260,Estimation of Post-partum blood loss using optical fiber sensor and its correlation to shock index,1838000,2022,
+GRANT_00261,Sewage Treatment Plant Setup for Rural Sector of India,98000,2022,
+GRANT_00262,Internet of Things â A Roadmap to Research and Product Development,300000,2022,
+GRANT_00263,Role of Power Electronics in Electric Vehicles: New Trends & Challenges,300000,2022,
+GRANT_00264,Authenticated e-Waste Management Using Renewable Resources,,2022,
+GRANT_00265,Automated Hydrophonics Farming-A versatile system to study nutrient allocation and plant responses to nutrient availability in a controlled environment agriculture,600000,2022,
+GRANT_00266,Development of thin film biosensor based on modified Copper-Zeolite A (CuZEA) glassy carbon electrode for electrochemical detection of dopamine from E-waste,,2022,
+GRANT_00267,Vision Based Clog Remover in Narrow Sewer Pipelines,,2022,
+GRANT_00268,DESIGN AND IMPLEMENTATION OF CHICKEN EGG INCUBATOR FOR HATCHING USING IOT,,2022,
+GRANT_00269,Jal Urja Mitra Skill Development Program - Operation & Maintenance of small hydro power plants,1934250,2022,
+GRANT_00270,IoT based Solar ironing cart,7000,2022,
+GRANT_00271,Solar based Motorized fruit and Vegetable Harvesting Device,185000,2022,
+GRANT_00272,Solar based mini-Air Cooler cum Mosquito trap,219000,2022,
+GRANT_00273,Connected Autonomous Vehicle-WIRIN (WIPRO IISc Research and Innovation Network Consortium),5000000,2022,
+GRANT_00274,“DST-IIT Kanpur integrated Clean Energy Material Acceleration Platform on Materials”,"30,35,029",2022,
+GRANT_00275,STUDENT PROJECT PROGRAMME-45TH SERIES/ “Design and Experimentation of a Low-Cost Exertion Gauntlet for Lymphedema”,"8,000",2022,
+GRANT_00276,MOU: Hewlett Packard Enterprise: Catch then Young Projects,110000,2023,
+GRANT_00277,Artificial Intelligence in Computer Networks,350000,2023,
+GRANT_00278,IOT AND CYBER SECURITY,350000,2023,
+GRANT_00279,"Design and Development of Ground Penetrating Radar with On-Field Reconfiguration Capability applicable to Institute of Technology, Bengaluru",6665000,2023,
+GRANT_00280,Create Management Under the MOU,20000,2023,
+GRANT_00281,FIST Program-2023 (TPN-89936) FILE NO.SR/FST/COLLEGE/2023/1474 -30/10/2023,9500000,2023,
+GRANT_00282,Exploration of transition metal doped GE2SB2TE5 Materials towards neuromorphic computing application,1263600,2023,
+GRANT_00283,Application Number: 1691566506,350000,2023,
+GRANT_00284,Arkesh Technology Private Limited,120000,2023,
+GRANT_00285,Deep Neural Network path to multiphysics modeling of heat transfer in porous media,3672000,2023,
+GRANT_00286,"""Research and Development in areas of minimally invasive and contactless patient monitoring, screening and triaging.""",6000000,2023,
+GRANT_00287,Development of a Polymer Nanocomposite based rapid malaria sensing device,2849000,2023,
+GRANT_00288,"A Non-intrusive monitoring smart bed to generate peronalized health profiles using Artificial Intelligence""",5477900,2023,
+GRANT_00289,IMPLEMENTATION OF INCUBATION COMPONENT OF MSME INNOVATIVE SCHEME,892500,2023,
+GRANT_00290,AI Based Virtual Presence Robo,6000,2023,
+GRANT_00291,MINDMATE: A PSYCHOLOGY CHATBOT,,2023,
+GRANT_00292,An assistive tool for the visually impaired in getting access to information in the news realm,,2023,
+GRANT_00293,âEmpowering Tomorrowâs Mobility : AI Driven Innovation for Electric Vehicles,350000,2023,
+GRANT_00294,"5 Days FDP on ""Data Science Tools for Secure Cloud Computing"".",,2023,
+GRANT_00295,"5 Days FDP on ""Big Data Analytics in Healthcare""",,2023,
+GRANT_00296,New Opportunities for Emerging 2D Materials in Bioelectronics and Biosensors,,2023,
+GRANT_00297,Empowering future 6G: GaN Semiconductor Technology growth towards a sustainable society,,2023,
+GRANT_00298,An automated year-round farming without soil and less water for socio-economic backward farmers,,2023,
+GRANT_00299,Smart Aeroponics,6000,2023,
+GRANT_00300,Modelling and Implementation of a Low Cost CAN Enabled Flex-Fuel Sensor,6000,2023,
+GRANT_00301,ATAL Academy Faculty Development Programme on Cyber Security for Industry 4.0,350000,2023,
+GRANT_00302,ATAL Academy Faculty Development Programme on SOC Design for Intergrated Sensing and Communication,350000,2023,
+GRANT_00303,"ATAL Academy Faculty Development Programme on Quantum Photonics, Computing and Communications dated 18.12.2023 to 23.12.2023",350000,2023,
+GRANT_00304,Investigation and optimization of factors influencing the high voltage electrical discharge-based extraction of protein from peanut meal/,"31,25,150",2023,
+GRANT_00305,AI - Based Proctoring System for Online Examination (Video Proctoring),500000,2024,
+GRANT_00306,Optimizing Big Data processing pipelines: A Comprehensive Investigation into performance Bottlenecks and scalability Challenges,300000,2024,
+GRANT_00307,"Investigations of Ge-Sn Alloys Suitable for Photodetector in SWIR Range""",3825700,2024,
+GRANT_00308,Digital Detox - User based prevention of Mobile Addiction through Smart Docking System,,2024,
+GRANT_00309,"Building Bridges, Creating Opportunities: Rural Tourism for Livelihood and Entrepreneurship Developmentâ",,2024,
+GRANT_00310,Designing an innovative automated seed sprouting system catering to the unique needs of elderly and athletic individuals,,2024,
+GRANT_00311,Empowering the future GaN Semiconductor for a sustainable society: From Qubits to frontend electronics and MOSFET Physics,,2024,
+GRANT_00312,Biochemical inspired remidiation of effluent waste water using poly based biofilter for conventional farming applications,,2024,
+GRANT_00313,Establishing a Rural Entrepreneurship Cell and Local Innovation Hub for Sustainable Rural Development: A Student-Led Initiative,100000,2024,
+GRANT_00314,"Building Bridges, Creating Opportunities: Rural Tourism for Livelihood and Entrepreneurship Development",100000,2024,
+GRANT_00315,Development and Installation of Effective Insect Trapping System in cropfields of channasandra village,100000,2024,
+GRANT_00316,Year-Round Farming for Sustainable Livelihoods and Rural Agripreneurship,100000,2024,
+GRANT_00317,Popularizing Electronics among School Kids through Basic Attractive Experiments,100000,2024,
+GRANT_00318,Setting Up Science Laboratory,100000,2024,
+GRANT_00319,"AICTE Approved online ATAL FDP on ""Artificial Intelligence in Satellite Image Processing & Applications""",100000,2024,
+GRANT_00320,"Nurturing Women, Nurturing Earth - Eco Friendly Sanitary Napkins",1500000,2024,
+GRANT_00321,Empowering Artisans: One-Stop Export Support Platform for PM Vishwakarma 18 Trades,1500000,2024,
+GRANT_00322,Samridh: Military advanced AI based Helmet,1500000,2024,
+GRANT_00323,Leaf Tissue,1500000,2024,
+GRANT_00324,An automated year-round farming without soil and less water for socio-economic backward farmers,2520358,2024,
+GRANT_00325,Digital Detox - User based prevention of Mobile Addiction through Smart Docking System,1500000,2024,
+GRANT_00326,Providing Game Accessibility to Disabled People and enabling Physical Activities in Computer / Mobile Games through Gestures,1500000,2024,
+GRANT_00327,Development of a Solenoid Valve for Pneumatic Actuation System in Seed,2909500,2024,
+GRANT_00328,Atmospheric Water Well Generator,700000,2024,
+GRANT_00329,ATAL Advanced FDP on Next-Gen System-on-Chip Design for Advanced Semiconductor Solutions during 12.08.24 to 24.08.24,415425,2024,
+GRANT_00330,Analysis and assessment of 6G electromagnetic exposer and absorption -A study on Biological aspects,2500000,2024,
+GRANT_00331,An IoT device for Remote Monitoring and Classification of species,1531640,2024,
+GRANT_00332,"Center for invention, innovation and incubation",600000000,2024,
+GRANT_00333,Development of automated detection and grading of cashew kernels using AI approach,1400000,2024,
+GRANT_00334,Studies on Use of AI for Replacing Subjective Analysis of Seriplane Test with Objective Analysis,1200000,2024,
+GRANT_00335,Field oriented ciontrol (FOC)based BLDC/Stepper motor Drive Electronics,2218112,2025,
+GRANT_00336,Field Oriented Control (FOC) based BLDC/Stepper Motor Drive Electronics,2218112,2025,
+GRANT_00337,Scan enhancement technique for phased array antennas,2500000,2025,
+GRANT_00338,"A shaped Sandwich Lens for enhanced directive gain, with squint compensation in streered beam antennas",1900000,2025,
+GRANT_00339,Al Driven Automation For High Precision Defect Detection in Rubber Seal Production,1500000,2025,
+GRANT_00340,"AI-Based Automated Threat Prediction, Detection and Incident Response System",2000000,2025,
+GRANT_00341,Development of Mobile (Android &amp; iOS) Application and web portal for Bulk Waste Management at MSGP,750000,2025,
+GRANT_00342,"Development of Al-driven Sensor Fusion Algorithms for Target Detection, Recognition and Parameter Estimation",9881025,2025,
+GRANT_00343,Development Of Digital Demodulator For Variable Data Rate Applications,986300,2025,
+GRANT_00344,Smart Tarpulin,1500000,2025,
+GRANT_00345,Pulselife: Multiparameter Diagnostic Device,630000,2025,
+GRANT_00346,Radar Based Intelligent Human Monitoring System using TI IWR6843,1828200,2025,
+GRANT_00347,ECG Rhythm Analysis,850000,2025,
+GRANT_00348,Computer Vision Based Recorded Video Analysis System,1357000,2025,
+GRANT_00349,AI based virtual assistant to support primary education for rural students in regional language,1000000,2025,
+GRANT_00350,"Design, Development & implementation of real / near real time low SNR target detection & tracking system",2496140,2025,
+GRANT_00351,FIST PG College - Project,,2024,https://www.indiascienceandtechnology.gov.in/research/fist-pg-college-project-17?field_area_id=2396
+GRANT_00352,"Establishment of Community Resilience Resource Centre CRRC in Challekere Block, Chitradurga District, Karnantaka State",,2024,https://www.indiascienceandtechnology.gov.in/research/establishment-community-resilience-resource-centre-crrc-challekere-block-chitradurga-district?field_area_id=2396
+GRANT_00353,"Carbon Sequestration and Development of Low Carbon Stabilised Compressed Earth Blocks Utilising Slags, Recycle FInes and CO2",,2024,https://www.indiascienceandtechnology.gov.in/research/carbon-sequestration-and-development-low-carbon-stabilised-compressed-earth-blocks-utilising-slags?field_area_id=2396
+GRANT_00354,A novel high dimensional interpolation scheme in reduced order models of stochastic dynamical systems,,2024,https://www.indiascienceandtechnology.gov.in/research/novel-high-dimensional-interpolation-scheme-reduced-order-models-stochastic-dynamical-systems?field_area_id=2396
+GRANT_00355,Smart Power Electronic-based Active Paralleling and Digital Twin Systems with IoT for Robust Design of Electric Vehicle Batteries,,2024,https://www.indiascienceandtechnology.gov.in/research/smart-power-electronic-based-active-paralleling-and-digital-twin-systems-iot-robust-design-electric?field_area_id=2396
+GRANT_00356,Design and development of Micro-cast heat sink out of Al-Si-MWCNT alloy composite for Thermal management of CPUs of High-Performance Servers,,2024,https://www.indiascienceandtechnology.gov.in/research/design-and-development-micro-cast-heat-sink-out-al-si-mwcnt-alloy-composite-thermal-management-cpus?field_area_id=2396
+GRANT_00357,Studies on Gaseous Mixing and Shock Waves in Supercritical and Transcritical CO2 Ejectors for Refrigeration Applications,,2024,https://www.indiascienceandtechnology.gov.in/research/studies-gaseous-mixing-and-shock-waves-supercritical-and-transcritical-co2-ejectors-refrigeration?field_area_id=2396
+GRANT_00358,Design of Cooperative Formation Control for Multi-Vehicle Systems,,2024,https://www.indiascienceandtechnology.gov.in/research/design-cooperative-formation-control-multi-vehicle-systems?field_area_id=2396
+GRANT_00359,Design of Robust Re-entrant Cavity Resonators and Their RF Readout Circuits for Sensing Applications,,2024,https://www.indiascienceandtechnology.gov.in/research/design-robust-re-entrant-cavity-resonators-and-their-rf-readout-circuits-sensing-applications?field_area_id=2396
+GRANT_00360,Development of Spinel-based Stable High-Voltage Lithium-ion Batteries,,2023,https://www.indiascienceandtechnology.gov.in/research/development-spinel-based-stable-high-voltage-lithium-ion-batteries?field_area_id=2396
+GRANT_00361,"IRS-Assisted Uplink, Downlink, and Full Duplex Satellite Communication and Its Prototyping",,2023,https://www.indiascienceandtechnology.gov.in/research/irs-assisted-uplink-downlink-and-full-duplex-satellite-communication-and-its-prototyping?field_area_id=2396
+GRANT_00362,Investigation of thin-film delafossite materials for spin-orbit torque-based energy-efficient non-volatile memory applications,,2023,https://www.indiascienceandtechnology.gov.in/research/investigation-thin-film-delafossite-materials-spin-orbit-torque-based-energy-efficient-non-volatile?field_area_id=2396
+GRANT_00363,Robust mechanical methods for production of high fidelity metal powders,,2023,https://www.indiascienceandtechnology.gov.in/research/robust-mechanical-methods-production-high-fidelity-metal-powders?field_area_id=2396
+GRANT_00364,"A toolkit to design, analyze and fabricate inflatable structures",,2023,https://www.indiascienceandtechnology.gov.in/research/toolkit-design-analyze-and-fabricate-inflatable-structures?field_area_id=2396
+GRANT_00365,Direct numerical simulation of speech flow during conversations: effect of loudness and background ventilation,,2023,https://www.indiascienceandtechnology.gov.in/research/direct-numerical-simulation-speech-flow-during-conversations-effect-loudness-and-background?field_area_id=2396
+GRANT_00366,Empowering UAV Autonomy Through Innovative Control Design,,2023,https://www.indiascienceandtechnology.gov.in/research/empowering-uav-autonomy-through-innovative-control-design?field_area_id=2396
+GRANT_00367,Performance-reliability Co-design Approach for High-performance and High Reliability Normally OFF Vertical β-Ga2O3 Field Effect Transistors (FETs),,2023,https://www.indiascienceandtechnology.gov.in/research/performance-reliability-co-design-approach-high-performance-and-high-reliability-normally-vertical-%CE%B2?field_area_id=2396
+GRANT_00368,Mechanics of dense granular materials and particle-liquid suspensions,,2023,https://www.indiascienceandtechnology.gov.in/research/mechanics-dense-granular-materials-and-particle-liquid-suspensions?field_area_id=2396
+GRANT_00369,Multi-dimensional Quantum Coding and fault-Tolerant Circuit Architectures,,2023,https://www.indiascienceandtechnology.gov.in/research/multi-dimensional-quantum-coding-and-fault-tolerant-circuit-architectures?field_area_id=2396
+GRANT_00370,Mechanism of force propagation in cohesive granular materials,,2023,https://www.indiascienceandtechnology.gov.in/research/mechanism-force-propagation-cohesive-granular-materials?field_area_id=2396
+GRANT_00371,An Eulerian-Lagrangian model to study the transmission of aerosols during speech,,2023,https://www.indiascienceandtechnology.gov.in/research/eulerian-lagrangian-model-study-transmission-aerosols-during-speech?field_area_id=2396
+GRANT_00372,Bridging Quantum Physics with Theoretical Computer Science and Graph Theory,,2023,https://www.indiascienceandtechnology.gov.in/research/bridging-quantum-physics-theoretical-computer-science-and-graph-theory?field_area_id=2396
+GRANT_00373,Bubbly flow past fixed and elastically-mounted bluff bodies: Vortex bubble interactions and their effects on flow-induced vibrations,,2023,https://www.indiascienceandtechnology.gov.in/research/bubbly-flow-past-fixed-and-elastically-mounted-bluff-bodies-vortex-bubble-interactions-and-their?field_area_id=2396
+GRANT_00374,"Conductive yarn-based electrodes for use in portable, wearable device for treatment of urinary incontinence and other biomedical applications",,2023,https://www.indiascienceandtechnology.gov.in/research/conductive-yarn-based-electrodes-use-portable-wearable-device-treatment-urinary-incontinence-and?field_area_id=2396
+GRANT_00375,Design and Hardware Implementation of Non-von-Neumann Accelerators for Energy Constrained Edge Computing Applications,,2023,https://www.indiascienceandtechnology.gov.in/research/design-and-hardware-implementation-non-von-neumann-accelerators-energy-constrained-edge-computing?field_area_id=2396
+GRANT_00376,High-Temperature Fatigue Behaviour of Laser Peened Additively Manufactured Titanium Aluminide for Aerospace Applications,,2023,https://www.indiascienceandtechnology.gov.in/research/high-temperature-fatigue-behaviour-laser-peened-additively-manufactured-titanium-aluminide-aerospace?field_area_id=2396
+GRANT_00377,Full duplex communication for Intelligent reflecting surface (IRS) using index modulation,,2023,https://www.indiascienceandtechnology.gov.in/research/full-duplex-communication-intelligent-reflecting-surface-irs-using-index-modulation?field_area_id=2396
+GRANT_00378,Fundamental aspects of bio-enzyme stabilisation to mitigate liquefaction in sands,,2023,https://www.indiascienceandtechnology.gov.in/research/fundamental-aspects-bio-enzyme-stabilisation-mitigate-liquefaction-sands?field_area_id=2396
+GRANT_00379,Joint STO and CFO Estimation for Intelligent Reflecting Surface (IRS) Assisted OFDM/OTFS using Deep Learning,,2023,https://www.indiascienceandtechnology.gov.in/research/joint-sto-and-cfo-estimation-intelligent-reflecting-surface-irs-assisted-ofdmotfs-using-deep?field_area_id=2396
+GRANT_00380,Loop Thermosyphon for Thermal Management of Electric Vehicle Traction Motors,,2023,https://www.indiascienceandtechnology.gov.in/research/loop-thermosyphon-thermal-management-electric-vehicle-traction-motors?field_area_id=2396
+GRANT_00381,Singlet-fission enhanced silicon solar cells,,2023,https://www.indiascienceandtechnology.gov.in/research/singlet-fission-enhanced-silicon-solar-cells?field_area_id=2396
+GRANT_00382,Nanometer-scale Ultra-low Energy Molecular Memristors,,2023,https://www.indiascienceandtechnology.gov.in/research/nanometer-scale-ultra-low-energy-molecular-memristors?field_area_id=2396
+GRANT_00383,The title of the project is: “Development of a magnetic sensor system using graphene Hall-effect device and CMOS Application Specific Integrated Circuit (ASIC)”. The ASIC implements a novel ambipolar gate modulation signal processing scheme which is uniquely applicable for graphene Hall-effect sensor (GHS). The ASIC provides bias and modulation signal for the GHS and amplifies and demodulates the sensor signal to achieve low-offset and low noise magnetic sensor performance.,,2023,https://www.indiascienceandtechnology.gov.in/research/title-project-%E2%80%9Cdevelopment-magnetic-sensor-system-using-graphene-hall-effect-device-and-cmos?field_area_id=2396
+GRANT_00384,Toward the Rational Design of Defect-Tolerant Photovoltaics: From Molecular Design to Device Scale,,2023,https://www.indiascienceandtechnology.gov.in/research/toward-rational-design-defect-tolerant-photovoltaics-molecular-design-device-scale?field_area_id=2396
+GRANT_00385,Platinum Overlayers on Nanostructured Electrodes,,2023,https://www.indiascienceandtechnology.gov.in/research/platinum-overlayers-nanostructured-electrodes?field_area_id=2396
+GRANT_00386,Red mud industry waste blended with high voltage plasma for hazardous pollutants treatment from diesel exhaust,,2023,https://www.indiascienceandtechnology.gov.in/research/red-mud-industry-waste-blended-high-voltage-plasma-hazardous-pollutants-treatment-diesel-exhaust?field_area_id=2396
+GRANT_00387,Rheocoalescence: Exploiting coalescence of complex fluid droplets to investigate rheological signatures,,2023,https://www.indiascienceandtechnology.gov.in/research/rheocoalescence-exploiting-coalescence-complex-fluid-droplets-investigate-rheological-signatures?field_area_id=2396
+GRANT_00388,"Scalable, Cost Effective Flexible Photonic Integrated Circuits via Templated Fluid Instabilities",,2023,https://www.indiascienceandtechnology.gov.in/research/scalable-cost-effective-flexible-photonic-integrated-circuits-templated-fluid-instabilities?field_area_id=2396
+GRANT_00389,Assessment of the antibacterial molecular mechanism of metal decorated self-antibacterial graphene-cellulose based scaffolds to combat chronic Methicillin-resistant Staphylococcus aureus (MRSA) osteomyelitis,,2022,https://www.indiascienceandtechnology.gov.in/research/assessment-antibacterial-molecular-mechanism-metal-decorated-self-antibacterial-graphene-cellulose?field_area_id=2396
+GRANT_00390,Computational Microwave Imaging using Meta-surface,,2022,https://www.indiascienceandtechnology.gov.in/research/computational-microwave-imaging-using-meta-surface?field_area_id=2396
+GRANT_00391,Control of Unknown Systems against Complex Specifications,,2022,https://www.indiascienceandtechnology.gov.in/research/control-unknown-systems-against-complex-specifications?field_area_id=2396
+GRANT_00392,Data-driven modelling of transitionally turbulent laboratory flows,,2022,https://www.indiascienceandtechnology.gov.in/research/data-driven-modelling-transitionally-turbulent-laboratory-flows?field_area_id=2396
+GRANT_00393,Design and Fabrication of Flexible Artificial Basilar Epithelium,,2022,https://www.indiascienceandtechnology.gov.in/research/design-and-fabrication-flexible-artificial-basilar-epithelium?field_area_id=2396
+GRANT_00394,"Design, development and heat transfer analysis of flexible and rigid transfer lines for cryogenic applications",,2022,https://www.indiascienceandtechnology.gov.in/research/design-development-and-heat-transfer-analysis-flexible-and-rigid-transfer-lines-cryogenic?field_area_id=2396
+GRANT_00395,Development of a Polymer Nanocomposite based Rapid Malaria Sensing Device,,2022,https://www.indiascienceandtechnology.gov.in/research/development-polymer-nanocomposite-based-rapid-malaria-sensing-device?field_area_id=2396
+GRANT_00396,Development of Time Modulated Frequency Diverse (TMFD) MIMO Array for Accurate RADAR Detection,,2022,https://www.indiascienceandtechnology.gov.in/research/development-time-modulated-frequency-diverse-tmfd-mimo-array-accurate-radar-detection?field_area_id=2396
+GRANT_00397,Hydrogenation of carbon dioxide (CO2) into methanol and DME - A potential alternative fuel for domestic and transport applications,,2022,https://www.indiascienceandtechnology.gov.in/research/hydrogenation-carbon-dioxide-co2-methanol-and-dme-potential-alternative-fuel-domestic-and-transport?field_area_id=2396
+GRANT_00398,Fabrication of Lung-on-a-chip by Bioprinting for Studying Lung Fibrosis.,,2022,https://www.indiascienceandtechnology.gov.in/research/fabrication-lung-chip-bioprinting-studying-lung-fibrosis?field_area_id=2396
+GRANT_00399,Fast and Scalable Algorithms for On-Board Routing of Autonomous Agents in Stochastic Dynamic Environments,,2022,https://www.indiascienceandtechnology.gov.in/research/fast-and-scalable-algorithms-board-routing-autonomous-agents-stochastic-dynamic-environments?field_area_id=2396
+GRANT_00400,Measurement of Parkinson’s Tremor and assistive device design,,2022,https://www.indiascienceandtechnology.gov.in/research/measurement-parkinson%E2%80%99s-tremor-and-assistive-device-design?field_area_id=2396
+GRANT_00401,Modelling spatial extremes using Max-Stable Processes across India,,2022,https://www.indiascienceandtechnology.gov.in/research/modelling-spatial-extremes-using-max-stable-processes-across-india?field_area_id=2396
+GRANT_00402,"The development of beta titanium alloys by in-situ alloying using additive manufacturing: Processing, microstructure and mechanical properties",,2022,https://www.indiascienceandtechnology.gov.in/research/development-beta-titanium-alloys-situ-alloying-using-additive-manufacturing-processing?field_area_id=2396
+GRANT_00403,Ultra-Low Power Analog Machine Learning Chip for Acoustic Pattern Recognizer Using Open Source EDA Tools,,2022,https://www.indiascienceandtechnology.gov.in/research/ultra-low-power-analog-machine-learning-chip-acoustic-pattern-recognizer-using-open-source-eda-tools?field_area_id=2396
+GRANT_00404,Role of dislocations slip mode on the fatigue behavior of novel complex concentrated alloys,,2022,https://www.indiascienceandtechnology.gov.in/research/role-dislocations-slip-mode-fatigue-behavior-novel-complex-concentrated-alloys?field_area_id=2396
+GRANT_00405,Nonlinear Dynamics of Topological Mechanical Metamaterials,,2022,https://www.indiascienceandtechnology.gov.in/research/nonlinear-dynamics-topological-mechanical-metamaterials?field_area_id=2396
+GRANT_00406,Design and Implementation of a Robust Machine Learning Hardware Accelerator with Adversarial Fault Attack Countermeasures,,2024,https://www.indiascienceandtechnology.gov.in/research/design-and-implementation-robust-machine-learning-hardware-accelerator-adversarial-fault-attack?field_area_id=2457
+GRANT_00407,Explainable artificial intelligence methods for studying structural variations in ageing brain,,2024,https://www.indiascienceandtechnology.gov.in/research/explainable-artificial-intelligence-methods-studying-structural-variations-ageing-brain?field_area_id=2457
+GRANT_00408,Bridging the Gap Between Theory and Practice: Towards Approximation Algorithms for Practical Instances,,2024,https://www.indiascienceandtechnology.gov.in/research/bridging-gap-between-theory-and-practice-towards-approximation-algorithms-practical-instances?field_area_id=2457
+GRANT_00409,Rational Cryptography : Fooling the Adversarial Mind,,2024,https://www.indiascienceandtechnology.gov.in/research/rational-cryptography-fooling-adversarial-mind?field_area_id=2457
+GRANT_00410,Unified GeoSpatial Interface UGI enabled Data Exchange and Spatial Analytics Engine for Geo-spatial Data Science Applications,,2023,https://www.indiascienceandtechnology.gov.in/research/unified-geospatial-interface-ugi-enabled-data-exchange-and-spatial-analytics-engine-geo-spatial-data?field_area_id=2457
+GRANT_00411,A Method and System for True Random Number Generation Using Electron Trapping in Tunnel Junction,,2023,https://www.indiascienceandtechnology.gov.in/research/method-and-system-true-random-number-generation-using-electron-trapping-tunnel-junction?field_area_id=2457
+GRANT_00412,Autonomous navigation in a crowded environment using AI/ML,,2023,https://www.indiascienceandtechnology.gov.in/research/autonomous-navigation-crowded-environment-using-aiml?field_area_id=2457
+GRANT_00413,"Deep Learning based Explainable, Cluster Structure Assessment in Complex High-Dimensional Data",,2023,https://www.indiascienceandtechnology.gov.in/research/deep-learning-based-explainable-cluster-structure-assessment-complex-high-dimensional-data?field_area_id=2457
+GRANT_00414,Ultralow power magnetoelectric nonvolatile memory devices for AI computing: A potential pathway to revolutionize the IoT technology,,2023,https://www.indiascienceandtechnology.gov.in/research/ultralow-power-magnetoelectric-nonvolatile-memory-devices-ai-computing-potential-pathway?field_area_id=2457
+GRANT_00415,"Design, analysis and real-time implementation of low-complexity receivers and spectrally efficient channel estimation schemes for 6G multi-user MIMO/massive MIMO-OTFS systems",,2022,https://www.indiascienceandtechnology.gov.in/research/design-analysis-and-real-time-implementation-low-complexity-receivers-and-spectrally-efficient?field_area_id=2457
+GRANT_00416,"Proteo-genomic analysis of SARS-CoV-2: A clinical landscape of SNPs, COVID-19 proteome and host responses",,2020,https://www.indiascienceandtechnology.gov.in/research/proteo-genomic-analysis-sars-cov-2-clinical-landscape-snps-covid-19-proteome-and-host-responses?field_area_id=2457
+GRANT_00417,CovidWATCH: Rapid monitoring tool for regions with low smartphone penetration,,2020,https://www.indiascienceandtechnology.gov.in/research/covidwatch-rapid-monitoring-tool-regions-low-smartphone-penetration?field_area_id=2457
+GRANT_00418,Coswara: Speech and sound based diagnostics,,2020,https://www.indiascienceandtechnology.gov.in/research/coswara-speech-and-sound-based-diagnostics?field_area_id=2457
+GRANT_00419,GoCoronaGo – Contact tracing app and network analytics,,2020,https://www.indiascienceandtechnology.gov.in/research/gocoronago-%E2%80%93-contact-tracing-app-and-network-analytics?field_area_id=2457
+GRANT_00420,Mobile diagnostic testing lab for COVID-19,,2020,https://www.indiascienceandtechnology.gov.in/research/mobile-diagnostic-testing-lab-covid-19?field_area_id=2457
+GRANT_00421,S3 medical oxygen generator,,2020,https://www.indiascienceandtechnology.gov.in/research/s3-medical-oxygen-generator?field_area_id=2457
+GRANT_00422,"Role of respiratory droplets, drying dynamics and transmission routes during COVID-19",,2020,https://www.indiascienceandtechnology.gov.in/research/role-respiratory-droplets-drying-dynamics-and-transmission-routes-during-covid-19?field_area_id=2457
+GRANT_00423,Cohorting to isolate asymptomatic spreaders: An agent-based simulation study on the Mumbai Suburban Railway,,2020,https://www.indiascienceandtechnology.gov.in/research/cohorting-isolate-asymptomatic-spreaders-agent-based-simulation-study-mumbai-suburban-railway?field_area_id=2457
+GRANT_00424,PDE-based modelling of COVID-19 infections,,2020,https://www.indiascienceandtechnology.gov.in/research/pde-based-modelling-covid-19-infections?field_area_id=2457
+GRANT_00425,Direct numerical simulation of “cough/sneeze flows” to understand transmission dynamics of COVID-19 infections,,2020,https://www.indiascienceandtechnology.gov.in/research/direct-numerical-simulation-%E2%80%9Ccoughsneeze-flows%E2%80%9D-understand-transmission-dynamics-covid-19-infections?field_area_id=2457
+GRANT_00426,Strategies for rapid suppression of COVID-19 transmission in small world communities,,2020,https://www.indiascienceandtechnology.gov.in/research/strategies-rapid-suppression-covid-19-transmission-small-world-communities?field_area_id=2457
+GRANT_00427,COVID-19 infection rate estimation,,2020,https://www.indiascienceandtechnology.gov.in/research/covid-19-infection-rate-estimation?field_area_id=2457
+GRANT_00428,Framework for studying testing strategies for COVID-19,,2020,https://www.indiascienceandtechnology.gov.in/research/framework-studying-testing-strategies-covid-19?field_area_id=2457
+GRANT_00429,"Predicting medical inventory, asymptomatics and lockdown effects",,2020,https://www.indiascienceandtechnology.gov.in/research/predicting-medical-inventory-asymptomatics-and-lockdown-effects?field_area_id=2457
+GRANT_00430,COVID-19 automatic phase analysis,,2020,https://www.indiascienceandtechnology.gov.in/research/covid-19-automatic-phase-analysis?field_area_id=2457
+GRANT_00431,Modeling of epidemic spread in Indian urban conditions,,2020,https://www.indiascienceandtechnology.gov.in/research/modeling-epidemic-spread-indian-urban-conditions?field_area_id=2457
+GRANT_00432,In-Vitro Fluorescence Microscopy Studies Show Retention of Spike-Protein (SARS-CoV-2) on Cell Membrane in the Presence of Amodiaquin Dihydrochloride Dihydrate Drug,,2020,https://www.indiascienceandtechnology.gov.in/research/vitro-fluorescence-microscopy-studies-show-retention-spike-protein-sars-cov-2-cell-membrane-presence?field_area_id=2457
+GRANT_00433,Dr-COVID: Graph Neural Networks for SARS-CoV-2 Drug Repurposing,,2020,https://www.indiascienceandtechnology.gov.in/research/dr-covid-graph-neural-networks-sars-cov-2-drug-repurposing?field_area_id=2457
+GRANT_00434,Spatio-temporal predictive modeling framework for infectious disease spread,,2020,https://www.indiascienceandtechnology.gov.in/research/spatio-temporal-predictive-modeling-framework-infectious-disease-spread?field_area_id=2457
+GRANT_00435,COVID-19 epidemic: unlocking the lockdown in India,,2020,https://www.indiascienceandtechnology.gov.in/research/covid-19-epidemic-unlocking-lockdown-india?field_area_id=2457
+GRANT_00436,City-scale agent-based simulators for the study of non-pharmaceutical interventions in the context of the COVID-19 epidemic,,2020,https://www.indiascienceandtechnology.gov.in/research/city-scale-agent-based-simulators-study-non-pharmaceutical-interventions-context-covid-19-epidemic?field_area_id=2457
+GRANT_00437,Mechanistic modeling of the SARS-CoV-2 and immune system interplay,,2020,https://www.indiascienceandtechnology.gov.in/research/mechanistic-modeling-sars-cov-2-and-immune-system-interplay?field_area_id=2457
+GRANT_00438,Functional genomics of Indian SARS-CoV-2,,2020,https://www.indiascienceandtechnology.gov.in/research/functional-genomics-indian-sars-cov-2?field_area_id=2457
+GRANT_00439,Dynamic Modelling and Optimal Management of Air-traffic over Indian Airspace,,2019,https://www.indiascienceandtechnology.gov.in/research/dynamic-modelling-and-optimal-management-air-traffic-over-indian-airspace?field_area_id=2457
+GRANT_00440,Digitization of ancient manuscripts in Thigalari and Grantha scripts using multimodal recognition of speech and online handwritten transcript of an expert in the loop,,2019,https://www.indiascienceandtechnology.gov.in/research/digitization-ancient-manuscripts-thigalari-and-grantha-scripts-using-multimodal-recognition-speech?field_area_id=2457
+GRANT_00441,NFC-based multi-sensor platform to monitor transportation and storage integrity of lifesaving pharmaceutical products,,2019,https://www.indiascienceandtechnology.gov.in/research/nfc-based-multi-sensor-platform-monitor-transportation-and-storage-integrity-lifesaving?field_area_id=2457
+GRANT_00442,A Smart factory test bed for Assessment of Certification worthiness for Design Transfer and changes in Medical Electronic SMEs,,2019,https://www.indiascienceandtechnology.gov.in/research/smart-factory-test-bed-assessment-certification-worthiness-design-transfer-and-changes-medical?field_area_id=2457
+GRANT_00443,High voltage & ESD device development & enablement for SCL 180nm CMOS Technology,,2026,https://www.indiascienceandtechnology.gov.in/research/high-voltage-esd-device-development-enablement-scl-180nm-cmos-technology?field_area_id=2457
