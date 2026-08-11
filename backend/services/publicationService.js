@@ -1,186 +1,229 @@
 import driver from "../config/neo4j.js";
+import neo4j from "neo4j-driver";
 
-function buildPublicationQuery(filters = {}) {
-    const where = [];
-    const params = {};
+/**
+ * IMPORTANT: institutions/domains/subdomains are collected as ARRAYS,
+ * not single scalar values — even though most publications will only
+ * have one of each. A publication CAN be linked to more than one
+ * Institution (e.g. co-published across institutions) or Domain.
+ *
+ * Returning them as scalars caused a classic Cypher bug: implicit
+ * grouping by every non-aggregated returned field meant a publication
+ * with 2 institutions came back as 2 separate near-duplicate rows
+ * (same Publication_ID, different institution each) instead of one
+ * row with two institutions. Collecting everything as an array,
+ * aggregated in its own WITH step, avoids that entirely.
+ */
 
-    if (filters.year) {
-        where.push("pub.Year = $year");
-        params.year = Number(filters.year);
-    }
+const LIST_FIELDS = `
+    MATCH (p:Publication)
 
-    if (filters.institution) {
-        where.push(`EXISTS {
-            MATCH (instFilter:Institution)-[:HAS_PUBLICATION]->(pub)
-            WHERE instFilter.Institution = $institution
-        }`);
-        params.institution = filters.institution;
-    }
+    OPTIONAL MATCH (author:Person)-[:AUTHORED_PUBLICATION]->(p)
+    WITH p, collect(DISTINCT {id: author.Person_ID, name: author.Name}) AS authors
 
-    if (filters.author) {
-        where.push(`EXISTS {
-            MATCH (author:Person)-[:AUTHORED_PUBLICATION]->(pub)
-            WHERE author.Name = $author
-        }`);
-        params.author = filters.author;
-    }
+    OPTIONAL MATCH (inst:Institution)-[:HAS_PUBLICATION]->(p)
+    WITH p, authors, collect(DISTINCT inst.Institution) AS institutions
 
-    if (filters.keyword) {
-        where.push(`(
-            toLower(coalesce(pub.Title, "")) CONTAINS $keyword
-            OR EXISTS {
-                MATCH (pub)-[:HAS_DOMAIN]->(d)
-                WHERE toLower(coalesce(d.Domain, "")) CONTAINS $keyword
-            }
-            OR EXISTS {
-                MATCH (pub)-[:HAS_SUBDOMAIN]->(s)
-                WHERE toLower(coalesce(s.Subdomain, "")) CONTAINS $keyword
-            }
-        )`);
-        params.keyword = filters.keyword.toLowerCase();
-    }
+    OPTIONAL MATCH (p)-[:HAS_DOMAIN]->(dom:Domain)
+    WITH p, authors, institutions, collect(DISTINCT dom.Domain) AS domains
 
-    if (filters.title) {
-        where.push(`toLower(coalesce(pub.Title, "")) CONTAINS $title`);
-        params.title = filters.title.toLowerCase();
-    }
+    OPTIONAL MATCH (p)-[:HAS_SUBDOMAIN]->(sub:Subdomain)
+    WITH p, authors, institutions, domains, collect(DISTINCT sub.Subdomain) AS subdomains
+`;
 
+const RETURN_FIELDS = `
+    RETURN
+        p.Publication_ID AS id,
+        p.Title AS title,
+        p.Venue AS venue,
+        p.Year AS year,
+        p.DOI AS doi,
+        p.Citations AS citations,
+        p.Source_URL AS sourceUrl,
+        authors,
+        institutions,
+        domains,
+        subdomains
+`;
+
+function mapRecord(record) {
     return {
-        whereClause: where.length > 0 ? `WHERE ${where.join(" AND ")}` : "",
-        params
+        id: record.get("id"),
+        title: record.get("title"),
+        venue: record.get("venue"),
+        year: record.get("year") !== null ? Number(record.get("year")) : null,
+        doi: record.get("doi"),
+        citations: record.get("citations") !== null ? Number(record.get("citations")) : 0,
+        sourceUrl: record.get("sourceUrl"),
+        authors: record.get("authors").filter((a) => a.name),
+        institutions: record.get("institutions").filter(Boolean),
+        domains: record.get("domains").filter(Boolean),
+        subdomains: record.get("subdomains").filter(Boolean),
     };
 }
 
-function buildPublicationBaseQuery(whereClause) {
-    return `
-        MATCH (pub:Publication)
-        ${whereClause}
-    `;
-}
-
-export async function getAllPublications(filters = {}) {
+export async function listPublications() {
     const session = driver.session();
-
     try {
-        const page = Math.max(Number(filters.page) || 1, 1);
-        const limit = Math.max(Number(filters.limit) || 20, 1);
-        const offset = (page - 1) * limit;
-
-        const { whereClause, params } = buildPublicationQuery(filters);
-        const baseQuery = buildPublicationBaseQuery(whereClause);
-
-        // COUNT
-        const countResult = await session.run(`
-            ${baseQuery}
-            RETURN count(DISTINCT pub) AS total
-        `, params);
-
-        const total = Number(countResult.records[0]?.get("total") ?? 0);
-
-        // FACETS: institutions, authors, domains
-        const facetsResult = await session.run(`
-            ${baseQuery}
-            OPTIONAL MATCH (inst:Institution)-[:HAS_PUBLICATION]->(pub)
-            OPTIONAL MATCH (author:Person)-[:AUTHORED_PUBLICATION]->(pub)
-            OPTIONAL MATCH (pub)-[:HAS_DOMAIN]->(d:Domain)
-            RETURN
-                collect(DISTINCT inst.Institution) AS institutions,
-                collect(DISTINCT author.Name) AS authors,
-                collect(DISTINCT d.Domain) AS domains
-        `, params);
-
-        const facetsRow = facetsResult.records[0];
-
-        const facets = {
-            institutions: (facetsRow?.get("institutions") ?? []).filter(Boolean).sort(),
-            authors: (facetsRow?.get("authors") ?? []).filter(Boolean).sort(),
-            domains: (facetsRow?.get("domains") ?? []).filter(Boolean).sort()
-        };
-
-        // MAIN QUERY
-        const result = await session.run(`
-            ${baseQuery}
-            OPTIONAL MATCH (inst:Institution)-[:HAS_PUBLICATION]->(pub)
-            OPTIONAL MATCH (author:Person)-[:AUTHORED_PUBLICATION]->(pub)
-            OPTIONAL MATCH (pub)-[:HAS_DOMAIN]->(d:Domain)
-
-            WITH pub,
-                collect(DISTINCT inst.Institution) AS institutions,
-                collect(DISTINCT author.Name) AS authors,
-                collect(DISTINCT d.Domain) AS domains
-
-            RETURN
-                pub.Publication_ID AS id,
-                pub.Title AS title,
-                pub.Venue AS venue,
-                pub.Year AS year,
-                coalesce(head(institutions), "") AS institution,
-                authors AS authors,
-                domains AS domains
-            ORDER BY year DESC, title
-            SKIP ${offset}
-            LIMIT ${limit}
-        `, params);
-
-        return {
-            data: result.records.map(record => ({
-                id: record.get("id"),
-                title: record.get("title"),
-                venue: record.get("venue"),
-                year: record.get("year") !== null ? Number(record.get("year")) : null,
-                institution: record.get("institution"),
-                authors: (record.get("authors") ?? []).filter(Boolean),
-                domains: (record.get("domains") ?? []).filter(Boolean)
-            })),
-            total,
-            page,
-            limit,
-            totalPages: Math.max(Math.ceil(total / limit), 1),
-            facets
-        };
-
+        const result = await session.run(`${LIST_FIELDS} ${RETURN_FIELDS} ORDER BY p.Year DESC`);
+        return result.records.map(mapRecord);
     } finally {
         await session.close();
     }
 }
 
-export async function getPublicationById(id) {
+export async function getPublicationById(publicationId) {
     const session = driver.session();
+    try {
+        const result = await session.run(`
+            MATCH (p:Publication {Publication_ID: $publicationId})
+
+            OPTIONAL MATCH (author:Person)-[:AUTHORED_PUBLICATION]->(p)
+            WITH p, collect(DISTINCT {id: author.Person_ID, name: author.Name}) AS authors
+
+            OPTIONAL MATCH (inst:Institution)-[:HAS_PUBLICATION]->(p)
+            WITH p, authors, collect(DISTINCT inst.Institution) AS institutions
+
+            OPTIONAL MATCH (p)-[:HAS_DOMAIN]->(dom:Domain)
+            WITH p, authors, institutions, collect(DISTINCT dom.Domain) AS domains
+
+            OPTIONAL MATCH (p)-[:HAS_SUBDOMAIN]->(sub:Subdomain)
+            WITH p, authors, institutions, domains, collect(DISTINCT sub.Subdomain) AS subdomains
+
+            ${RETURN_FIELDS}
+        `, { publicationId });
+
+        if (result.records.length === 0) return null;
+        return mapRecord(result.records[0]);
+    } finally {
+        await session.close();
+    }
+}
+
+/**
+ * Server-side filtered search — GET /publications/search
+ * All filters optional; empty string / 0 means "not applied".
+ * Institution/domain filters use ANY(...) since those fields are
+ * now arrays.
+ */
+export async function searchPublications(filters) {
+    const session = driver.session();
+    const { search = "", institution = "", domain = "", author = "", year = 0, venue = "" } = filters;
 
     try {
         const result = await session.run(`
-            MATCH (pub:Publication {Publication_ID:$id})
-            OPTIONAL MATCH (author:Person)-[:AUTHORED_PUBLICATION]->(pub)
-            OPTIONAL MATCH (inst:Institution)-[:HAS_PUBLICATION]->(pub)
-            OPTIONAL MATCH (pub)-[:HAS_DOMAIN]->(d:Domain)
-            OPTIONAL MATCH (pub)-[:HAS_SUBDOMAIN]->(s:Subdomain)
-            RETURN
-                pub,
-                collect(DISTINCT author.Name) AS authors,
-                head(collect(DISTINCT inst)) AS inst,
-                collect(DISTINCT d.Domain) AS domains,
-                collect(DISTINCT s.Subdomain) AS subdomains
-        `, { id });
+            ${LIST_FIELDS}
+            WHERE
+                ($search = '' OR toLower(p.Title) CONTAINS toLower($search))
+                AND ($institution = '' OR $institution IN institutions)
+                AND ($domain = '' OR $domain IN domains)
+                AND ($year = 0 OR p.Year = $year)
+                AND ($venue = '' OR toLower(p.Venue) CONTAINS toLower($venue))
+                AND ($author = '' OR any(a IN authors WHERE a.name IS NOT NULL AND toLower(a.name) CONTAINS toLower($author)))
+            ${RETURN_FIELDS}
+            ORDER BY p.Year DESC
+        `, { search, institution, domain, author, year: Number(year) || 0, venue });
 
-        if (result.records.length === 0) return null;
+        return result.records.map(mapRecord);
+    } finally {
+        await session.close();
+    }
+}
 
-        const row = result.records[0];
-        const pub = row.get("pub").properties;
+/** GET /publications/:id/authors */
+export async function getAuthorsForPublication(publicationId) {
+    const session = driver.session();
+    try {
+        const result = await session.run(`
+            MATCH (author:Person)-[:AUTHORED_PUBLICATION]->(:Publication {Publication_ID: $publicationId})
+            RETURN author.Person_ID AS id, author.Name AS name
+        `, { publicationId });
 
-        return {
-            Publication_ID: pub.Publication_ID,
-            Title: pub.Title,
-            Venue: pub.Venue,
-            Year: typeof pub.Year === "number" ? pub.Year : pub.Year?.low ?? pub.Year,
-            DOI: pub.DOI,
-            Citations: pub.Citations,
-            Source_URL: pub.Source_URL,
-            Institution: row.get("inst") ? row.get("inst").properties.Institution : "",
-            Authors: (row.get("authors") ?? []).filter(Boolean),
-            Domains: (row.get("domains") ?? []).filter(Boolean),
-            Subdomains: (row.get("subdomains") ?? []).filter(Boolean)
-        };
+        return result.records.map((r) => ({ id: r.get("id"), name: r.get("name") }));
+    } finally {
+        await session.close();
+    }
+}
 
+/**
+ * Related papers, ranked by relevance rather than just recency:
+ * - Tier 1 (strong signal): shares a Subdomain, or shares a co-author.
+ *   These are specific enough to actually mean something.
+ * - Tier 2 (weak signal, fallback only): shares a Domain. Domains can
+ *   be very broad (e.g. "Engineering" covering thousands of papers),
+ *   so this tier is only used to fill remaining slots if Tier 1
+ *   doesn't produce enough results — never ranked equally with it.
+ */
+export async function getRelatedPublications(publicationId, limit = 5) {
+    const session = driver.session();
+    try {
+        const result = await session.run(`
+            MATCH (p:Publication {Publication_ID: $publicationId})
+
+            OPTIONAL MATCH (p)-[:HAS_SUBDOMAIN]->(:Subdomain)<-[:HAS_SUBDOMAIN]-(bySubdomain:Publication)
+            WHERE bySubdomain.Publication_ID <> $publicationId
+            WITH p, collect(DISTINCT bySubdomain)[0..15] AS subdomainMatches
+
+            OPTIONAL MATCH (p)<-[:AUTHORED_PUBLICATION]-(:Person)-[:AUTHORED_PUBLICATION]->(byAuthor:Publication)
+            WHERE byAuthor.Publication_ID <> $publicationId
+            WITH p, subdomainMatches, collect(DISTINCT byAuthor)[0..15] AS authorMatches
+
+            OPTIONAL MATCH (p)-[:HAS_DOMAIN]->(:Domain)<-[:HAS_DOMAIN]-(byDomain:Publication)
+            WHERE byDomain.Publication_ID <> $publicationId
+            WITH subdomainMatches, authorMatches, collect(DISTINCT byDomain)[0..15] AS domainMatches
+
+            RETURN subdomainMatches, authorMatches, domainMatches
+        `, { publicationId });
+
+        if (result.records.length === 0) return [];
+
+        const record = result.records[0];
+        const toItem = (node) => ({
+            id: node.properties.Publication_ID,
+            title: node.properties.Title,
+            year: node.properties.Year !== null && node.properties.Year !== undefined ? Number(node.properties.Year) : null,
+            citations: node.properties.Citations !== null && node.properties.Citations !== undefined ? Number(node.properties.Citations) : 0,
+        });
+
+        const strongTier = [...record.get("subdomainMatches"), ...record.get("authorMatches")].map(toItem);
+        const weakTier = record.get("domainMatches").map(toItem);
+
+        // Dedup, keeping first occurrence (strong tier wins if a paper
+        // appears in both), each tier sorted by year within itself.
+        const seen = new Set();
+        const ranked = [];
+        for (const item of [...sortByYearDesc(strongTier), ...sortByYearDesc(weakTier)]) {
+            if (seen.has(item.id)) continue;
+            seen.add(item.id);
+            ranked.push(item);
+            if (ranked.length >= limit) break;
+        }
+
+        return ranked;
+    } finally {
+        await session.close();
+    }
+}
+
+function sortByYearDesc(items) {
+    return [...items].sort((a, b) => (b.year || 0) - (a.year || 0));
+}
+
+export async function getRelatedPatentsByAuthor(publicationId, limit = 5) {
+    const session = driver.session();
+    try {
+        const result = await session.run(`
+            MATCH (:Publication {Publication_ID: $publicationId})<-[:AUTHORED_PUBLICATION]-(person:Person)-[:INVENTED]->(pat:Patent)
+            RETURN DISTINCT pat.Patent_ID AS id, pat.Patent_Title AS title, pat.Year AS year
+            ORDER BY pat.Year DESC
+            LIMIT $limit
+        `, { publicationId, limit: neo4j.int(limit) });
+
+        return result.records.map((r) => ({
+            id: r.get("id"),
+            title: r.get("title"),
+            year: r.get("year") !== null ? Number(r.get("year")) : null,
+        }));
     } finally {
         await session.close();
     }

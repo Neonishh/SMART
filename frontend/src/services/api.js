@@ -524,6 +524,25 @@ export async function listPublications() {
   return client.get("/publications");
 }
 
+
+export async function getPublication(id) {
+  if (USE_MOCK) {
+    const pub = mock.publications.find((p) => p.id === id) || mock.publications[0];
+    return resolveMock(pub);
+  }
+  return client.get(`/publications/${id}`);
+}
+
+export async function getPublicationAuthors(id) {
+  if (USE_MOCK) return resolveMock([]);
+  return client.get(`/publications/${id}/authors`);
+}
+
+export async function getRelatedPublications(id) {
+  if (USE_MOCK) return resolveMock([]);
+  return client.get(`/publications/${id}/related`);
+}
+
 export async function listTheses() {
   if (USE_MOCK) return resolveMock(mock.theses);
 
