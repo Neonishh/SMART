@@ -1,0 +1,270 @@
+{
+    "technology": "Computer Science",
+    "year": 2023,
+    "publication_statistics": {
+        "publications": 0,
+        "patents": 0,
+        "grants": 0,
+        "theses": 0,
+        "total_output": 0
+    },
+    "growth_statistics": {
+        "yoy_growth_percent": 0.0,
+        "cagr_percent": 0.0
+    },
+    "grant_statistics": {
+        "average_impact_score": 31.86
+    },
+    "top_researchers": [
+        {
+            "researcher": "B. Sundar Rajan",
+            "institution": "Indian Institute of Science Bangalore",
+            "publications": 97,
+            "citations": 247,
+            "research_score": 198.94
+        },
+        {
+            "researcher": "Arpita Patra",
+            "institution": "Indian Institute of Science Bangalore",
+            "publications": 69,
+            "citations": 628,
+            "research_score": 150.56
+        },
+        {
+            "researcher": "Madhav Rao",
+            "institution": "International Institute of Information Technology Bangalore",
+            "publications": 63,
+            "citations": 220,
+            "research_score": 130.4
+        },
+        {
+            "researcher": "Sriram Ganapathy",
+            "institution": "Indian Institute of Science Bangalore",
+            "publications": 59,
+            "citations": 384,
+            "research_score": 125.68
+        },
+        {
+            "researcher": "Debasish Ghose",
+            "institution": "Indian Institute of Science Bangalore",
+            "publications": 56,
+            "citations": 351,
+            "research_score": 119.02
+        }
+    ],
+    "top_institutions": [
+        {
+            "institution": "Indian Institute of Science Bangalore",
+            "impact_score": 86.42,
+            "total_projects": 187,
+            "total_funding_lakhs": 18225.5067
+        },
+        {
+            "institution": "R V College of Engineering",
+            "impact_score": 42.65,
+            "total_projects": 42,
+            "total_funding_lakhs": 6723.758900000001
+        },
+        {
+            "institution": "CMR Institute of Technology",
+            "impact_score": 29.44,
+            "total_projects": 60,
+            "total_funding_lakhs": 162.6849
+        },
+        {
+            "institution": "B.M.S. College of Engineering",
+            "impact_score": 27.05,
+            "total_projects": 48,
+            "total_funding_lakhs": 687.667
+        },
+        {
+            "institution": "International Institute of Information Technology Bangalore",
+            "impact_score": 17.64,
+            "total_projects": 8,
+            "total_funding_lakhs": 183.9866
+        },
+        {
+            "institution": "Dayananda Sagar College of Engineering",
+            "impact_score": 10.45,
+            "total_projects": 5,
+            "total_funding_lakhs": 26.9944
+        },
+        {
+            "institution": "M.S. Ramaiah Institute of Technology",
+            "impact_score": 9.39,
+            "total_projects": 56,
+            "total_funding_lakhs": 384.4958
+        }
+    ],
+    "top_journals": [
+        {
+            "rank": 1,
+            "venue": "Physical review. B./Physical review. B",
+            "publications": 268
+        },
+        {
+            "rank": 2,
+            "venue": "Lecture notes in computer science",
+            "publications": 204
+        },
+        {
+            "rank": 3,
+            "venue": "SSRN Electronic Journal",
+            "publications": 192
+        },
+        {
+            "rank": 4,
+            "venue": "Journal of Alloys and Compounds",
+            "publications": 113
+        },
+        {
+            "rank": 5,
+            "venue": "ePrints@IISc (Indian Institute of Science)",
+            "publications": 84
+        },
+        {
+            "rank": 6,
+            "venue": "The Journal of Physical Chemistry C",
+            "publications": 80
+        },
+        {
+            "rank": 7,
+            "venue": "IEEE Transactions on Electron Devices",
+            "publications": 79
+        },
+        {
+            "rank": 8,
+            "venue": "Journal of Applied Physics",
+            "publications": 75
+        },
+        {
+            "rank": 9,
+            "venue": "International Journal for Research in Applied Science and Engineering Technology",
+            "publications": 73
+        },
+        {
+            "rank": 10,
+            "venue": "Journal of Fluid Mechanics",
+            "publications": 69
+        }
+    ],
+    "top_conferences": [
+        {
+            "rank": 1,
+            "venue": "Materials Today: Proceedings",
+            "publications": 222
+        },
+        {
+            "rank": 2,
+            "venue": "AIP Conference Proceedings",
+            "publications": 101
+        },
+        {
+            "rank": 3,
+            "venue": "Materials Today Proceedings",
+            "publications": 101
+        },
+        {
+            "rank": 4,
+            "venue": "AIP conference proceedings",
+            "publications": 84
+        },
+        {
+            "rank": 5,
+            "venue": "2023 7th International Conference on Computation System and Information Technology for Sustainable Solutions (CSITSS)",
+            "publications": 45
+        },
+        {
+            "rank": 6,
+            "venue": "2025 9th International Conference on Computational System and Information Technology for Sustainable Solutions (CSITSS)",
+            "publications": 38
+        },
+        {
+            "rank": 7,
+            "venue": "ECS Meeting Abstracts",
+            "publications": 35
+        },
+        {
+            "rank": 8,
+            "venue": "Proceedings of the AAAI Conference on Artificial Intelligence",
+            "publications": 35
+        },
+        {
+            "rank": 9,
+            "venue": "2021 IEEE International Conference on Electronics, Computing and Communication Technologies (CONECCT)",
+            "publications": 31
+        },
+        {
+            "rank": 10,
+            "venue": "2022 IEEE International Conference on Electronics, Computing and Communication Technologies (CONECCT)",
+            "publications": 29
+        }
+    ],
+    "top_venues": [
+        {
+            "domain": "Computer Science",
+            "venue_type": "Conference",
+            "venue": "Proceedings of the AAAI Conference on Artificial Intelligence",
+            "publications": 27
+        },
+        {
+            "domain": "Computer Science",
+            "venue_type": "Conference",
+            "venue": "2022 IEEE International Conference on Electronics, Computing and Communication Technologies (CONECCT)",
+            "publications": 13
+        },
+        {
+            "domain": "Computer Science",
+            "venue_type": "Conference",
+            "venue": "2025 9th International Conference on Computational System and Information Technology for Sustainable Solutions (CSITSS)",
+            "publications": 13
+        },
+        {
+            "domain": "Computer Science",
+            "venue_type": "Conference",
+            "venue": "2021 IEEE International Conference on Electronics, Computing and Communication Technologies (CONECCT)",
+            "publications": 12
+        },
+        {
+            "domain": "Computer Science",
+            "venue_type": "Conference",
+            "venue": "AIP conference proceedings",
+            "publications": 12
+        },
+        {
+            "domain": "Computer Science",
+            "venue_type": "Journal",
+            "venue": "Lecture notes in computer science",
+            "publications": 183
+        },
+        {
+            "domain": "Computer Science",
+            "venue_type": "Journal",
+            "venue": "ePrints@IISc (Indian Institute of Science)",
+            "publications": 41
+        },
+        {
+            "domain": "Computer Science",
+            "venue_type": "Journal",
+            "venue": "SSRN Electronic Journal",
+            "publications": 32
+        },
+        {
+            "domain": "Computer Science",
+            "venue_type": "Journal",
+            "venue": "Communications in Computer and Information Science",
+            "publications": 31
+        },
+        {
+            "domain": "Computer Science",
+            "venue_type": "Journal",
+            "venue": "IEEE Transactions on Information Theory",
+            "publications": 30
+        }
+    ],
+    "executive_summary": "The Computer Science domain produced 0 total research outputs in 2023, including 0 publications, 0 patents, 0 grants and 0 theses. The year-on-year growth was 0.0%, while the long-term CAGR stands at 0.0%. Across all participating institutions, the average Grant Impact Score was 31.86.",
+    "recommendations": [
+        "Research output has declined. Strategic funding and collaboration should be encouraged.",
+        "Grant funding should be strengthened to improve technology development."
+    ]
+}
