@@ -19,6 +19,7 @@ import KnowledgeGraph from "./pages/KnowledgeGraph";
 import KnowledgeGraphPage from "./pages/KnowledgeGraphPage";
 import Publications from "./pages/Publications";
 import PublicationProfile from "./pages/PublicationProfile";
+import Reports from "./pages/Reports";
 
 
 export default function App() {
@@ -114,6 +115,10 @@ export default function App() {
             <Route
                 path="/dashboard/chatbot"
                 element={<Chatbot />}
+            />
+            <Route
+                path="/dashboard/reports"
+                element={<Reports />}
             />
       <Route path="/dashboard/publications" element={<Publications />} />
 <Route path="/dashboard/publications/:id" element={<PublicationProfile />} />

@@ -518,6 +518,36 @@ export async function sendChatMessage(message, history = []) {
   });
 }
 
+export async function listTechnologyDomains() {
+  return client.get("/analytics/trends/domains");
+}
+
+export async function getTrendAnalytics(params = {}) {
+  return client.get("/analytics/trends", { params });
+}
+
+export async function getTrendTopics(params = {}) {
+  return client.get("/analytics/trends/topics", { params });
+}
+
+export async function getTrendResearchers(params = {}) {
+  return client.get("/analytics/trends/researchers", { params });
+}
+
+export async function generateTechnologyReport(technology, year) {
+  return client.post("/analytics/reports", {
+    technology,
+    year,
+  });
+}
+
+export async function downloadTechnologyReport(technology, year, format = "pdf") {
+  return client.get("/analytics/reports/download", {
+    params: { technology, year, format },
+    responseType: "blob",
+  });
+}
+
 export async function listPublications() {
   if (USE_MOCK) return resolveMock(mock.publications);
 

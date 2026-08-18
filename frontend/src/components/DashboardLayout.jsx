@@ -11,6 +11,7 @@ import {
   MessageSquare,
   BookOpen,
   GraduationCap,
+  FileBarChart,
   Menu,
   X,
 } from "lucide-react";
@@ -25,6 +26,7 @@ const NAV = [
   { to: "/dashboard/researchers", label: "Researchers", icon: Users },
   { to: "/dashboard/patents", label: "Patents", icon: FileText },
   { to: "/dashboard/grants", label: "Grants", icon: Landmark },
+  { to: "/dashboard/reports", label: "Reports", icon: FileBarChart },
   { to: "/dashboard/chatbot", label: "Ask SMART", icon: MessageSquare },
 ];
 

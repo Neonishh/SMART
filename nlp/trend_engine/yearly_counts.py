@@ -1,7 +1,6 @@
 import pandas as pd
 
-from ZIP.trend_engine.institution_normalizer import normalize
-
+from institution_normalizer import normalize
 print("Loading datasets...")
 
 # ==========================================================

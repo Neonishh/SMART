@@ -7,6 +7,7 @@ import patentRoutes from "./routes/patents.js";
 import grantRoutes from "./routes/grants.js";
 import institutionRoutes from "./routes/institution.js";
 import dashboardRoutes from "./routes/dashboard.js";
+import analyticsRoutes from "./routes/analytics.js";
 import thesisRoutes from "./routes/thesisRoutes.js";
 import researcherRoutes from "./routes/researcher.js";
 
@@ -30,6 +31,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/dashboard", dashboardRoutes);
+app.use("/analytics", analyticsRoutes);
 app.use("/patents", patentRoutes);
 app.use("/grants", grantRoutes);
 app.use("/knowledge-graph", knowledgeGraphRoutes);
