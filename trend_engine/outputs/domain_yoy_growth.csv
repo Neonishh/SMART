@@ -1,0 +1,176 @@
+domain_name,year,publications,patents,grants,theses,total,publications_yoy,patents_yoy,grants_yoy,theses_yoy,total_yoy,yoy_growth_percent,trend
+Advanced Manufacturing and Metallurgy,2019,72,1,0,9,82,0.0,0.0,0.0,0.0,0.0,0.0,Base Year
+Advanced Manufacturing and Metallurgy,2020,107,3,0,10,120,48.61,200.0,0.0,11.11,46.34,46.34,High Growth
+Advanced Manufacturing and Metallurgy,2021,103,4,0,3,110,-3.74,33.33,0.0,-70.0,-8.33,-8.33,Declining
+Advanced Manufacturing and Metallurgy,2022,102,3,0,8,113,-0.97,-25.0,0.0,166.67,2.73,2.73,Stable
+Advanced Manufacturing and Metallurgy,2023,104,3,0,14,121,1.96,0.0,0.0,75.0,7.08,7.08,Growing
+Advanced Manufacturing and Metallurgy,2024,100,7,0,11,118,-3.85,133.33,0.0,-21.43,-2.48,-2.48,Stable
+Advanced Manufacturing and Metallurgy,2025,88,8,0,1,97,-12.0,14.29,0.0,-90.91,-17.8,-17.8,Declining
+Advanced Materials and Nanotechnology,2019,103,0,0,2,105,0.0,0.0,0.0,0.0,0.0,0.0,Base Year
+Advanced Materials and Nanotechnology,2020,128,4,0,2,134,24.27,inf,0.0,0.0,27.62,27.62,High Growth
+Advanced Materials and Nanotechnology,2021,118,6,0,5,129,-7.81,50.0,0.0,150.0,-3.73,-3.73,Stable
+Advanced Materials and Nanotechnology,2022,122,10,0,7,139,3.39,66.67,0.0,40.0,7.75,7.75,Growing
+Advanced Materials and Nanotechnology,2023,125,12,0,14,151,2.46,20.0,0.0,100.0,8.63,8.63,Growing
+Advanced Materials and Nanotechnology,2024,137,21,0,6,164,9.6,75.0,0.0,-57.14,8.61,8.61,Growing
+Advanced Materials and Nanotechnology,2025,123,14,0,2,139,-10.22,-33.33,0.0,-66.67,-15.24,-15.24,Declining
+Aerospace and Fluid Dynamics,2019,87,3,0,12,102,0.0,0.0,0.0,0.0,0.0,0.0,Base Year
+Aerospace and Fluid Dynamics,2020,86,5,0,23,114,-1.15,66.67,0.0,91.67,11.76,11.76,Growing
+Aerospace and Fluid Dynamics,2021,118,3,0,21,142,37.21,-40.0,0.0,-8.7,24.56,24.56,High Growth
+Aerospace and Fluid Dynamics,2022,111,16,0,17,144,-5.93,433.33,0.0,-19.05,1.41,1.41,Stable
+Aerospace and Fluid Dynamics,2023,143,10,0,24,177,28.83,-37.5,0.0,41.18,22.92,22.92,High Growth
+Aerospace and Fluid Dynamics,2024,111,13,0,24,148,-22.38,30.0,0.0,0.0,-16.38,-16.38,Declining
+Aerospace and Fluid Dynamics,2025,124,13,0,3,140,11.71,0.0,0.0,-87.5,-5.41,-5.41,Declining
+Agriculture and Environmental Systems,2019,52,6,1,3,62,0.0,0.0,0.0,0.0,0.0,0.0,Base Year
+Agriculture and Environmental Systems,2020,80,6,22,2,110,53.85,0.0,2100.0,-33.33,77.42,77.42,High Growth
+Agriculture and Environmental Systems,2021,87,3,3,6,99,8.75,-50.0,-86.36,200.0,-10.0,-10.0,Declining
+Agriculture and Environmental Systems,2022,120,10,4,6,140,37.93,233.33,33.33,0.0,41.41,41.41,High Growth
+Agriculture and Environmental Systems,2023,99,37,1,8,145,-17.5,270.0,-75.0,33.33,3.57,3.57,Stable
+Agriculture and Environmental Systems,2024,85,36,1,5,127,-14.14,-2.7,0.0,-37.5,-12.41,-12.41,Declining
+Agriculture and Environmental Systems,2025,95,15,0,0,110,11.76,-58.33,-100.0,-100.0,-13.39,-13.39,Declining
+Applied Mathematics and Simulation,2019,66,0,0,0,66,0.0,0.0,0.0,0.0,0.0,0.0,Base Year
+Applied Mathematics and Simulation,2020,83,0,0,0,83,25.76,0.0,0.0,0.0,25.76,25.76,High Growth
+Applied Mathematics and Simulation,2021,115,0,0,0,115,38.55,0.0,0.0,0.0,38.55,38.55,High Growth
+Applied Mathematics and Simulation,2022,105,0,0,0,105,-8.7,0.0,0.0,0.0,-8.7,-8.7,Declining
+Applied Mathematics and Simulation,2023,113,0,0,0,113,7.62,0.0,0.0,0.0,7.62,7.62,Growing
+Applied Mathematics and Simulation,2024,85,0,0,0,85,-24.78,0.0,0.0,0.0,-24.78,-24.78,Rapid Decline
+Applied Mathematics and Simulation,2025,109,0,0,0,109,28.24,0.0,0.0,0.0,28.24,28.24,High Growth
+Artificial Intelligence and Computer Vision,2019,54,2,0,0,56,0.0,0.0,0.0,0.0,0.0,0.0,Base Year
+Artificial Intelligence and Computer Vision,2020,77,0,0,0,77,42.59,-100.0,0.0,0.0,37.5,37.5,High Growth
+Artificial Intelligence and Computer Vision,2021,74,0,0,0,74,-3.9,0.0,0.0,0.0,-3.9,-3.9,Stable
+Artificial Intelligence and Computer Vision,2022,95,3,0,0,98,28.38,inf,0.0,0.0,32.43,32.43,High Growth
+Artificial Intelligence and Computer Vision,2023,86,3,0,0,89,-9.47,0.0,0.0,0.0,-9.18,-9.18,Declining
+Artificial Intelligence and Computer Vision,2024,95,8,0,0,103,10.47,166.67,0.0,0.0,15.73,15.73,Growing
+Artificial Intelligence and Computer Vision,2025,116,9,0,0,125,22.11,12.5,0.0,0.0,21.36,21.36,High Growth
+Bioinformatics and Life Sciences,2019,38,8,0,0,46,0.0,0.0,0.0,0.0,0.0,0.0,Base Year
+Bioinformatics and Life Sciences,2020,45,7,0,1,53,18.42,-12.5,0.0,inf,15.22,15.22,Growing
+Bioinformatics and Life Sciences,2021,51,17,0,2,70,13.33,142.86,0.0,100.0,32.08,32.08,High Growth
+Bioinformatics and Life Sciences,2022,43,14,0,1,58,-15.69,-17.65,0.0,-50.0,-17.14,-17.14,Declining
+Bioinformatics and Life Sciences,2023,50,24,0,5,79,16.28,71.43,0.0,400.0,36.21,36.21,High Growth
+Bioinformatics and Life Sciences,2024,49,26,0,4,79,-2.0,8.33,0.0,-20.0,0.0,0.0,Base Year
+Bioinformatics and Life Sciences,2025,59,16,0,1,76,20.41,-38.46,0.0,-75.0,-3.8,-3.8,Stable
+Biomaterials and Tissue Engineering,2019,71,1,0,1,73,0.0,0.0,0.0,0.0,0.0,0.0,Base Year
+Biomaterials and Tissue Engineering,2020,82,0,0,3,85,15.49,-100.0,0.0,200.0,16.44,16.44,Growing
+Biomaterials and Tissue Engineering,2021,118,5,0,4,127,43.9,inf,0.0,33.33,49.41,49.41,High Growth
+Biomaterials and Tissue Engineering,2022,124,7,0,3,134,5.08,40.0,0.0,-25.0,5.51,5.51,Growing
+Biomaterials and Tissue Engineering,2023,120,9,0,7,136,-3.23,28.57,0.0,133.33,1.49,1.49,Stable
+Biomaterials and Tissue Engineering,2024,121,10,0,3,134,0.83,11.11,0.0,-57.14,-1.47,-1.47,Stable
+Biomaterials and Tissue Engineering,2025,120,18,0,1,139,-0.83,80.0,0.0,-66.67,3.73,3.73,Stable
+Computer Systems and Algorithms,2019,71,2,0,5,78,0.0,0.0,0.0,0.0,0.0,0.0,Base Year
+Computer Systems and Algorithms,2020,84,3,0,5,92,18.31,50.0,0.0,0.0,17.95,17.95,Growing
+Computer Systems and Algorithms,2021,95,3,0,5,103,13.1,0.0,0.0,0.0,11.96,11.96,Growing
+Computer Systems and Algorithms,2022,82,2,0,4,88,-13.68,-33.33,0.0,-20.0,-14.56,-14.56,Declining
+Computer Systems and Algorithms,2023,75,5,0,3,83,-8.54,150.0,0.0,-25.0,-5.68,-5.68,Declining
+Computer Systems and Algorithms,2024,91,5,0,4,100,21.33,0.0,0.0,33.33,20.48,20.48,High Growth
+Computer Systems and Algorithms,2025,73,9,0,1,83,-19.78,80.0,0.0,-75.0,-17.0,-17.0,Declining
+Construction and Infrastructure Materials,2019,35,0,0,0,35,0.0,0.0,0.0,0.0,0.0,0.0,Base Year
+Construction and Infrastructure Materials,2020,45,1,0,2,48,28.57,inf,0.0,inf,37.14,37.14,High Growth
+Construction and Infrastructure Materials,2021,45,3,0,2,50,0.0,200.0,0.0,0.0,4.17,4.17,Stable
+Construction and Infrastructure Materials,2022,59,6,0,2,67,31.11,100.0,0.0,0.0,34.0,34.0,High Growth
+Construction and Infrastructure Materials,2023,39,16,0,4,59,-33.9,166.67,0.0,100.0,-11.94,-11.94,Declining
+Construction and Infrastructure Materials,2024,52,15,0,1,68,33.33,-6.25,0.0,-75.0,15.25,15.25,Growing
+Construction and Infrastructure Materials,2025,33,12,0,0,45,-36.54,-20.0,0.0,-100.0,-33.82,-33.82,Rapid Decline
+Cybersecurity and Blockchain,2019,75,4,0,8,87,0.0,0.0,0.0,0.0,0.0,0.0,Base Year
+Cybersecurity and Blockchain,2020,99,3,0,8,110,32.0,-25.0,0.0,0.0,26.44,26.44,High Growth
+Cybersecurity and Blockchain,2021,138,1,0,9,148,39.39,-66.67,0.0,12.5,34.55,34.55,High Growth
+Cybersecurity and Blockchain,2022,127,2,0,4,133,-7.97,100.0,0.0,-55.56,-10.14,-10.14,Declining
+Cybersecurity and Blockchain,2023,144,7,0,15,166,13.39,250.0,0.0,275.0,24.81,24.81,High Growth
+Cybersecurity and Blockchain,2024,152,6,0,7,165,5.56,-14.29,0.0,-53.33,-0.6,-0.6,Stable
+Cybersecurity and Blockchain,2025,192,7,0,0,199,26.32,16.67,0.0,-100.0,20.61,20.61,High Growth
+Data Science and Knowledge Discovery,2019,87,2,0,0,89,0.0,0.0,0.0,0.0,0.0,0.0,Base Year
+Data Science and Knowledge Discovery,2020,107,0,0,2,109,22.99,-100.0,0.0,inf,22.47,22.47,High Growth
+Data Science and Knowledge Discovery,2021,127,0,0,0,127,18.69,0.0,0.0,-100.0,16.51,16.51,Growing
+Data Science and Knowledge Discovery,2022,119,4,0,2,125,-6.3,inf,0.0,inf,-1.57,-1.57,Stable
+Data Science and Knowledge Discovery,2023,111,6,0,4,121,-6.72,50.0,0.0,100.0,-3.2,-3.2,Stable
+Data Science and Knowledge Discovery,2024,130,15,0,2,147,17.12,150.0,0.0,-50.0,21.49,21.49,High Growth
+Data Science and Knowledge Discovery,2025,108,6,0,1,115,-16.92,-60.0,0.0,-50.0,-21.77,-21.77,Rapid Decline
+Energy Storage and Renewable Energy,2019,50,1,0,0,51,0.0,0.0,0.0,0.0,0.0,0.0,Base Year
+Energy Storage and Renewable Energy,2020,63,1,0,0,64,26.0,0.0,0.0,0.0,25.49,25.49,High Growth
+Energy Storage and Renewable Energy,2021,63,2,0,0,65,0.0,100.0,0.0,0.0,1.56,1.56,Stable
+Energy Storage and Renewable Energy,2022,109,8,0,0,117,73.02,300.0,0.0,0.0,80.0,80.0,High Growth
+Energy Storage and Renewable Energy,2023,104,14,0,0,118,-4.59,75.0,0.0,0.0,0.85,0.85,Stable
+Energy Storage and Renewable Energy,2024,109,17,0,0,126,4.81,21.43,0.0,0.0,6.78,6.78,Growing
+Energy Storage and Renewable Energy,2025,123,17,0,0,140,12.84,0.0,0.0,0.0,11.11,11.11,Growing
+Healthcare and Biomedical Engineering,2019,51,3,0,21,75,0.0,0.0,0.0,0.0,0.0,0.0,Base Year
+Healthcare and Biomedical Engineering,2020,71,2,0,15,88,39.22,-33.33,0.0,-28.57,17.33,17.33,Growing
+Healthcare and Biomedical Engineering,2021,85,6,0,23,114,19.72,200.0,0.0,53.33,29.55,29.55,High Growth
+Healthcare and Biomedical Engineering,2022,72,15,0,29,116,-15.29,150.0,0.0,26.09,1.75,1.75,Stable
+Healthcare and Biomedical Engineering,2023,82,24,0,19,125,13.89,60.0,0.0,-34.48,7.76,7.76,Growing
+Healthcare and Biomedical Engineering,2024,104,27,0,33,164,26.83,12.5,0.0,73.68,31.2,31.2,High Growth
+Healthcare and Biomedical Engineering,2025,97,21,0,8,126,-6.73,-22.22,0.0,-75.76,-23.17,-23.17,Rapid Decline
+Intelligent Transportation Systems,2019,38,0,0,0,38,0.0,0.0,0.0,0.0,0.0,0.0,Base Year
+Intelligent Transportation Systems,2020,48,4,0,0,52,26.32,inf,0.0,0.0,36.84,36.84,High Growth
+Intelligent Transportation Systems,2021,50,8,0,0,58,4.17,100.0,0.0,0.0,11.54,11.54,Growing
+Intelligent Transportation Systems,2022,37,15,0,0,52,-26.0,87.5,0.0,0.0,-10.34,-10.34,Declining
+Intelligent Transportation Systems,2023,71,27,0,0,98,91.89,80.0,0.0,0.0,88.46,88.46,High Growth
+Intelligent Transportation Systems,2024,55,27,0,0,82,-22.54,0.0,0.0,0.0,-16.33,-16.33,Declining
+Intelligent Transportation Systems,2025,49,28,0,0,77,-10.91,3.7,0.0,0.0,-6.1,-6.1,Declining
+Mechanical Systems and Control Engineering,2019,75,2,0,1,78,0.0,0.0,0.0,0.0,0.0,0.0,Base Year
+Mechanical Systems and Control Engineering,2020,91,1,0,4,96,21.33,-50.0,0.0,300.0,23.08,23.08,High Growth
+Mechanical Systems and Control Engineering,2021,74,0,0,2,76,-18.68,-100.0,0.0,-50.0,-20.83,-20.83,Rapid Decline
+Mechanical Systems and Control Engineering,2022,100,2,0,2,104,35.14,inf,0.0,0.0,36.84,36.84,High Growth
+Mechanical Systems and Control Engineering,2023,70,2,0,0,72,-30.0,0.0,0.0,-100.0,-30.77,-30.77,Rapid Decline
+Mechanical Systems and Control Engineering,2024,58,4,0,2,64,-17.14,100.0,0.0,inf,-11.11,-11.11,Declining
+Mechanical Systems and Control Engineering,2025,54,1,0,0,55,-6.9,-75.0,0.0,-100.0,-14.06,-14.06,Declining
+Photonics and Quantum Materials,2019,231,0,0,0,231,0.0,0.0,0.0,0.0,0.0,0.0,Base Year
+Photonics and Quantum Materials,2020,225,1,0,0,226,-2.6,inf,0.0,0.0,-2.16,-2.16,Stable
+Photonics and Quantum Materials,2021,247,0,0,0,247,9.78,-100.0,0.0,0.0,9.29,9.29,Growing
+Photonics and Quantum Materials,2022,244,3,0,0,247,-1.21,inf,0.0,0.0,0.0,0.0,Base Year
+Photonics and Quantum Materials,2023,261,5,0,0,266,6.97,66.67,0.0,0.0,7.69,7.69,Growing
+Photonics and Quantum Materials,2024,236,5,0,0,241,-9.58,0.0,0.0,0.0,-9.4,-9.4,Declining
+Photonics and Quantum Materials,2025,236,5,0,0,241,0.0,0.0,0.0,0.0,0.0,0.0,Base Year
+Physics and Theoretical Sciences,2019,100,1,0,0,101,0.0,0.0,0.0,0.0,0.0,0.0,Base Year
+Physics and Theoretical Sciences,2020,94,1,0,0,95,-6.0,0.0,0.0,0.0,-5.94,-5.94,Declining
+Physics and Theoretical Sciences,2021,136,2,0,0,138,44.68,100.0,0.0,0.0,45.26,45.26,High Growth
+Physics and Theoretical Sciences,2022,161,1,0,0,162,18.38,-50.0,0.0,0.0,17.39,17.39,Growing
+Physics and Theoretical Sciences,2023,122,2,0,0,124,-24.22,100.0,0.0,0.0,-23.46,-23.46,Rapid Decline
+Physics and Theoretical Sciences,2024,104,5,0,0,109,-14.75,150.0,0.0,0.0,-12.1,-12.1,Declining
+Physics and Theoretical Sciences,2025,108,2,0,0,110,3.85,-60.0,0.0,0.0,0.92,0.92,Stable
+Robotics and Autonomous Systems,2019,70,2,19,3,94,0.0,0.0,0.0,0.0,0.0,0.0,Base Year
+Robotics and Autonomous Systems,2020,92,4,86,13,195,31.43,100.0,352.63,333.33,107.45,107.45,High Growth
+Robotics and Autonomous Systems,2021,103,4,49,8,164,11.96,0.0,-43.02,-38.46,-15.9,-15.9,Declining
+Robotics and Autonomous Systems,2022,100,6,54,13,173,-2.91,50.0,10.2,62.5,5.49,5.49,Growing
+Robotics and Autonomous Systems,2023,130,11,71,8,220,30.0,83.33,31.48,-38.46,27.17,27.17,High Growth
+Robotics and Autonomous Systems,2024,145,26,61,11,243,11.54,136.36,-14.08,37.5,10.45,10.45,Growing
+Robotics and Autonomous Systems,2025,129,27,17,3,176,-11.03,3.85,-72.13,-72.73,-27.57,-27.57,Rapid Decline
+Semiconductors and Nanoelectronics,2019,99,3,0,13,115,0.0,0.0,0.0,0.0,0.0,0.0,Base Year
+Semiconductors and Nanoelectronics,2020,109,2,0,17,128,10.1,-33.33,0.0,30.77,11.3,11.3,Growing
+Semiconductors and Nanoelectronics,2021,77,7,0,12,96,-29.36,250.0,0.0,-29.41,-25.0,-25.0,Rapid Decline
+Semiconductors and Nanoelectronics,2022,97,4,0,15,116,25.97,-42.86,0.0,25.0,20.83,20.83,High Growth
+Semiconductors and Nanoelectronics,2023,89,6,0,19,114,-8.25,50.0,0.0,26.67,-1.72,-1.72,Stable
+Semiconductors and Nanoelectronics,2024,95,14,0,18,127,6.74,133.33,0.0,-5.26,11.4,11.4,Growing
+Semiconductors and Nanoelectronics,2025,101,13,0,5,119,6.32,-7.14,0.0,-72.22,-6.3,-6.3,Declining
+Smart Cities and Sustainability,2019,31,0,0,4,35,0.0,0.0,0.0,0.0,0.0,0.0,Base Year
+Smart Cities and Sustainability,2020,42,0,0,5,47,35.48,0.0,0.0,25.0,34.29,34.29,High Growth
+Smart Cities and Sustainability,2021,44,0,0,2,46,4.76,0.0,0.0,-60.0,-2.13,-2.13,Stable
+Smart Cities and Sustainability,2022,41,0,0,2,43,-6.82,0.0,0.0,0.0,-6.52,-6.52,Declining
+Smart Cities and Sustainability,2023,37,0,0,7,44,-9.76,0.0,0.0,250.0,2.33,2.33,Stable
+Smart Cities and Sustainability,2024,48,0,0,1,49,29.73,0.0,0.0,-85.71,11.36,11.36,Growing
+Smart Cities and Sustainability,2025,38,0,0,0,38,-20.83,0.0,0.0,-100.0,-22.45,-22.45,Rapid Decline
+Smart Energy Systems,2019,95,3,0,7,105,0.0,0.0,0.0,0.0,0.0,0.0,Base Year
+Smart Energy Systems,2020,111,0,0,11,122,16.84,-100.0,0.0,57.14,16.19,16.19,Growing
+Smart Energy Systems,2021,128,1,0,15,144,15.32,inf,0.0,36.36,18.03,18.03,Growing
+Smart Energy Systems,2022,132,9,0,12,153,3.12,800.0,0.0,-20.0,6.25,6.25,Growing
+Smart Energy Systems,2023,122,12,0,19,153,-7.58,33.33,0.0,58.33,0.0,0.0,Base Year
+Smart Energy Systems,2024,121,12,0,20,153,-0.82,0.0,0.0,5.26,0.0,0.0,Base Year
+Smart Energy Systems,2025,145,12,0,2,159,19.83,0.0,0.0,-90.0,3.92,3.92,Stable
+Social Computing and Security Analytics,2019,43,0,0,0,43,0.0,0.0,0.0,0.0,0.0,0.0,Base Year
+Social Computing and Security Analytics,2020,88,0,0,0,88,104.65,0.0,0.0,0.0,104.65,104.65,High Growth
+Social Computing and Security Analytics,2021,91,0,0,0,91,3.41,0.0,0.0,0.0,3.41,3.41,Stable
+Social Computing and Security Analytics,2022,80,0,0,0,80,-12.09,0.0,0.0,0.0,-12.09,-12.09,Declining
+Social Computing and Security Analytics,2023,83,0,0,0,83,3.75,0.0,0.0,0.0,3.75,3.75,Stable
+Social Computing and Security Analytics,2024,95,0,0,0,95,14.46,0.0,0.0,0.0,14.46,14.46,Growing
+Social Computing and Security Analytics,2025,71,0,0,0,71,-25.26,0.0,0.0,0.0,-25.26,-25.26,Rapid Decline
+Speech and Language Technologies,2019,46,5,0,4,55,0.0,0.0,0.0,0.0,0.0,0.0,Base Year
+Speech and Language Technologies,2020,62,6,0,4,72,34.78,20.0,0.0,0.0,30.91,30.91,High Growth
+Speech and Language Technologies,2021,66,0,0,1,67,6.45,-100.0,0.0,-75.0,-6.94,-6.94,Declining
+Speech and Language Technologies,2022,38,14,0,1,53,-42.42,inf,0.0,0.0,-20.9,-20.9,Rapid Decline
+Speech and Language Technologies,2023,59,20,0,3,82,55.26,42.86,0.0,200.0,54.72,54.72,High Growth
+Speech and Language Technologies,2024,41,12,0,5,58,-30.51,-40.0,0.0,66.67,-29.27,-29.27,Rapid Decline
+Speech and Language Technologies,2025,56,3,0,3,62,36.59,-75.0,0.0,-40.0,6.9,6.9,Growing
+Wireless Communications and IoT,2019,119,2,0,15,136,0.0,0.0,0.0,0.0,0.0,0.0,Base Year
+Wireless Communications and IoT,2020,101,1,0,5,107,-15.13,-50.0,0.0,-66.67,-21.32,-21.32,Rapid Decline
+Wireless Communications and IoT,2021,153,0,0,11,164,51.49,-100.0,0.0,120.0,53.27,53.27,High Growth
+Wireless Communications and IoT,2022,166,9,0,14,189,8.5,inf,0.0,27.27,15.24,15.24,Growing
+Wireless Communications and IoT,2023,181,11,0,8,200,9.04,22.22,0.0,-42.86,5.82,5.82,Growing
+Wireless Communications and IoT,2024,135,15,0,11,161,-25.41,36.36,0.0,37.5,-19.5,-19.5,Declining
+Wireless Communications and IoT,2025,148,9,0,4,161,9.63,-40.0,0.0,-63.64,0.0,0.0,Base Year

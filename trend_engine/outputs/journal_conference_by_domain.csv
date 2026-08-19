@@ -1,0 +1,139 @@
+domain,Conference,Journal,Unknown,Total,Journal %,Conference %
+Engineering,924.0,3406.0,5287.0,9617.0,35.42,9.61
+Computer Science,1047.0,1428.0,2878.0,5353.0,26.68,19.56
+Materials Science,104.0,1363.0,1715.0,3182.0,42.83,3.27
+Computer Sciences and Information Technology,1125.0,646.0,698.0,2469.0,26.16,45.57
+Physics and Astronomy,46.0,905.0,720.0,1671.0,54.16,2.75
+Mathematics,24.0,405.0,511.0,940.0,43.09,2.55
+Engineering; Computer Science,459.0,183.0,257.0,899.0,20.36,51.06
+CSE,49.0,87.0,481.0,617.0,14.1,7.94
+ECE,55.0,115.0,395.0,565.0,20.35,9.73
+Engineering; Materials Science,72.0,150.0,175.0,397.0,37.78,18.14
+PHY,2.0,23.0,282.0,307.0,7.49,0.65
+EEE,28.0,33.0,164.0,225.0,14.67,12.44
+MATH,2.0,25.0,181.0,208.0,12.02,0.96
+Computer Science & Engineering,13.0,80.0,35.0,128.0,62.5,10.16
+ISE,4.0,14.0,80.0,98.0,14.29,4.08
+Engineering; Physics and Astronomy,27.0,23.0,21.0,71.0,32.39,38.03
+Engineering; Energy,21.0,21.0,25.0,67.0,31.34,31.34
+Computer Science; Engineering,26.0,13.0,21.0,60.0,21.67,43.33
+Physics,4.0,18.0,31.0,53.0,33.96,7.55
+Physics and Astronomy; Computer Science,21.0,14.0,14.0,49.0,28.57,42.86
+ETE,6.0,9.0,31.0,46.0,19.57,13.04
+AI & Data Science,9.0,20.0,7.0,36.0,55.56,25.0
+Energy,2.0,11.0,15.0,28.0,39.29,7.14
+Electronics & Communication Engineering,15.0,6.0,7.0,28.0,21.43,53.57
+Engineering; Environmental Science,8.0,7.0,9.0,24.0,29.17,33.33
+Computer Science; Social Sciences,8.0,6.0,9.0,23.0,26.09,34.78
+Medicine; Computer Science,12.0,4.0,4.0,20.0,20.0,60.0
+Computer Science & Engineering - AI and ML,3.0,9.0,6.0,18.0,50.0,16.67
+Computer Science; Decision Sciences,10.0,5.0,2.0,17.0,29.41,58.82
+Engineering; Mathematics,2.0,8.0,6.0,16.0,50.0,12.5
+Computer Science; Neuroscience,7.0,5.0,4.0,16.0,31.25,43.75
+Engineering; Physics and Astronomy; Materials Science,4.0,6.0,6.0,16.0,37.5,25.0
+Mathematics; Computer Science,1.0,5.0,10.0,16.0,31.25,6.25
+Engineering; Social Sciences,1.0,6.0,6.0,13.0,46.15,7.69
+Engineering; Computer Science; Environmental Science,7.0,0.0,5.0,12.0,0.0,58.33
+Engineering; Chemical Engineering,0.0,4.0,8.0,12.0,33.33,0.0
+Medicine; Computer Science; Health Professions,5.0,2.0,5.0,12.0,16.67,41.67
+Engineering; Energy; Computer Science,4.0,2.0,6.0,12.0,16.67,33.33
+Computer Science; Health Professions,2.0,4.0,6.0,12.0,33.33,16.67
+Computer Science - Cyber Security,3.0,5.0,3.0,11.0,45.45,27.27
+"Computer Science; Business, Management and Accounting",3.0,5.0,3.0,11.0,45.45,27.27
+Engineering; Energy; Materials Science,3.0,1.0,6.0,10.0,10.0,30.0
+Computer Science; Physics and Astronomy,3.0,2.0,5.0,10.0,20.0,30.0
+Engineering; Physics and Astronomy; Computer Science,4.0,1.0,2.0,7.0,14.29,57.14
+Psychology; Computer Science,3.0,2.0,1.0,6.0,33.33,50.0
+Mathematics; Physics and Astronomy,0.0,4.0,2.0,6.0,66.67,0.0
+Engineering; Materials Science; Energy,0.0,3.0,3.0,6.0,50.0,0.0
+Engineering; Computer Science; Social Sciences,1.0,2.0,2.0,5.0,40.0,20.0
+Engineering; Medicine,2.0,2.0,1.0,5.0,40.0,40.0
+Computer Science; Agricultural and Biological Sciences,4.0,0.0,1.0,5.0,0.0,80.0
+Engineering; Agricultural and Biological Sciences,4.0,0.0,1.0,5.0,0.0,80.0
+"Computer Science; Biochemistry, Genetics and Molecular Biology",3.0,2.0,0.0,5.0,40.0,60.0
+Computer Science; Environmental Science,2.0,2.0,1.0,5.0,40.0,40.0
+Engineering; Environmental Science; Materials Science,0.0,3.0,1.0,4.0,75.0,0.0
+Engineering; Neuroscience,1.0,2.0,1.0,4.0,50.0,25.0
+Engineering; Computer Science; Physics and Astronomy,1.0,2.0,1.0,4.0,50.0,25.0
+Engineering; Computer Science; Neuroscience,2.0,1.0,1.0,4.0,25.0,50.0
+Computer Science; Materials Science,1.0,1.0,2.0,4.0,25.0,25.0
+Medicine; Neuroscience; Engineering,1.0,1.0,2.0,4.0,25.0,25.0
+Engineering; Chemistry; Chemical Engineering,2.0,2.0,0.0,4.0,50.0,50.0
+Medicine; Computer Science; Neuroscience,3.0,0.0,1.0,4.0,0.0,75.0
+Engineering; Computer Science; Agricultural and Biological Sciences,1.0,1.0,1.0,3.0,33.33,33.33
+"Engineering; Business, Management and Accounting",0.0,3.0,0.0,3.0,100.0,0.0
+Computer Science; Energy,1.0,1.0,1.0,3.0,33.33,33.33
+"Computer Science; Business, Management and Accounting; Decision Sciences",1.0,1.0,1.0,3.0,33.33,33.33
+Mathematics; Engineering,1.0,0.0,2.0,3.0,0.0,33.33
+Medicine; Engineering,2.0,1.0,0.0,3.0,33.33,66.67
+Engineering; Health Professions,0.0,2.0,1.0,3.0,66.67,0.0
+Medicine; Computer Science; Social Sciences,0.0,1.0,2.0,3.0,33.33,0.0
+Engineering; Energy; Environmental Science,0.0,2.0,1.0,3.0,66.67,0.0
+Engineering; Environmental Science; Agricultural and Biological Sciences,1.0,1.0,1.0,3.0,33.33,33.33
+Engineering; Chemistry,1.0,1.0,1.0,3.0,33.33,33.33
+"Medicine; Computer Science; Biochemistry, Genetics and Molecular Biology",0.0,2.0,1.0,3.0,66.67,0.0
+Engineering; Computer Science; Materials Science,3.0,0.0,0.0,3.0,0.0,100.0
+Engineering; Materials Science; Chemical Engineering,1.0,0.0,1.0,2.0,0.0,50.0
+Psychology; Engineering,1.0,1.0,0.0,2.0,50.0,50.0
+Computer Science; Mathematics,0.0,1.0,1.0,2.0,50.0,0.0
+Computer Science; Social Sciences; Neuroscience,1.0,1.0,0.0,2.0,50.0,50.0
+"Computer Science; Biochemistry, Genetics and Molecular Biology; Decision Sciences",0.0,2.0,0.0,2.0,100.0,0.0
+Computer Science; Decision Sciences; Health Professions,0.0,0.0,2.0,2.0,0.0,0.0
+Psychology; Computer Science; Neuroscience,0.0,1.0,1.0,2.0,50.0,0.0
+Engineering; Computer Science; Medicine,1.0,0.0,1.0,2.0,0.0,50.0
+Engineering; Chemistry; Materials Science,0.0,0.0,2.0,2.0,0.0,0.0
+Engineering; Earth and Planetary Sciences; Environmental Science,1.0,1.0,0.0,2.0,50.0,50.0
+Engineering; Materials Science; Chemistry,0.0,0.0,2.0,2.0,0.0,0.0
+Engineering; Earth and Planetary Sciences,2.0,0.0,0.0,2.0,0.0,100.0
+Mathematics; Materials Science; Computer Science,0.0,1.0,1.0,2.0,50.0,0.0
+Energy; Computer Science,1.0,1.0,0.0,2.0,50.0,50.0
+"Engineering; Business, Management and Accounting; Decision Sciences",0.0,1.0,1.0,2.0,50.0,0.0
+Engineering; Decision Sciences; Health Professions,0.0,1.0,1.0,2.0,50.0,0.0
+"Engineering; Economics, Econometrics and Finance; Decision Sciences",2.0,0.0,0.0,2.0,0.0,100.0
+Arts and Humanities; Computer Science,1.0,0.0,1.0,2.0,0.0,50.0
+Mathematics; Materials Science,0.0,0.0,2.0,2.0,0.0,0.0
+"Engineering; Computer Science; Business, Management and Accounting",0.0,2.0,0.0,2.0,100.0,0.0
+Engineering; Computer Science; Psychology,1.0,0.0,1.0,2.0,0.0,50.0
+Mathematics; Computer Science; Physics and Astronomy,0.0,0.0,1.0,1.0,0.0,0.0
+"Psychology; Computer Science; Economics, Econometrics and Finance",0.0,1.0,0.0,1.0,100.0,0.0
+Mathematics; Computer Science; Decision Sciences,1.0,0.0,0.0,1.0,0.0,100.0
+Materials Science; Computer Science,1.0,0.0,0.0,1.0,0.0,100.0
+"Medicine; Economics, Econometrics and Finance; Engineering",0.0,0.0,1.0,1.0,0.0,0.0
+Psychology; Computer Science; Social Sciences,0.0,0.0,1.0,1.0,0.0,0.0
+Physics and Astronomy; Materials Science; Computer Science,1.0,0.0,0.0,1.0,0.0,100.0
+Materials Science; Engineering; Chemistry,0.0,1.0,0.0,1.0,100.0,0.0
+Psychology; Computer Science; Physics and Astronomy,0.0,1.0,0.0,1.0,100.0,0.0
+Medicine; Computer Science; Engineering,0.0,0.0,1.0,1.0,0.0,0.0
+Medicine; Computer Science; Decision Sciences,1.0,0.0,0.0,1.0,0.0,100.0
+Engineering; Decision Sciences; Environmental Science,0.0,0.0,1.0,1.0,0.0,0.0
+Engineering; Physics and Astronomy; Mathematics,0.0,0.0,1.0,1.0,0.0,0.0
+Engineering; Arts and Humanities,0.0,1.0,0.0,1.0,100.0,0.0
+"Business, Management and Accounting; Computer Science; Social Sciences",1.0,0.0,0.0,1.0,0.0,100.0
+"Computer Science; Biochemistry, Genetics and Molecular Biology; Chemistry",0.0,0.0,1.0,1.0,0.0,0.0
+"Computer Science; Biochemistry, Genetics and Molecular Biology; Environmental Science",0.0,0.0,1.0,1.0,0.0,0.0
+"Computer Science; Biochemistry, Genetics and Molecular Biology; Health Professions",1.0,0.0,0.0,1.0,0.0,100.0
+"Computer Science; Biochemistry, Genetics and Molecular Biology; Immunology and Microbiology",0.0,0.0,1.0,1.0,0.0,0.0
+Computer Science; Engineering; Energy,0.0,0.0,1.0,1.0,0.0,0.0
+Computer Science; Neuroscience; Physics and Astronomy,0.0,1.0,0.0,1.0,100.0,0.0
+Computer Science; Social Sciences; Decision Sciences,0.0,0.0,1.0,1.0,0.0,0.0
+Computer Science; Social Sciences; Physics and Astronomy,0.0,1.0,0.0,1.0,100.0,0.0
+Earth and Planetary Sciences; Computer Science,1.0,0.0,0.0,1.0,0.0,100.0
+Earth and Planetary Sciences; Computer Science; Health Professions,0.0,0.0,1.0,1.0,0.0,0.0
+Earth and Planetary Sciences; Environmental Science; Engineering,1.0,0.0,0.0,1.0,0.0,100.0
+"Economics, Econometrics and Finance; Decision Sciences; Computer Science",1.0,0.0,0.0,1.0,0.0,100.0
+"Engineering; Biochemistry, Genetics and Molecular Biology",1.0,0.0,0.0,1.0,0.0,100.0
+"Engineering; Nursing; Biochemistry, Genetics and Molecular Biology",0.0,1.0,0.0,1.0,100.0,0.0
+"Engineering; Biochemistry, Genetics and Molecular Biology; Neuroscience",0.0,1.0,0.0,1.0,100.0,0.0
+"Engineering; Business, Management and Accounting; Social Sciences",0.0,1.0,0.0,1.0,100.0,0.0
+Engineering; Computer Science; Decision Sciences,0.0,0.0,1.0,1.0,0.0,0.0
+Engineering; Computer Science; Health Professions,0.0,1.0,0.0,1.0,100.0,0.0
+Engineering; Decision Sciences,0.0,0.0,1.0,1.0,0.0,0.0
+Engineering; Earth and Planetary Sciences; Physics and Astronomy,1.0,0.0,0.0,1.0,0.0,100.0
+"Engineering; Economics, Econometrics and Finance",0.0,1.0,0.0,1.0,100.0,0.0
+Engineering; Materials Science; Agricultural and Biological Sciences,0.0,1.0,0.0,1.0,100.0,0.0
+Engineering; Materials Science; Computer Science,0.0,0.0,1.0,1.0,0.0,0.0
+"Engineering; Materials Science; Pharmacology, Toxicology and Pharmaceutics",0.0,0.0,1.0,1.0,0.0,0.0
+Engineering; Medicine; Health Professions,1.0,0.0,0.0,1.0,0.0,100.0
+Engineering; Neuroscience; Agricultural and Biological Sciences,0.0,1.0,0.0,1.0,100.0,0.0
+Engineering; Neuroscience; Materials Science,1.0,0.0,0.0,1.0,0.0,100.0
+Psychology; Medicine; Engineering,1.0,0.0,0.0,1.0,0.0,100.0

@@ -3,6 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 import {
   LayoutDashboard,
   BarChart3,
+  TrendingUp,
   Search,
   Building2,
   Users,
@@ -19,6 +20,7 @@ import {
 const NAV = [
   { to: "/dashboard", label: "Dashboard", icon: LayoutDashboard },
   { to: "/dashboard/analytics", label: "Analytics", icon: BarChart3 },
+  { to: "/dashboard/trend-engine", label: "Trend Engine", icon: TrendingUp },
   { to: "/dashboard/search", label: "Search", icon: Search },
   { to: "/dashboard/publications", label: "Publications", icon: BookOpen },
   { to: "/dashboard/theses", label: "Theses", icon: GraduationCap },

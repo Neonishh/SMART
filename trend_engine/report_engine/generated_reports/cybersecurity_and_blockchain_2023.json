@@ -1,0 +1,209 @@
+{
+    "technology": "Cybersecurity and Blockchain",
+    "year": 2023,
+    "publication_statistics": {
+        "publications": 144,
+        "patents": 7,
+        "grants": 0,
+        "theses": 15,
+        "total_output": 166
+    },
+    "growth_statistics": {
+        "yoy_growth_percent": 24.81,
+        "cagr_percent": 14.79
+    },
+    "grant_statistics": {
+        "average_impact_score": 31.86
+    },
+    "top_researchers": [
+        {
+            "researcher": "B. Sundar Rajan",
+            "institution": "Indian Institute of Science Bangalore",
+            "publications": 45,
+            "citations": 115,
+            "research_score": 92.3
+        },
+        {
+            "researcher": "Prasad B. Honnavalli",
+            "institution": "PES University",
+            "publications": 29,
+            "citations": 219,
+            "research_score": 62.38
+        },
+        {
+            "researcher": "V Sarasvathi",
+            "institution": "PES University",
+            "publications": 14,
+            "citations": 37,
+            "research_score": 28.74
+        },
+        {
+            "researcher": "Subramaniam Kalambur",
+            "institution": "PES University",
+            "publications": 13,
+            "citations": 55,
+            "research_score": 27.1
+        },
+        {
+            "researcher": "Dankan Gowda",
+            "institution": "International Institute of Information Technology Bangalore",
+            "publications": 9,
+            "citations": 153,
+            "research_score": 21.06
+        }
+    ],
+    "top_institutions": [
+        {
+            "institution": "Indian Institute of Science Bangalore",
+            "impact_score": 86.42,
+            "total_projects": 187,
+            "total_funding_lakhs": 18225.5067
+        },
+        {
+            "institution": "R V College of Engineering",
+            "impact_score": 42.65,
+            "total_projects": 42,
+            "total_funding_lakhs": 6723.758900000001
+        },
+        {
+            "institution": "CMR Institute of Technology",
+            "impact_score": 29.44,
+            "total_projects": 60,
+            "total_funding_lakhs": 162.6849
+        },
+        {
+            "institution": "B.M.S. College of Engineering",
+            "impact_score": 27.05,
+            "total_projects": 48,
+            "total_funding_lakhs": 687.667
+        },
+        {
+            "institution": "International Institute of Information Technology Bangalore",
+            "impact_score": 17.64,
+            "total_projects": 8,
+            "total_funding_lakhs": 183.9866
+        },
+        {
+            "institution": "Dayananda Sagar College of Engineering",
+            "impact_score": 10.45,
+            "total_projects": 5,
+            "total_funding_lakhs": 26.9944
+        },
+        {
+            "institution": "M.S. Ramaiah Institute of Technology",
+            "impact_score": 9.39,
+            "total_projects": 56,
+            "total_funding_lakhs": 384.4958
+        }
+    ],
+    "top_journals": [
+        {
+            "rank": 1,
+            "venue": "Physical review. B./Physical review. B",
+            "publications": 268
+        },
+        {
+            "rank": 2,
+            "venue": "Lecture notes in computer science",
+            "publications": 204
+        },
+        {
+            "rank": 3,
+            "venue": "SSRN Electronic Journal",
+            "publications": 192
+        },
+        {
+            "rank": 4,
+            "venue": "Journal of Alloys and Compounds",
+            "publications": 113
+        },
+        {
+            "rank": 5,
+            "venue": "ePrints@IISc (Indian Institute of Science)",
+            "publications": 84
+        },
+        {
+            "rank": 6,
+            "venue": "The Journal of Physical Chemistry C",
+            "publications": 80
+        },
+        {
+            "rank": 7,
+            "venue": "IEEE Transactions on Electron Devices",
+            "publications": 79
+        },
+        {
+            "rank": 8,
+            "venue": "Journal of Applied Physics",
+            "publications": 75
+        },
+        {
+            "rank": 9,
+            "venue": "International Journal for Research in Applied Science and Engineering Technology",
+            "publications": 73
+        },
+        {
+            "rank": 10,
+            "venue": "Journal of Fluid Mechanics",
+            "publications": 69
+        }
+    ],
+    "top_conferences": [
+        {
+            "rank": 1,
+            "venue": "Materials Today: Proceedings",
+            "publications": 222
+        },
+        {
+            "rank": 2,
+            "venue": "AIP Conference Proceedings",
+            "publications": 101
+        },
+        {
+            "rank": 3,
+            "venue": "Materials Today Proceedings",
+            "publications": 101
+        },
+        {
+            "rank": 4,
+            "venue": "AIP conference proceedings",
+            "publications": 84
+        },
+        {
+            "rank": 5,
+            "venue": "2023 7th International Conference on Computation System and Information Technology for Sustainable Solutions (CSITSS)",
+            "publications": 45
+        },
+        {
+            "rank": 6,
+            "venue": "2025 9th International Conference on Computational System and Information Technology for Sustainable Solutions (CSITSS)",
+            "publications": 38
+        },
+        {
+            "rank": 7,
+            "venue": "ECS Meeting Abstracts",
+            "publications": 35
+        },
+        {
+            "rank": 8,
+            "venue": "Proceedings of the AAAI Conference on Artificial Intelligence",
+            "publications": 35
+        },
+        {
+            "rank": 9,
+            "venue": "2021 IEEE International Conference on Electronics, Computing and Communication Technologies (CONECCT)",
+            "publications": 31
+        },
+        {
+            "rank": 10,
+            "venue": "2022 IEEE International Conference on Electronics, Computing and Communication Technologies (CONECCT)",
+            "publications": 29
+        }
+    ],
+    "top_venues": [],
+    "executive_summary": "The Cybersecurity and Blockchain domain produced 166 total research outputs in 2023, including 144 publications, 7 patents, 0 grants and 15 theses. The year-on-year growth was 24.81%, while the long-term CAGR stands at 14.79%. Across all participating institutions, the average Grant Impact Score was 31.86.",
+    "recommendations": [
+        "Strong growth detected. Continued investment is recommended.",
+        "Grant funding should be strengthened to improve technology development."
+    ]
+}

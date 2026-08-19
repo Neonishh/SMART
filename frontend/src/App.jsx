@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import Landing from "./pages/Landing";
 import Dashboard from "./pages/Dashboard";
 import Analytics from "./pages/Analytics";
+import TrendEngine from "./pages/TrendEngine";
 import Search from "./pages/Search";
 import Institutions from "./pages/Institutions";
 import Researchers from "./pages/Researchers";
@@ -79,6 +80,15 @@ export default function App() {
             <Route
                 path="/dashboard/analytics"
                 element={<Analytics />}
+            />
+
+            {/* ------------------------------------------------------ */}
+            {/* Trend Engine                                            */}
+            {/* ------------------------------------------------------ */}
+
+            <Route
+                path="/dashboard/trend-engine"
+                element={<TrendEngine />}
             />
 
             <Route

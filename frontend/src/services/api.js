@@ -2,14 +2,13 @@ import axios from "axios";
 import * as mock from "../mock/data";
 
 // -----------------------------------------------------------------------
-// When your FastAPI backend is ready, set VITE_API_BASE_URL in a .env file
-// (e.g. VITE_API_BASE_URL=http://localhost:8000) and the calls below will
-// hit the real endpoints. Until then, USE_MOCK stays true and every
-// function resolves with the mock data from src/mock/data.js, so the UI
-// works standalone with zero backend.
+// Set VITE_API_BASE_URL in frontend/.env (e.g. http://localhost:5001) to
+// point the app at the Node backend. The fallback below must match PORT in
+// backend/.env. Note: macOS AirPlay Receiver occupies port 5000, so this
+// project uses 5001.
 // -----------------------------------------------------------------------
 
-const BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:5000";
+const BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:5001";
 const USE_MOCK = false;
 
 const client = axios.create({
@@ -577,6 +576,16 @@ export async function listTheses() {
   if (USE_MOCK) return resolveMock(mock.theses);
 
   return client.get("/theses");
+}
+
+/* ============================================================
+   TREND ENGINE
+   Reads the CSVs produced by the Python Trend Engine, served by
+   backend/routes/trend_engine.js at GET /trend-engine
+============================================================ */
+
+export async function getTrendEngineAnalytics() {
+  return client.get("/trend-engine");
 }
 
 export default client;
