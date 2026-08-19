@@ -33,7 +33,7 @@ const __dirname = path.dirname(__filename);
 
 const OUTPUT_DIR = path.resolve(
     __dirname,
-    "../../trend_engine/outputs"
+    "../../nlp/trend_engine/outputs"
 );
 
 

@@ -16,8 +16,12 @@ import DashboardLayout from "../components/DashboardLayout";
 import { Card, StatCard, Badge, SectionLabel, EmptyState } from "../components/ui";
 import { getTrendEngineAnalytics } from "../services/api";
 
-const NAVY = "#16143f";
-const OCHRE = "#a9762f";
+// Chart palette — edit these to restyle every chart on the page
+const PUBLICATIONS = "#16143f"; // navy
+const PATENTS = "#c2410c";      // burnt orange
+const THESES = "#0d9488";       // teal
+const BAR = "#a9762f";          // ochre
+const GRID = "#e5e2dc";
 
 export default function TrendEngine() {
   const [data, setData] = useState(null);
@@ -143,14 +147,38 @@ export default function TrendEngine() {
 
           <ResponsiveContainer width="100%" height={300}>
             <LineChart data={domainSeries}>
-              <CartesianGrid strokeDasharray="3 3" />
-              <XAxis dataKey="year" />
-              <YAxis />
+              <CartesianGrid strokeDasharray="3 3" stroke={GRID} />
+              <XAxis dataKey="year" tick={{ fontSize: 12 }} />
+              {/* Left axis carries publications; right axis rescales the much
+                  smaller patents/theses series so they are actually readable */}
+              <YAxis yAxisId="left" tick={{ fontSize: 12 }} />
+              <YAxis yAxisId="right" orientation="right" tick={{ fontSize: 12 }} />
               <Tooltip />
               <Legend />
-              <Line type="monotone" dataKey="publications" stroke={NAVY} />
-              <Line type="monotone" dataKey="patents" stroke={OCHRE} />
-              <Line type="monotone" dataKey="theses" stroke="#6f6c7f" />
+              <Line
+                yAxisId="left"
+                type="monotone"
+                dataKey="publications"
+                stroke={PUBLICATIONS}
+                strokeWidth={2}
+                dot={{ r: 3 }}
+              />
+              <Line
+                yAxisId="right"
+                type="monotone"
+                dataKey="patents"
+                stroke={PATENTS}
+                strokeWidth={2}
+                dot={{ r: 3 }}
+              />
+              <Line
+                yAxisId="right"
+                type="monotone"
+                dataKey="theses"
+                stroke={THESES}
+                strokeWidth={2}
+                dot={{ r: 3 }}
+              />
             </LineChart>
           </ResponsiveContainer>
         </Card>
@@ -160,11 +188,11 @@ export default function TrendEngine() {
           <SectionLabel>Top Domains by CAGR (%)</SectionLabel>
           <ResponsiveContainer width="100%" height={340}>
             <BarChart data={topCAGR} layout="vertical" margin={{ left: 160 }}>
-              <CartesianGrid strokeDasharray="3 3" />
-              <XAxis type="number" />
+              <CartesianGrid strokeDasharray="3 3" stroke={GRID} />
+              <XAxis type="number" tick={{ fontSize: 12 }} />
               <YAxis type="category" dataKey="domain" width={160} tick={{ fontSize: 11 }} />
               <Tooltip />
-              <Bar dataKey="cagr" fill={OCHRE} />
+              <Bar dataKey="cagr" fill={BAR} radius={[0, 3, 3, 0]} />
             </BarChart>
           </ResponsiveContainer>
         </Card>
