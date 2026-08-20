@@ -3,35 +3,77 @@ from reportlab.platypus import (
     Paragraph,
     Spacer,
     Table,
-    TableStyle
+    TableStyle,
 )
 from reportlab.lib import colors
 from reportlab.lib.styles import getSampleStyleSheet
 from reportlab.lib.units import inch
+from xml.sax.saxutils import escape
 import os
+
+
+GENERATED_REPORTS_DIR = (
+    "trend_engine/report_engine/generated_reports"
+)
+
+
+def safe_text(value):
+    if value is None:
+        return ""
+
+    return escape(str(value))
 
 
 def generate_pdf(report):
 
+    if not isinstance(report, dict):
+        raise ValueError(
+            "Report must be a dictionary."
+        )
+
+    required_fields = [
+        "technology",
+        "year",
+        "publication_statistics",
+        "growth_statistics",
+        "grant_statistics",
+        "top_researchers",
+        "top_institutions",
+        "executive_summary",
+        "recommendations",
+    ]
+
+    missing = [
+        field
+        for field in required_fields
+        if field not in report
+    ]
+
+    if missing:
+        raise ValueError(
+            f"Report is missing required fields: {missing}"
+        )
+
     os.makedirs(
-        "trend_engine/report_engine/generated_reports",
+        GENERATED_REPORTS_DIR,
         exist_ok=True
     )
 
-    technology = report["technology"]
+    technology = str(report["technology"])
     year = report["year"]
 
     filename = (
         technology.lower()
+        .strip()
         .replace(" ", "_")
-        + "_"
-        + str(year)
-        + ".pdf"
+        + f"_{year}.pdf"
     )
 
-    filepath = os.path.join(
-        "trend_engine/report_engine/generated_reports",
-        filename
+    filepath = os.path.abspath(
+        os.path.join(
+            GENERATED_REPORTS_DIR,
+            filename
+        )
     )
 
     doc = SimpleDocTemplate(
@@ -39,228 +81,548 @@ def generate_pdf(report):
         rightMargin=40,
         leftMargin=40,
         topMargin=40,
-        bottomMargin=40
+        bottomMargin=40,
+        title=(
+            f"SMART Technology Report - "
+            f"{technology} - {year}"
+        ),
+        author="SMART Knowledge Graph",
     )
 
     styles = getSampleStyleSheet()
 
     story = []
 
-    # -------------------------------------------------
+    # =====================================================
     # TITLE
-    # -------------------------------------------------
+    # =====================================================
 
     story.append(
-        Paragraph("<b>SMART TECHNOLOGY REPORT</b>", styles["Title"])
-    )
-
-    story.append(Spacer(1, 0.3 * inch))
-
-    story.append(
-        Paragraph(f"<b>Technology:</b> {technology}", styles["Heading2"])
+        Paragraph(
+            "<b>SMART TECHNOLOGY REPORT</b>",
+            styles["Title"]
+        )
     )
 
     story.append(
-        Paragraph(f"<b>Year:</b> {year}", styles["Heading2"])
+        Spacer(1, 0.3 * inch)
     )
-
-    story.append(Spacer(1, 0.4 * inch))
-
-    # -------------------------------------------------
-    # SECTION 1: PUBLICATION STATISTICS
-    # -------------------------------------------------
 
     story.append(
-        Paragraph("<b>1. Publication Statistics</b>", styles["Heading1"])
+        Paragraph(
+            f"<b>Technology:</b> "
+            f"{safe_text(technology)}",
+            styles["Heading2"]
+        )
     )
 
-    pub = report["publication_statistics"]
+    story.append(
+        Paragraph(
+            f"<b>Year:</b> {safe_text(year)}",
+            styles["Heading2"]
+        )
+    )
 
-    table_data = [
-        ["Metric", "Value"],
-        ["Publications", pub["publications"]],
-        ["Patents", pub["patents"]],
-        ["Grants", pub["grants"]],
-        ["Theses", pub["theses"]],
-        ["Total Output", pub["total_output"]],
+    story.append(
+        Spacer(1, 0.4 * inch)
+    )
+
+    # =====================================================
+    # PUBLICATION STATISTICS
+    # =====================================================
+
+    story.append(
+        Paragraph(
+            "<b>1. Publication Statistics</b>",
+            styles["Heading1"]
+        )
+    )
+
+    pub = report[
+        "publication_statistics"
     ]
 
-    table = Table(table_data)
+    publication_table = Table([
+        ["Metric", "Value"],
+        ["Publications", pub.get("publications", 0)],
+        ["Patents", pub.get("patents", 0)],
+        ["Grants", pub.get("grants", 0)],
+        ["Theses", pub.get("theses", 0)],
+        ["Total Output", pub.get("total_output", 0)],
+    ])
 
-    table.setStyle(TableStyle([
-        ("BACKGROUND", (0, 0), (-1, 0), colors.darkblue),
-        ("TEXTCOLOR", (0, 0), (-1, 0), colors.white),
-        ("GRID", (0, 0), (-1, -1), 1, colors.grey),
-        ("BACKGROUND", (0, 1), (-1, -1), colors.beige),
-        ("FONTNAME", (0, 0), (-1, 0), "Helvetica-Bold"),
-        ("BOTTOMPADDING", (0, 0), (-1, 0), 10),
-    ]))
-
-    story.append(table)
-
-    story.append(Spacer(1, 0.3 * inch))
-
-    # -------------------------------------------------
-    # SECTION 2: GROWTH STATISTICS
-    # -------------------------------------------------
-
-    story.append(
-        Paragraph("<b>2. Growth Statistics</b>", styles["Heading1"])
+    publication_table.setStyle(
+        TableStyle([
+            (
+                "BACKGROUND",
+                (0, 0),
+                (-1, 0),
+                colors.darkblue
+            ),
+            (
+                "TEXTCOLOR",
+                (0, 0),
+                (-1, 0),
+                colors.white
+            ),
+            (
+                "GRID",
+                (0, 0),
+                (-1, -1),
+                1,
+                colors.grey
+            ),
+            (
+                "BACKGROUND",
+                (0, 1),
+                (-1, -1),
+                colors.beige
+            ),
+            (
+                "FONTNAME",
+                (0, 0),
+                (-1, 0),
+                "Helvetica-Bold"
+            ),
+        ])
     )
 
-    growth = report["growth_statistics"]
+    story.append(publication_table)
+
+    story.append(
+        Spacer(1, 0.3 * inch)
+    )
+
+    # =====================================================
+    # GROWTH
+    # =====================================================
+
+    story.append(
+        Paragraph(
+            "<b>2. Growth Statistics</b>",
+            styles["Heading1"]
+        )
+    )
+
+    growth = report[
+        "growth_statistics"
+    ]
 
     growth_table = Table([
         ["Metric", "Value"],
-        ["YoY Growth (%)", growth["yoy_growth_percent"]],
-        ["CAGR (%)", growth["cagr_percent"]]
+        [
+            "YoY Growth (%)",
+            growth.get(
+                "yoy_growth_percent",
+                0
+            )
+        ],
+        [
+            "CAGR (%)",
+            growth.get(
+                "cagr_percent",
+                0
+            )
+        ],
     ])
 
-    growth_table.setStyle(TableStyle([
-        ("BACKGROUND", (0, 0), (-1, 0), colors.darkgreen),
-        ("TEXTCOLOR", (0, 0), (-1, 0), colors.white),
-        ("GRID", (0, 0), (-1, -1), 1, colors.grey),
-        ("BACKGROUND", (0, 1), (-1, -1), colors.whitesmoke),
-    ]))
+    growth_table.setStyle(
+        TableStyle([
+            (
+                "BACKGROUND",
+                (0, 0),
+                (-1, 0),
+                colors.darkgreen
+            ),
+            (
+                "TEXTCOLOR",
+                (0, 0),
+                (-1, 0),
+                colors.white
+            ),
+            (
+                "GRID",
+                (0, 0),
+                (-1, -1),
+                1,
+                colors.grey
+            ),
+        ])
+    )
 
     story.append(growth_table)
 
-    story.append(Spacer(1, 0.3 * inch))
-
-    # -------------------------------------------------
-    # SECTION 3: GRANT STATISTICS
-    # -------------------------------------------------
-
     story.append(
-        Paragraph("<b>3. Grant Statistics</b>", styles["Heading1"])
+        Spacer(1, 0.3 * inch)
     )
 
-    grant = report["grant_statistics"]
+    # =====================================================
+    # GRANTS
+    # =====================================================
+
+    story.append(
+        Paragraph(
+            "<b>3. Grant Statistics</b>",
+            styles["Heading1"]
+        )
+    )
+
+    grant = report[
+        "grant_statistics"
+    ]
 
     grant_table = Table([
         ["Metric", "Value"],
-        ["Average Grant Impact Score", grant["average_impact_score"]]
+        [
+            "Average Grant Impact Score",
+            grant.get(
+                "average_impact_score",
+                0
+            )
+        ],
     ])
 
-    grant_table.setStyle(TableStyle([
-        ("BACKGROUND", (0, 0), (-1, 0), colors.darkred),
-        ("TEXTCOLOR", (0, 0), (-1, 0), colors.white),
-        ("GRID", (0, 0), (-1, -1), 1, colors.grey),
-        ("BACKGROUND", (0, 1), (-1, -1), colors.beige),
-        ("FONTNAME", (0, 0), (-1, 0), "Helvetica-Bold"),
-    ]))
-
-    story.append(grant_table)
-    story.append(Spacer(1, 0.3 * inch))
-
-    # -------------------------------------------------
-    # SECTION 4: TOP RESEARCHERS
-    # -------------------------------------------------
-
-    story.append(
-        Paragraph("<b>4. Top Researchers</b>", styles["Heading1"])
+    grant_table.setStyle(
+        TableStyle([
+            (
+                "BACKGROUND",
+                (0, 0),
+                (-1, 0),
+                colors.darkred
+            ),
+            (
+                "TEXTCOLOR",
+                (0, 0),
+                (-1, 0),
+                colors.white
+            ),
+            (
+                "GRID",
+                (0, 0),
+                (-1, -1),
+                1,
+                colors.grey
+            ),
+        ])
     )
 
-    researchers = report["top_researchers"]
+    story.append(grant_table)
 
-    data = [
+    story.append(
+        Spacer(1, 0.3 * inch)
+    )
+
+    # =====================================================
+    # RESEARCHERS
+    # =====================================================
+
+    story.append(
+        Paragraph(
+            "<b>4. Top Researchers</b>",
+            styles["Heading1"]
+        )
+    )
+
+    researcher_data = [
         [
             "Rank",
             "Researcher",
             "Institution",
-            "Score"
+            "Score",
         ]
     ]
 
-    for r in researchers:
-        data.append([
-            r["rank"],
-            r["researcher"],
-            r["institution"],
-            round(r["research_score"], 2)
+    for rank, researcher in enumerate(
+        report.get(
+            "top_researchers",
+            []
+        ),
+        start=1
+    ):
+        researcher_data.append([
+            rank,
+            safe_text(
+                researcher.get(
+                    "researcher",
+                    ""
+                )
+            ),
+            safe_text(
+                researcher.get(
+                    "institution",
+                    ""
+                )
+            ),
+            round(
+                float(
+                    researcher.get(
+                        "research_score",
+                        0
+                    ) or 0
+                ),
+                2
+            ),
         ])
 
-    researcher_table = Table(data)
-
-    researcher_table.setStyle(TableStyle([
-        ("BACKGROUND", (0, 0), (-1, 0), colors.darkblue),
-        ("TEXTCOLOR", (0, 0), (-1, 0), colors.white),
-        ("GRID", (0, 0), (-1, -1), 0.5, colors.grey),
-        ("FONTNAME", (0, 0), (-1, 0), "Helvetica-Bold"),
-        ("BACKGROUND", (0, 1), (-1, -1), colors.whitesmoke),
-    ]))
-
-    story.append(researcher_table)
-    story.append(Spacer(1, 0.3 * inch))
-
-    # -------------------------------------------------
-    # SECTION 5: TOP INSTITUTIONS
-    # -------------------------------------------------
-
-    story.append(
-        Paragraph("<b>5. Top Institutions</b>", styles["Heading1"])
+    researcher_table = Table(
+        researcher_data,
+        repeatRows=1,
+        colWidths=[
+            0.5 * inch,
+            2.0 * inch,
+            2.5 * inch,
+            1.0 * inch,
+        ],
     )
 
-    institutions = report["top_institutions"]
+    researcher_table.setStyle(
+        TableStyle([
+            (
+                "BACKGROUND",
+                (0, 0),
+                (-1, 0),
+                colors.darkblue
+            ),
+            (
+                "TEXTCOLOR",
+                (0, 0),
+                (-1, 0),
+                colors.white
+            ),
+            (
+                "GRID",
+                (0, 0),
+                (-1, -1),
+                0.5,
+                colors.grey
+            ),
+            (
+                "FONTNAME",
+                (0, 0),
+                (-1, 0),
+                "Helvetica-Bold"
+            ),
+            (
+                "VALIGN",
+                (0, 0),
+                (-1, -1),
+                "TOP"
+            ),
+        ])
+    )
 
-    data = [
+    story.append(
+        researcher_table
+    )
+
+    story.append(
+        Spacer(1, 0.3 * inch)
+    )
+
+    # =====================================================
+    # INSTITUTIONS
+    # =====================================================
+
+    story.append(
+        Paragraph(
+            "<b>5. Top Institutions</b>",
+            styles["Heading1"]
+        )
+    )
+
+    institution_data = [
         [
             "Rank",
             "Institution",
-            "Output"
+            "Impact Score",
+            "Projects",
+            "Funding (Lakhs)",
         ]
     ]
 
-    for inst in institutions:
-        data.append([
-            inst["rank"],
-            inst["institution"],
-            inst["total_output"]
+    for rank, institution in enumerate(
+        report.get(
+            "top_institutions",
+            []
+        ),
+        start=1
+    ):
+        institution_data.append([
+            rank,
+            safe_text(
+                institution.get(
+                    "institution",
+                    ""
+                )
+            ),
+            round(
+                float(
+                    institution.get(
+                        "impact_score",
+                        0
+                    ) or 0
+                ),
+                2
+            ),
+            institution.get(
+                "total_projects",
+                0
+            ),
+            institution.get(
+                "total_funding_lakhs",
+                0
+            ),
         ])
 
-    institution_table = Table(data)
+    institution_table = Table(
+        institution_data,
+        repeatRows=1,
+        colWidths=[
+            0.5 * inch,
+            2.2 * inch,
+            1.1 * inch,
+            1.0 * inch,
+            1.2 * inch,
+        ],
+    )
 
-    institution_table.setStyle(TableStyle([
-        ("BACKGROUND", (0, 0), (-1, 0), colors.darkgreen),
-        ("TEXTCOLOR", (0, 0), (-1, 0), colors.white),
-        ("GRID", (0, 0), (-1, -1), 0.5, colors.grey),
-        ("FONTNAME", (0, 0), (-1, 0), "Helvetica-Bold"),
-    ]))
-
-    story.append(institution_table)
-    story.append(Spacer(1, 0.3 * inch))
-
-    # -------------------------------------------------
-    # SECTION 6: EXECUTIVE SUMMARY
-    # -------------------------------------------------
-
-    story.append(
-        Paragraph("<b>6. Executive Summary</b>", styles["Heading1"])
+    institution_table.setStyle(
+        TableStyle([
+            (
+                "BACKGROUND",
+                (0, 0),
+                (-1, 0),
+                colors.darkgreen
+            ),
+            (
+                "TEXTCOLOR",
+                (0, 0),
+                (-1, 0),
+                colors.white
+            ),
+            (
+                "GRID",
+                (0, 0),
+                (-1, -1),
+                0.5,
+                colors.grey
+            ),
+            (
+                "FONTNAME",
+                (0, 0),
+                (-1, 0),
+                "Helvetica-Bold"
+            ),
+            (
+                "VALIGN",
+                (0, 0),
+                (-1, -1),
+                "TOP"
+            ),
+        ])
     )
 
     story.append(
-        Paragraph(report["executive_summary"], styles["BodyText"])
+        institution_table
     )
-
-    story.append(Spacer(1, 0.3 * inch))
-
-    # -------------------------------------------------
-    # SECTION 7: RECOMMENDATIONS
-    # -------------------------------------------------
 
     story.append(
-        Paragraph("<b>7. Recommendations</b>", styles["Heading1"])
+        Spacer(1, 0.3 * inch)
     )
 
-    for rec in report["recommendations"]:
+    # =====================================================
+    # EXECUTIVE SUMMARY
+    # =====================================================
+
+    story.append(
+        Paragraph(
+            "<b>6. Executive Summary</b>",
+            styles["Heading1"]
+        )
+    )
+
+    story.append(
+        Paragraph(
+            safe_text(
+                report.get(
+                    "executive_summary",
+                    ""
+                )
+            ),
+            styles["BodyText"]
+        )
+    )
+
+    story.append(
+        Spacer(1, 0.3 * inch)
+    )
+
+    # =====================================================
+    # RECOMMENDATIONS
+    # =====================================================
+
+    story.append(
+        Paragraph(
+            "<b>7. Recommendations</b>",
+            styles["Heading1"]
+        )
+    )
+
+    for recommendation in report.get(
+        "recommendations",
+        []
+    ):
         story.append(
-            Paragraph("• " + rec, styles["BodyText"])
+            Paragraph(
+                f"- {safe_text(recommendation)}",
+                styles["BodyText"]
+            )
         )
 
-    # -------------------------------------------------
-    # BUILD PDF
-    # -------------------------------------------------
+        story.append(
+            Spacer(1, 0.08 * inch)
+        )
+
+    # =====================================================
+    # BUILD
+    # =====================================================
 
     doc.build(story)
+
+    # =====================================================
+    # VERIFY
+    # =====================================================
+
+    if not os.path.exists(filepath):
+        raise FileNotFoundError(
+            f"PDF was not created: {filepath}"
+        )
+
+    file_size = os.path.getsize(filepath)
+
+    if file_size <= 0:
+        raise ValueError(
+            f"Generated PDF is empty: {filepath}"
+        )
+
+    with open(
+        filepath,
+        "rb"
+    ) as pdf_file:
+        header = pdf_file.read(5)
+
+    if header != b"%PDF-":
+        raise ValueError(
+            f"Generated file is not a valid PDF. "
+            f"Header: {header!r}"
+        )
+
+    print(
+        f"PDF generated successfully: {filepath}"
+    )
+
+    print(
+        f"PDF size: {file_size} bytes"
+    )
 
     return filepath

@@ -154,36 +154,91 @@ async function runPythonReportEngine(technology, year) {
         `sys.path.append(r'${REPORT_ENGINE_DIR.replace(/\\/g, "\\\\")}')`,
         `os.chdir(r'${NLP_ROOT.replace(/\\/g, "\\\\")}')`,
         "from report_builder import build_report",
-        "try:",
-        "    from pdf_generator import generate_pdf",
-        "except Exception:",
-        "    generate_pdf = None",
+        "from pdf_generator import generate_pdf",
         `report = build_report(${JSON.stringify(technology)}, ${Number(year)})`,
-        "pdf_path = None",
-        "if generate_pdf is not None:",
-        "    try:",
-        "        pdf_path = generate_pdf(report)",
-        "    except Exception:",
-        "        pdf_path = None",
+        "pdf_path = generate_pdf(report)",
         "print('JSON_RESULT::' + json.dumps({'report': report, 'pdf_path': pdf_path}))",
     ].join("\n");
 
-    const { stdout } = await execFileAsync("python", ["-c", pythonCode], {
-        cwd: NLP_ROOT,
-        windowsHide: true,
-        maxBuffer: 1024 * 1024 * 10,
-    });
+    try {
+        const { stdout, stderr } = await execFileAsync(
+            "python",
+            ["-c", pythonCode],
+            {
+                cwd: NLP_ROOT,
+                windowsHide: true,
+                maxBuffer: 1024 * 1024 * 10,
+            }
+        );
 
-    const marker = "JSON_RESULT::";
-    const line = stdout
-        .split(/\r?\n/)
-        .find((entry) => entry.startsWith(marker));
+        if (stderr && stderr.trim()) {
+            console.warn(
+                "Python report engine stderr:",
+                stderr
+            );
+        }
 
-    if (!line) {
-        throw new Error("Python report engine did not return a parseable result");
+        const marker = "JSON_RESULT::";
+
+        const line = stdout
+            .split(/\r?\n/)
+            .find((entry) => entry.startsWith(marker));
+
+        if (!line) {
+            throw new Error(
+                "Python report engine did not return a parseable result."
+            );
+        }
+
+        const result = JSON.parse(
+            line.slice(marker.length)
+        );
+
+        if (!result.report) {
+            throw new Error(
+                "Python report engine returned no report."
+            );
+        }
+
+        if (!result.pdf_path) {
+            throw new Error(
+                "Python report engine did not return a PDF path."
+            );
+        }
+
+        const pdfPath = path.resolve(
+            NLP_ROOT,
+            result.pdf_path
+        );
+
+        const pdfBuffer = await fs.readFile(pdfPath);
+
+        if (pdfBuffer.length === 0) {
+            throw new Error(
+                `Generated PDF is empty: ${pdfPath}`
+            );
+        }
+
+        const pdfHeader = pdfBuffer.subarray(0, 5);
+
+        if (!pdfHeader.equals(Buffer.from("%PDF-"))) {
+            throw new Error(
+                `Generated file is not a valid PDF. Header: ${pdfHeader.toString()}`
+            );
+        }
+
+        return {
+            report: result.report,
+            pdfPath,
+        };
+    } catch (error) {
+        console.error(
+            "Python report engine failed:",
+            error
+        );
+
+        throw error;
     }
-
-    return JSON.parse(line.slice(marker.length));
 }
 
 async function buildFallbackReport(technology, year) {
@@ -514,22 +569,52 @@ export async function getTrendAnalytics(params = {}) {
     };
 }
 
-export async function generateTechnologyReport(technology, year) {
+export async function generateTechnologyReport(
+    technology,
+    year
+) {
     let report;
     let pythonGenerated = true;
     let warning = null;
 
     try {
-        const result = await runPythonReportEngine(technology, year);
+        const result = await runPythonReportEngine(
+            technology,
+            year
+        );
+
         report = result.report;
+
     } catch (error) {
         pythonGenerated = false;
-        warning = `Python report engine fallback used: ${error.message}`;
-        report = await buildFallbackReport(technology, year);
 
-        await fs.mkdir(GENERATED_REPORTS_DIR, { recursive: true });
-        const jsonPath = path.join(GENERATED_REPORTS_DIR, reportFileName(technology, year, "json"));
-        await fs.writeFile(jsonPath, JSON.stringify(report, null, 2), "utf8");
+        warning =
+            `Python report engine failed: ${error.message}`;
+
+        report = await buildFallbackReport(
+            technology,
+            year
+        );
+
+        await fs.mkdir(
+            GENERATED_REPORTS_DIR,
+            { recursive: true }
+        );
+
+        const jsonPath = path.join(
+            GENERATED_REPORTS_DIR,
+            reportFileName(
+                technology,
+                year,
+                "json"
+            )
+        );
+
+        await fs.writeFile(
+            jsonPath,
+            JSON.stringify(report, null, 2),
+            "utf8"
+        );
     }
 
     return {
@@ -538,45 +623,114 @@ export async function generateTechnologyReport(technology, year) {
         warning,
         report,
         files: {
-            json: reportFileName(technology, year, "json"),
-            pdf: reportFileName(technology, year, "pdf"),
+            json: reportFileName(
+                technology,
+                year,
+                "json"
+            ),
+            pdf: reportFileName(
+                technology,
+                year,
+                "pdf"
+            ),
         },
     };
 }
 
-export async function getReportDownload(technology, year, format = "pdf") {
-    const extension = format === "json" ? "json" : "pdf";
-    const filePath = path.join(GENERATED_REPORTS_DIR, reportFileName(technology, year, extension));
+export async function getReportDownload(
+    technology,
+    year,
+    format = "pdf"
+) {
+    const extension =
+        String(format).toLowerCase() === "json"
+            ? "json"
+            : "pdf";
+
+    const filename = reportFileName(
+        technology,
+        year,
+        extension
+    );
+
+    const filePath = path.join(
+        GENERATED_REPORTS_DIR,
+        filename
+    );
+
+    // -----------------------------------------------------
+    // JSON DOWNLOAD
+    // -----------------------------------------------------
+
+    if (extension === "json") {
+        try {
+            await fs.access(filePath);
+        } catch {
+            await generateTechnologyReport(
+                technology,
+                year
+            );
+        }
+
+        const content = await fs.readFile(
+            filePath,
+            "utf8"
+        );
+
+        return {
+            contentType: "application/json; charset=utf-8",
+            filename,
+            buffer: Buffer.from(
+                content,
+                "utf8"
+            ),
+        };
+    }
+
+    // -----------------------------------------------------
+    // PDF DOWNLOAD
+    // -----------------------------------------------------
+
+    let pdfExists = true;
 
     try {
         await fs.access(filePath);
     } catch {
-        await generateTechnologyReport(technology, year);
+        pdfExists = false;
     }
 
-    if (extension === "json") {
-        const content = await fs.readFile(filePath, "utf8");
-        return {
-            contentType: "application/json",
-            filename: reportFileName(technology, year, "json"),
-            buffer: Buffer.from(content, "utf8"),
-        };
+    if (!pdfExists) {
+        await runPythonReportEngine(
+            technology,
+            year
+        );
     }
 
-    try {
-        const buffer = await fs.readFile(filePath);
-        return {
-            contentType: "application/pdf",
-            filename: reportFileName(technology, year, "pdf"),
-            buffer,
-        };
-    } catch {
-        const jsonPath = path.join(GENERATED_REPORTS_DIR, reportFileName(technology, year, "json"));
-        const fallback = await fs.readFile(jsonPath, "utf8");
-        return {
-            contentType: "application/json",
-            filename: reportFileName(technology, year, "json"),
-            buffer: Buffer.from(fallback, "utf8"),
-        };
+    const pdfBuffer = await fs.readFile(
+        filePath
+    );
+
+    if (pdfBuffer.length === 0) {
+        throw new Error(
+            `Generated PDF is empty: ${filePath}`
+        );
     }
+
+    const header = pdfBuffer.subarray(
+        0,
+        5
+    );
+
+    if (!header.equals(Buffer.from("%PDF-"))) {
+        throw new Error(
+            `Invalid PDF file: ${filePath}. ` +
+            `Expected %PDF- but received ${header.toString()}`
+        );
+    }
+
+    return {
+        contentType: "application/pdf",
+        filename,
+        buffer: pdfBuffer,
+    };
 }
