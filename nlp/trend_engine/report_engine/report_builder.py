@@ -6,7 +6,7 @@ import os
 # SMART REPORT BUILDER
 # =====================================================
 
-OUTPUT_PATH = "trend_engine/outputs"
+OUTPUT_PATH = "nlp/trend_engine/outputs"
 
 def build_report(technology, year):
 
