@@ -13,10 +13,12 @@
         "cagr_percent": 14.32
     },
     "grant_statistics": {
-        "average_impact_score": 31.86
+        "average_impact_score": 31.86,
+        "scope": "overall"
     },
     "top_researchers": [
         {
+            "rank": 1,
             "researcher": "Pradipta Biswas",
             "institution": "Indian Institute of Science Bangalore",
             "publications": 14,
@@ -24,6 +26,7 @@
             "research_score": 31.36
         },
         {
+            "rank": 2,
             "researcher": "A. Vinay",
             "institution": "PES University",
             "publications": 12,
@@ -31,6 +34,7 @@
             "research_score": 24.26
         },
         {
+            "rank": 3,
             "researcher": "Radhika K R",
             "institution": "B.M.S. College of Engineering",
             "publications": 12,
@@ -38,6 +42,7 @@
             "research_score": 24.0
         },
         {
+            "rank": 4,
             "researcher": "L. R. D. Murthy",
             "institution": "Indian Institute of Science Bangalore",
             "publications": 9,
@@ -45,6 +50,7 @@
             "research_score": 20.94
         },
         {
+            "rank": 5,
             "researcher": "S. Natarajan",
             "institution": "PES University",
             "publications": 10,
@@ -54,46 +60,25 @@
     ],
     "top_institutions": [
         {
+            "rank": 1,
             "institution": "Indian Institute of Science Bangalore",
-            "impact_score": 86.42,
-            "total_projects": 187,
-            "total_funding_lakhs": 18225.5067
+            "total_output": 23,
+            "research_output": 23,
+            "output_type": "publications"
         },
         {
-            "institution": "R V College of Engineering",
-            "impact_score": 42.65,
-            "total_projects": 42,
-            "total_funding_lakhs": 6723.758900000001
+            "rank": 2,
+            "institution": "PES University",
+            "total_output": 22,
+            "research_output": 22,
+            "output_type": "publications"
         },
         {
-            "institution": "CMR Institute of Technology",
-            "impact_score": 29.44,
-            "total_projects": 60,
-            "total_funding_lakhs": 162.6849
-        },
-        {
+            "rank": 3,
             "institution": "B.M.S. College of Engineering",
-            "impact_score": 27.05,
-            "total_projects": 48,
-            "total_funding_lakhs": 687.667
-        },
-        {
-            "institution": "International Institute of Information Technology Bangalore",
-            "impact_score": 17.64,
-            "total_projects": 8,
-            "total_funding_lakhs": 183.9866
-        },
-        {
-            "institution": "Dayananda Sagar College of Engineering",
-            "impact_score": 10.45,
-            "total_projects": 5,
-            "total_funding_lakhs": 26.9944
-        },
-        {
-            "institution": "M.S. Ramaiah Institute of Technology",
-            "impact_score": 9.39,
-            "total_projects": 56,
-            "total_funding_lakhs": 384.4958
+            "total_output": 12,
+            "research_output": 12,
+            "output_type": "publications"
         }
     ],
     "top_journals": [
@@ -201,7 +186,7 @@
         }
     ],
     "top_venues": [],
-    "executive_summary": "The Artificial Intelligence and Computer Vision domain produced 89 total research outputs in 2023, including 86 publications, 3 patents, 0 grants and 0 theses. The year-on-year growth was -9.18%, while the long-term CAGR stands at 14.32%. Across all participating institutions, the average Grant Impact Score was 31.86.",
+    "executive_summary": "The Artificial Intelligence and Computer Vision domain produced 89 total research outputs in 2023, including 86 publications, 3 patents, 0 grants and 0 theses. The year-on-year growth was -9.18%, while the long-term CAGR stands at 14.32%. The average Grant Impact Score across the available grant dataset was 31.86.",
     "recommendations": [
         "Research output has declined. Strategic funding and collaboration should be encouraged.",
         "Grant funding should be strengthened to improve technology development."

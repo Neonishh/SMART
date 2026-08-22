@@ -150,9 +150,8 @@ function computeSeriesCAGR(yearlySeries) {
 
 async function runPythonReportEngine(technology, year) {
     const pythonCode = [
-        "import json, os, sys",
+        "import json, sys",
         `sys.path.append(r'${REPORT_ENGINE_DIR.replace(/\\/g, "\\\\")}')`,
-        `os.chdir(r'${NLP_ROOT.replace(/\\/g, "\\\\")}')`,
         "from report_builder import build_report",
         "from pdf_generator import generate_pdf",
         `report = build_report(${JSON.stringify(technology)}, ${Number(year)})`,
@@ -165,7 +164,7 @@ async function runPythonReportEngine(technology, year) {
             "python",
             ["-c", pythonCode],
             {
-                cwd: NLP_ROOT,
+                cwd: PROJECT_ROOT,
                 windowsHide: true,
                 maxBuffer: 1024 * 1024 * 10,
             }
@@ -207,7 +206,7 @@ async function runPythonReportEngine(technology, year) {
         }
 
         const pdfPath = path.resolve(
-            NLP_ROOT,
+            PROJECT_ROOT,
             result.pdf_path
         );
 
