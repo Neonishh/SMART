@@ -20,6 +20,7 @@ import KnowledgeGraphPage from "./pages/KnowledgeGraphPage";
 import Publications from "./pages/Publications";
 import PublicationProfile from "./pages/PublicationProfile";
 import Reports from "./pages/Reports";
+import Contribute from "./pages/Contribute";
 
 
 export default function App() {
@@ -123,6 +124,7 @@ export default function App() {
       <Route path="/dashboard/publications" element={<Publications />} />
 <Route path="/dashboard/publications/:id" element={<PublicationProfile />} />
       <Route path="/dashboard/theses" element={<Theses />} />
+      <Route path="/dashboard/contribute" element={<Contribute />} />
 
             {/* ====================================================== */}
             {/* Fallback */}

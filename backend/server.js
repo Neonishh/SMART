@@ -15,6 +15,7 @@ import { loadResearchersCSV } from "./services/researcherService/csvLoader.js";
 
 import publicationsRoutes from "./routes/publications.js";
 import chatbotRoutes from "./routes/chatbot.js";
+import manualEntriesRoutes from "./routes/manualEntries.js";
 
 dotenv.config();
 
@@ -40,6 +41,7 @@ app.use("/theses", thesisRoutes);
 app.use("/researcher", researcherRoutes);
 app.use("/chat", chatbotRoutes);
 app.use("/publications", publicationsRoutes);
+app.use("/manual-entries", manualEntriesRoutes);
 
 const PORT = process.env.PORT || 5000;
 

@@ -4,6 +4,8 @@ import DashboardLayout from "../components/DashboardLayout";
 
 import GrantModal from "../components/modals/GrantModal";
 
+import ContributedEntriesSection from "../components/shared/ContributedEntriesSection";
+
 import {
     listGrants,
     getGrant,
@@ -518,6 +520,12 @@ export default function Grants() {
                     </div>
 
                 </form>
+
+                {/* ===========================
+                    CONTRIBUTED (MANUAL) GRANTS
+                =========================== */}
+
+                <ContributedEntriesSection type="Grant" titleField="Project_Title" />
 
                 {/* ===========================
                     RESULTS

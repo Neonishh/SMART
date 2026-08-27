@@ -51,7 +51,7 @@ export default function Navbar() {
             Help
           </Link>
           <Link
-            to="/dashboard"
+            to={localStorage.getItem("token") ? "/dashboard" : "/login"}
             className="bg-white text-[var(--color-navy)] text-sm font-medium px-4 py-2 rounded-sm hover:bg-[var(--color-paper-dim)] transition-colors"
           >
             Enter Platform
@@ -76,7 +76,7 @@ export default function Navbar() {
           ))}
           <Link to="/login" onClick={() => setOpen(false)} className="text-[var(--color-muted-inv)]">Login</Link>
           <Link
-            to="/dashboard"
+            to={localStorage.getItem("token") ? "/dashboard" : "/login"}
             onClick={() => setOpen(false)}
             className="bg-white text-[var(--color-navy)] text-sm font-medium px-4 py-2 rounded-sm w-fit"
           >

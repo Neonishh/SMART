@@ -4,6 +4,7 @@ import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContaine
 import { Search, ExternalLink, ChevronLeft, ChevronRight, X, ArrowUpDown, Download, Quote } from "lucide-react";
 import DashboardLayout from "../components/DashboardLayout";
 import { Card, Badge, SectionLabel, EmptyState } from "../components/ui";
+import ContributedEntriesSection from "../components/shared/ContributedEntriesSection";
 import { listPublications } from "../services/api";
 
 const NAVY = "#16143f";
@@ -200,6 +201,8 @@ export default function Publications() {
           ))}
         </div>
       )}
+
+      <ContributedEntriesSection type="Publication" titleField="Title" />
 
       {/* Search */}
       <div className="relative mb-4">

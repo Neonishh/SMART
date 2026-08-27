@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import DashboardLayout from "../components/DashboardLayout";
 import PatentModal from "../components/modals/PatentModal";
+import ContributedEntriesSection from "../components/shared/ContributedEntriesSection";
 import {
     listPatents,
     getPatentAnalytics,
@@ -297,6 +298,9 @@ export default function Patents() {
                     </div>
 
                 </div>
+
+            <ContributedEntriesSection type="Patent" titleField="Patent_Title" />
+
             <PatentFilters
                 institutions={facets.institutions}
                 applicants={facets.applicants}

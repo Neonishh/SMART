@@ -579,4 +579,34 @@ export async function listTheses() {
   return client.get("/theses");
 }
 
+/*
+-----------------------------------------------------
+MANUAL ENTRIES
+-----------------------------------------------------
+Contributor-submitted records. These are NOT part of the
+NLP pipeline or knowledge graph — kept in a separate store
+and shown alongside live data as "pending processing".
+-----------------------------------------------------
+*/
+
+export async function getManualEntrySchemas() {
+  if (USE_MOCK) return resolveMock({});
+  return client.get("/manual-entries/schemas");
+}
+
+export async function listManualEntries(type) {
+  if (USE_MOCK) return resolveMock([]);
+  return client.get("/manual-entries", { params: type ? { type } : {} });
+}
+
+export async function submitManualEntry({ type, payload, submittedBy, accessCode }) {
+  if (USE_MOCK) return resolveMock({ id: Date.now() });
+
+  return client.post(
+    "/manual-entries",
+    { type, payload, submitted_by: submittedBy || null },
+    { headers: accessCode ? { "x-contributor-code": accessCode } : {} }
+  );
+}
+
 export default client;

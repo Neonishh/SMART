@@ -11,6 +11,38 @@ from reportlab.lib.units import inch
 import os
 
 
+def _records_table(records, header_color=colors.darkblue, max_rows=10):
+    """
+    Builds a Table from a list of dict records whose columns aren't
+    known ahead of time (journals/conferences/venues CSVs can have
+    different column names). Uses the keys of the first record as
+    headers, title-cased for display. Returns None if records is empty
+    so the caller can skip rendering an empty section.
+    """
+
+    if not records:
+        return None
+
+    columns = list(records[0].keys())
+
+    data = [[c.replace("_", " ").title() for c in columns]]
+
+    for rec in records[:max_rows]:
+        data.append([rec.get(c, "-") for c in columns])
+
+    table = Table(data)
+
+    table.setStyle(TableStyle([
+        ("BACKGROUND", (0, 0), (-1, 0), header_color),
+        ("TEXTCOLOR", (0, 0), (-1, 0), colors.white),
+        ("GRID", (0, 0), (-1, -1), 0.5, colors.grey),
+        ("FONTNAME", (0, 0), (-1, 0), "Helvetica-Bold"),
+        ("BACKGROUND", (0, 1), (-1, -1), colors.whitesmoke),
+    ]))
+
+    return table
+
+
 def generate_pdf(report):
 
     os.makedirs(
@@ -172,12 +204,13 @@ def generate_pdf(report):
         ]
     ]
 
-    for r in researchers:
+    for i, r in enumerate(researchers, start=1):
+        score = r.get("research_score", 0)
         data.append([
-            r["rank"],
-            r["researcher"],
-            r["institution"],
-            round(r["research_score"], 2)
+            i,
+            r.get("researcher", "-"),
+            r.get("institution", "-"),
+            round(score, 2) if score not in (None, "") else "-"
         ])
 
     researcher_table = Table(data)
@@ -207,15 +240,17 @@ def generate_pdf(report):
         [
             "Rank",
             "Institution",
-            "Output"
+            "Projects",
+            "Funding (Lakhs)"
         ]
     ]
 
-    for inst in institutions:
+    for i, inst in enumerate(institutions, start=1):
         data.append([
-            inst["rank"],
-            inst["institution"],
-            inst["total_output"]
+            i,
+            inst.get("institution", "-"),
+            inst.get("total_projects", "-"),
+            inst.get("total_funding_lakhs", "-")
         ])
 
     institution_table = Table(data)
@@ -231,11 +266,68 @@ def generate_pdf(report):
     story.append(Spacer(1, 0.3 * inch))
 
     # -------------------------------------------------
-    # SECTION 6: EXECUTIVE SUMMARY
+    # SECTION 6: TOP JOURNALS
     # -------------------------------------------------
 
     story.append(
-        Paragraph("<b>6. Executive Summary</b>", styles["Heading1"])
+        Paragraph("<b>6. Top Journals</b>", styles["Heading1"])
+    )
+
+    journals_table = _records_table(
+        report.get("top_journals", []), header_color=colors.darkblue
+    )
+
+    if journals_table:
+        story.append(journals_table)
+    else:
+        story.append(Paragraph("No journal data available.", styles["BodyText"]))
+
+    story.append(Spacer(1, 0.3 * inch))
+
+    # -------------------------------------------------
+    # SECTION 7: TOP CONFERENCES
+    # -------------------------------------------------
+
+    story.append(
+        Paragraph("<b>7. Top Conferences</b>", styles["Heading1"])
+    )
+
+    conferences_table = _records_table(
+        report.get("top_conferences", []), header_color=colors.darkgreen
+    )
+
+    if conferences_table:
+        story.append(conferences_table)
+    else:
+        story.append(Paragraph("No conference data available.", styles["BodyText"]))
+
+    story.append(Spacer(1, 0.3 * inch))
+
+    # -------------------------------------------------
+    # SECTION 8: TOP VENUES
+    # -------------------------------------------------
+
+    top_venues = report.get("top_venues", [])
+
+    if top_venues:
+
+        story.append(
+            Paragraph("<b>8. Top Venues</b>", styles["Heading1"])
+        )
+
+        venues_table = _records_table(top_venues, header_color=colors.darkred)
+
+        if venues_table:
+            story.append(venues_table)
+
+        story.append(Spacer(1, 0.3 * inch))
+
+    # -------------------------------------------------
+    # SECTION 9: EXECUTIVE SUMMARY
+    # -------------------------------------------------
+
+    story.append(
+        Paragraph("<b>9. Executive Summary</b>", styles["Heading1"])
     )
 
     story.append(
@@ -245,11 +337,11 @@ def generate_pdf(report):
     story.append(Spacer(1, 0.3 * inch))
 
     # -------------------------------------------------
-    # SECTION 7: RECOMMENDATIONS
+    # SECTION 10: RECOMMENDATIONS
     # -------------------------------------------------
 
     story.append(
-        Paragraph("<b>7. Recommendations</b>", styles["Heading1"])
+        Paragraph("<b>10. Recommendations</b>", styles["Heading1"])
     )
 
     for rec in report["recommendations"]:

@@ -12,6 +12,7 @@ import {
   BookOpen,
   GraduationCap,
   FileBarChart,
+  PlusCircle,
   Menu,
   X,
 } from "lucide-react";
@@ -27,6 +28,7 @@ const NAV = [
   { to: "/dashboard/patents", label: "Patents", icon: FileText },
   { to: "/dashboard/grants", label: "Grants", icon: Landmark },
   { to: "/dashboard/reports", label: "Reports", icon: FileBarChart },
+  { to: "/dashboard/contribute", label: "Contribute", icon: PlusCircle },
   { to: "/dashboard/chatbot", label: "Ask SMART", icon: MessageSquare },
 ];
 
@@ -44,7 +46,7 @@ function SidebarContent({ onNavigate }) {
     </span>
   </div>
 </Link>
-      <nav className="flex-1 px-3 py-4 space-y-1 overflow-y-auto">
+      <nav className="flex-1 px-3 py-4 space-y-1 overflow-y-auto sidebar-scroll">
         {NAV.map(({ to, label, icon: Icon }) => (
           <NavLink
             key={to}

@@ -6,7 +6,7 @@ import os
 # SMART REPORT BUILDER
 # =====================================================
 
-OUTPUT_PATH = "nlp/trend_engine/outputs"
+OUTPUT_PATH = "trend_engine/outputs"
 
 def build_report(technology, year):
 
@@ -337,12 +337,18 @@ def build_report(technology, year):
 # =====================================================
 if __name__ == "__main__":
 
+    import sys
+
     from pdf_generator import generate_pdf
 
-    report = build_report(
-        "Artificial Intelligence and Computer Vision",
-        2023
-    )
+    if len(sys.argv) < 3:
+        print("Usage: python report_builder.py <technology> <year>")
+        sys.exit(1)
+
+    technology_arg = sys.argv[1]
+    year_arg = int(sys.argv[2])
+
+    report = build_report(technology_arg, year_arg)
 
     pdf_path = generate_pdf(report)
 

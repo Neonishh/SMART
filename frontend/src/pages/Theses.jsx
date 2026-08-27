@@ -3,6 +3,7 @@ import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContaine
 import { Search, Calendar, User2, ExternalLink, ChevronLeft, ChevronRight, X, ArrowUpDown, GraduationCap, Building2 } from "lucide-react";
 import DashboardLayout from "../components/DashboardLayout";
 import { Card, Badge, SectionLabel, EmptyState } from "../components/ui";
+import ContributedEntriesSection from "../components/shared/ContributedEntriesSection";
 import { listTheses } from "../services/api";
 
 const NAVY = "#16143f";
@@ -183,6 +184,8 @@ export default function Theses() {
           ))}
         </div>
       )}
+
+      <ContributedEntriesSection type="Thesis" titleField="Title" />
 
       {/* Search */}
       <div className="relative mb-4">

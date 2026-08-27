@@ -394,7 +394,7 @@ export default function KnowledgeGraphPage() {
 
                         <Link
 
-                            to="/dashboard"
+                            to={localStorage.getItem("token") ? "/dashboard" : "/login"}
 
                             className="bg-white text-[var(--color-ink)] px-8 py-3 font-mono text-xs uppercase tracking-widest rounded-md hover:opacity-90 transition-opacity"
 
