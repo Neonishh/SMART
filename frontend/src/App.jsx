@@ -124,7 +124,7 @@ export default function App() {
       <Route path="/dashboard/publications" element={<Publications />} />
 <Route path="/dashboard/publications/:id" element={<PublicationProfile />} />
       <Route path="/dashboard/theses" element={<Theses />} />
-      <Route path="/dashboard/contribute" element={<Contribute />} />
+            <Route path="/dashboard/contribute" element={<Contribute />} />
 
             {/* ====================================================== */}
             {/* Fallback */}

@@ -9,10 +9,11 @@ import {
   FileText,
   Landmark,
   MessageSquare,
+  PlusCircle,
+  LogOut,
   BookOpen,
   GraduationCap,
   FileBarChart,
-  PlusCircle,
   Menu,
   X,
 } from "lucide-react";
@@ -28,8 +29,8 @@ const NAV = [
   { to: "/dashboard/patents", label: "Patents", icon: FileText },
   { to: "/dashboard/grants", label: "Grants", icon: Landmark },
   { to: "/dashboard/reports", label: "Reports", icon: FileBarChart },
-  { to: "/dashboard/contribute", label: "Contribute", icon: PlusCircle },
   { to: "/dashboard/chatbot", label: "Ask SMART", icon: MessageSquare },
+  { to: "/dashboard/contribute", label: "Contribute Data", icon: PlusCircle },
 ];
 
 function SidebarContent({ onNavigate }) {
@@ -102,6 +103,31 @@ export default function DashboardLayout({ children, title, description }) {
           <div>
             <h1 className="font-serif text-lg font-semibold text-[var(--color-ink)]">{title}</h1>
             {description && <p className="text-xs text-[var(--color-muted)]">{description}</p>}
+          </div>
+          <div className="hidden md:flex items-center gap-3 mr-4">
+            {(() => {
+              try {
+                const user = JSON.parse(localStorage.getItem("smart_user") || "null");
+                if (!user) return null;
+                return (
+                  <>
+                    <span className="text-xs text-[var(--color-muted)]">
+                      {user.name} · <span className="font-semibold">{user.role}</span>
+                    </span>
+                    <button
+                      onClick={() => {
+                        localStorage.removeItem("smart_token");
+                        localStorage.removeItem("smart_user");
+                        window.location.href = "/login";
+                      }}
+                      className="flex items-center gap-1.5 text-xs text-[var(--color-muted)] hover:text-[var(--color-ink)]"
+                    >
+                      <LogOut size={14} /> Logout
+                    </button>
+                  </>
+                );
+              } catch { return null; }
+            })()}
           </div>
           <button
             className="md:hidden p-2 text-[var(--color-ink)]"

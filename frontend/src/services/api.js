@@ -573,40 +573,52 @@ export async function getRelatedPublications(id) {
   return client.get(`/publications/${id}/related`);
 }
 
+
+/* ============================================================
+   AUTHENTICATION + THESIS CONTRIBUTION
+============================================================ */
+
+export async function loginUser(email, password) {
+  return client.post("/auth/login", { email, password });
+}
+
+export function getCurrentUser() {
+  try {
+    return JSON.parse(localStorage.getItem("smart_user") || "null");
+  } catch {
+    return null;
+  }
+}
+
+function authConfig() {
+  const token = localStorage.getItem("smart_token");
+  return token ? { headers: { Authorization: `Bearer ${token}` } } : {};
+}
+
+export async function createThesis(data) {
+  return client.post("/theses", data, authConfig());
+}
+
+export async function deleteThesis(id) {
+  return client.delete(`/theses/${encodeURIComponent(id)}`, authConfig());
+}
+
 export async function listTheses() {
   if (USE_MOCK) return resolveMock(mock.theses);
 
   return client.get("/theses");
 }
 
-/*
------------------------------------------------------
-MANUAL ENTRIES
------------------------------------------------------
-Contributor-submitted records. These are NOT part of the
-NLP pipeline or knowledge graph — kept in a separate store
-and shown alongside live data as "pending processing".
------------------------------------------------------
-*/
-
-export async function getManualEntrySchemas() {
-  if (USE_MOCK) return resolveMock({});
-  return client.get("/manual-entries/schemas");
+// Compatibility helpers for the contributed-entries UI.
+// Manual thesis entries are stored in the same theses endpoint.
+export async function listManualEntries(type = "thesis") {
+  if (type !== "thesis") return { data: [] };
+  return listTheses();
 }
 
-export async function listManualEntries(type) {
-  if (USE_MOCK) return resolveMock([]);
-  return client.get("/manual-entries", { params: type ? { type } : {} });
-}
-
-export async function submitManualEntry({ type, payload, submittedBy, accessCode }) {
-  if (USE_MOCK) return resolveMock({ id: Date.now() });
-
-  return client.post(
-    "/manual-entries",
-    { type, payload, submitted_by: submittedBy || null },
-    { headers: accessCode ? { "x-contributor-code": accessCode } : {} }
-  );
+export async function deleteManualEntry(id, type = "thesis") {
+  if (type !== "thesis") throw new Error("Unsupported manual entry type");
+  return deleteThesis(id);
 }
 
 export default client;

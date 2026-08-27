@@ -1,33 +1,73 @@
-import bcrypt from "bcryptjs";
-import jwt from "jsonwebtoken";
-import pool from "../config/db.js";
+import crypto from "crypto";
 
-export async function register(req, res) {
-  const { email, password } = req.body;
-  if (!email || !password) return res.status(400).json({ error: "Email and password required" });
+const USERS = {
+    "admin@smart.com": {
+        password: "admin123",
+        name: "SMART Admin",
+        role: "admin",
+    },
+    "contributor@smart.com": {
+        password: "user123",
+        name: "SMART Contributor",
+        role: "contributor",
+    },
+};
 
-  const hash = await bcrypt.hash(password, 10);
-  try {
-    const result = await pool.query(
-      "INSERT INTO users (email, password_hash) VALUES ($1, $2) RETURNING id, email",
-      [email, hash]
-    );
-    res.status(201).json({ user: result.rows[0] });
-  } catch (err) {
-    if (err.code === "23505") return res.status(409).json({ error: "Email already registered" });
-    res.status(500).json({ error: "Registration failed" });
-  }
+const SECRET = process.env.AUTH_SECRET || "smart-demo-auth-secret-2026";
+
+function sign(value) {
+    return crypto.createHmac("sha256", SECRET).update(value).digest("hex");
 }
 
-export async function login(req, res) {
-  const { email, password } = req.body;
-  const result = await pool.query("SELECT * FROM users WHERE email = $1", [email]);
-  const user = result.rows[0];
-  if (!user) return res.status(401).json({ error: "Invalid credentials" });
+export function createToken(user) {
+    const payload = Buffer.from(JSON.stringify({
+        email: user.email,
+        name: user.name,
+        role: user.role,
+    })).toString("base64url");
 
-  const match = await bcrypt.compare(password, user.password_hash);
-  if (!match) return res.status(401).json({ error: "Invalid credentials" });
+    return `${payload}.${sign(payload)}`;
+}
 
-  const token = jwt.sign({ id: user.id, email: user.email }, process.env.JWT_SECRET, { expiresIn: "7d" });
-  res.json({ token, user: { id: user.id, email: user.email } });
+export function verifyToken(token) {
+    if (!token || !token.includes(".")) return null;
+
+    const [payload, signature] = token.split(".");
+    const expected = sign(payload);
+
+    if (signature.length !== expected.length ||
+        !crypto.timingSafeEqual(Buffer.from(signature), Buffer.from(expected))) {
+        return null;
+    }
+
+    try {
+        return JSON.parse(Buffer.from(payload, "base64url").toString("utf8"));
+    } catch {
+        return null;
+    }
+}
+
+export function login(req, res) {
+    const email = String(req.body?.email || "").trim().toLowerCase();
+    const password = String(req.body?.password || "");
+    const user = USERS[email];
+
+    if (!user || user.password !== password) {
+        return res.status(401).json({
+            success: false,
+            error: "Invalid email or password.",
+        });
+    }
+
+    const safeUser = {
+        email,
+        name: user.name,
+        role: user.role,
+    };
+
+    return res.json({
+        success: true,
+        user: safeUser,
+        token: createToken(safeUser),
+    });
 }
