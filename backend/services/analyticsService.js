@@ -148,6 +148,36 @@ function computeSeriesCAGR(yearlySeries) {
     return Number(cagr.toFixed(2));
 }
 
+// How long to let the Python subprocess run before Node kills it and
+// falls back to the JS report builder. Actual report generation takes
+// well under a second once Python starts correctly, so this ceiling only
+// exists to catch cases where the interpreter never starts/exits at all
+// (e.g. "python" resolving to the Windows Store app-execution alias stub,
+// which silently hangs forever instead of erroring).
+const PYTHON_SUBPROCESS_TIMEOUT_MS = 10000;
+
+// Try these in order until one actually runs. Covers machines where
+// "python" is aliased to the Microsoft Store stub, and machines that
+// only expose "python3" or the Windows "py" launcher.
+const PYTHON_CANDIDATES =
+    process.platform === "win32"
+        ? [
+              { cmd: "py", args: ["-3"] },
+              { cmd: "python3", args: [] },
+              { cmd: "python", args: [] },
+          ]
+        : [
+              { cmd: "python3", args: [] },
+              { cmd: "python", args: [] },
+          ];
+
+// Once we find an interpreter that actually works on this machine, remember
+// it for the lifetime of the process and try it first on every subsequent
+// call. Without this, every report generation re-probes the full candidate
+// list from scratch and eats the full PYTHON_SUBPROCESS_TIMEOUT_MS on "py"
+// (or whichever candidate hangs) before falling through to the one that works.
+let cachedWorkingCandidate = null;
+
 async function runPythonReportEngine(technology, year) {
     const pythonCode = [
         "import json, os, sys",
@@ -168,23 +198,74 @@ async function runPythonReportEngine(technology, year) {
         "print('JSON_RESULT::' + json.dumps({'report': report, 'pdf_path': pdf_path}))",
     ].join("\n");
 
-    const { stdout } = await execFileAsync("python", ["-c", pythonCode], {
-        cwd: NLP_ROOT,
-        windowsHide: true,
-        maxBuffer: 1024 * 1024 * 10,
-    });
+    let lastError = null;
 
-    const marker = "JSON_RESULT::";
-    const line = stdout
-        .split(/\r?\n/)
-        .find((entry) => entry.startsWith(marker));
+    // Try the interpreter that worked last time first, so a healthy machine
+    // pays for exactly one subprocess launch per report instead of re-timing-out
+    // on every dead candidate ahead of it in PYTHON_CANDIDATES.
+    const orderedCandidates = cachedWorkingCandidate
+        ? [
+              cachedWorkingCandidate,
+              ...PYTHON_CANDIDATES.filter((c) => c.cmd !== cachedWorkingCandidate.cmd),
+          ]
+        : PYTHON_CANDIDATES;
 
-    if (!line) {
-        throw new Error("Python report engine did not return a parseable result");
+    for (const candidate of orderedCandidates) {
+        try {
+            const { stdout } = await execFileAsync(
+                candidate.cmd,
+                [...candidate.args, "-c", pythonCode],
+                {
+                    cwd: NLP_ROOT,
+                    windowsHide: true,
+                    maxBuffer: 1024 * 1024 * 10,
+                    timeout: PYTHON_SUBPROCESS_TIMEOUT_MS,
+                    killSignal: "SIGKILL",
+                }
+            );
+
+            const marker = "JSON_RESULT::";
+            const line = stdout
+                .split(/\r?\n/)
+                .find((entry) => entry.startsWith(marker));
+
+            if (!line) {
+                throw new Error(
+                    `"${candidate.cmd}" ran but produced no parseable result. stdout: ${stdout.slice(0, 500)}`
+                );
+            }
+
+            cachedWorkingCandidate = candidate;
+            return JSON.parse(line.slice(marker.length));
+        } catch (error) {
+            if (cachedWorkingCandidate?.cmd === candidate.cmd) {
+                cachedWorkingCandidate = null;
+            }
+            // ENOENT: this interpreter name doesn't exist on PATH — try the next one.
+            // ETIMEDOUT / signal SIGKILL: the process hung (e.g. Store alias stub) — also try the next one.
+            // Anything else (non-zero exit from a real Python exception) will have the
+            // actual traceback in error.stderr — log it in full instead of swallowing it,
+            // otherwise every failure looks identical from the logs.
+            lastError = error;
+            console.warn(
+                `Python report engine: "${candidate.cmd}" failed (${error.code || error.signal || error.message})`
+            );
+            if (error.stderr) {
+                console.warn(`--- stderr from ${candidate.cmd} ---\n${error.stderr}`);
+            }
+            if (error.stdout) {
+                console.warn(`--- stdout from ${candidate.cmd} ---\n${error.stdout}`);
+            }
+        }
     }
 
-    return JSON.parse(line.slice(marker.length));
+    throw new Error(
+        `All Python interpreters failed or timed out after ${PYTHON_SUBPROCESS_TIMEOUT_MS}ms: ${
+            lastError?.stderr || lastError?.message || "unknown error"
+        }`
+    );
 }
+
 
 async function buildFallbackReport(technology, year) {
     const domainYearly = await readCSVFrom(TREND_OUTPUT_DIR, "domain_yearly_counts.csv");

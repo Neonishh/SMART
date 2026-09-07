@@ -534,17 +534,26 @@ export async function getTrendResearchers(params = {}) {
   return client.get("/analytics/trends/researchers", { params });
 }
 
+// Report generation/download spawn a Python subprocess on the backend
+// (report_builder.py + pdf_generator.py) and can take noticeably longer
+// than a normal API call, especially on a cold start. Give these two
+// calls a longer timeout than the shared 10s default so they don't get
+// aborted client-side while the backend is still working.
+const REPORT_TIMEOUT_MS = 60000;
+
 export async function generateTechnologyReport(technology, year) {
-  return client.post("/analytics/reports", {
-    technology,
-    year,
-  });
+  return client.post(
+    "/analytics/reports",
+    { technology, year },
+    { timeout: REPORT_TIMEOUT_MS }
+  );
 }
 
 export async function downloadTechnologyReport(technology, year, format = "pdf") {
   return client.get("/analytics/reports/download", {
     params: { technology, year, format },
     responseType: "blob",
+    timeout: REPORT_TIMEOUT_MS,
   });
 }
 
