@@ -90,7 +90,47 @@ universities institute institutes college colleges agency agencies funder funder
 trends trending growing growth emerging momentum rising compare comparison versus vs difference work working works done
 field fields area areas domain domains topic topics research researching supervised authored invented bengaluru bangalore india indian last past
 first second third between there here than then so very just one two three four five six seven eight nine ten
-records record data dataset datasets results result answer question questions most-cited highly`.split(/\s+/));
+records record data dataset datasets results result answer question questions most-cited highly
+form`.split(/\s+/)); // "form" = common typo of "from"
+
+// Typos of long structural words ("insitute", "reserchers") must not become a topic.
+// Only words of 6+ letters, one edit (incl. a swap) away from a stopword.
+const LONG_STOPWORDS = [...STOPWORDS].filter((w) => w.length >= 6);
+
+function withinOneEdit(a, b) {
+    if (Math.abs(a.length - b.length) > 1 || a === b) return a === b;
+    let i = 0;
+    while (i < a.length && i < b.length && a[i] === b[i]) i++;
+    if (a.length === b.length) {
+        if (a.slice(i + 1) === b.slice(i + 1)) return true;                                      // substitution
+        return a[i] === b[i + 1] && a[i + 1] === b[i] && a.slice(i + 2) === b.slice(i + 2);    // swap
+    }
+    const [s, l] = a.length < b.length ? [a, b] : [b, a];
+    return s.slice(i) === l.slice(i + 1);                                                      // insert/delete
+}
+
+const isStopword = (lw) => STOPWORDS.has(lw) || (lw.length >= 6 && LONG_STOPWORDS.some((s) => withinOneEdit(lw, s)));
+
+// "top 3 researchers from every institute", "each college", "institution-wise"
+// — tolerating one typo in the noun ("insitute", "colege").
+const INSTITUTION_NOUNS = ["institute", "institutes", "institution", "institutions", "college", "colleges", "university", "universities", "uni", "unis"];
+const isInstitutionNoun = (w) => INSTITUTION_NOUNS.some((n) => n === w || (w.length >= 5 && withinOneEdit(w, n)));
+
+function asksPerInstitution(text) {
+    const lower = text.toLowerCase();
+    const re = /\b(?:every|each|all|per)\s+(?:the\s+)?([a-z]+)|\b([a-z]+)[- ]?wise\b/g;
+    let m;
+    while ((m = re.exec(lower)) !== null) if (isInstitutionNoun(m[1] || m[2])) return true;
+    return false;
+}
+const NUMBER_WORDS = { one: 1, two: 2, three: 3, four: 4, five: 5, six: 6, seven: 7, eight: 8, nine: 9, ten: 10 };
+
+function findTopN(text) {
+    const m = /\btop\s+(\d{1,2}|one|two|three|four|five|six|seven|eight|nine|ten)\b/i.exec(text);
+    if (!m) return null;
+    const n = NUMBER_WORDS[m[1].toLowerCase()] || Number(m[1]);
+    return n >= 1 && n <= 25 ? n : null;
+}
 
 // ----------------------------------------------------------
 // Helpers
@@ -206,13 +246,19 @@ const NAME_BLOCKLIST = new Set(["Show", "List", "Find", "Give", "Tell", "Which",
 function findResearcher(text, institutions) {
     // Explicit cues: "Dr. Jane Doe", "Prof Rao", "by Jane Doe", "researcher Jane Doe", "about Jane Doe"
     const cue = /(?:\bdr\.?|\bprof(?:essor)?\.?|\bby|\bauthor(?:ed)? by|\bresearcher|\bsupervised by|\bpi|\binvestigator|\bwho is|\btell me about|\bprofile of|\babout)\s+([A-Z][A-Za-z.'-]+(?:\s+[A-Z][A-Za-z.'-]*){0,3})/;
-    const m = text.match(cue);
+    // Possessive: "Show PRASAD HONNAVALLI's publications", "Satyam Suwas’ patents"
+    const possessive = /\b([A-Z][A-Za-z.-]+(?:\s+[A-Z][A-Za-z.-]*){1,4})(?:['’]s|['’])(?=\s|$)/;
+    const m = text.match(cue) || text.match(possessive);
     if (m) {
-        const candidate = m[1]
+        let words = m[1]
+            .replace(/['’]s?$/, "")
             .replace(/^(?:dr|prof|professor)\.?\s+/i, "")
             .replace(/\s+(?:at|from|in|of)$/i, "")
-            .trim();
-        const words = candidate.split(/\s+/);
+            .trim()
+            .split(/\s+/);
+        // drop leading command words caught by the capitalised-name pattern ("Show ...")
+        while (words.length > 1 && NAME_BLOCKLIST.has(words[0].replace(/\./g, ""))) words = words.slice(1);
+        const candidate = words.join(" ");
         const looksLikeName = words.every((w) => !NAME_BLOCKLIST.has(w.replace(/\./g, "")));
         const isInstitution = findInstitutions(candidate).length > 0;
         const isDomain = findDomain(candidate) !== null && words.length <= 3 && !/\./.test(candidate);
@@ -229,12 +275,12 @@ function extractTopic(text, consumed) {
     }
     // remove institution aliases, years, punctuation
     for (const inst of INSTITUTIONS) for (const a of inst.aliases) t = t.replace(new RegExp(aliasRegex(a).source, "ig"), " ");
-    t = t.replace(/\b(19|20)\d{2}\b/g, " ").replace(/[?!.,;:()"“”]/g, " ");
+    t = t.replace(/\b(19|20)\d{2}\b/g, " ").replace(/[?!.,;:()"“”]/g, " ").replace(/\b([a-z]+)[- ]wise\b/gi, (m, w) => (isInstitutionNoun(w.toLowerCase()) ? " " : m));
 
     const words = t.split(/\s+/).filter(Boolean);
     const kept = words.filter((w) => {
         const lw = w.toLowerCase();
-        if (STOPWORDS.has(lw)) return false;
+        if (isStopword(lw)) return false;
         if (AGENCY_ACRONYMS.includes(w.toUpperCase()) && w === w.toUpperCase()) return false;
         // keep short acronyms like AI, ML, IoT, 5G; drop other 1-2 char noise
         if (lw.length <= 2 && !/^(ai|ml|iot|5g|6g|ar|vr|ev)$/i.test(lw)) return false;
@@ -286,6 +332,8 @@ export function classify(text = "") {
         wantsCompare: scores.compare > 0 || institutions.length >= 2 && /\b(and|vs|versus|or)\b/i.test(cleaned) && /\bcompare|better|more|difference|vs|versus\b/i.test(cleaned),
         isFollowUp: FOLLOW_UP_RE.test(cleaned),
         isSemantic: /\b(about|on|related to|regarding|similar to|working on|work on|in the area of|in the field of|focus(?:ed|ing)? on|deal(?:s|ing)? with)\b/i.test(cleaned),
+        perInstitution: institutions.length === 0 && asksPerInstitution(cleaned),
+        topN: findTopN(cleaned),
     };
 
     // Topic = what's left after removing structural words / entities

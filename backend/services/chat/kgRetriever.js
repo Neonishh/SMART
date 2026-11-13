@@ -21,6 +21,7 @@ import * as publicationService from "../publicationService.js";
 import * as analyticsService from "../analyticsService.js";
 import * as researcherService from "../researcherService/index.js";
 import { getResearchersData } from "../researcherService/csvLoader.js";
+import { sameInstitutionKey } from "../researcherService/getResearchers.js";
 import * as trendData from "./trendData.js";
 
 const LIST_LIMIT = 8;
@@ -296,7 +297,7 @@ async function researcherProfile(name) {
     return profile;
 }
 
-async function researchers({ entities }) {
+async function researchers({ entities, flags = {} }) {
     const trace = [];
 
     // 1) A specific person
@@ -331,12 +332,41 @@ async function researchers({ entities }) {
         };
     }
 
-    // 2) Top researchers in a technology domain
+    // 2) "top 3 researchers from every institute" — a ranked list per institution
+    if (flags.perInstitution && !entities.institution) {
+        const n = flags.topN || 3;
+        const institutionsList = (await institutionService.getInstitutions()).map((i) => i.name).sort();
+        trace.push("institutionService.getInstitutions()");
+        let perInst;
+        if (entities.domain) {
+            const analytics = await analyticsService.getTrendAnalytics({ technology: entities.domain });
+            trace.push(`analyticsService.getTrendAnalytics({technology:"${entities.domain}"}).trendEngine.topResearchers grouped by institution`);
+            const all = (analytics.trendEngine?.topResearchers || []).map((r) => ({ name: r.researcher, institution: r.institution, publications: r.publications, citations: r.citations }));
+            perInst = institutionsList.map((inst) => ({ inst, list: all.filter((r) => sameInstitutionKey(r.institution) === sameInstitutionKey(inst)).slice(0, n) }));
+        } else {
+            perInst = await Promise.all(institutionsList.map(async (inst) => ({ inst, list: (await researcherService.getResearchers(1, n, "", inst, "", "rank")).researchers || [] })));
+            trace.push(`researcherService.getResearchers(limit=${n}, institution=<each of ${institutionsList.length}>)`);
+        }
+        const scope = entities.domain ? ` in ${entities.domain}` : "";
+        const facts = [`Top ${n} researchers${scope} at each of the ${institutionsList.length} institutions (ranked by research score; publication and citation counts shown):`];
+        for (const { inst, list } of perInst) {
+            facts.push(`${inst}: ${list.length ? list.map((r, i) => `${i + 1}. ${r.name} — ${fmt(r.publications)} pubs, ${fmt(r.citations)} citations`).join("; ") : "no ranked researchers in the data"}`);
+        }
+        return {
+            facts,
+            // one source per institution's #1 keeps the citation list short and balanced
+            records: perInst.filter((p) => p.list[0]).map((p) => researcherToRecord({ ...p.list[0], institution: p.inst })),
+            trace,
+            focus: null,
+        };
+    }
+
+    // 3) Top researchers in a technology domain
     if (entities.domain) {
         const analytics = await analyticsService.getTrendAnalytics({ technology: entities.domain });
         trace.push(`analyticsService.getTrendAnalytics({technology:"${entities.domain}"}).trendEngine.topResearchers`);
         let list = analytics.trendEngine?.topResearchers || [];
-        if (entities.institution) list = list.filter((r) => r.institution === entities.institution);
+        if (entities.institution) list = list.filter((r) => sameInstitutionKey(r.institution) === sameInstitutionKey(entities.institution));
         if (list.length) {
             return {
                 facts: [`Top researchers in ${entities.domain}${entities.institution ? ` at ${entities.institution}` : ""} (by research score): ${list.map((r, i) => `${i + 1}. ${r.researcher} (${r.institution}) — ${fmt(r.publications)} pubs, ${fmt(r.citations)} citations`).join("; ")}`],
@@ -347,8 +377,8 @@ async function researchers({ entities }) {
         }
     }
 
-    // 3) Overall / per-institution ranking
-    const res = await researcherService.getResearchers(1, 10, "", entities.institution || "", "", "rank");
+    // 4) Overall / single-institution ranking
+    const res = await researcherService.getResearchers(1, flags.topN || 10, "", entities.institution || "", "", "rank");
     trace.push(`researcherService.getResearchers(institution="${entities.institution || ""}")`);
     const list = res.researchers || [];
     return {

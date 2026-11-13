@@ -287,11 +287,16 @@ function buildPublicationWhere(filters = {}) {
     }
 
     if (filters.author) {
+        // Every name part must appear, in any order, so "Prasad Honnavalli"
+        // also finds "Prasad B. Honnavalli" and "Prasad Honnavalli B".
+        // Titles and lone initials are ignored.
+        const parts = String(filters.author).toLowerCase().split(/[\s.,]+/)
+            .filter((w) => w.length >= 2 && !["dr", "prof", "mr", "mrs", "ms"].includes(w));
         where.push(`EXISTS {
             MATCH (authorFilter:Person)-[:AUTHORED_PUBLICATION]->(p)
-            WHERE toLower(authorFilter.Name) CONTAINS toLower($author)
+            WHERE all(part IN $authorParts WHERE toLower(authorFilter.Name) CONTAINS part)
         }`);
-        params.author = filters.author;
+        params.authorParts = parts.length ? parts : [String(filters.author).toLowerCase()];
     }
 
     if (filters.domain) {

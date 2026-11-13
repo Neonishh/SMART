@@ -88,7 +88,8 @@ export function resolvePlan(classification, history, text) {
     if (!e.researcher) {
         carry("topic");
         carry("domain");
-        if (!e.institutions?.length) {
+        // "...from every institute" deliberately has no institution — don't inherit one
+        if (!e.institutions?.length && !classification.flags?.perInstitution) {
             carry("institutions");
             e.institution = e.institutions?.[0] || null;
         }
