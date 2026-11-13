@@ -195,6 +195,116 @@ def calculate_output(row):
     return None
 
 
+def ugc_style_research_scores(technology, researchers):
+    """Recalculate researcher scores from source records when available."""
+    publications_path = _TREND_ENGINE_DIR.parent / "Final csvs" / "publications_processed.csv"
+    theses_path = _TREND_ENGINE_DIR.parent / "Final csvs" / "theses_processed.csv"
+
+    if not publications_path.exists():
+        return researchers
+
+    publications = pd.read_csv(publications_path)
+    publications.columns = publications.columns.astype(str).str.strip()
+    if "year" in publications.columns:
+        publications["year"] = pd.to_numeric(publications["year"], errors="coerce")
+        publications = publications[
+            (publications["year"] >= 2019) & (publications["year"] <= 2025)
+        ].copy()
+    required = {"authors", "institution", "title", "citations"}
+    if not required.issubset(publications.columns):
+        print("Research score source is missing required publication columns; using stored scores.")
+        return researchers
+
+    if "domain" in publications.columns:
+        publications["domain"] = publications["domain"].fillna("").astype(str)
+        publications = publications[
+            publications["domain"].map(normalize_text) == normalize_text(technology)
+        ].copy()
+    elif "subdomain" in publications.columns:
+        publications = publications[
+            publications["subdomain"].fillna("").astype(str).map(normalize_text)
+            == normalize_text(technology)
+        ].copy()
+    else:
+        print("Publication source has no domain column; using stored domain scores.")
+        return researchers
+
+    publications["institution"] = publications["institution"].fillna("Unknown").astype(str).str.strip()
+    publications["citations"] = pd.to_numeric(publications["citations"], errors="coerce").fillna(0)
+    publications["authors"] = publications["authors"].fillna("").astype(str)
+
+    def classify_publication(row):
+        label_value = row.get("venue_type", "")
+        label = "" if pd.isna(label_value) else str(label_value).strip().lower()
+        if label in {"journal", "conference"}:
+            return label
+        venue_value = row.get("venue", "")
+        venue = "" if pd.isna(venue_value) else str(venue_value).lower()
+        journal_terms = ("journal", "transactions", "letters", "review", "magazine", "bulletin", "annals", "nature", "science", "cell", "lancet", "ieee access", "expert systems")
+        conference_terms = ("conference", "proceedings", "symposium", "workshop", "congress", "meeting", "icml", "neurips", "cvpr", "iccv", "eccv", "ijcai", "aaai", "acl", "emnlp", "icra", "iros", "sigcomm", "sigir", "kdd", "www")
+        if any(term in venue for term in journal_terms):
+            return "journal"
+        if any(term in venue for term in conference_terms):
+            return "conference"
+        return "unknown"
+
+    publications["publication_type"] = publications.apply(classify_publication, axis=1)
+    publications["researcher"] = publications["authors"].str.split(";")
+    publications = publications.explode("researcher")
+    publications["researcher"] = publications["researcher"].fillna("").astype(str).str.strip()
+    publications = publications[publications["researcher"].str.lower().isin({"", "unknown", "nan", "none"}) == False]
+
+    grouped = publications.groupby(["researcher", "institution"], as_index=False).agg(
+        publications=("title", "count"),
+        journal_papers=("publication_type", lambda x: int((x == "journal").sum())),
+        conference_papers=("publication_type", lambda x: int((x == "conference").sum())),
+        citations=("citations", "sum"),
+        _citation_list=("citations", list),
+    )
+
+    def h_index(citations):
+        return sum(citation >= rank for rank, citation in enumerate(sorted(citations, reverse=True), 1))
+
+    grouped["h_index"] = grouped["_citation_list"].map(h_index)
+    grouped.drop(columns="_citation_list", inplace=True)
+    grouped["theses"] = 0
+
+    if theses_path.exists():
+        theses = pd.read_csv(theses_path)
+        theses.columns = theses.columns.astype(str).str.strip()
+        researcher_col = "researcher" if "researcher" in theses.columns else "author" if "author" in theses.columns else None
+        if researcher_col and {"institution", "title"}.issubset(theses.columns):
+            if "year" in theses.columns:
+                theses["year"] = pd.to_numeric(theses["year"], errors="coerce")
+                theses = theses[(theses["year"] >= 2019) & (theses["year"] <= 2025)].copy()
+            theses["researcher"] = theses[researcher_col].fillna("").astype(str).str.strip()
+            theses["institution"] = theses["institution"].fillna("Unknown").astype(str).str.strip()
+            thesis_counts = theses.groupby(["researcher", "institution"], as_index=False).agg(theses=("title", "count"))
+            grouped = grouped.merge(thesis_counts, on=["researcher", "institution"], how="left", suffixes=("", "_from_theses"))
+            if "theses_from_theses" in grouped.columns:
+                grouped["theses"] = grouped["theses_from_theses"].fillna(0)
+                grouped.drop(columns="theses_from_theses", inplace=True)
+
+    grouped["research_score"] = (
+        grouped["journal_papers"] * 8
+        + grouped["conference_papers"] * 2.5
+        + grouped["theses"] * 3
+        + grouped["h_index"] * 2
+    ).round(2)
+    grouped["score_method"] = "UGC-style baseline (journal/conference/thesis + 2x h-index)"
+    grouped["score_data_limitations"] = "Researcher-linked patents and grants unavailable; thesis count treated as awarded"
+
+    domain_col = get_domain_col(researchers, "researchers") if not researchers.empty else None
+    if domain_col and not researchers.empty:
+        names = researchers.loc[
+            researchers[domain_col].map(normalize_text) == normalize_text(technology), "researcher"
+        ] if "researcher" in researchers.columns else pd.Series(dtype=str)
+        if not names.empty:
+            grouped = grouped[grouped["researcher"].isin(names.astype(str))]
+
+    return grouped
+
+
 # =====================================================
 # INSTITUTION ANALYTICS
 # =====================================================
@@ -619,6 +729,13 @@ def build_report(technology, year):
 
         filtered_researchers = researchers.copy()
 
+    scored_researchers = ugc_style_research_scores(
+        technology,
+        filtered_researchers
+    )
+    if not scored_researchers.empty and "research_score" in scored_researchers.columns:
+        filtered_researchers = scored_researchers
+
     if "research_score" in filtered_researchers.columns:
 
         filtered_researchers["research_score_numeric"] = pd.to_numeric(
@@ -645,8 +762,14 @@ def build_report(technology, year):
             "researcher",
             "institution",
             "publications",
+            "journal_papers",
+            "conference_papers",
+            "theses",
             "citations",
-            "research_score"
+            "h_index",
+            "research_score",
+            "score_method",
+            "score_data_limitations"
         ]
         if c in top_res.columns
     ]
@@ -656,6 +779,17 @@ def build_report(technology, year):
         .fillna("")
         .to_dict("records")
     )
+
+    report["research_score_methodology"] = {
+        "name": "UGC-style baseline with h-index bonus",
+        "formula": "8 × journal papers + 2.5 × conference papers + 3 × thesis records + 2 × h-index",
+        "conference_points_per_paper": 2.5,
+        "limitations": [
+            "Patent and grant records are not linked to individual researchers in the available data.",
+            "Thesis records do not distinguish completed Ph.D. awards, submissions, and postgraduate dissertations; each matched record uses 3 points.",
+            "Publication venue and journal peer-review/indexing status are inferred from available venue labels or titles, not externally validated."
+        ]
+    }
 
     # =====================================================
     # TOP INSTITUTIONS — FIXED
