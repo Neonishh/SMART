@@ -22,6 +22,9 @@ const MAX_TOKENS = Number(process.env.LLM_MAX_TOKENS || 1200);
 const GEMINI_MODEL = process.env.LLM_MODEL || process.env.GEMINI_MODEL || "gemini-flash-latest";
 const OPENAI_MODEL = process.env.LLM_MODEL || process.env.OPENAI_MODEL || "gpt-4o-mini";
 const OPENAI_BASE_URL = (process.env.OPENAI_BASE_URL || "https://api.openai.com/v1").replace(/\/+$/, "");
+// Reasoning models spend (rate-limited) tokens thinking before they answer.
+// Phrasing already-retrieved facts needs little of that, so gpt-oss defaults to "low".
+const REASONING_EFFORT = process.env.LLM_REASONING_EFFORT || (/gpt-oss/i.test(OPENAI_MODEL) ? "low" : "");
 
 export function llmInfo() {
     const enabled =
@@ -86,6 +89,7 @@ function openaiRequest({ system, messages }, stream) {
                 temperature: TEMPERATURE,
                 max_tokens: MAX_TOKENS,
                 stream,
+                ...(REASONING_EFFORT ? { reasoning_effort: REASONING_EFFORT } : {}),
                 messages: [{ role: "system", content: system }, ...messages],
             }),
         },
@@ -99,7 +103,25 @@ function extractText(provider, json) {
     return json?.choices?.[0]?.message?.content ?? json?.choices?.[0]?.delta?.content ?? "";
 }
 
-async function fetchWithTimeout(url, init, signal) {
+// Free tiers (e.g. Groq: 8k tokens/minute) answer 429 with a short wait.
+// Wait and retry once when the wait is short; otherwise fail fast so the
+// chatbot can fall back to its template answer.
+const MAX_RETRY_WAIT_MS = 10000;
+
+function retryDelayMs(res, body) {
+    const header = Number(res.headers.get("retry-after"));
+    if (Number.isFinite(header) && header > 0) return header * 1000;
+    const m = /try again in ([\d.]+)\s*(ms|s)\b/i.exec(body);
+    if (m) return Number(m[1]) * (m[2].toLowerCase() === "ms" ? 1 : 1000);
+    return null;
+}
+
+const sleep = (ms, signal) => new Promise((resolve, reject) => {
+    const t = setTimeout(resolve, ms);
+    signal?.addEventListener("abort", () => { clearTimeout(t); reject(signal.reason); }, { once: true });
+});
+
+async function fetchWithTimeout(url, init, signal, attempt = 0) {
     const controller = new AbortController();
     const timer = setTimeout(() => controller.abort(new Error(`LLM request timed out after ${TIMEOUT_MS}ms`)), TIMEOUT_MS);
     if (signal) signal.addEventListener("abort", () => controller.abort(signal.reason), { once: true });
@@ -107,6 +129,12 @@ async function fetchWithTimeout(url, init, signal) {
         const res = await fetch(url, { ...init, signal: controller.signal });
         if (!res.ok) {
             const body = await res.text().catch(() => "");
+            const wait = res.status === 429 && attempt === 0 ? retryDelayMs(res, body) : null;
+            if (wait !== null && wait <= MAX_RETRY_WAIT_MS) {
+                clearTimeout(timer);
+                await sleep(wait + 250, signal);
+                return fetchWithTimeout(url, init, signal, attempt + 1);
+            }
             throw new Error(`LLM ${PROVIDER} HTTP ${res.status}: ${body.slice(0, 300)}`);
         }
         return { res, clear: () => clearTimeout(timer) };
@@ -125,7 +153,10 @@ async function fetchWithTimeout(url, init, signal) {
  * The frontend renders citation chips for "[3]" / "[1, 4]", so normalise.
  */
 export function normalizeCitations(text = "") {
-    return String(text).replace(/【\s*(\d+(?:\s*[,，]\s*\d+)*)\s*】/g, (_, nums) => `[${nums.replace(/\s*[,，]\s*/g, ", ")}]`);
+    return String(text)
+        .replace(/【\s*(\d+(?:\s*[,，]\s*\d+)*)\s*】/g, (_, nums) => `[${nums.replace(/\s*[,，]\s*/g, ", ")}]`)
+        // pseudo-citations like "[knowledge graph facts]" are not source numbers
+        .replace(/ ?[[【]knowledge[ -]graph[^\]】]*[\]】]/gi, "");
 }
 
 /** Non-streaming generation. Returns the full answer text. */

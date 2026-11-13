@@ -65,6 +65,8 @@ function parseBlocks(md) {
     .replace(/\r/g, "")
     // some models cite with full-width brackets: 【3】 / 【1, 4】 → [3] / [1, 4]
     .replace(/【\s*(\d+(?:\s*[,，]\s*\d+)*)\s*】/g, (_, nums) => `[${nums.replace(/\s*[,，]\s*/g, ", ")}]`)
+    // pseudo-citations like "[knowledge graph facts]" are not source numbers
+    .replace(/ ?[[【]knowledge[ -]graph[^\]】]*[\]】]/gi, "")
     .split("\n");
   const blocks = [];
   let para = [];
