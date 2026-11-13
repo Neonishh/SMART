@@ -228,3 +228,167 @@ export async function getRelatedPatentsByAuthor(publicationId, limit = 5) {
         await session.close();
     }
 }
+/*
+=========================================================
+GET ALL PUBLICATIONS (paginated + facets)
+Used by the chatbot. Mirrors the getAllGrants / getAllPatents
+contract: { data, total, page, limit, totalPages, facets }.
+
+Supported filters (all optional):
+- search      : free text; every word must appear in the title
+- institution : exact Institution name
+- author      : partial author name (case-insensitive)
+- domain      : partial Domain name (case-insensitive)
+- year | yearFrom | yearTo
+- sort        : "year" (default) | "citations"
+=========================================================
+*/
+
+function titleWords(text = "") {
+    return String(text)
+        .toLowerCase()
+        .split(/[^a-z0-9]+/)
+        .filter((w) => w.length > 1)
+        // crude plural folding so "networks" also matches "network"
+        .map((w) => (w.length > 4 && w.endsWith("s") ? w.slice(0, -1) : w));
+}
+
+function buildPublicationWhere(filters = {}) {
+    const where = [];
+    const params = {};
+
+    const words = titleWords(filters.search || filters.keyword || filters.title || "");
+    if (words.length) {
+        // Match at the start of a word, so "graph" hits "graphs"/"graph-based"
+        // but not "tomography". Words are [a-z0-9]+ so no regex escaping needed.
+        where.push("all(w IN $words WHERE toLower(coalesce(p.Title, '')) =~ ('(?s).*\\\\b' + w + '.*'))");
+        params.words = words;
+    }
+
+    if (filters.year) {
+        where.push("p.Year = $year");
+        params.year = neo4j.int(Number(filters.year));
+    }
+    if (filters.yearFrom) {
+        where.push("p.Year >= $yearFrom");
+        params.yearFrom = neo4j.int(Number(filters.yearFrom));
+    }
+    if (filters.yearTo) {
+        where.push("p.Year <= $yearTo");
+        params.yearTo = neo4j.int(Number(filters.yearTo));
+    }
+
+    if (filters.institution) {
+        where.push(`EXISTS {
+            MATCH (instFilter:Institution)-[:HAS_PUBLICATION]->(p)
+            WHERE instFilter.Institution = $institution
+        }`);
+        params.institution = filters.institution;
+    }
+
+    if (filters.author) {
+        where.push(`EXISTS {
+            MATCH (authorFilter:Person)-[:AUTHORED_PUBLICATION]->(p)
+            WHERE toLower(authorFilter.Name) CONTAINS toLower($author)
+        }`);
+        params.author = filters.author;
+    }
+
+    if (filters.domain) {
+        where.push(`EXISTS {
+            MATCH (p)-[:HAS_DOMAIN]->(domFilter:Domain)
+            WHERE toLower(domFilter.Domain) CONTAINS toLower($domain)
+        }`);
+        params.domain = filters.domain;
+    }
+
+    return {
+        whereClause: where.length ? `WHERE ${where.join(" AND ")}` : "",
+        params,
+    };
+}
+
+export async function getAllPublications(filters = {}) {
+    const session = driver.session();
+
+    try {
+        const page = Math.max(Number(filters.page) || 1, 1);
+        const limit = Math.min(Math.max(Number(filters.limit) || 20, 1), 100);
+        const offset = (page - 1) * limit;
+        const orderBy = filters.sort === "citations"
+            ? "coalesce(p.Citations, 0) DESC, p.Year DESC"
+            : "p.Year DESC, coalesce(p.Citations, 0) DESC";
+
+        const { whereClause, params } = buildPublicationWhere(filters);
+
+        const countResult = await session.run(
+            `MATCH (p:Publication) ${whereClause} RETURN count(p) AS total`,
+            params
+        );
+        const total = Number(countResult.records[0]?.get("total") ?? 0);
+
+        const instFacet = await session.run(
+            `MATCH (p:Publication) ${whereClause}
+             MATCH (inst:Institution)-[:HAS_PUBLICATION]->(p)
+             RETURN inst.Institution AS name, count(DISTINCT p) AS count
+             ORDER BY count DESC LIMIT 10`,
+            params
+        );
+
+        const yearFacet = await session.run(
+            `MATCH (p:Publication) ${whereClause}
+             WITH p WHERE p.Year IS NOT NULL
+             RETURN toInteger(p.Year) AS year, count(p) AS count
+             ORDER BY year`,
+            params
+        );
+
+        const result = await session.run(
+            `
+            MATCH (p:Publication) ${whereClause}
+            WITH p ORDER BY ${orderBy} SKIP ${offset} LIMIT ${limit}
+
+            OPTIONAL MATCH (author:Person)-[:AUTHORED_PUBLICATION]->(p)
+            WITH p, collect(DISTINCT {id: author.Person_ID, name: author.Name}) AS authors
+
+            OPTIONAL MATCH (inst:Institution)-[:HAS_PUBLICATION]->(p)
+            WITH p, authors, collect(DISTINCT inst.Institution) AS institutions
+
+            OPTIONAL MATCH (p)-[:HAS_DOMAIN]->(dom:Domain)
+            WITH p, authors, institutions, collect(DISTINCT dom.Domain) AS domains
+
+            OPTIONAL MATCH (p)-[:HAS_SUBDOMAIN]->(sub:Subdomain)
+            WITH p, authors, institutions, domains, collect(DISTINCT sub.Subdomain) AS subdomains
+
+            ${RETURN_FIELDS}
+            ORDER BY ${orderBy.replace(/p\.Citations/g, "citations").replace(/p\.Year/g, "year")}
+            `,
+            params
+        );
+
+        const data = result.records.map((record) => {
+            const pub = mapRecord(record);
+            return { ...pub, institution: pub.institutions[0] || "" };
+        });
+
+        return {
+            data,
+            total,
+            page,
+            limit,
+            totalPages: Math.max(Math.ceil(total / limit), 1),
+            facets: {
+                institutions: instFacet.records.map((r) => ({
+                    name: r.get("name"),
+                    count: Number(r.get("count")),
+                })),
+                years: yearFacet.records.map((r) => ({
+                    year: Number(r.get("year")),
+                    count: Number(r.get("count")),
+                })),
+            },
+        };
+    } finally {
+        await session.close();
+    }
+}
