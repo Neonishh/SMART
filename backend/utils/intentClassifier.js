@@ -93,7 +93,7 @@ first second third between there here than then so very just one two three four 
 records record data dataset datasets results result answer question questions most-cited highly
 form title titles name names
 bro yo hey hi dude pls plz please check asked ask asking said mentioned earlier previous previously again
-clearly really actually okay ok present exists exist available`.split(/\s+/)); // "form" = common typo of "from"
+clearly really actually okay ok present exists exist available files filing produce produces produced get gets got hold holds`.split(/\s+/)); // "form" = common typo of "from"
 
 // Typos of long structural words ("insitute", "reserchers") must not become a topic.
 // Only words of 6+ letters, one edit (incl. a swap) away from a stopword.
@@ -329,6 +329,14 @@ function extractNameCandidate(text) {
     return words.join(" ");
 }
 
+// The nouns that name each record type (verbs like "published"/"filed" don't count)
+const RECORD_NOUNS = {
+    publications: /\b(publications?|papers?|articles?|journals?|conferences?)\b/i,
+    patents: /\b(patents?|inventions?)\b/i,
+    grants: /\b(grants?|projects?)\b/i,
+    theses: /\b(thesis|theses|dissertations?|phds?|doctoral)\b/i,
+};
+
 function scoreIntents(text) {
     const lower = ` ${text.toLowerCase()} `;
     const scores = {};
@@ -404,6 +412,17 @@ export function classify(text = "") {
         else if (fundingAgency) intent = "grants";
         else if (institutions.length) intent = "institutions";
         else if (topic) intent = "search";
+    }
+    // A record type named by its noun beats one matched only by a verb:
+    // "how many theses were published" is about theses, not publications.
+    if (RECORD_NOUNS[intent] && !RECORD_NOUNS[intent].test(cleaned)) {
+        const named = Object.keys(RECORD_NOUNS).find((k) => k !== intent && RECORD_NOUNS[k].test(cleaned));
+        if (named) intent = named;
+    }
+    // "which institution has the most grants?" ranks institutions (by grants)
+    if (RECORD_NOUNS[intent] && !institutions.length && !researcher && !topic &&
+        /\b(which|what|top|rank|ranking)\b[^?]*\b(institution|institute|college|university|uni)s?\b|\b(institution|institute|college|university)s?\b[^?]*\b(most|highest|leads?|top|maximum)\b/i.test(cleaned)) {
+        intent = "institutions";
     }
     if (/funding agenc|funders|sponsors/i.test(cleaned) && !fundingAgency) intent = "funding agencies";
     if (intent === "funding agencies" && fundingAgency && /grant|fund|project/i.test(cleaned)) intent = "grants";

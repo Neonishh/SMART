@@ -154,8 +154,10 @@ function rankedFocus(ranked, extra = {}) {
     if (!ranked.length) return null;
     const top = ranked[0].count;
     const tied = ranked.filter((r) => r.count === top);
-    if (!(top > 0)) return { people: ranked.map((r) => r.name), ...extra };
-    if (tied.length > 1) return { people: tied.map((r) => r.name), tie: true, ...extra };
+    // extra.institution describes the winner, so it's only kept when there is one
+    const { institution: _winnerInstitution, ...shared } = extra;
+    if (!(top > 0)) return { people: ranked.map((r) => r.name), ...shared };
+    if (tied.length > 1) return { people: tied.map((r) => r.name), tie: true, ...shared };
     return { researcher: ranked[0].name, researcherId: researcherIdByName(ranked[0].name), people: ranked.map((r) => r.name), ...extra };
 }
 
@@ -231,7 +233,7 @@ async function patents({ entities, flags, text }) {
             facts.push(`Top inventors by patent count ${describeScope(entities, { topic: search || null })}: ${inventors.map((p, i) => `${i + 1}. ${p.name} — ${p.patents} patents${p.institutions.length ? ` (${p.institutions.join(", ")})` : ""}`).join("; ")}`);
             const tie = tieFact(ranked, "patent(s)");
             if (tie) facts.push(tie);
-            focus = rankedFocus(ranked);
+            focus = rankedFocus(ranked, { institution: inventors[0].institutions?.[0] || entities.institution || null });
             topInventorCount = ranked[0].count;
             records.push(...inventors.slice(0, 5).map((p) => researcherToRecord({ name: p.name, institution: p.institutions[0], patents: p.patents })));
         }
@@ -299,24 +301,26 @@ async function grants({ entities, flags, text }) {
             const ranked = pis.map((p) => ({ name: p.name, count: Number(p.projects) || 0 }));
             const tie = tieFact(ranked, "project(s)");
             if (tie) facts.push(tie);
-            focus = rankedFocus(ranked);
+            focus = rankedFocus(ranked, { institution: pis[0].institution || entities.institution || null });
         }
     }
 
     return { facts, records: res.data.map(grantToRecord), trace, focus };
 }
 
-async function theses({ entities }) {
+async function theses({ entities, text = "" }) {
     const all = await thesisService.listTheses();
     const words = kgSearchText(entities.topic).toLowerCase().split(/\s+/).filter(Boolean);
     const r = entities.yearRange;
-    const name = entities.researcher?.toLowerCase();
+    const isPerson = entities.researcher ? nameMatcher(entities.researcher) : null;
+    // "theses supervised by X" -> only as supervisor; otherwise as author or supervisor
+    const asSupervisor = /supervis|guided|guide\b|advis/i.test(text);
 
     const filtered = all.filter((t) => {
-        if (entities.institution && t.institution !== entities.institution) return false;
+        if (entities.institution && sameInstitutionKey(t.institution) !== sameInstitutionKey(entities.institution)) return false;
         if (r?.from && (!t.year || t.year < r.from)) return false;
         if (r?.to && (!t.year || t.year > r.to)) return false;
-        if (name && ![...t.authors, ...t.supervisors].some((p) => p?.toLowerCase().includes(name))) return false;
+        if (isPerson && !(asSupervisor ? t.supervisors : [...t.authors, ...t.supervisors]).some(isPerson)) return false;
         if (words.length) {
             const hay = `${t.title} ${t.keywords.join(" ")}`.toLowerCase();
             if (!words.every((w) => hay.includes(w.replace(/s$/, "")))) return false;
@@ -324,7 +328,11 @@ async function theses({ entities }) {
         return true;
     });
 
-    const facts = [`Theses ${describeScope(entities)}: ${fmt(filtered.length)} (of ${fmt(all.length)} in the graph)`];
+    const facts = [`Theses ${describeScope(entities)}${isPerson && asSupervisor ? " (as supervisor)" : ""}: ${fmt(filtered.length)} (of ${fmt(all.length)} in the graph)`];
+    if (isPerson && !asSupervisor && filtered.length) {
+        const supervised = filtered.filter((t) => t.supervisors.some(isPerson)).length;
+        facts.push(`Of these, ${entities.researcher} supervised ${fmt(supervised)} and authored ${fmt(filtered.length - supervised)}.`);
+    }
     if (!entities.institution && filtered.length) {
         const byInst = {};
         for (const t of filtered) byInst[t.institution || "Unknown"] = (byInst[t.institution || "Unknown"] || 0) + 1;
@@ -443,7 +451,7 @@ async function researchers({ entities, flags = {} }) {
                 facts: [`Top researchers in ${entities.domain}${entities.institution ? ` at ${entities.institution}` : ""} (by research score): ${list.map((r, i) => `${i + 1}. ${r.researcher} (${r.institution}) — ${fmt(r.publications)} pubs, ${fmt(r.citations)} citations`).join("; ")}`],
                 records: list.slice(0, 6).map((r) => researcherToRecord({ name: r.researcher, institution: r.institution, publications: r.publications, citations: r.citations })),
                 trace,
-                focus: { researcher: list[0].researcher, researcherId: researcherIdByName(list[0].researcher), domain: entities.domain, people: list.slice(0, 10).map((r) => r.researcher) },
+                focus: { researcher: list[0].researcher, researcherId: researcherIdByName(list[0].researcher), domain: entities.domain, institution: list[0].institution || null, people: list.slice(0, 10).map((r) => r.researcher) },
             };
         }
     }

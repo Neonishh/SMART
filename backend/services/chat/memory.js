@@ -13,6 +13,7 @@
 // ==========================================================
 
 import { classify } from "../../utils/intentClassifier.js";
+import { fullNameWordCount } from "../../utils/nameParts.js";
 
 const PRONOUN_RE = /\b(their|them|they|his|her|him|this person|that person|same person|that researcher|this researcher)\b/i;
 const CARRY_INTENTS = new Set(["unknown", "search", "institutions", "greeting"]);
@@ -106,6 +107,13 @@ export function resolvePlan(classification, history, text) {
     if (pronoun && !e.researcher && prev.focus?.researcher) {
         e.researcher = prev.focus.researcher;
         plan.followUp.inherited.push(`researcher=${e.researcher}`);
+        // Short names ("Dr. Raja M") also match other people ("Pavan Raja M");
+        // keep them to the institution they were found at.
+        if (fullNameWordCount(e.researcher) < 2 && prev.focus.institution && !e.institutions?.length) {
+            e.institutions = [prev.focus.institution];
+            e.institution = prev.focus.institution;
+            plan.followUp.inherited.push(`institution=${prev.focus.institution}`);
+        }
     } else if (pronoun && !e.researcher && people.length) {
         // No single person in focus (a tie, or a list): answer for each of them
         e.researchers = people.slice(0, MAX_PEOPLE_PER_PRONOUN);
