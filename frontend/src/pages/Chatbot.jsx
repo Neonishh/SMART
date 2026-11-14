@@ -1,6 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from "react";
-import { Link } from "react-router-dom";
-import { ArrowUp, Check, Copy, Network, RotateCcw, Square } from "lucide-react";
+import { ArrowUp, Check, Copy, RotateCcw, Square } from "lucide-react";
 import DashboardLayout from "../components/DashboardLayout";
 import { Card } from "../components/ui";
 import MarkdownMessage from "../components/chat/MarkdownMessage";
@@ -95,7 +94,6 @@ function AssistantMessage({ m, isLast, onSuggest, busy }) {
   }, []);
 
   const waiting = m.streaming && !m.content;
-  const hasGraphLink = m.sources?.some((s) => ["publication", "researcher", "institution", "patent"].includes(s.type));
 
   return (
     <div className="max-w-2xl">
@@ -118,11 +116,6 @@ function AssistantMessage({ m, isLast, onSuggest, busy }) {
         {!m.streaming && !m.welcome && !m.error && (
           <div className="flex items-center gap-4 mt-3 pt-2 border-t border-[var(--color-line)] text-[11px] font-mono text-[var(--color-muted)]">
             <CopyButton text={m.content} />
-            {hasGraphLink && (
-              <Link to="/dashboard/knowledge-graph" className="flex items-center gap-1 hover:text-[var(--color-ochre)]">
-                <Network size={12} /> Explore in graph
-              </Link>
-            )}
             {m.meta?.mode && (
               <span className="ml-auto" title={(m.meta.trace || []).join("\n")}>
                 {m.meta.mode === "llm" ? `AI answer · ${m.meta.llm?.model || m.meta.llm?.provider}` : m.meta.mode === "template" ? "Direct from knowledge graph" : ""}
