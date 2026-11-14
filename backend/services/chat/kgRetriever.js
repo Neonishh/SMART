@@ -290,7 +290,7 @@ async function grants({ entities, flags, text }) {
     const shownAmount = res.data.reduce((s, g) => s + (g.amount || 0), 0);
     if (res.facets?.agencies?.length) facts.push(`Funding agencies involved: ${res.facets.agencies.slice(0, 12).join(", ")}${res.facets.agencies.length > 12 ? ", …" : ""}`);
     if (!entities.institution && res.facets?.institutions?.length) facts.push(`Institutions: ${res.facets.institutions.join(", ")}`);
-    if (shownAmount) facts.push(`Combined sanctioned amount of the ${res.data.length} listed grants: ₹${fmt(shownAmount)}`);
+    if (shownAmount) facts.push(`Combined sanctioned amount of only the ${res.data.length} grants listed below (a sample, NOT the total for all ${fmt(res.total)} grants): ₹${fmt(shownAmount)}`);
 
     let focus = null;
     if (/\bwho\b|principal investigator|\bpis?\b|investigators/i.test(text) || (flags.wantsTop && /\bwho\b/i.test(text))) {
@@ -705,13 +705,41 @@ async function forEachPerson(handler, plan) {
     };
 }
 
+/**
+ * "top researchers at msrit and cmrit", "patents from pes and rvce":
+ * handlers filter on one institution, so run the handler once per
+ * institution named and merge (each with a smaller list).
+ */
+async function forEachInstitution(handler, plan) {
+    const names = plan.entities.institutions;
+    const flags = { ...plan.flags, topN: plan.flags?.topN || 5 };
+    const outs = await Promise.all(names.map((inst) => handler({
+        ...plan,
+        flags,
+        entities: { ...plan.entities, institution: inst, institutions: [inst] },
+    })));
+    const people = outs.flatMap((o) => o.focus?.people || []);
+    return {
+        facts: [
+            `Answering separately for each of the ${names.length} institutions asked about: ${names.join("; ")}.`,
+            ...outs.flatMap((o) => o.facts || []),
+        ],
+        records: outs.flatMap((o) => (o.records || []).slice(0, Math.max(3, Math.floor(10 / names.length)))),
+        trace: outs.flatMap((o) => o.trace || []),
+        focus: people.length ? { people } : null,
+    };
+}
+
 export async function retrieveFromGraph(plan) {
     const handler = HANDLERS[plan.intent];
     if (!handler) return { ok: true, facts: [], records: [], trace: [], focus: null };
     try {
-        const many = plan.entities?.researchers?.length > 1 && !plan.entities.researcher && PER_PERSON_INTENTS.has(plan.intent);
+        const manyPeople = plan.entities?.researchers?.length > 1 && !plan.entities.researcher && PER_PERSON_INTENTS.has(plan.intent);
+        const manyInstitutions = !manyPeople && plan.entities?.institutions?.length > 1 && PER_PERSON_INTENTS.has(plan.intent);
         if (plan.entities?.researchers?.length === 1 && !plan.entities.researcher) plan.entities.researcher = plan.entities.researchers[0];
-        const out = many ? await forEachPerson(handler, plan) : await handler(plan);
+        const out = manyPeople ? await forEachPerson(handler, plan)
+            : manyInstitutions ? await forEachInstitution(handler, plan)
+                : await handler(plan);
         return { ok: true, focus: null, ...out };
     } catch (err) {
         console.error(`[chat] KG retrieval failed for intent "${plan.intent}":`, err);

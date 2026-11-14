@@ -89,7 +89,8 @@ function semanticQuery(plan) {
         text: topic || plan.text,
         collection: COLLECTION_FOR_INTENT[plan.intent] || "all",
         topK: wide ? 30 : 8,
-        institution: plan.intent === "compare" ? null : e.institution,
+        // several institutions named -> search all, the graph side splits per institution
+        institution: plan.intent === "compare" || (e.institutions?.length || 0) > 1 ? null : e.institution,
         yearFrom: yr.from || null,
         yearTo: yr.to || null,
     };
