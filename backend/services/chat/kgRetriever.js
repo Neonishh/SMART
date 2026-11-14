@@ -22,6 +22,7 @@ import * as analyticsService from "../analyticsService.js";
 import * as researcherService from "../researcherService/index.js";
 import { getResearchersData } from "../researcherService/csvLoader.js";
 import { sameInstitutionKey } from "../researcherService/getResearchers.js";
+import { nameMatcher, looseNameKey } from "../../utils/nameParts.js";
 import * as trendData from "./trendData.js";
 
 const LIST_LIMIT = 8;
@@ -73,8 +74,8 @@ function kgSearchText(topic) {
 
 function researcherIdByName(name) {
     if (!name) return null;
-    const lower = name.toLowerCase();
-    const hit = getResearchersData().find((r) => r.researcher?.toLowerCase() === lower);
+    const key = looseNameKey(name);
+    const hit = getResearchersData().find((r) => looseNameKey(r.researcher) === key);
     return hit ? hit.rank : null;
 }
 
@@ -138,6 +139,29 @@ const researcherToRecord = (r) => ({
 const ORG_RE = /\b(institute|university|college|universit|pvt|ltd|limited|llp|inc|corporation|foundation|technologies|department|school|centre|center|trust|society|india)\b/i;
 const isPersonName = (name) => Boolean(name) && !ORG_RE.test(name) && /[a-z]/i.test(name);
 
+/**
+ * Follow-up focus from a ranked list [{ name, count }] (sorted, highest first).
+ * - clear winner -> focus.researcher = winner, focus.people = everyone listed
+ * - tie at the top -> no single researcher; focus.people = only the tied names
+ * - nobody has any -> no single researcher; focus.people = everyone listed
+ */
+function rankedFocus(ranked, extra = {}) {
+    if (!ranked.length) return null;
+    const top = ranked[0].count;
+    const tied = ranked.filter((r) => r.count === top);
+    if (!(top > 0)) return { people: ranked.map((r) => r.name), ...extra };
+    if (tied.length > 1) return { people: tied.map((r) => r.name), tie: true, ...extra };
+    return { researcher: ranked[0].name, researcherId: researcherIdByName(ranked[0].name), people: ranked.map((r) => r.name), ...extra };
+}
+
+/** "Tie: 10 people share the top count of 1 patent each: A, B, ..." or null */
+function tieFact(ranked, unit) {
+    if (ranked.length < 2 || !(ranked[0].count > 0)) return null;
+    const tied = ranked.filter((r) => r.count === ranked[0].count);
+    if (tied.length < 2) return null;
+    return `Tie: ${tied.length} people share the top count of ${fmt(ranked[0].count)} ${unit} each (${tied.map((r) => r.name).join("; ")}) — no single person leads.`;
+}
+
 function pickMeasure(scores = {}) {
     for (const k of ["patents", "grants", "theses", "publications"]) if (scores[k] > 0) return k;
     return null;
@@ -184,12 +208,17 @@ async function patents({ entities, flags, text }) {
     const records = [];
 
     const wantsWho = !entities.researcher && /\bwho\b|inventors?\b|people|person|researchers?\b/i.test(text);
+    let topInventorCount = null;
     if (wantsWho || (flags.wantsTop && /\bwho|whom\b/i.test(text))) {
         const inventors = (await patentService.getTopInventors({ ...filters, limit: 25 })).filter((p) => isPersonName(p.name)).slice(0, 10);
         trace.push(`patentService.getTopInventors(${JSON.stringify({ ...filters, limit: 25 })}) → people only`);
         if (inventors.length) {
+            const ranked = inventors.map((p) => ({ name: p.name, count: p.patents }));
             facts.push(`Top inventors by patent count ${describeScope(entities, { topic: search || null })}: ${inventors.map((p, i) => `${i + 1}. ${p.name} — ${p.patents} patents${p.institutions.length ? ` (${p.institutions.join(", ")})` : ""}`).join("; ")}`);
-            focus = { researcher: inventors[0].name, researcherId: researcherIdByName(inventors[0].name) };
+            const tie = tieFact(ranked, "patent(s)");
+            if (tie) facts.push(tie);
+            focus = rankedFocus(ranked);
+            topInventorCount = ranked[0].count;
             records.push(...inventors.slice(0, 5).map((p) => researcherToRecord({ name: p.name, institution: p.institutions[0], patents: p.patents })));
         }
     }
@@ -204,6 +233,9 @@ async function patents({ entities, flags, text }) {
         if (res.total) facts.push(`(No exact phrase match for "${search}"; showing patents matching "${loose.search}".)`);
     }
     facts.unshift(`Patents ${describeScope(entities, { topic: search || null })}: ${fmt(res.total)}`);
+    if (topInventorCount !== null && topInventorCount <= 1) {
+        facts.push(`Matches are sparse: only ${fmt(res.total)} patent(s) ${describeScope(entities, { topic: search || null })}, and no inventor has more than ${topInventorCount}, so nobody stands out.`);
+    }
 
     if (!entities.institution && !search && !filters.inventor && !filters.year && !filters.yearFrom && !filters.yearTo) {
         const list = await institutionService.getInstitutions();
@@ -250,7 +282,10 @@ async function grants({ entities, flags, text }) {
         trace.push("trend_engine/outputs/top_principal_investigators.csv");
         if (pis.length) {
             facts.push(`Top principal investigators by number of projects: ${pis.map((p, i) => `${i + 1}. ${p.name} (${p.institution}) — ${p.projects} project(s), ₹${fmt(p.fundingLakhs)} lakhs`).join("; ")}`);
-            focus = { researcher: pis[0].name, researcherId: researcherIdByName(pis[0].name) };
+            const ranked = pis.map((p) => ({ name: p.name, count: Number(p.projects) || 0 }));
+            const tie = tieFact(ranked, "project(s)");
+            if (tie) facts.push(tie);
+            focus = rankedFocus(ranked);
         }
     }
 
@@ -357,7 +392,8 @@ async function researchers({ entities, flags = {} }) {
             // one source per institution's #1 keeps the citation list short and balanced
             records: perInst.filter((p) => p.list[0]).map((p) => researcherToRecord({ ...p.list[0], institution: p.inst })),
             trace,
-            focus: null,
+            // no single subject, but "who has most patents" can rank everyone listed
+            focus: { people: perInst.flatMap((p) => p.list.map((r) => r.name)) },
         };
     }
 
@@ -372,7 +408,7 @@ async function researchers({ entities, flags = {} }) {
                 facts: [`Top researchers in ${entities.domain}${entities.institution ? ` at ${entities.institution}` : ""} (by research score): ${list.map((r, i) => `${i + 1}. ${r.researcher} (${r.institution}) — ${fmt(r.publications)} pubs, ${fmt(r.citations)} citations`).join("; ")}`],
                 records: list.slice(0, 6).map((r) => researcherToRecord({ name: r.researcher, institution: r.institution, publications: r.publications, citations: r.citations })),
                 trace,
-                focus: { researcher: list[0].researcher, researcherId: researcherIdByName(list[0].researcher), domain: entities.domain },
+                focus: { researcher: list[0].researcher, researcherId: researcherIdByName(list[0].researcher), domain: entities.domain, people: list.slice(0, 10).map((r) => r.researcher) },
             };
         }
     }
@@ -385,7 +421,70 @@ async function researchers({ entities, flags = {} }) {
         facts: [`Top-ranked researchers${entities.institution ? ` at ${entities.institution}` : " across all institutions"} (of ${fmt(res.total)}): ${list.map((r, i) => `${i + 1}. ${r.name} (${r.institution}) — ${fmt(r.publications)} pubs, ${fmt(r.citations)} citations`).join("; ")}`],
         records: list.slice(0, 6).map(researcherToRecord),
         trace,
-        focus: list[0] ? { researcher: list[0].name, researcherId: list[0].id } : null,
+        focus: list[0] ? { researcher: list[0].name, researcherId: list[0].id, people: list.map((r) => r.name) } : null,
+    };
+}
+
+// ----------------------------------------------------------
+// rank-people: "who has most patents?" about the people the
+// previous answer listed (plan.rank = { measure, people })
+// ----------------------------------------------------------
+
+const RANK_UNITS = { patents: "patent(s)", publications: "publication(s)", citations: "citation(s)", grants: "grant(s)", theses: "thesis/theses" };
+
+async function citationsFor(name) {
+    // Same source as the researcher rankings the user just saw, so numbers agree
+    const key = looseNameKey(name);
+    const row = getResearchersData().find((r) => looseNameKey(r.researcher) === key);
+    if (row && row.citations != null && row.citations !== "") return { count: Number(row.citations) || 0, source: "researcher ranking" };
+    const pubs = await publicationService.getAllPublications({ author: name, sort: "citations", limit: 100 });
+    return { count: pubs.data.reduce((s, p) => s + (p.citations || 0), 0), source: pubs.total > 100 ? "top 100 graph papers" : "graph papers" };
+}
+
+async function countFor(name, measure, allTheses) {
+    switch (measure) {
+        case "patents": return { count: (await patentService.getAllPatents({ inventor: name, limit: 1 })).total };
+        case "publications": return { count: (await publicationService.getAllPublications({ author: name, limit: 1 })).total };
+        case "grants": return { count: (await grantService.getAllGrants({ search: name.toLowerCase(), limit: 1 })).total };
+        case "theses": {
+            const has = nameMatcher(name);
+            return { count: allTheses.filter((t) => [...t.authors, ...t.supervisors].some(has)).length };
+        }
+        case "citations": return citationsFor(name);
+        default: return { count: 0 };
+    }
+}
+
+async function rankPeople({ rank }) {
+    const { measure, people } = rank;
+    const unit = RANK_UNITS[measure] || measure;
+    const allTheses = measure === "theses" ? await thesisService.listTheses() : null;
+    const counted = await Promise.all(people.map(async (name) => ({ name, ...(await countFor(name, measure, allTheses)) })));
+    const ranked = counted.sort((a, b) => b.count - a.count || a.name.localeCompare(b.name));
+
+    const top = ranked[0]?.count ?? 0;
+    const total = ranked.reduce((s, r) => s + r.count, 0);
+    const how = measure === "citations" ? "citations from the researcher ranking (graph papers where a person isn't ranked)"
+        : measure === "grants" ? "grants that name them (as PI) in the graph"
+            : `${measure} linked to them in the knowledge graph`;
+    const facts = [
+        `Ranking the ${ranked.length} researchers from the previous answer by ${how}: ${ranked.map((r, i) => `${i + 1}. ${r.name} — ${fmt(r.count)} ${unit}`).join("; ")}`,
+    ];
+    const tie = tieFact(ranked, unit);
+    if (tie) facts.push(tie);
+    else if (top > 0) facts.push(`${ranked[0].name} has the most ${measure} among them (${fmt(top)}).`);
+    if (top === 0) facts.push(`None of these ${ranked.length} researchers has any ${measure} in the graph.`);
+    else if (top <= 1) facts.push(`Matches are sparse: these ${ranked.length} researchers have only ${fmt(total)} ${unit} between them, so this ranking says little.`);
+
+    const field = { patents: "patents", publications: "publications", citations: "citations" }[measure];
+    return {
+        facts,
+        records: ranked.filter((r) => r.count > 0).slice(0, 6).map((r) => ({
+            ...researcherToRecord({ name: r.name, ...(field ? { [field]: r.count } : {}) }),
+            snippet: `${fmt(r.count)} ${unit}`,
+        })),
+        trace: [`rank-people: ${measure} for ${people.length} people (${measure === "patents" ? "patentService.getAllPatents({inventor})" : measure === "publications" ? "publicationService.getAllPublications({author})" : measure === "grants" ? "grantService.getAllGrants({search})" : measure === "theses" ? "thesisService.listTheses() authors/supervisors" : "top_researchers.csv citations"} ×${people.length})`],
+        focus: rankedFocus(ranked),
     };
 }
 
@@ -394,6 +493,7 @@ async function institutions({ entities, scores }) {
     const trace = ["institutionService.getInstitutions()"];
     const facts = [];
     const records = [];
+    let instPeople = [];
 
     if (entities.institution) {
         const inst = list.find((i) => i.name === entities.institution);
@@ -403,10 +503,11 @@ async function institutions({ entities, scores }) {
             if (growth) facts.push(`Research output growth ${growth.yearly[0]?.year}–${growth.yearly.at(-1)?.year}: CAGR ${growth.cagrPercent}% (${growth.trend}); yearly totals ${growth.yearly.map((y) => `${y.year}: ${fmt(y.total)}`).join(", ")}`);
             const top = await researcherService.getResearchers(1, 5, "", inst.name, "", "rank");
             if (top.researchers?.length) facts.push(`Top researchers at ${inst.name}: ${top.researchers.map((r) => `${r.name} (${fmt(r.publications)} pubs)`).join(", ")}`);
+            instPeople = (top.researchers || []).map((r) => r.name);
             records.push({ type: "institution", id: inst.id, title: inst.name, year: null, institution: inst.name, url: null, snippet: `${fmt(inst.publications)} publications · ${fmt(inst.patents)} patents`, extra: {} });
             records.push(...(top.researchers || []).slice(0, 3).map(researcherToRecord));
         }
-        return { facts, records, trace, focus: { institution: entities.institution } };
+        return { facts, records, trace, focus: { institution: entities.institution, ...(instPeople.length ? { people: instPeople } : {}) } };
     }
 
     const search = kgSearchText(entities.topic);
@@ -537,13 +638,37 @@ const HANDLERS = {
     "dashboard statistics": dashboardStats,
     "knowledge graph": knowledgeGraph,
     search,
+    "rank-people": rankPeople,
 };
+
+const PER_PERSON_INTENTS = new Set(["publications", "patents", "grants", "theses", "researchers"]);
+
+/**
+ * "show their publications" when the previous answer had no single subject
+ * (a tie, or a list): run the normal handler once per person and merge.
+ */
+async function forEachPerson(handler, plan) {
+    const names = plan.entities.researchers;
+    const outs = await Promise.all(names.map((name) => handler({ ...plan, entities: { ...plan.entities, researcher: name, researchers: [] } })));
+    const more = plan.followUp?.morePeople || 0;
+    return {
+        facts: [
+            `Answering for each of the ${names.length} people from the previous answer (${names.join(", ")})${more ? `; ${more} more were listed but are not shown` : ""}.`,
+            ...outs.flatMap((o) => o.facts || []),
+        ],
+        records: outs.flatMap((o) => (o.records || []).slice(0, 3)),
+        trace: outs.flatMap((o) => o.trace || []),
+        focus: { people: names },
+    };
+}
 
 export async function retrieveFromGraph(plan) {
     const handler = HANDLERS[plan.intent];
     if (!handler) return { ok: true, facts: [], records: [], trace: [], focus: null };
     try {
-        const out = await handler(plan);
+        const many = plan.entities?.researchers?.length > 1 && !plan.entities.researcher && PER_PERSON_INTENTS.has(plan.intent);
+        if (plan.entities?.researchers?.length === 1 && !plan.entities.researcher) plan.entities.researcher = plan.entities.researchers[0];
+        const out = many ? await forEachPerson(handler, plan) : await handler(plan);
         return { ok: true, focus: null, ...out };
     } catch (err) {
         console.error(`[chat] KG retrieval failed for intent "${plan.intent}":`, err);

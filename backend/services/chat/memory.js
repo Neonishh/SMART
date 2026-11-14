@@ -38,6 +38,27 @@ function hasOwnEntities(e) {
     return Boolean(e.institutions?.length || e.yearRange || e.topic || e.researcher || e.fundingAgency || e.domain);
 }
 
+// "who has most patents", "which of them has the highest citations", "who is most cited"
+const RANK_RE = /\b(who|which|whom)\b.*\b(most|highest|max(?:imum)?|top|largest|more|greatest)\b/i;
+const MEASURES = [
+    ["patents", /\bpatent/i],
+    ["citations", /\bcit(?:ation|ed)/i],
+    ["publications", /\b(?:publication|paper|article)/i],
+    ["grants", /\bgrant|\bfunding\b/i],
+    ["theses", /\bthes[ie]s\b|\bphds?\b|\bstudents?\b/i],
+];
+const MAX_PEOPLE_TO_RANK = 10;
+const MAX_PEOPLE_PER_PRONOUN = 5;
+
+/** { measure } when text is a short "who has most X" with nothing else in it. */
+function rankRequest(text, e) {
+    if (text.trim().split(/\s+/).length > 10 || !RANK_RE.test(text)) return null;
+    // a restated topic/institution ("who has most patents in robotics") is a new search
+    if (e.institutions?.length || e.yearRange || e.researcher || e.fundingAgency || e.topic || e.domain) return null;
+    const hit = MEASURES.find(([, re]) => re.test(text));
+    return hit ? { measure: hit[0] } : null;
+}
+
 /**
  * resolvePlan(classification, history, text) => plan
  * plan = { intent, entities, flags, scores, text, followUp: { used, inherited[] } }
@@ -67,10 +88,29 @@ export function resolvePlan(classification, history, text) {
     if (!isFollowUp) return plan;
     plan.followUp.used = true;
 
+    // "who has most patents" right after a list of researchers means
+    // "among those people" — rank them, don't re-search the old topic.
+    const people = Array.isArray(prev.focus?.people) ? prev.focus.people.filter(Boolean) : [];
+    const rank = people.length >= 2 ? rankRequest(text, e) : null;
+    if (rank) {
+        plan.intent = "rank-people";
+        plan.rank = { measure: rank.measure, people: people.slice(0, MAX_PEOPLE_TO_RANK) };
+        e.topic = null;
+        e.keywords = null;
+        e.domain = null;
+        plan.followUp.inherited.push(`people(${plan.rank.people.length})`);
+        return plan;
+    }
+
     // Pronoun -> the person the previous answer was about
     if (pronoun && !e.researcher && prev.focus?.researcher) {
         e.researcher = prev.focus.researcher;
         plan.followUp.inherited.push(`researcher=${e.researcher}`);
+    } else if (pronoun && !e.researcher && people.length) {
+        // No single person in focus (a tie, or a list): answer for each of them
+        e.researchers = people.slice(0, MAX_PEOPLE_PER_PRONOUN);
+        plan.followUp.inherited.push(`researchers(${e.researchers.length}${people.length > e.researchers.length ? ` of ${people.length}` : ""})`);
+        plan.followUp.morePeople = Math.max(0, people.length - e.researchers.length);
     }
 
     // Carry filters the user didn't restate
@@ -85,7 +125,7 @@ export function resolvePlan(classification, history, text) {
 
     // When a researcher is now the subject, the old topic/institution filters
     // usually narrow too much ("their publications" = all of them).
-    if (!e.researcher) {
+    if (!e.researcher && !e.researchers?.length) {
         carry("topic");
         carry("domain");
         // "...from every institute" deliberately has no institution — don't inherit one
@@ -105,7 +145,7 @@ export function resolvePlan(classification, history, text) {
         plan.followUp.inherited.push(`intent=${plan.intent}`);
     }
     // "Show their publications" with a researcher -> publications by that author
-    if (plan.intent === "researchers" && pronoun && /publication|paper|patent|grant|thes/i.test(text)) {
+    if (plan.intent === "researchers" && pronoun && (e.researcher || e.researchers?.length) && /publication|paper|patent|grant|thes/i.test(text)) {
         plan.intent = /patent/i.test(text) ? "patents" : /grant/i.test(text) ? "grants" : /thes/i.test(text) ? "theses" : "publications";
     }
 

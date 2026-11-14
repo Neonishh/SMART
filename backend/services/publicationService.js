@@ -1,5 +1,6 @@
 import driver from "../config/neo4j.js";
 import neo4j from "neo4j-driver";
+import { nameRegexes } from "../utils/nameParts.js";
 
 /**
  * IMPORTANT: institutions/domains/subdomains are collected as ARRAYS,
@@ -287,16 +288,12 @@ function buildPublicationWhere(filters = {}) {
     }
 
     if (filters.author) {
-        // Every name part must appear, in any order, so "Prasad Honnavalli"
-        // also finds "Prasad B. Honnavalli" and "Prasad Honnavalli B".
-        // Titles and lone initials are ignored.
-        const parts = String(filters.author).toLowerCase().split(/[\s.,]+/)
-            .filter((w) => w.length >= 2 && !["dr", "prof", "mr", "mrs", "ms"].includes(w));
+        // Every name part must appear as a word, any order (see utils/nameParts.js)
         where.push(`EXISTS {
             MATCH (authorFilter:Person)-[:AUTHORED_PUBLICATION]->(p)
-            WHERE all(part IN $authorParts WHERE toLower(authorFilter.Name) CONTAINS part)
+            WHERE all(rx IN $authorRegexes WHERE toLower(authorFilter.Name) =~ rx)
         }`);
-        params.authorParts = parts.length ? parts : [String(filters.author).toLowerCase()];
+        params.authorRegexes = nameRegexes(filters.author);
     }
 
     if (filters.domain) {

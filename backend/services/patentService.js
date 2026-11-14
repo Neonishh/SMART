@@ -1,4 +1,5 @@
 import driver from "../config/neo4j.js";
+import { nameRegexes } from "../utils/nameParts.js";
 
 function buildPatentQuery(filters = {}) {
 
@@ -39,9 +40,10 @@ function buildPatentQuery(filters = {}) {
     if (filters.inventor) {
         where.push(`EXISTS {
             MATCH (invFilter:Person)-[:INVENTED]->(pat)
-            WHERE toLower(invFilter.Name) CONTAINS toLower($inventor)
+            WHERE all(rx IN $inventorRegexes WHERE toLower(invFilter.Name) =~ rx)
         }`);
-        params.inventor = filters.inventor;
+        // every name part, any order (see utils/nameParts.js)
+        params.inventorRegexes = nameRegexes(filters.inventor);
     }
 
     if (filters.ipc) {

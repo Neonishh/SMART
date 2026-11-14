@@ -115,6 +115,8 @@ export function buildPrompt({ text, plan, facts, sources, history = [], notes = 
     if (e.topic) scope.push(`topic: ${e.topic}`);
     if (e.domain) scope.push(`domain: ${e.domain}`);
     if (e.researcher) scope.push(`researcher: ${e.researcher}`);
+    if (!e.researcher && e.researchers?.length) scope.push(`researchers: ${e.researchers.join(", ")}`);
+    if (plan.rank) scope.push(`ranking the people from the previous answer by ${plan.rank.measure}`);
     if (e.fundingAgency) scope.push(`agency: ${e.fundingAgency}`);
     if (e.yearRange) scope.push(`years: ${e.yearRange.from ?? "…"}–${e.yearRange.to ?? "…"}`);
 
@@ -191,8 +193,14 @@ export function suggestFollowUps(plan, focus) {
     if (focus?.researcher) {
         if (plan.intent !== "publications") out.push(`Show ${focus.researcher}'s publications`);
         if (plan.intent !== "patents") out.push(`Does ${focus.researcher} have any patents?`);
+    } else if (focus?.people?.length > 1 && focus.people.length <= 5) {
+        if (plan.intent !== "publications") out.push("Show their publications");
+        if (plan.intent !== "patents") out.push("Show their patents");
     }
     switch (plan.intent) {
+        case "rank-people":
+            for (const m of ["citations", "patents", "publications"]) if (m !== plan.rank?.measure) out.push(`Who has the most ${m}?`);
+            break;
         case "publications":
             if (!plan.flags.sortByCitations) out.push("Show the most cited ones");
             if (topic) out.push(`Which institutions lead in ${topic}?`, `Patents related to ${topic}`);

@@ -53,7 +53,8 @@ function sanitizeHistory(history) {
 
 function shouldUseSemantic(plan) {
     const e = plan.entities;
-    if (["greeting", "help", "dashboard statistics", "knowledge graph", "funding agencies", "trends"].includes(plan.intent)) return false;
+    if (["greeting", "help", "dashboard statistics", "knowledge graph", "funding agencies", "trends", "rank-people"].includes(plan.intent)) return false;
+    if (e.researchers?.length) return false; // "their publications" for several named people
     if (plan.intent === "researchers" && (e.researcher || e.domain)) return false; // exact profile / domain ranking
     if (plan.intent === "compare" && !e.topic) return false;
     if (plan.intent === "institutions" && !e.topic) return false;
