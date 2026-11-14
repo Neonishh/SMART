@@ -77,10 +77,12 @@ This picks up from the earlier status note ("KG chatbot done, FAISS / LLM / memo
    ```
    The first start downloads `all-MiniLM-L6-v2` (~90 MB). Check `http://localhost:8001/health` — all four collections should say `"ready": true`.
 
-4. **Configure the backend** — copy `backend/.env.example` to `backend/.env`, fill in Neo4j, then pick an LLM:
-   - Gemini (free key from https://aistudio.google.com/apikey): `LLM_PROVIDER=gemini`, `GEMINI_API_KEY=...`
-   - Groq (free, fast): `LLM_PROVIDER=openai`, `OPENAI_BASE_URL=https://api.groq.com/openai/v1`, `OPENAI_API_KEY=...`, `LLM_MODEL=<a Groq model id>`
+4. **Configure the backend** — copy `backend/.env.example` to `backend/.env`, fill in Neo4j, then set the LLM:
+   - **Groq (default in `.env.example`)**: free key from https://console.groq.com/keys → `OPENAI_API_KEY=...`. Already set: `LLM_PROVIDER=openai`, `OPENAI_BASE_URL=https://api.groq.com/openai/v1`, `LLM_MODEL=openai/gpt-oss-120b` (`llama-3.3-70b-versatile` has been retired).
+     The free tier allows ~8,000 tokens/minute (≈4–5 answers); beyond that the bot briefly answers with formatted facts instead of prose.
+   - Gemini instead: `LLM_PROVIDER=gemini`, `GEMINI_API_KEY=...` (free key from https://aistudio.google.com/apikey)
    - No key: `LLM_PROVIDER=none` — still works, answers are formatted facts + sources.
+   - `/chat/health` showing `llm.enabled: true` only means a key is set; ask one question to confirm the model works.
 
 5. **Start the backend**: `cd backend && npm install && npm start`, then open `http://localhost:5000/chat/health` — expect `graph: "ok"`, `retriever.status: "ok"`, `llm.enabled: true`.
 
