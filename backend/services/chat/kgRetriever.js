@@ -338,12 +338,29 @@ async function theses({ entities }) {
     };
 }
 
-async function researcherProfile(name) {
-    const search = await researcherService.getResearchers(1, 5, name, "", "", "rank");
-    const match = search.researchers?.find((r) => r.name.toLowerCase() === name.toLowerCase()) || search.researchers?.[0];
-    if (!match) return null;
-    const profile = await researcherService.getResearcherProfile(match.id);
-    return profile;
+/**
+ * Find a researcher in the ranked CSV by name (whole-word rule, see utils/nameParts.js),
+ * preferring the institution the user named ("dr prajwala from pes").
+ * Returns { profile, others, institutionMissed } or null.
+ *  - others: other people matching the name in the same pool, so the answer
+ *    can say "there are several Prajwalas at PES"
+ *  - institutionMissed: nobody by that name at the requested institution
+ */
+async function researcherProfile(name, institution = null) {
+    const matches = nameMatcher(name);
+    const all = getResearchersData().filter((r) => matches(r.researcher) && !/[·;]/.test(r.researcher)); // skip multi-name junk rows
+    if (!all.length) return null;
+    const atInst = institution ? all.filter((r) => sameInstitutionKey(r.institution) === sameInstitutionKey(institution)) : [];
+    const pool = atInst.length ? atInst : all;
+    const key = looseNameKey(name);
+    const ranked = [...pool].sort((a, b) => (looseNameKey(b.researcher) === key) - (looseNameKey(a.researcher) === key) || Number(a.rank) - Number(b.rank));
+    const profile = await researcherService.getResearcherProfile(ranked[0].rank);
+    if (!profile) return null;
+    return {
+        profile,
+        others: ranked.slice(1, 6).map((r) => ({ name: r.researcher, institution: r.institution, publications: Number(r.publications) || 0 })),
+        institutionMissed: Boolean(institution) && !atInst.length,
+    };
 }
 
 async function researchers({ entities, flags = {} }) {
@@ -351,14 +368,18 @@ async function researchers({ entities, flags = {} }) {
 
     // 1) A specific person
     if (entities.researcher) {
-        const profile = await researcherProfile(entities.researcher);
-        trace.push(`researcherService.getResearchers(search="${entities.researcher}") → getResearcherProfile()`);
-        if (profile) {
+        const found = await researcherProfile(entities.researcher, entities.institution);
+        trace.push(`researcher CSV name match "${entities.researcher}"${entities.institution ? ` (prefer ${entities.institution})` : ""} → getResearcherProfile()`);
+        if (found) {
+            const { profile, others, institutionMissed } = found;
             const topPubs = [...(profile.publicationsList || [])].sort((a, b) => (b.citations || 0) - (a.citations || 0)).slice(0, 5);
-            const facts = [
+            const facts = [];
+            if (institutionMissed) facts.push(`No researcher named "${entities.researcher}" is listed at ${entities.institution}; the closest match is at another institution.`);
+            facts.push(
                 `Researcher: ${profile.name} — ${profile.institution || "institution unknown"} (overall rank #${profile.rank})`,
                 `Output in the graph: ${fmt(profile.publications)} publications, ${fmt(profile.citations)} citations, ${fmt(profile.patents)} patents, ${fmt(profile.grants)} grants, ${fmt(profile.theses)} theses; research score ${fmt(profile.researchScore)}`,
-            ];
+            );
+            if (others.length) facts.push(`Other researchers matching "${entities.researcher}"${institutionMissed || !entities.institution ? "" : ` at ${entities.institution}`} (some may be the same person under a different spelling): ${others.map((o) => `${o.name} (${o.institution}, ${fmt(o.publications)} pubs)`).join("; ")}`);
             if (profile.patentsList?.length) facts.push(`Patents: ${profile.patentsList.slice(0, 5).map((p) => `${p.title} (${p.year ?? "n/a"}, ${p.status || "status n/a"})`).join("; ")}`);
             if (profile.grantsList?.length) facts.push(`Grants: ${profile.grantsList.slice(0, 5).map((g) => `${g.title} (${g.year ?? "n/a"})`).join("; ")}`);
             if (profile.thesesList?.length) facts.push(`Theses: ${profile.thesesList.slice(0, 5).map((t) => `${t.title} (${t.role})`).join("; ")}`);
