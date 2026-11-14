@@ -311,6 +311,30 @@ export default function Theses() {
   );
 
   /*
+   * Stat cards follow the active filters (institution, year, department,
+   * supervisor, search), so "PES University" shows PES's own counts.
+   * The unfiltered totals above are still shown as "of N".
+   */
+  const filteredStats = useMemo(() => {
+    const supervisorSet = new Set();
+    const areaSet = new Set();
+    const institutionSet = new Set();
+
+    filtered.forEach((t) => {
+      (t.supervisors || []).forEach((s) => supervisorSet.add(s));
+      (t.keywords || []).forEach((k) => areaSet.add(k));
+      if (t.institution) institutionSet.add(t.institution);
+    });
+
+    return {
+      theses: filtered.length,
+      institutions: institutionSet.size,
+      supervisors: supervisorSet.size,
+      researchAreas: areaSet.size,
+    };
+  }, [filtered]);
+
+  /*
    * ------------------------------------------------------------
    * Insights
    * ------------------------------------------------------------
@@ -459,21 +483,23 @@ export default function Theses() {
           {[
             {
               label: "Theses",
-              value:
-                existingTheses.length.toLocaleString(),
+              value: filteredStats.theses,
+              total: existingTheses.length,
             },
             {
               label: "Institutions",
-              value: institutionCountAll,
+              value: filteredStats.institutions,
+              total: institutionCountAll,
             },
             {
               label: "Supervisors",
-              value:
-                supervisorNames.length.toLocaleString(),
+              value: filteredStats.supervisors,
+              total: supervisorNames.length,
             },
             {
               label: "Research Areas",
-              value: researchAreaCount,
+              value: filteredStats.researchAreas,
+              total: researchAreaCount,
             },
           ].map((s) => (
             <Card key={s.label}>
@@ -482,8 +508,14 @@ export default function Theses() {
               </p>
 
               <p className="font-serif text-3xl font-semibold text-[var(--color-ink)] mt-2">
-                {s.value}
+                {s.value.toLocaleString()}
               </p>
+
+              {hasActiveFilters && (
+                <p className="text-xs font-mono text-[var(--color-muted)] mt-1">
+                  of {s.total.toLocaleString()} overall
+                </p>
+              )}
             </Card>
           ))}
         </div>
