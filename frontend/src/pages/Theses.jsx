@@ -281,39 +281,8 @@ export default function Theses() {
   );
 
   /*
-   * ------------------------------------------------------------
-   * Statistics
-   *
-   * Keep the existing statistics based only on the original
-   * thesis dataset so manually contributed entries don't alter
-   * the existing dashboard numbers.
-   * ------------------------------------------------------------
-   */
-
-  const researchAreaCount = useMemo(() => {
-    const set = new Set();
-
-    existingTheses.forEach((t) =>
-      (t.keywords || []).forEach((k) => set.add(k))
-    );
-
-    return set.size;
-  }, [existingTheses]);
-
-  const institutionCountAll = useMemo(
-    () =>
-      new Set(
-        existingTheses
-          .map((t) => t.institution)
-          .filter(Boolean)
-      ).size,
-    [existingTheses]
-  );
-
-  /*
    * Stat cards follow the active filters (institution, year, department,
    * supervisor, search), so "PES University" shows PES's own counts.
-   * The unfiltered totals above are still shown as "of N".
    */
   const filteredStats = useMemo(() => {
     const supervisorSet = new Set();
@@ -484,22 +453,18 @@ export default function Theses() {
             {
               label: "Theses",
               value: filteredStats.theses,
-              total: existingTheses.length,
             },
             {
               label: "Institutions",
               value: filteredStats.institutions,
-              total: institutionCountAll,
             },
             {
               label: "Supervisors",
               value: filteredStats.supervisors,
-              total: supervisorNames.length,
             },
             {
               label: "Research Areas",
               value: filteredStats.researchAreas,
-              total: researchAreaCount,
             },
           ].map((s) => (
             <Card key={s.label}>
@@ -510,12 +475,6 @@ export default function Theses() {
               <p className="font-serif text-3xl font-semibold text-[var(--color-ink)] mt-2">
                 {s.value.toLocaleString()}
               </p>
-
-              {hasActiveFilters && (
-                <p className="text-xs font-mono text-[var(--color-muted)] mt-1">
-                  of {s.total.toLocaleString()} overall
-                </p>
-              )}
             </Card>
           ))}
         </div>
