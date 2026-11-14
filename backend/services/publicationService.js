@@ -254,16 +254,42 @@ function titleWords(text = "") {
         .map((w) => (w.length > 4 && w.endsWith("s") ? w.slice(0, -1) : w));
 }
 
+// Acronyms are often spelled out in titles; either form counts as a match.
+const TITLE_ACRONYMS = {
+    iot: "internet of things",
+    ai: "artificial intelligence",
+    ml: "machine learning",
+    dl: "deep learning",
+    nlp: "natural language processing",
+    gnn: "graph neural network",
+    llm: "large language model",
+    ar: "augmented reality",
+    vr: "virtual reality",
+    ev: "electric vehicle",
+    uav: "unmanned aerial vehicle",
+};
+
+/**
+ * Regex for one title word (words are [a-z0-9]+, so no escaping needed):
+ *  - 4+ chars: start of a word, so "graph" hits "graphs" but not "tomography"
+ *  - shorter : whole word, so "ai" hits "AI" but not "detail"/"aided"
+ *  - acronyms: also match the spelled-out phrase ("iot" | "internet of things")
+ */
+function titleWordRegex(word) {
+    const alt = [word.length >= 4 ? `\\b${word}` : `\\b${word}\\b`];
+    if (TITLE_ACRONYMS[word]) alt.push(`\\b${TITLE_ACRONYMS[word]}`);
+    return `(?s).*(?:${alt.join("|")}).*`;
+}
+
 function buildPublicationWhere(filters = {}) {
     const where = [];
     const params = {};
 
     const words = titleWords(filters.search || filters.keyword || filters.title || "");
     if (words.length) {
-        // Match at the start of a word, so "graph" hits "graphs"/"graph-based"
-        // but not "tomography". Words are [a-z0-9]+ so no regex escaping needed.
-        where.push("all(w IN $words WHERE toLower(coalesce(p.Title, '')) =~ ('(?s).*\\\\b' + w + '.*'))");
-        params.words = words;
+        // Every word must appear in the title (see titleWordRegex).
+        where.push("all(rx IN $titleRegexes WHERE toLower(coalesce(p.Title, '')) =~ rx)");
+        params.titleRegexes = words.map(titleWordRegex);
     }
 
     if (filters.year) {

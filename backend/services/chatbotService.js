@@ -21,6 +21,7 @@ import { retrieveFromGraph } from "./chat/kgRetriever.js";
 import { semanticSearch } from "./chat/semanticRetriever.js";
 import { buildSources, buildPrompt, semanticFacts, templateAnswer, suggestFollowUps } from "./chat/contextBuilder.js";
 import * as llm from "./llmService.js";
+import { findPersonByName } from "./chat/personLookup.js";
 
 const MAX_MESSAGE_LENGTH = 2000;
 const DEBUG = String(process.env.CHAT_DEBUG || "false").toLowerCase() === "true";
@@ -49,6 +50,18 @@ function sanitizeHistory(history) {
         .filter((h) => h && (h.role === "user" || h.role === "assistant") && typeof h.content === "string")
         .slice(-12)
         .map((h) => ({ role: h.role, content: h.content.slice(0, 4000), context: h.context && typeof h.context === "object" ? h.context : undefined }));
+}
+
+/** Question is just 2–4 plain words (e.g. "richa sharma?") with nothing else recognised. */
+function looksLikeBareName(plan) {
+    const e = plan.entities;
+    if (!["search", "unknown"].includes(plan.intent) || e.researcher || !e.topic) return false;
+    if (e.institutions?.length || e.yearRange || e.fundingAgency || e.domain) return false;
+    const words = e.topic.trim().split(/\s+/);
+    if (words.length < 2 || words.length > 4 || !words.every((w) => /^[\p{L}.'-]+$/u.test(w))) return false;
+    // the topic must be (nearly) the whole question — "find work on graph theory" is not a name
+    const asked = plan.text.replace(/[?!.,]/g, " ").trim().split(/\s+/).filter(Boolean);
+    return asked.length <= words.length + 2;
 }
 
 function shouldUseSemantic(plan) {
@@ -109,6 +122,17 @@ async function prepare(message, history) {
 
     if (plan.intent === "greeting" || plan.intent === "help") {
         return { text, plan, hist, canned: plan.intent === "greeting" ? GREETING_REPLY : HELP_REPLY };
+    }
+
+    // A bare name ("richa sharma?") has no "by"/"Dr." cue, so the classifier
+    // sees a topic. If the whole question is a real person's name, ask about them.
+    if (looksLikeBareName(plan)) {
+        const person = await findPersonByName(plan.entities.topic);
+        if (person) {
+            plan.intent = "researchers";
+            plan.entities = { ...plan.entities, researcher: person, topic: null, keywords: null, domain: null };
+            if (DEBUG) console.log("[chat] bare name ->", person);
+        }
     }
 
     const useSemantic = shouldUseSemantic(plan);

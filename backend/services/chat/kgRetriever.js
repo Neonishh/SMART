@@ -60,17 +60,22 @@ function describeScope(entities, extra = {}) {
 
 /**
  * Title keyword search only works for meaningful words. Very short tokens
- * like "AI" would match "detail", "chain", ... so they are left to the
- * semantic retriever instead.
+ * like "AI" would match "detail", "chain", ... with substring search, so they
+ * are left to the semantic retriever — except for publication search, which
+ * matches short words as whole words and expands known acronyms
+ * (publicationService.titleWordRegex), so it keeps them (keepAcronyms).
  */
-function kgSearchText(topic) {
+const SEARCHABLE_ACRONYMS = new Set(["iot", "ai", "ml", "dl", "nlp", "gnn", "llm", "ar", "vr", "ev", "uav"]);
+
+function kgSearchText(topic, { keepAcronyms = false } = {}) {
     if (!topic) return "";
     return topic
         .split(/\s+/)
-        .filter((w) => w.length >= 4 || /\d/.test(w))
+        .filter((w) => w.length >= 4 || /\d/.test(w) || (keepAcronyms && SEARCHABLE_ACRONYMS.has(w.toLowerCase())))
         .join(" ")
         .trim();
 }
+const pubSearchText = (topic) => kgSearchText(topic, { keepAcronyms: true });
 
 function researcherIdByName(name) {
     if (!name) return null;
@@ -172,7 +177,17 @@ function pickMeasure(scores = {}) {
 // ----------------------------------------------------------
 
 async function publications({ entities, flags }) {
-    const search = kgSearchText(entities.topic);
+    const search = pubSearchText(entities.topic);
+    // A topic we can't title-search must not turn into "all publications":
+    // that listed the most cited papers in the whole database for "IoT papers".
+    if (entities.topic && !search && !entities.researcher) {
+        return {
+            facts: [`(The term "${entities.topic}" is too short to match in titles; the topical results are the semantic matches.)`],
+            records: [],
+            trace: [`publications: skipped title search for short term "${entities.topic}"`],
+            focus: null,
+        };
+    }
     const filters = {
         search,
         institution: entities.institution || "",
@@ -182,8 +197,7 @@ async function publications({ entities, flags }) {
         limit: LIST_LIMIT,
     };
     const res = await publicationService.getAllPublications(filters);
-    const facts = [`Publications ${describeScope(entities, { topic: search || null })}: ${fmt(res.total)}`];
-    if (entities.topic && !search) facts.push(`(No title filter applied for the short term "${entities.topic}" — see semantic matches for topical results.)`);
+    const facts = [`Publications ${describeScope(entities, { topic: search || null })}${search ? " (matched in titles)" : ""}: ${fmt(res.total)}`];
     if (!entities.institution && res.facets.institutions.length > 1) {
         facts.push(`By institution: ${res.facets.institutions.slice(0, 8).map((f) => `${f.name} (${fmt(f.count)})`).join("; ")}`);
     }
@@ -510,7 +524,7 @@ async function institutions({ entities, scores }) {
         return { facts, records, trace, focus: { institution: entities.institution, ...(instPeople.length ? { people: instPeople } : {}) } };
     }
 
-    const search = kgSearchText(entities.topic);
+    const search = pubSearchText(entities.topic);
     if (search) {
         const res = await publicationService.getAllPublications({ search, limit: 5, sort: "citations", ...yearFilters(entities) });
         trace.push(`publicationService.getAllPublications({search:"${search}"}).facets.institutions`);
@@ -536,7 +550,7 @@ async function compare({ entities }) {
         const growth = await trendData.institutionGrowth(inst.name);
         facts.push(`${inst.name}: ${fmt(inst.publications)} publications, ${fmt(inst.patents)} patents, ${fmt(inst.grants)} grants, ${fmt(inst.theses)} theses; top domain ${inst.topDomain || "n/a"}${growth ? `; output CAGR ${growth.cagrPercent}% (${growth.trend})` : ""}`);
     }
-    const search = kgSearchText(entities.topic);
+    const search = pubSearchText(entities.topic);
     if (search) {
         for (const inst of picked) {
             const res = await publicationService.getAllPublications({ search, institution: inst.name, limit: 1, ...yearFilters(entities) });
@@ -620,7 +634,7 @@ async function knowledgeGraph() {
 async function search({ entities, flags }) {
     // Pure topical question: semantic retrieval does the heavy lifting,
     // the graph adds an exact title-match count.
-    const searchText = kgSearchText(entities.topic);
+    const searchText = pubSearchText(entities.topic);
     if (!searchText) return { facts: [], records: [], trace: [] };
     return publications({ entities, flags });
 }

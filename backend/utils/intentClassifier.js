@@ -91,7 +91,7 @@ trends trending growing growth emerging momentum rising compare comparison versu
 field fields area areas domain domains topic topics research researching supervised authored invented bengaluru bangalore india indian last past
 first second third between there here than then so very just one two three four five six seven eight nine ten
 records record data dataset datasets results result answer question questions most-cited highly
-form`.split(/\s+/)); // "form" = common typo of "from"
+form title titles name names`.split(/\s+/)); // "form" = common typo of "from"
 
 // Typos of long structural words ("insitute", "reserchers") must not become a topic.
 // Only words of 6+ letters, one edit (incl. a swap) away from a stopword.
@@ -265,7 +265,27 @@ function findResearcher(text, institutions) {
         const isAcronym = /^[A-Z]{2,6}$/.test(candidate);
         if (looksLikeName && !isInstitution && !isDomain && !isAcronym) return candidate;
     }
-    return null;
+    return findLowercaseResearcher(text);
+}
+
+// Names typed in lowercase ("patent titles by dr arti arya"). Only after strong
+// person cues — not "about", which usually introduces a topic — and only when
+// every word is a plain word that isn't a structural/topic stopword.
+function findLowercaseResearcher(text) {
+    const m = /(?:\bdr\.?|\bprof(?:essor)?\.?|\b(?:authored|written|invented|filed|supervised|guided)\s+by|\bby(?:\s+(?:dr|prof)\.?)?)\s+([a-z][a-z.'-]*(?:\s+[a-z][a-z.'-]*){1,3})/i.exec(text);
+    if (!m) return null;
+    // stop at the first structural word: "by arti arya from pes" -> "arti arya"
+    const words = [];
+    for (const w of m[1].split(/\s+/)) {
+        const lw = w.toLowerCase().replace(/[.'-]+$/, "");
+        if (STOPWORDS.has(lw) || /^(at|from|in|of|on|since|between|during)$/.test(lw)) break;
+        words.push(w.replace(/[.'-]+$/, ""));
+    }
+    if (words.length < 2 || words.some((w) => w.replace(/\./g, "").length < 1)) return null;
+    const candidate = words.join(" ");
+    if (findInstitutions(candidate).length || findDomain(candidate)) return null;
+    // "arti arya" -> "Arti Arya" for display
+    return candidate.replace(/\b\p{L}/gu, (c) => c.toUpperCase());
 }
 
 function extractTopic(text, consumed) {
