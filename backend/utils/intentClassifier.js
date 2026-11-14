@@ -91,7 +91,9 @@ trends trending growing growth emerging momentum rising compare comparison versu
 field fields area areas domain domains topic topics research researching supervised authored invented bengaluru bangalore india indian last past
 first second third between there here than then so very just one two three four five six seven eight nine ten
 records record data dataset datasets results result answer question questions most-cited highly
-form title titles name names`.split(/\s+/)); // "form" = common typo of "from"
+form title titles name names
+bro yo hey hi dude pls plz please check asked ask asking said mentioned earlier previous previously again
+clearly really actually okay ok present exists exist available`.split(/\s+/)); // "form" = common typo of "from"
 
 // Typos of long structural words ("insitute", "reserchers") must not become a topic.
 // Only words of 6+ letters, one edit (incl. a swap) away from a stopword.
@@ -272,8 +274,10 @@ function findResearcher(text, institutions) {
 // person cues — not "about", which usually introduces a topic — and only when
 // every word is a plain word that isn't a structural/topic stopword.
 function findLowercaseResearcher(text) {
-    const m = /(?:\bdr\.?|\bprof(?:essor)?\.?|\b(?:authored|written|invented|filed|supervised|guided)\s+by|\bby(?:\s+(?:dr|prof)\.?)?)\s+([a-z][a-z.'-]*(?:\s+[a-z][a-z.'-]*){1,3})/i.exec(text);
+    const m = /(?:\bdr\.?|\bprof(?:essor)?\.?|\b(?:authored|written|invented|filed|supervised|guided)\s+by|\bby(?:\s+(?:dr|prof)\.?)?)\s+([a-z][a-z.'-]*(?:\s+[a-z][a-z.'-]*){0,3})/i.exec(text);
     if (!m) return null;
+    // "dr shylaja" — a title is a strong enough cue for a single name
+    const titled = /\b(?:dr|prof(?:essor)?)\.?\s*$/i.test(text.slice(0, m.index + m[0].length - m[1].length));
     // stop at the first structural word: "by arti arya from pes" -> "arti arya"
     const words = [];
     for (const w of m[1].split(/\s+/)) {
@@ -281,7 +285,7 @@ function findLowercaseResearcher(text) {
         if (STOPWORDS.has(lw) || /^(at|from|in|of|on|since|between|during)$/.test(lw)) break;
         words.push(w.replace(/[.'-]+$/, ""));
     }
-    if (words.length < 2 || words.some((w) => w.replace(/\./g, "").length < 1)) return null;
+    if (words.length < (titled ? 1 : 2) || words.some((w) => w.replace(/\./g, "").length < 1)) return null;
     const candidate = words.join(" ");
     if (findInstitutions(candidate).length || findDomain(candidate)) return null;
     // "arti arya" -> "Arti Arya" for display
@@ -308,6 +312,21 @@ function extractTopic(text, consumed) {
     });
     const topic = kept.join(" ").trim();
     return topic.length >= 2 ? topic : null;
+}
+
+/**
+ * Words that might be a person's name: what's left after removing structural
+ * words, institutions and years — like extractTopic, but KEEPING short tokens,
+ * because initials matter ("shylaja ss"). 1–4 plain words, or null.
+ * chatbotService checks it against real people before using it.
+ */
+function extractNameCandidate(text) {
+    let t = ` ${text} `;
+    for (const inst of INSTITUTIONS) for (const a of inst.aliases) t = t.replace(new RegExp(aliasRegex(a).source, "ig"), " ");
+    t = t.replace(/\b(19|20)\d{2}\b/g, " ").replace(/[?!,;:()"“”]/g, " ").replace(/['’]s\b/g, " ");
+    const words = t.split(/\s+/).filter(Boolean).filter((w) => !isStopword(w.toLowerCase().replace(/\.+$/, "")));
+    if (!words.length || words.length > 4 || !words.every((w) => /^[\p{L}.'-]+$/u.test(w))) return null;
+    return words.join(" ");
 }
 
 function scoreIntents(text) {
@@ -406,6 +425,8 @@ export function classify(text = "") {
             topic,
             // kept for backwards compatibility with older callers
             keywords: topic,
+            // possible person name incl. initials; only used after a lookup confirms it
+            nameCandidate: researcher || titles.length ? null : extractNameCandidate(cleaned),
         },
         flags,
         scores,

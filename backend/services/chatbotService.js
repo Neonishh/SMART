@@ -52,16 +52,20 @@ function sanitizeHistory(history) {
         .map((h) => ({ role: h.role, content: h.content.slice(0, 4000), context: h.context && typeof h.context === "object" ? h.context : undefined }));
 }
 
-/** Question is just 2–4 plain words (e.g. "richa sharma?") with nothing else recognised. */
-function looksLikeBareName(plan) {
+const NAME_INTENTS = new Set(["search", "unknown", "publications", "patents", "grants", "theses", "researchers"]);
+
+/**
+ * Words that might name a person, to check against real people:
+ *  - "richa sharma?"                  (bare name)
+ *  - "give shylaja ss patent titles"  (name inside a typed question)
+ * Not when a person, domain or quoted title was already recognised.
+ */
+function nameToLookUp(plan) {
     const e = plan.entities;
-    if (!["search", "unknown"].includes(plan.intent) || e.researcher || !e.topic) return false;
-    if (e.institutions?.length || e.yearRange || e.fundingAgency || e.domain) return false;
-    const words = e.topic.trim().split(/\s+/);
-    if (words.length < 2 || words.length > 4 || !words.every((w) => /^[\p{L}.'-]+$/u.test(w))) return false;
-    // the topic must be (nearly) the whole question — "find work on graph theory" is not a name
-    const asked = plan.text.replace(/[?!.,]/g, " ").trim().split(/\s+/).filter(Boolean);
-    return asked.length <= words.length + 2;
+    if (!NAME_INTENTS.has(plan.intent) || e.researcher || e.domain || !e.nameCandidate) return null;
+    // a follow-up that inherited the old topic isn't naming someone new
+    if (plan.followUp?.inherited?.includes("topic")) return null;
+    return e.nameCandidate;
 }
 
 function shouldUseSemantic(plan) {
@@ -124,14 +128,15 @@ async function prepare(message, history) {
         return { text, plan, hist, canned: plan.intent === "greeting" ? GREETING_REPLY : HELP_REPLY };
     }
 
-    // A bare name ("richa sharma?") has no "by"/"Dr." cue, so the classifier
-    // sees a topic. If the whole question is a real person's name, ask about them.
-    if (looksLikeBareName(plan)) {
-        const person = await findPersonByName(plan.entities.topic);
+    // A name without a "by"/"Dr." cue ("richa sharma?", "give shylaja ss patent
+    // titles") looks like a topic to the classifier. If it is a real person, use it.
+    const candidate = nameToLookUp(plan);
+    if (candidate) {
+        const person = await findPersonByName(candidate);
         if (person) {
-            plan.intent = "researchers";
+            if (["search", "unknown"].includes(plan.intent)) plan.intent = "researchers";
             plan.entities = { ...plan.entities, researcher: person, topic: null, keywords: null, domain: null };
-            if (DEBUG) console.log("[chat] bare name ->", person);
+            if (DEBUG) console.log("[chat] name ->", candidate, "=>", person);
         }
     }
 
