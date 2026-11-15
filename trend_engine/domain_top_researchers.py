@@ -6,11 +6,12 @@ print("Loading data...")
 # LOAD DATA
 # =====================================================
 
-topics = pd.read_csv("topics/publication_topics.csv")
-pub = pd.read_csv("Final csvs/publications_processed.csv")
 
-topics.columns = topics.columns.str.strip()
-pub.columns = pub.columns.str.strip()
+topics = pd.read_csv("nlp/topics/publication_topics.csv")
+pub = pd.read_csv("nlp/Final csvs/publications_processed.csv")
+
+topic_domains = pd.read_csv("nlp/trend_outputs/topic_domains.csv")
+domain_labels = pd.read_csv("nlp/trend_outputs/domain_labels.csv")
 # ==========================================
 # KEEP ONLY REQUIRED COLUMNS
 # ==========================================
@@ -29,12 +30,12 @@ pub = pub[
         "authors",
         "institution",
         "citations",
-        "year"
+        "year",
+        "venue"
     ]
-]
-
-topic_domains = pd.read_csv("trend_outputs/topic_domains.csv")
-domain_labels = pd.read_csv("trend_outputs/domain_labels.csv")
+].copy()
+topic_domains = pd.read_csv("nlp/trend_outputs/topic_domains.csv")
+domain_labels = pd.read_csv("nlp/trend_outputs/domain_labels.csv")
 
 topic_domains = topic_domains[
     [
@@ -172,7 +173,46 @@ if "citations" in pub.columns:
 else:
 
     pub["citations"] = 0
+# =====================================================
+# CLASSIFY PUBLICATION VENUES
+# =====================================================
 
+import re
+
+JOURNAL_KEYWORDS = [
+    "journal", "transactions", "letters", "review",
+    "reviews", "magazine", "bulletin", "annals",
+    "nature", "ieee access", "acm computing surveys",
+    "expert systems"
+]
+
+CONFERENCE_KEYWORDS = [
+    "conference", "proceedings", "symposium",
+    "workshop", "congress", "icml", "neurips",
+    "cvpr", "iccv", "eccv", "ijcai", "aaai",
+    "acl", "emnlp", "icra", "iros",
+    "sigcomm", "sigir", "kdd"
+]
+
+
+def classify_venue(venue):
+    if pd.isna(venue):
+        return "unclassified"
+
+    venue = str(venue).lower().strip()
+
+    for word in JOURNAL_KEYWORDS:
+        if re.search(r"\b" + re.escape(word) + r"\b", venue):
+            return "journal"
+
+    for word in CONFERENCE_KEYWORDS:
+        if re.search(r"\b" + re.escape(word) + r"\b", venue):
+            return "conference"
+
+    return "unclassified"
+
+
+pub["kind"] = pub["venue"].apply(classify_venue)
 # =====================================================
 # EXPLODE AUTHORS
 # =====================================================
@@ -207,59 +247,124 @@ print("After explode:", len(pub))
 # =====================================================
 # CREATE STANDARD DOMAIN COLUMN
 # =====================================================
-
-pub["domain"] = pub[domain_col]
-
-# =====================================================
-# GROUP
+# GROUP + SMART-ADAPTED UGC SCORING
 # =====================================================
 
-researcher_domain = (
-
-    pub
-
-    .groupby(
+def calculate_h_index(citations):
+    values = sorted(
         [
-            "researcher",
-            "institution",
-            "domain"
+            max(0, int(c))
+            for c in citations
+            if pd.notna(c)
         ],
-        as_index=False
+        reverse=True
     )
 
-    .agg(
-
-        publications=("title", "count"),
-
-        citations=("citations", "sum")
-
+    return sum(
+        c >= i
+        for i, c in enumerate(values, start=1)
     )
 
+
+# Exclude records without a mapped research domain
+pub = pub[
+    pub["domain"].notna()
+    & pub["domain"].astype(str).str.strip().ne("")
+].copy()
+
+# Avoid counting the same publication twice for a researcher
+pub = pub.drop_duplicates(
+    subset=[
+        "researcher",
+        "institution",
+        "domain",
+        "title"
+    ]
 )
 
-print()
+# Provisional journal score:
+# 8 points per journal-classified publication.
+# Conference points require additional eligibility data.
+pub["journal_points"] = (
+    (pub["kind"] == "journal").astype(int) * 8
+)
 
-print("Columns after groupby:")
+pub["conference_points"] = 0.0
 
-print(researcher_domain.columns.tolist())
+# Group researcher contributions within each domain
+researcher_domain = (
+    pub.groupby(
+        ["researcher", "institution", "domain"],
+        as_index=False
+    )
+    .agg(
+        publications=("title", "count"),
+        citations=("citations", "sum"),
+        journal_publications=(
+            "kind",
+            lambda s: int((s == "journal").sum())
+        ),
+        conference_publications=(
+            "kind",
+            lambda s: int((s == "conference").sum())
+        ),
+        unclassified_publications=(
+            "kind",
+            lambda s: int((s == "unclassified").sum())
+        ),
+        journal_points=("journal_points", "sum"),
+        conference_points=("conference_points", "sum"),
+        h_index=("citations", calculate_h_index)
+    )
+)
 
-print()
+# The domain dataset currently does not provide verified
+# researcher-attributed patent, grant or thesis-guidance points.
+researcher_domain["patent_points"] = 0.0
+researcher_domain["grant_points"] = 0.0
+researcher_domain["guidance_points"] = 0.0
 
-print("Unique researcher-domain rows:", len(researcher_domain))
+researcher_domain["ugc_based_score"] = (
+    researcher_domain[
+        [
+            "journal_points",
+            "conference_points",
+            "patent_points",
+            "grant_points",
+            "guidance_points"
+        ]
+    ].sum(axis=1)
+).round(2)
 
-# =====================================================
-# SCORE
-# =====================================================
+# SMART-specific citation enhancement
+researcher_domain["h_index_bonus"] = (
+    2 * researcher_domain["h_index"]
+)
 
 researcher_domain["research_score"] = (
-
-    2 * researcher_domain["publications"]
-
-    +
-
-    researcher_domain["citations"] / 50
-
+    researcher_domain["ugc_based_score"]
+    + researcher_domain["h_index_bonus"]
 ).round(2)
+
+researcher_domain["score_method"] = (
+    "SMART-adapted UGC-inspired rubric + 2*h-index"
+)
+
+researcher_domain["score_period"] = "2019-2025"
+
+print("\nDomain researcher scoring completed.")
+print(
+    researcher_domain[
+        [
+            "researcher",
+            "domain",
+            "journal_publications",
+            "h_index",
+            "ugc_based_score",
+            "research_score"
+        ]
+    ].head(10).to_string(index=False)
+)
 
 # =====================================================
 # SORT
