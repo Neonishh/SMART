@@ -1,4 +1,5 @@
 import driver from "../config/neo4j.js";
+import { nameRegexes } from "../utils/nameParts.js";
 
 function buildPatentQuery(filters = {}) {
 
@@ -8,6 +9,16 @@ function buildPatentQuery(filters = {}) {
     if (filters.year) {
         where.push("pat.Year = $year");
         params.year = Number(filters.year);
+    }
+
+    if (filters.yearFrom) {
+        where.push("pat.Year >= $yearFrom");
+        params.yearFrom = Number(filters.yearFrom);
+    }
+
+    if (filters.yearTo) {
+        where.push("pat.Year <= $yearTo");
+        params.yearTo = Number(filters.yearTo);
     }
 
     if (filters.institution) {
@@ -24,6 +35,15 @@ function buildPatentQuery(filters = {}) {
             WHERE appFilter.Applicant_Name = $applicant
         }`);
         params.applicant = filters.applicant;
+    }
+
+    if (filters.inventor) {
+        where.push(`EXISTS {
+            MATCH (invFilter:Person)-[:INVENTED]->(pat)
+            WHERE all(rx IN $inventorRegexes WHERE toLower(invFilter.Name) =~ rx)
+        }`);
+        // every name part, any order (see utils/nameParts.js)
+        params.inventorRegexes = nameRegexes(filters.inventor);
     }
 
     if (filters.ipc) {
@@ -423,6 +443,52 @@ LIMIT 10
                 }))
 
         };
+
+    }
+
+    finally {
+
+        await session.close();
+
+    }
+
+}
+/*
+=========================================================
+TOP INVENTORS (used by the chatbot: "who has the most patents?")
+Filters: institution (exact), search (title/field text),
+yearFrom, yearTo, limit
+=========================================================
+*/
+
+export async function getTopInventors(filters = {}) {
+
+    const session = driver.session();
+
+    try {
+
+        const limit = Math.min(Math.max(Number(filters.limit) || 10, 1), 50);
+        const { whereClause, params } = buildPatentQuery(filters);
+
+        const result = await session.run(
+            `
+            ${buildPatentBaseQuery(whereClause)}
+            MATCH (person:Person)-[:INVENTED]->(pat)
+            OPTIONAL MATCH (inst:Institution)-[:HAS_PATENT]->(pat)
+            WITH person, count(DISTINCT pat) AS patents, collect(DISTINCT inst.Institution) AS institutions
+            RETURN person.Person_ID AS id, person.Name AS name, patents, institutions
+            ORDER BY patents DESC, name
+            LIMIT ${limit}
+            `,
+            params
+        );
+
+        return result.records.map((record) => ({
+            id: record.get("id"),
+            name: record.get("name"),
+            patents: Number(record.get("patents")),
+            institutions: (record.get("institutions") || []).filter(Boolean),
+        }));
 
     }
 

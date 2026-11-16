@@ -15,6 +15,7 @@ import { loadResearchersCSV } from "./services/researcherService/csvLoader.js";
 
 import publicationsRoutes from "./routes/publications.js";
 import chatbotRoutes from "./routes/chatbot.js";
+import searchRoutes from "./routes/search.js";
 import authRoutes from "./routes/auth.js";
 
 dotenv.config();
@@ -40,6 +41,7 @@ app.use("/institution", institutionRoutes);
 app.use("/theses", thesisRoutes);
 app.use("/researcher", researcherRoutes);
 app.use("/chat", chatbotRoutes);
+app.use("/semantic-search", searchRoutes);
 app.use("/auth", authRoutes);
 app.use("/publications", publicationsRoutes);
 

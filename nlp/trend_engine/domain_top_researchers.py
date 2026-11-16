@@ -1,4 +1,19 @@
+from pathlib import Path
+
 import pandas as pd
+
+
+SCRIPT_DIR = Path(__file__).resolve().parent
+NLP_DIR = SCRIPT_DIR.parent
+PROJECT_ROOT = NLP_DIR.parent
+
+
+def project_path(*parts):
+    return PROJECT_ROOT.joinpath(*parts)
+
+
+def nlp_path(*parts):
+    return NLP_DIR.joinpath(*parts)
 
 print("Loading data...")
 
@@ -6,11 +21,13 @@ print("Loading data...")
 # LOAD DATA
 # =====================================================
 
-topics = pd.read_csv("topics/publication_topics.csv")
-pub = pd.read_csv("Final csvs/publications_processed.csv")
+topics = pd.read_csv(nlp_path("topics", "publication_topics.csv"))
+pub = pd.read_csv(nlp_path("Final csvs", "publications_processed.csv"))
+thesis = pd.read_csv(nlp_path("Final csvs", "theses_processed.csv"))
 
 topics.columns = topics.columns.str.strip()
 pub.columns = pub.columns.str.strip()
+thesis.columns = thesis.columns.str.strip()
 # ==========================================
 # KEEP ONLY REQUIRED COLUMNS
 # ==========================================
@@ -29,12 +46,13 @@ pub = pub[
         "authors",
         "institution",
         "citations",
-        "year"
+        "year",
+        "venue"
     ]
 ]
 
-topic_domains = pd.read_csv("trend_outputs/topic_domains.csv")
-domain_labels = pd.read_csv("trend_outputs/domain_labels.csv")
+topic_domains = pd.read_csv(nlp_path("trend_outputs", "topic_domains.csv"))
+domain_labels = pd.read_csv(nlp_path("trend_outputs", "domain_labels.csv"))
 
 topic_domains = topic_domains[
     [
@@ -112,6 +130,13 @@ pub = pub[
     (pub["year"] <= END_YEAR)
 ].copy()
 
+if "year" in thesis.columns:
+    thesis["year"] = pd.to_numeric(thesis["year"], errors="coerce")
+    thesis = thesis[
+        (thesis["year"] >= START_YEAR) &
+        (thesis["year"] <= END_YEAR)
+    ].copy()
+
 print("After year filter:", len(pub))
 
 # =====================================================
@@ -173,6 +198,33 @@ else:
 
     pub["citations"] = 0
 
+# Classify publication types using the existing normalized venue labels,
+# falling back to venue text when the processed dataset has no label.
+def classify_venue(row):
+    venue_type_value = row.get("venue_type", "")
+    venue_type = "" if pd.isna(venue_type_value) else str(venue_type_value).strip().lower()
+    if venue_type in {"journal", "conference"}:
+        return venue_type
+
+    venue_value = row.get("venue", "")
+    venue = "" if pd.isna(venue_value) else str(venue_value).strip().lower()
+    if any(word in venue for word in (
+        "journal", "transactions", "letters", "review", "magazine",
+        "bulletin", "annals", "nature", "science", "cell", "lancet",
+        "ieee access", "acm computing surveys", "expert systems"
+    )):
+        return "journal"
+    if any(word in venue for word in (
+        "conference", "proceedings", "symposium", "workshop", "congress",
+        "meeting", "icml", "neurips", "cvpr", "iccv", "eccv", "ijcai",
+        "aaai", "acl", "emnlp", "icra", "iros", "sigcomm", "sigir", "kdd"
+    )):
+        return "conference"
+    return "unknown"
+
+pub["venue_type"] = pub.apply(classify_venue, axis=1)
+pub["paper_citations"] = pub["citations"]
+
 # =====================================================
 # EXPLODE AUTHORS
 # =====================================================
@@ -231,7 +283,16 @@ researcher_domain = (
 
         publications=("title", "count"),
 
-        citations=("citations", "sum")
+        citations=("citations", "sum"),
+
+        h_index=("paper_citations", lambda values: sum(
+            citation >= rank
+            for rank, citation in enumerate(sorted(values, reverse=True), start=1)
+        )),
+
+        journal_papers=("venue_type", lambda values: (values == "journal").sum()),
+
+        conference_papers=("venue_type", lambda values: (values == "conference").sum())
 
     )
 
@@ -248,18 +309,38 @@ print()
 print("Unique researcher-domain rows:", len(researcher_domain))
 
 # =====================================================
-# SCORE
+# THESIS GUIDANCE
 # =====================================================
 
+thesis_researcher_col = "researcher" if "researcher" in thesis.columns else "author"
+thesis["researcher"] = thesis[thesis_researcher_col].fillna("").astype(str).str.strip()
+thesis["institution"] = thesis["institution"].fillna("Unknown").astype(str).str.strip()
+thesis_counts = (
+    thesis[thesis["researcher"] != ""]
+    .groupby(["researcher", "institution"], as_index=False)
+    .agg(theses=("title", "count"))
+)
+
+researcher_domain = researcher_domain.merge(
+    thesis_counts,
+    on=["researcher", "institution"],
+    how="left"
+)
+researcher_domain["theses"] = researcher_domain["theses"].fillna(0).astype(int)
+
+# UGC-style baseline: 8 per journal paper, 2.5 per conference paper,
+# 3 per thesis record, plus 2 points per h-index.
+# Patent and grant points are omitted because the current source data does
+# not link those records to individual researchers.
 researcher_domain["research_score"] = (
-
-    2 * researcher_domain["publications"]
-
-    +
-
-    researcher_domain["citations"] / 50
-
+    8 * researcher_domain["journal_papers"]
+    + 2.5 * researcher_domain["conference_papers"]
+    + 3 * researcher_domain["theses"]
+    + 2 * researcher_domain["h_index"]
 ).round(2)
+
+researcher_domain["score_method"] = "UGC-style baseline (journal/conference/thesis + 2x h-index)"
+researcher_domain["score_data_limitations"] = "Researcher-linked patents and grants unavailable; thesis count treated as awarded"
 
 # =====================================================
 # SORT
@@ -357,9 +438,21 @@ for d in domains:
 
                 "publications",
 
+                "journal_papers",
+
+                "conference_papers",
+
+                "theses",
+
                 "citations",
 
-                "research_score"
+                "h_index",
+
+                "research_score",
+
+                "score_method",
+
+                "score_data_limitations"
 
             ]
 
@@ -371,11 +464,11 @@ for d in domains:
 # SAVE
 # =====================================================
 
-output = "trend_engine/outputs/domain_top_researchers.csv"
+output = project_path("nlp", "trend_engine", "outputs", "domain_top_researchers.csv")
 
 domain_top.to_csv(
 
-    output,
+    str(output),
 
     index=False
 

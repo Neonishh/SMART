@@ -512,10 +512,12 @@ export async function sendChatMessage(message, history = []) {
     );
   }
 
-  return client.post("/chat", {
-    message,
-    history,
-  });
+  // LLM answers can take longer than the shared 10s default
+  return client.post(
+    "/chat",
+    { message, history },
+    { timeout: 60000 }
+  );
 }
 
 export async function listTechnologyDomains() {
@@ -642,3 +644,88 @@ export async function deleteManualEntry(id, type) {
 }
 
 export default client;
+/* ============================================================
+   CHATBOT — streaming + health
+   POST /chat/stream answers as Server-Sent Events:
+     meta  { sources, suggestions, context, meta }
+     token { text }
+     done  { reply, meta? }
+     error { message }
+   Falls back to the regular POST /chat if streaming fails.
+============================================================ */
+
+export async function streamChatMessage(message, history = [], handlers = {}, signal) {
+  const { onMeta, onToken, onDone, onError } = handlers;
+
+  if (USE_MOCK) {
+    const res = await sendChatMessage(message, history);
+    onMeta?.({ sources: [], suggestions: [], context: null, meta: { mode: "mock" } });
+    onToken?.(res.data.reply);
+    onDone?.({ reply: res.data.reply });
+    return;
+  }
+
+  let response;
+  try {
+    response = await fetch(`${BASE_URL}/chat/stream`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Accept: "text/event-stream" },
+      body: JSON.stringify({ message, history }),
+      signal,
+    });
+  } catch (err) {
+    if (signal?.aborted) return;
+    throw err;
+  }
+
+  if (!response.ok || !response.body) {
+    throw new Error(`Chat stream failed with HTTP ${response.status}`);
+  }
+
+  const reader = response.body.getReader();
+  const decoder = new TextDecoder();
+  let buffer = "";
+
+  const dispatch = (block) => {
+    let event = "message";
+    let data = "";
+    for (const line of block.split("\n")) {
+      if (line.startsWith("event:")) event = line.slice(6).trim();
+      else if (line.startsWith("data:")) data += line.slice(5).trim();
+    }
+    if (!data) return;
+    let payload;
+    try {
+      payload = JSON.parse(data);
+    } catch {
+      return;
+    }
+    if (event === "meta") onMeta?.(payload);
+    else if (event === "token") onToken?.(payload.text || "");
+    else if (event === "done") onDone?.(payload);
+    else if (event === "error") onError?.(payload);
+  };
+
+  try {
+    // eslint-disable-next-line no-constant-condition
+    while (true) {
+      const { value, done } = await reader.read();
+      if (done) break;
+      buffer += decoder.decode(value, { stream: true }).replace(/\r/g, "");
+      let idx;
+      while ((idx = buffer.indexOf("\n\n")) !== -1) {
+        dispatch(buffer.slice(0, idx));
+        buffer = buffer.slice(idx + 2);
+      }
+    }
+    if (buffer.trim()) dispatch(buffer);
+  } catch (err) {
+    if (signal?.aborted) return;
+    throw err;
+  }
+}
+
+export async function getChatHealth() {
+  if (USE_MOCK) return resolveMock({ graph: "mock", retriever: { status: "mock" }, llm: { enabled: false } });
+  return client.get("/chat/health");
+}

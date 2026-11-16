@@ -1761,6 +1761,15 @@ def generate_pdf(report):
         )
     )
 
+    story.append(
+        Paragraph(
+            "Research score formula: 8 × journal papers + 2.5 × conference papers "
+            "+ 3 × thesis records + 2 × h-index. Patent and grant points are "
+            "not included because researcher-linked records are unavailable.",
+            styles["BodySmall"]
+        )
+    )
+
     researcher_chart = create_researcher_chart(
         researchers
     )

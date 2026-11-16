@@ -281,34 +281,27 @@ export default function Theses() {
   );
 
   /*
-   * ------------------------------------------------------------
-   * Statistics
-   *
-   * Keep the existing statistics based only on the original
-   * thesis dataset so manually contributed entries don't alter
-   * the existing dashboard numbers.
-   * ------------------------------------------------------------
+   * Stat cards follow the active filters (institution, year, department,
+   * supervisor, search), so "PES University" shows PES's own counts.
    */
+  const filteredStats = useMemo(() => {
+    const supervisorSet = new Set();
+    const areaSet = new Set();
+    const institutionSet = new Set();
 
-  const researchAreaCount = useMemo(() => {
-    const set = new Set();
+    filtered.forEach((t) => {
+      (t.supervisors || []).forEach((s) => supervisorSet.add(s));
+      (t.keywords || []).forEach((k) => areaSet.add(k));
+      if (t.institution) institutionSet.add(t.institution);
+    });
 
-    existingTheses.forEach((t) =>
-      (t.keywords || []).forEach((k) => set.add(k))
-    );
-
-    return set.size;
-  }, [existingTheses]);
-
-  const institutionCountAll = useMemo(
-    () =>
-      new Set(
-        existingTheses
-          .map((t) => t.institution)
-          .filter(Boolean)
-      ).size,
-    [existingTheses]
-  );
+    return {
+      theses: filtered.length,
+      institutions: institutionSet.size,
+      supervisors: supervisorSet.size,
+      researchAreas: areaSet.size,
+    };
+  }, [filtered]);
 
   /*
    * ------------------------------------------------------------
@@ -459,21 +452,19 @@ export default function Theses() {
           {[
             {
               label: "Theses",
-              value:
-                existingTheses.length.toLocaleString(),
+              value: filteredStats.theses,
             },
             {
               label: "Institutions",
-              value: institutionCountAll,
+              value: filteredStats.institutions,
             },
             {
               label: "Supervisors",
-              value:
-                supervisorNames.length.toLocaleString(),
+              value: filteredStats.supervisors,
             },
             {
               label: "Research Areas",
-              value: researchAreaCount,
+              value: filteredStats.researchAreas,
             },
           ].map((s) => (
             <Card key={s.label}>
@@ -482,7 +473,7 @@ export default function Theses() {
               </p>
 
               <p className="font-serif text-3xl font-semibold text-[var(--color-ink)] mt-2">
-                {s.value}
+                {s.value.toLocaleString()}
               </p>
             </Card>
           ))}

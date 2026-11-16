@@ -1,349 +1,412 @@
-import pandas as pd
+from __future__ import annotations
+
+import argparse
 import json
-import os
+import math
+import re
+import traceback
+from pathlib import Path
 
-# =====================================================
-# SMART REPORT BUILDER
-# =====================================================
+import pandas as pd
 
-OUTPUT_PATH = "trend_engine/outputs"
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
+OUTPUT_PATH = PROJECT_ROOT / 'nlp' / 'trend_engine' / 'outputs'
+SAVE_FOLDER = PROJECT_ROOT / 'trend_engine' / 'report_engine' / 'generated_reports'
+DOMAIN_COLUMNS = ('domain_name', 'domain', 'subdomain', 'topic_label', 'topic')
+DESIGN_VERSION = 'SMART-DOMAIN-ONLY-2026-11-V4'
 
-def build_report(technology, year):
 
-    print("=" * 70)
-    print("SMART TECHNOLOGY REPORT")
-    print("=" * 70)
-    print(f"Technology : {technology}")
-    print(f"Year       : {year}")
-    print()
 
-    # =====================================================
-    # LOAD ANALYTICS
-    # =====================================================
-    domain_counts  = pd.read_csv(f"{OUTPUT_PATH}/domain_yearly_counts.csv")
-    domain_growth  = pd.read_csv(f"{OUTPUT_PATH}/domain_yoy_growth.csv")
-    domain_cagr    = pd.read_csv(f"{OUTPUT_PATH}/domain_cagr.csv")
-    researchers    = pd.read_csv(f"{OUTPUT_PATH}/domain_top_researchers.csv")
-    grants         = pd.read_csv(f"{OUTPUT_PATH}/grant_impact_score.csv")
-    journals       = pd.read_csv(f"{OUTPUT_PATH}/top_journals.csv")
-    conferences    = pd.read_csv(f"{OUTPUT_PATH}/top_conferences.csv")
+def load_csv(filename: str, required: bool = True) -> pd.DataFrame:
+    path = OUTPUT_PATH / filename
+    if not path.is_file():
+        if required:
+            raise FileNotFoundError(f'Required SMART analytics file missing: {path}')
+        print(f'Info: optional analytics file unavailable: {path}')
+        return pd.DataFrame()
+    df = pd.read_csv(path)
+    df.columns = df.columns.astype(str).str.strip()
+    return df
 
-    # Strip whitespace from ALL column names
-    for df in [domain_counts, domain_growth, domain_cagr,
-               researchers, grants, journals, conferences]:
-        df.columns = df.columns.str.strip()
 
-    # Load venues only if file exists
-    venues_path = f"{OUTPUT_PATH}/domain_top_venues.csv"
-    if os.path.exists(venues_path):
-        venues = pd.read_csv(venues_path)
-        venues.columns = venues.columns.str.strip()
-    else:
-        venues = pd.DataFrame()
+def domain_column(frame: pd.DataFrame) -> str | None:
+    return next((c for c in DOMAIN_COLUMNS if c in frame.columns), None)
 
-    # =====================================================
-    # DEBUG — print columns to confirm
-    # =====================================================
-    print("domain_counts columns :", domain_counts.columns.tolist())
-    print("domain_growth columns :", domain_growth.columns.tolist())
-    print("domain_cagr columns   :", domain_cagr.columns.tolist())
-    print("researchers columns   :", researchers.columns.tolist())
-    print()
 
-    # =====================================================
-    # DETECT DOMAIN COLUMN NAME
-    # =====================================================
-    def get_domain_col(df, label="df"):
-        possible_columns = [
-            "domain_name",
-            "domain",
-            "subdomain",
-            "topic_label",
-            "topic"
-        ]
-        for col in possible_columns:
-            if col in df.columns:
-                return col
-        print(
-            f"Warning: No domain column found in {label}. "
-            f"Columns: {df.columns.tolist()}"
-        )
+def filter_domain(frame: pd.DataFrame, technology: str) -> pd.DataFrame:
+    col = domain_column(frame)
+    if col is None:
+        return frame.iloc[:0].copy()
+    return frame.loc[frame[col].astype(str).str.strip().str.casefold() == technology.casefold()].copy()
+
+
+def filter_year(frame: pd.DataFrame, year: int) -> pd.DataFrame:
+    if 'year' not in frame.columns:
+        return frame.iloc[:0].copy()
+    return frame.loc[pd.to_numeric(frame['year'], errors='coerce') == year].copy()
+
+
+def number(value, *, integer=False):
+    if value is None:
+        return None
+    try:
+        if pd.isna(value):
+            return None
+        parsed = float(value)
+        if not math.isfinite(parsed):
+            return None
+        return int(parsed) if integer else round(parsed, 2)
+    except (ValueError, TypeError, OverflowError):
         return None
 
-    counts_domain_col     = get_domain_col(domain_counts,  "domain_counts")
-    growth_domain_col     = get_domain_col(domain_growth,  "domain_growth")
-    cagr_domain_col       = get_domain_col(domain_cagr,    "domain_cagr")
-    researcher_domain_col = get_domain_col(researchers,    "researchers")
 
-    # =====================================================
-    # REPORT OBJECT
-    # =====================================================
+def safe_records(frame: pd.DataFrame, columns=None, limit=10) -> list[dict]:
+    if frame.empty:
+        return []
+    if columns is not None:
+        frame = frame[[c for c in columns if c in frame.columns]]
+    return json.loads(frame.head(limit).to_json(orient='records', date_format='iso'))
+
+
+def fmt(value, suffix='') -> str:
+    return 'unavailable' if value is None else f'{value:,}{suffix}'
+
+
+def ranked_records(frame, candidates, columns, limit=10):
+    if frame.empty:
+        return []
+    for candidate in candidates:
+        if candidate in frame.columns:
+            frame = frame.assign(_rank=pd.to_numeric(frame[candidate], errors='coerce'))
+            frame = frame.sort_values('_rank', ascending=False, na_position='last')
+            break
+    return safe_records(frame, columns=columns, limit=limit)
+
+
+# Optional analytics: keep provenance and never relabel global series as domain-specific.
+# Every CSV in the analytics output directory is inventoried, including newly
+# introduced modules. Files lacking a domain column are contextual, not local.
+PREFERRED_ANALYTICS = {
+    'domain_yearly_counts.csv': 'Annual output',
+    'domain_yoy_growth.csv': 'Domain YoY growth',
+    'domain_cagr.csv': 'Domain CAGR',
+    'emerging_domains.csv': 'Emerging domains',
+    'institution_cagr.csv': 'Institution CAGR',
+    'institution_yoy_growth.csv': 'Institution YoY',
+    'institution_yearly_counts.csv': 'Institution annual counts',
+    'domain_top_venues.csv': 'Top venues by domain',
+    'journal_conference_by_domain.csv': 'Journal/conference by domain',
+    'journal_conference_by_year.csv': 'Journal/conference by year',
+    'venue_yearly_trend.csv': 'Venue annual trend',
+    'top_journals.csv': 'Top journals',
+    'top_conferences.csv': 'Top conferences',
+    'grant_yearly_counts.csv': 'Grant annual counts',
+    'grant_cagr.csv': 'Grant CAGR',
+    'grant_impact_score.csv': 'Grant impact',
+    'top_funding_agencies.csv': 'Funding agencies',
+    'scheme_analysis.csv': 'Grant schemes',
+    'top_principal_investigators.csv': 'Principal investigators',
+    'domain_top_researchers.csv': 'Domain researcher rankings',
+    'top_researchers.csv': 'Overall researcher rankings',
+    'institution_top_researchers.csv': 'Institution researcher rankings',
+    'top_thesis_researchers.csv': 'Thesis researchers',
+    'institution_top_thesis_researchers.csv': 'Institution thesis researchers',
+    'institution_top_venues.csv': 'Institution top venues',
+    'institution_grant_funding.csv': 'Institution grant funding',
+    'journal_conference_overall.csv': 'Overall journal/conference',
+    'journal_conference_yearly.csv': 'Annual journal/conference',
+    'unknown_publications.csv': 'Unclassified publications',
+    'unknown_venues.csv': 'Unclassified venues',
+}
+
+
+# Editorial chart policy: only comparable, technology-matched metrics may be plotted.
+# Financial schemes/discipline/agency CSVs have no verified selected-technology scope,
+# so they belong in the coverage audit, NOT in the research-domain chart section.
+CURATED_DOMAIN_PANELS = {
+    'domain_yearly_counts.csv': 'Annual research output by technology',
+    'domain_yoy_growth.csv': 'Technology year-over-year growth',
+    'domain_top_researchers.csv': 'Top researchers in the selected technology',
+    'domain_top_venues.csv': 'Publication venues in the selected technology',
+}
+
+
+def collect_analytics(technology: str, year: int) -> tuple[list[dict], list[dict]]:
+    """Strict domain AND year filter. No global or date-unspecified result panels.
+
+    A source must carry both technology and year labels. No guessed joins,
+    no all-domain panels, no 2019-2025 rankings inside a 2023 report.
+    """
+    sections, inventory = [], []
+    if not OUTPUT_PATH.exists():
+        return sections, [{'file': '(outputs directory)', 'status': 'not found'}]
+
+    # Only these have semantics suitable for a one-year technology report.
+    approved = {
+        'journal_conference_by_domain.csv': 'Journal and conference composition',
+        'domain_top_venues.csv': 'Publication venues',
+        'domain_top_researchers.csv': 'Researchers',
+    }
+    for path in sorted(OUTPUT_PATH.glob('*.csv')):
+        if 'backup' in path.stem.lower():
+            continue
+        item = {'file': path.name, 'status': 'excluded: not a curated domain/year result'}
+        if path.name not in approved:
+            inventory.append(item)
+            continue
+        try:
+            frame = load_csv(path.name)
+            item['source_records'] = len(frame)
+            if not domain_column(frame) or 'year' not in frame.columns:
+                item['status'] = 'excluded: no verified domain AND year columns'
+            else:
+                frame = filter_year(filter_domain(frame, technology), year)
+                item['matched_records'] = len(frame)
+                if frame.empty:
+                    item['status'] = 'excluded: no records for selected domain/year'
+                elif path.name == 'domain_top_researchers.csv':
+                    # The source may carry a year from a prior merger while its score
+                    # calculation still spans many years. Require score-period proof.
+                    if 'score_period' not in frame.columns or not frame['score_period'].astype(str).str.fullmatch(str(year)).all():
+                        item['status'] = 'excluded: researcher score period differs from selected year'
+                    else:
+                        sections.append({'title': approved[path.name], 'file': path.name,
+                            'scope': f'{technology}; {year}', 'rows': safe_records(frame, limit=10),
+                            'columns': list(frame.columns), 'record_count': len(frame),
+                            'source_record_count': item['source_records']})
+                        item['status'] = 'included: verified domain and year'
+                else:
+                    sections.append({'title': approved[path.name], 'file': path.name,
+                        'scope': f'{technology}; {year}', 'rows': safe_records(frame, limit=10),
+                        'columns': list(frame.columns), 'record_count': len(frame),
+                        'source_record_count': item['source_records']})
+                    item['status'] = 'included: verified domain and year'
+        except Exception as exc:
+            item['status'] = f'excluded: read/validation error: {type(exc).__name__}: {str(exc)[:80]}'
+        inventory.append(item)
+    return sections, inventory
+
+
+def build_report(technology: str, year: int) -> dict:
+    technology = str(technology).strip()
+    year = int(year)
+    if not technology:
+        raise ValueError('A technology domain is required')
+
+    counts = load_csv('domain_yearly_counts.csv')
+    selected = filter_year(filter_domain(counts, technology), year)
+    if selected.empty:
+        available = sorted(filter_domain(counts, technology)['year'].dropna().astype(str).unique().tolist()) if 'year' in counts.columns else []
+        raise ValueError(f'No research counts for {technology!r} in {year}. Available years for this domain: {available or "none"}')
+    if len(selected) != 1:
+        raise ValueError(f'Expected one domain/year summary row; found {len(selected)} for {technology!r} ({year}).')
+    row = selected.iloc[0]
+    stats = {key: number(row.get(key), integer=True) for key in ('publications', 'patents', 'grants', 'theses')}
+    total = number(row.get('total_research'), integer=True)
+    if total is None and all(v is not None for v in stats.values()):
+        total = sum(stats.values())
+    stats['total_output'] = total
+
+    growth_frame = filter_year(filter_domain(load_csv('domain_yoy_growth.csv', required=False), technology), year)
+    yoy = number(growth_frame.iloc[0].get('yoy_growth_percent')) if len(growth_frame) == 1 else None
+    # CAGR spans multiple years. A strict one-year report must not imply
+    # it is a 2023-only metric; omit unless a separate requested period exists.
+    cagr = None
+
+    researchers = filter_domain(load_csv('domain_top_researchers.csv', required=False), technology)
+    if 'year' in researchers.columns:
+        researchers = filter_year(researchers, year)
+    else:
+        researchers = researchers.iloc[:0].copy()
+    if not researchers.empty and ('score_period' not in researchers.columns or
+         not researchers['score_period'].astype(str).str.fullmatch(str(year)).all()):
+        researchers = researchers.iloc[:0].copy()
+    score_fields = ['rank','researcher','institution','publications','citations',
+                    'journal_publications','conference_publications','unclassified_publications',
+                    'journal_points','conference_points','patent_points','grant_points',
+                    'guidance_points','ugc_based_score','h_index','h_index_bonus',
+                    'research_score','score_method','score_period']
+    top_researchers = ranked_records(researchers, ['research_score','publications','citations'],score_fields)
+    domain_score_verified = (not researchers.empty
+       and {'ugc_based_score','h_index','h_index_bonus','research_score','journal_points',
+            'conference_points','patent_points','grant_points','guidance_points','score_method'}.
+            issubset(researchers.columns)
+       and researchers['score_method'].astype(str).str.contains('UGC',case=False,na=False).all())
+
+
+    venues = filter_domain(load_csv('domain_top_venues.csv', required=False), technology)
+    venues = filter_year(venues, year)
+    top_venues = ranked_records(venues, ['publications', 'count', 'total_publications'], list(venues.columns))
+
+    # Global journal/conference files must not be presented as domain-specific.
+    journals_df = load_csv('journal_conference_by_domain.csv', required=False)
+    journals_df = filter_domain(journals_df, technology)
+    journals_df = filter_year(journals_df, year)
+    # Schema varies; do not infer whether a row is a journal or conference.
+    top_journals = []
+    top_conferences = []
+    if not journals_df.empty:
+        kind_col = next((c for c in ('type', 'venue_type', 'publication_type', 'category') if c in journals_df.columns), None)
+        if kind_col:
+            kinds = journals_df[kind_col].astype(str).str.casefold()
+            top_journals = ranked_records(journals_df[kinds.str.contains('journal', na=False)], ['count', 'publications'], list(journals_df.columns))
+            top_conferences = ranked_records(journals_df[kinds.str.contains('conference', na=False)], ['count', 'publications'], list(journals_df.columns))
+
+    # The grant impact file is not assumed to have domain/year scope.
+    grant_frame = load_csv('grant_impact_score.csv', required=False)
+    grant_scope_ok = domain_column(grant_frame) is not None and 'year' in grant_frame.columns
+    if grant_scope_ok:
+        grant_frame = filter_year(filter_domain(grant_frame, technology), year)
+    else:
+        grant_frame = grant_frame.iloc[:0]
+    impact = number(pd.to_numeric(grant_frame['impact_score'], errors='coerce').mean()) if not grant_frame.empty and 'impact_score' in grant_frame.columns else None
+
+    institution_frame = load_csv('institution_yearly_counts.csv', required=False)
+    top_institutions = []
+    institution_scope = f'{technology}; {year} (no matching verifiable data)'
+    if (not institution_frame.empty and 'institution' in institution_frame.columns
+            and 'year' in institution_frame.columns and domain_column(institution_frame)):
+        inst_selected = filter_year(filter_domain(institution_frame, technology), year)
+        if not inst_selected.empty:
+            institution_scope = f'{technology}; {year}'
+            if 'total_research' in inst_selected.columns:
+                inst_selected = inst_selected.assign(total_output=pd.to_numeric(
+                    inst_selected['total_research'], errors='coerce'))
+            top_institutions = ranked_records(inst_selected,
+                ['total_output','total_research','publications'],
+                ['institution','publications','patents','grants','theses',
+                 'total_output','total_research'], limit=10)
+
     report = {
-        "technology":             technology,
-        "year":                   year,
-        "publication_statistics": {},
-        "growth_statistics":      {},
-        "grant_statistics":       {},
-        "top_researchers":        [],
-        "top_institutions":       [],
-        "top_journals":           [],
-        "top_conferences":        [],
-        "top_venues":             [],
-        "executive_summary":      "",
-        "recommendations":        []
+        'technology': technology,
+        'design_version': DESIGN_VERSION,
+        'year': year,
+        'publication_statistics': stats,
+        'growth_statistics': {'yoy_growth_percent': yoy, 'cagr_percent': cagr},
+        'grant_statistics': {'average_impact_score': impact},
+        'top_researchers': top_researchers,
+        'top_institutions': top_institutions,
+        'institution_scope': institution_scope,
+        'top_journals': top_journals,
+        'top_conferences': top_conferences,
+        'top_venues': top_venues,
+        'executive_summary': '',
+        'recommendations': [],
+        'data_notes': [],
+        'analytics_sections': [],
+        'analytics_inventory': [],
+        'researcher_score_methodology': {
+            'classification': 'SMART-adapted, UGC-inspired; NOT an official UGC assessment',
+            'formula': 'SMART enhanced score = UGC-inspired base score + 2 x h-index (only if implemented upstream)',
+            'purpose': 'Summarize documented scholarly activities using category weights and optional citation impact.',
+            'inputs': 'Journal and conference records, patents, verified supervision, funded projects, and paper-level citations where available.',
+            'reference': 'UGC 2018 Regulations, Appendix II, Table 2 (consult original rules for eligibility, sharing and caps).',
+            'limitations': 'Category defaults, omitted author-share adjustments and the h-index bonus are SMART adaptations. Thesis authorship is not evidence of supervision. The PDF does not recalculate scores.',
+        }
     }
-
-    # =====================================================
-    # PUBLICATION STATISTICS
-    # =====================================================
-    if counts_domain_col:
-        year_row = domain_counts[
-            (domain_counts[counts_domain_col] == technology) &
-            (domain_counts["year"] == year)
-        ]
+    pieces = [f'This SMART Technology Intelligence Report examines recorded research activity in {technology} for {year}.']
+    if total is not None:
+        breakdown = ', '.join(f'{fmt(stats[k])} {k}' for k in ('publications', 'patents', 'grants', 'theses'))
+        pieces.append(f'The dataset records {fmt(total)} total research outputs ({breakdown}).')
+        if total > 0 and stats['publications'] is not None:
+            pieces.append(f'Publications account for {stats["publications"] / total * 100:.1f}% of recorded outputs.')
+    if yoy is not None:
+        pieces.append(f'The recorded year-on-year change is {yoy:+.2f}% compared with the preceding year.')
     else:
-        year_row = pd.DataFrame()
+        report['data_notes'].append('Year-on-year growth is unavailable for the selected domain/year.')
+    # Multi-year CAGR excluded from a one-year report.
+    if impact is None:
+        report['data_notes'].append('Domain-and-year-specific grant impact could not be verified from the available grant analytics.')
+    if not top_institutions:
+        report['data_notes'].append('Institution rankings not available for this domain and year; all-domain statistics excluded.')
+    if not top_journals and not top_conferences:
+        report['data_notes'].append('Domain-and-year-specific journal/conference classifications could not be verified and are omitted.')
+    report['executive_summary'] = ' '.join(pieces)
 
-    if year_row.empty:
-        print(f"Warning: No data for domain='{technology}' year={year}")
-        publications = patents = grants_count = theses = total_output = 0
-    else:
-        row          = year_row.iloc[0]
-        publications = int(row.get("publications",    0))
-        patents      = int(row.get("patents",         0))
-        grants_count = int(row.get("grants",          0))
-        theses       = int(row.get("theses",          0))
-        total_output = int(row.get("total_research",
-                           publications + patents + grants_count + theses))
-
-    report["publication_statistics"] = {
-        "publications": publications,
-        "patents":      patents,
-        "grants":       grants_count,
-        "theses":       theses,
-        "total_output": total_output
-    }
-
-    # =====================================================
-    # GROWTH STATISTICS
-    # =====================================================
-    yoy_growth = 0.0
-    if growth_domain_col:
-        growth_row = domain_growth[
-            (domain_growth[growth_domain_col] == technology) &
-            (domain_growth["year"] == year)
-        ]
-        if not growth_row.empty:
-            yoy_val    = growth_row.iloc[0].get("yoy_growth_percent", 0)
-            yoy_growth = round(float(yoy_val) if pd.notna(yoy_val) else 0.0, 2)
-
-    # =====================================================
-    # CAGR
-    # domain_cagr.csv columns:
-    # domain_name, 2019, 2020 ... 2025, cagr_percent, trend
-    # =====================================================
-    cagr_val = 0.0
-    if cagr_domain_col:
-        cagr_row = domain_cagr[
-            domain_cagr[cagr_domain_col] == technology
-        ]
-        if not cagr_row.empty:
-            cagr_val = round(
-                float(cagr_row.iloc[0].get("cagr_percent", 0)), 2
-            )
-
-    report["growth_statistics"] = {
-        "yoy_growth_percent": yoy_growth,
-        "cagr_percent":       cagr_val
-    }
-
-    # =====================================================
-    # GRANT STATISTICS
-    # =====================================================
-    grant_domain_col = get_domain_col(grants, "grants")
-
-    if grant_domain_col:
-        domain_grants = grants[grants[grant_domain_col] == technology]
-    else:
-        domain_grants = grants
-
-    avg_impact = 0.0
-    if not domain_grants.empty and "impact_score" in domain_grants.columns:
-        avg_impact = round(float(domain_grants["impact_score"].mean()), 2)
-
-    report["grant_statistics"] = {
-        "average_impact_score": avg_impact
-    }
-
-    # =====================================================
-    # TOP RESEARCHERS
-    # researcher file columns:
-    # researcher, institution, domain, publications, citations, research_score
-    # =====================================================
-    if researcher_domain_col:
-        top_res = researchers[
-            researchers[researcher_domain_col] == technology
-        ].sort_values("research_score", ascending=False).head(10)
-    else:
-        top_res = researchers.sort_values(
-            "research_score", ascending=False
-        ).head(10)
-
-    cols_res = [c for c in
-                ["researcher", "institution", "publications",
-                 "citations", "research_score"]
-                if c in top_res.columns]
-    report["top_researchers"] = top_res[cols_res].to_dict("records")
-
-    # =====================================================
-    # TOP INSTITUTIONS
-    # =====================================================
-    top_inst = grants.sort_values("impact_score", ascending=False).head(10) \
-        if "impact_score" in grants.columns else grants.head(10)
-
-    cols_inst = [c for c in
-                 ["institution", "impact_score",
-                  "total_projects", "total_funding_lakhs"]
-                 if c in top_inst.columns]
-    report["top_institutions"] = top_inst[cols_inst].to_dict("records")
-
-    # =====================================================
-    # TOP JOURNALS + CONFERENCES
-    # =====================================================
-    report["top_journals"]    = journals.head(10).to_dict("records")
-    report["top_conferences"] = conferences.head(10).to_dict("records")
-
-    # =====================================================
-    # TOP VENUES FOR THIS DOMAIN
-    # =====================================================
-    if not venues.empty:
-        venue_domain_col = get_domain_col(venues, "venues")
-        if venue_domain_col:
-            report["top_venues"] = venues[
-                venues[venue_domain_col] == technology
-            ].head(10).to_dict("records")
-        else:
-            report["top_venues"] = venues.head(10).to_dict("records")
-
-    # =====================================================
-    # EXECUTIVE SUMMARY
-    # =====================================================
-    pub    = report["publication_statistics"]
-    growth = report["growth_statistics"]
-    grant  = report["grant_statistics"]
-
-    report["executive_summary"] = (
-        f"The {technology} domain produced {pub['total_output']} total research "
-        f"outputs in {year}, including {pub['publications']} publications, "
-        f"{pub['patents']} patents, {pub['grants']} grants and "
-        f"{pub['theses']} theses. "
-        f"The year-on-year growth was {growth['yoy_growth_percent']}%, "
-        f"while the long-term CAGR stands at {growth['cagr_percent']}%. "
-        f"Across all participating institutions, the average Grant Impact Score "
-        f"was {grant['average_impact_score']}."
-    )
-
-    # =====================================================
-    # RECOMMENDATIONS
-    # =====================================================
     recs = []
-
-    if growth["yoy_growth_percent"] > 20:
-        recs.append(
-            "Strong growth detected. Continued investment is recommended."
-        )
-    elif growth["yoy_growth_percent"] > 0:
-        recs.append(
-            "Steady growth observed. Monitor emerging research trends."
-        )
+    if yoy is not None:
+        if yoy > 0:
+            recs.append(f'Research output increased by {yoy:.2f}% year over year; examine the annual counts to assess whether this growth is sustained.')
+        elif yoy < 0:
+            recs.append(f'Research output declined by {abs(yoy):.2f}% year over year; review changes by output category before attributing causes.')
+        else:
+            recs.append('Recorded output was unchanged year over year; compare category-level counts to identify shifts in research activity.')
+    if top_researchers:
+        recs.append('Review the selected-year, selected-domain researchers and their documented output; scores are provisional.')
+    if stats['patents'] is not None and stats['publications'] is not None:
+        recs.append('Compare publication and patent patterns to understand the balance of scholarly and recorded intellectual-property output.')
+    if not recs:
+        recs.append('Improve completeness of domain/year analytics before drawing strategic conclusions.')
+    report['recommendations'] = recs
+    # General-purpose outputs are reserved for a separate Overall Research Report.
+    report['analytics_sections'] = []
+    report['analytics_inventory'] = []
+    # No all-domain researcher rankings in a domain/year-specific report.
+    report['ugc_overall_researchers'] = []
+    if domain_score_verified:
+        lead = top_researchers[0] if top_researchers else {}
+        example = None
+        if lead and all(k in lead for k in ('journal_points','conference_points','patent_points',
+                      'grant_points','guidance_points','ugc_based_score','h_index','h_index_bonus','research_score')):
+            example = {
+                'researcher': lead.get('researcher'),
+                'steps': (f"Journal {lead['journal_points']} + Conference {lead['conference_points']} + "
+                          f"Patent {lead['patent_points']} + Grant {lead['grant_points']} + "
+                          f"Guidance {lead['guidance_points']} = {lead['ugc_based_score']}; "
+                          f"2 x h-index ({lead['h_index']}) = {lead['h_index_bonus']}; "
+                          f"total = {lead['ugc_based_score']} + {lead['h_index_bonus']}"),
+                'result': lead['research_score'],
+            }
+        report['researcher_score_methodology'] = {
+            'classification': 'SMART-adapted UGC-inspired research activity score (NOT official UGC)',
+            'formula': 'UGC-inspired base = journal + conference + patent + grant + guidance points; SMART score = base + 2 x h-index',
+            'purpose': 'Rank researchers by documented publication-related weighted activity and citation impact.',
+            'inputs': 'Journal classification is heuristic. Conference eligibility, supervision, patents and grant points require explicit source evidence.',
+            'normalization': 'No coauthor share, career-stage or field normalization is applied.',
+            'reference': 'UGC Regulations 2018 Appendix II Table 2 (reference only; SMART adaptations are not official).',
+            'interpretation': 'Domain researcher scores are calculated for 2019-2025, not the selected single year. Unverified component eligibility and 2 x h-index are SMART adaptations.',
+            'worked_example': example,
+        }
     else:
-        recs.append(
-            "Research output has declined. "
-            "Strategic funding and collaboration should be encouraged."
-        )
-
-    if growth["cagr_percent"] > 15:
-        recs.append(
-            "Long-term CAGR indicates this technology is emerging rapidly."
-        )
-
-    if pub["publications"] > 500:
-        recs.append(
-            "High publication volume supports international collaboration."
-        )
-
-    if grant["average_impact_score"] > 50:
-        recs.append(
-            "Grant funding performance is strong across institutions."
-        )
-    else:
-        recs.append(
-            "Grant funding should be strengthened to improve "
-            "technology development."
-        )
-
-    report["recommendations"] = recs
-
-    # =====================================================
-    # PRINT REPORT
-    # =====================================================
-    print("=" * 70)
-    print("REPORT GENERATED")
-    print("=" * 70)
-    print(f"\nTechnology : {report['technology']}")
-    print(f"Year       : {report['year']}")
-    print(f"\nPublication Statistics")
-    print(report["publication_statistics"])
-    print(f"\nGrowth Statistics")
-    print(report["growth_statistics"])
-    print(f"\nGrant Statistics")
-    print(report["grant_statistics"])
-    print(f"\nTop Researchers  : {len(report['top_researchers'])}")
-    print(f"Top Institutions : {len(report['top_institutions'])}")
-    print(f"Top Journals     : {len(report['top_journals'])}")
-    print(f"Top Conferences  : {len(report['top_conferences'])}")
-    print(f"\nExecutive Summary")
-    print(report["executive_summary"])
-    print("\nRecommendations")
-    for r in report["recommendations"]:
-        print("-", r)
-
-    # =====================================================
-    # SAVE REPORT AS JSON
-    # =====================================================
-    save_folder = "trend_engine/report_engine/generated_reports"
-    os.makedirs(save_folder, exist_ok=True)
-
-    file_name = (
-        technology.lower().replace(" ", "_")
-        + "_" + str(year) + ".json"
-    )
-    save_path = os.path.join(save_folder, file_name)
-
-    with open(save_path, "w") as f:
-        json.dump(report, f, indent=4)
-
-    print()
-    print("=" * 70)
-    print("REPORT SAVED")
-    print("=" * 70)
-    print(save_path)
-
+        report['researcher_score_methodology'] = {
+            'classification': 'Domain score formula unverified from available CSV fields',
+            'limitations': 'Re-run and verify domain_top_researchers.py to provide score components and the method label.'
+        }
+    report['researcher_scope'] = f'{technology}; {year}' if domain_score_verified else f'No validated {technology} researcher scores specific to {year}'
     return report
 
 
-# =====================================================
-# RUN
-# =====================================================
-if __name__ == "__main__":
+def save_report(report: dict) -> Path:
+    SAVE_FOLDER.mkdir(parents=True, exist_ok=True)
+    slug = re.sub(r'[^a-z0-9]+', '_', report['technology'].lower()).strip('_')
+    destination = SAVE_FOLDER / f'{slug}_{report["year"]}.json'
+    with destination.open('w', encoding='utf-8') as file:
+        json.dump(report, file, indent=2, ensure_ascii=False, allow_nan=False)
+    return destination
 
-    from pdf_generator import generate_pdf
 
-    report = build_report(
-        "Artificial Intelligence and Computer Vision",
-        2023
-    )
+def main():
+    parser = argparse.ArgumentParser(description='SMART automated technology report builder')
+    parser.add_argument('--technology', default='Artificial Intelligence and Computer Vision')
+    parser.add_argument('--year', type=int, default=2023)
+    parser.add_argument('--json-only', action='store_true', help='Build JSON without invoking PDF generator')
+    args = parser.parse_args()
+    print(f'Generating SMART report: {args.technology} ({args.year})', flush=True)
+    report = build_report(args.technology, args.year)
+    print(f'DESIGN VERSION: {DESIGN_VERSION}', flush=True)
+    print(f'ANALYTICS SOURCE: {OUTPUT_PATH.resolve()}', flush=True)
+    json_path = save_report(report)
+    print(f'JSON saved: {json_path}')
+    if not args.json_only:
+        from pdf_generator import generate_pdf
+        pdf_path = generate_pdf(report)
+        print(f'PDF generator returned: {pdf_path}')
+    print('Report generation completed.')
 
-    pdf_path = generate_pdf(report)
 
-    print(f"\nPDF saved to: {pdf_path}")
+if __name__ == '__main__':
+    try:
+        main()
+    except Exception:
+        traceback.print_exc()
+        raise SystemExit(1)

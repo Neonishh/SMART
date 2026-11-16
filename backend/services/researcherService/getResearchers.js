@@ -4,6 +4,8 @@
 
 import { getResearchersData } from "./csvLoader.js";
 
+export const sameInstitutionKey = (name) => String(name || "").toLowerCase().replace(/[^a-z0-9]/g, "");
+
 export async function getResearchers(
     page = 1,
     limit = 20,
@@ -41,8 +43,11 @@ export async function getResearchers(
 
     if (institution) {
 
+        // The CSV says "M.S. Ramaiah Institute of Technology", Neo4j says
+        // "M S Ramaiah Institute of Technology" — compare ignoring punctuation/spaces.
+        const key = sameInstitutionKey(institution);
         researchers = researchers.filter(
-            r => r.institution === institution
+            r => sameInstitutionKey(r.institution) === key
         );
 
     }

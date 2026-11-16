@@ -31,6 +31,24 @@ function buildGrantQuery(filters = {}) {
     }
 
     // -------------------------
+    // Year range (used by the chatbot)
+    // -------------------------
+
+    if (filters.yearFrom) {
+
+        where.push("g.Year >= $yearFrom");
+        params.yearFrom = Number(filters.yearFrom);
+
+    }
+
+    if (filters.yearTo) {
+
+        where.push("g.Year <= $yearTo");
+        params.yearTo = Number(filters.yearTo);
+
+    }
+
+    // -------------------------
     // Institution
     // -------------------------
 
