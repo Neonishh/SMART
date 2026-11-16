@@ -620,14 +620,25 @@ export async function listTheses() {
 
 // Compatibility helpers for the contributed-entries UI.
 // Manual thesis entries are stored in the same theses endpoint.
-export async function listManualEntries(type = "thesis") {
-  if (type !== "thesis") return { data: [] };
-  return listTheses();
+const TYPE_PATHS = {
+  Thesis: "/theses",
+  Grant: "/grants",
+  Patent: "/patents",
+  Publication: "/publications",
+};
+
+export async function createContribution(type, data) {
+  if (type === "Thesis") return createThesis(data);
+  return client.post(TYPE_PATHS[type], data, authConfig());
 }
 
-export async function deleteManualEntry(id, type = "thesis") {
-  if (type !== "thesis") throw new Error("Unsupported manual entry type");
-  return deleteThesis(id);
+export async function listManualEntries(type) {
+  if (type === "Thesis") return listTheses();
+  return client.get(`${TYPE_PATHS[type]}/manual`);
+}
+
+export async function deleteManualEntry(id, type) {
+  return client.delete(`${TYPE_PATHS[type]}/${encodeURIComponent(id)}`, authConfig());
 }
 
 export default client;

@@ -2,7 +2,7 @@ import driver from "../config/neo4j.js";
 
 function buildPatentQuery(filters = {}) {
 
-    const where = [];
+    const where = ["coalesce(pat.is_manual,false) = false", "coalesce(pat.is_deleted,false) = false"];
     const params = {};
 
     if (filters.year) {

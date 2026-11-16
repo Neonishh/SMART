@@ -16,7 +16,7 @@ Supported Filters
 
 function buildGrantQuery(filters = {}) {
 
-    const where = [];
+    const where = ["coalesce(g.is_manual,false) = false", "coalesce(g.is_deleted,false) = false"];
     const params = {};
 
     // -------------------------

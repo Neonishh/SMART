@@ -1,5 +1,6 @@
 import express from "express";
-
+import { requireAuth, requireAdmin } from "../middleware/auth.js";
+import { listManual, create, remove } from "../controllers/contributionController.js";
 import {
     getAllGrants,
     getGrantById,
@@ -17,7 +18,9 @@ Keep this BEFORE "/:id"
 Otherwise "analytics" will be interpreted as an id.
 =========================================================
 */
-
+router.get("/manual", listManual("Grant"));
+router.post("/", requireAuth, create("Grant"));
+router.delete("/:id", requireAuth, requireAdmin, remove("Grant"));
 router.get("/analytics", getGrantAnalytics);
 
 /*

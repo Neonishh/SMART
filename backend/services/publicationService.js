@@ -17,6 +17,7 @@ import neo4j from "neo4j-driver";
 
 const LIST_FIELDS = `
     MATCH (p:Publication)
+    WHERE coalesce(p.is_manual,false) = false AND coalesce(p.is_deleted,false) = false
 
     OPTIONAL MATCH (author:Person)-[:AUTHORED_PUBLICATION]->(p)
     WITH p, collect(DISTINCT {id: author.Person_ID, name: author.Name}) AS authors

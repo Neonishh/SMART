@@ -1,97 +1,88 @@
 import { useEffect, useState } from "react";
+import { Trash2 } from "lucide-react";
+import { Card, Badge, SectionLabel } from "../ui.jsx";
+import { listManualEntries, deleteManualEntry, getCurrentUser } from "../../services/api";
 
-import { Card, Badge, SectionLabel, EmptyState } from "../ui.jsx";
-
-import { listManualEntries } from "../../services/api";
-
-/*
-=========================================================
-CONTRIBUTED ENTRIES SECTION
-=========================================================
-Drop this into any record-type page (Grants, Patents,
-Publications, Theses) to show manually submitted records
-of that type. These are fetched from the separate
-manual-entries store — never mixed into the live
-Neo4j-backed dataset above — and are visually distinct so
-it's obvious they haven't gone through the NLP pipeline
-or the knowledge graph yet.
-
-Usage:
-  <ContributedEntriesSection type="Grant" titleField="Project_Title" />
-=========================================================
-*/
-
-export default function ContributedEntriesSection({ type, titleField }) {
+export default function ContributedEntriesSection({ type }) {
   const [entries, setEntries] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+  const isAdmin = getCurrentUser()?.role === "admin";
 
   useEffect(() => {
     let cancelled = false;
-
-    async function load() {
+    (async () => {
       try {
         setLoading(true);
         setError("");
-        const response = await listManualEntries(type);
-        if (!cancelled) {
-          setEntries(response.data?.data ?? []);
-        }
+        const res = await listManualEntries(type);
+        if (!cancelled) setEntries(res.data?.data ?? []);
       } catch (err) {
-        if (!cancelled) {
-          console.error(err);
-          setError("Couldn't load contributed entries.");
-        }
+        console.error(err);
+        if (!cancelled) setError("Couldn't load contributed entries.");
       } finally {
         if (!cancelled) setLoading(false);
       }
-    }
-
-    load();
-    return () => {
-      cancelled = true;
-    };
+    })();
+    return () => { cancelled = true; };
   }, [type]);
 
-  if (loading || (!error && entries.length === 0)) {
-    // Stay quiet when there's nothing contributed yet — no need to
-    // clutter the page with an empty section on every visit.
-    return null;
-  }
+  const handleDelete = async (entry) => {
+    if (!window.confirm(`Delete "${entry.title}"?`)) return;
+    try {
+      await deleteManualEntry(entry.id, type);
+      setEntries((cur) => cur.filter((e) => e.id !== entry.id));
+    } catch (err) {
+      window.alert(err?.response?.data?.error || "Unable to delete.");
+    }
+  };
+
+  if (loading || (!error && entries.length === 0)) return null;
 
   return (
-    <section className="space-y-3">
+    <section className="space-y-3 mb-8">
       <div className="flex items-center justify-between flex-wrap gap-2">
         <div>
-          <SectionLabel>Recently Contributed</SectionLabel>
-          <p className="text-sm text-gray-500 -mt-2">
-            Submitted directly by contributors. Not yet part of analytics,
-            search, or the knowledge graph.
+          <SectionLabel>Manually Contributed {type}s</SectionLabel>
+          <p className="text-xs text-[var(--color-muted)] mt-1">
+            {type}s submitted manually through the contribution form.
           </p>
         </div>
-        <Badge tone="accent">Pending NLP processing</Badge>
+        <Badge tone="accent">
+          {entries.length} {entries.length === 1 ? "entry" : "entries"}
+        </Badge>
       </div>
 
       {error ? (
-        <Card className="border-red-200">
-          <p className="text-sm text-red-600">{error}</p>
-        </Card>
+        <Card className="border-red-200"><p className="text-sm text-red-600">{error}</p></Card>
       ) : (
-        <div className="space-y-3">
-          {entries.map((entry) => (
-            <Card key={entry.id} className="border-dashed">
+        <div className="grid gap-3">
+          {entries.map((e) => (
+            <Card key={e.id} className="border-l-4 border-l-[var(--color-ochre)]">
               <div className="flex items-start justify-between gap-4 flex-wrap">
-                <div>
-                  <p className="font-medium text-[var(--color-ink)]">
-                    {entry[titleField] || "Untitled"}
+                <div className="min-w-0 flex-1">
+                  {e.sourceUrl ? (
+                    <a href={e.sourceUrl} target="_blank" rel="noreferrer"
+                       className="font-serif text-lg font-semibold text-[var(--color-ink)] hover:underline">
+                      {e.title}
+                    </a>
+                  ) : (
+                    <h3 className="font-serif text-lg font-semibold text-[var(--color-ink)]">{e.title}</h3>
+                  )}
+                  <p className="text-sm text-[var(--color-muted)] mt-2">
+                    {[e.people.join(", "), e.institution, e.year].filter(Boolean).join(" · ")}
                   </p>
-                  <p className="text-xs text-gray-500 mt-1">
-                    {entry.Institution && <>{entry.Institution} · </>}
-                    Submitted {new Date(entry.submitted_at).toLocaleDateString()}
-                    {entry.submitted_by && <> by {entry.submitted_by}</>}
+                  {e.detail && <p className="text-xs text-[var(--color-muted)] mt-1">{e.detail}</p>}
+                  <p className="mt-3 text-[10px] uppercase tracking-wide font-mono text-[var(--color-ochre)]">
+                    Manual Contribution{e.createdBy ? ` · ${e.createdBy}` : ""}
                   </p>
                 </div>
-                <Badge tone="neutral">Unprocessed</Badge>
+                {isAdmin && (
+                  <button type="button" onClick={() => handleDelete(e)}
+                    className="inline-flex items-center gap-1.5 px-3 py-2 text-xs rounded-sm border border-red-200 text-red-700 bg-white hover:bg-red-50 shrink-0">
+                    <Trash2 size={13} /> Delete
+                  </button>
+                )}
               </div>
             </Card>
           ))}
